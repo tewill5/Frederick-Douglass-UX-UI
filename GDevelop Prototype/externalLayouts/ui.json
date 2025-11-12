@@ -1,0 +1,52 @@
+{
+  "associatedLayout": "Base Template",
+  "name": "UI",
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "PauseButton",
+      "persistentUuid": "b90aab14-b306-45f5-92e4-208c70a7a59f",
+      "width": 0,
+      "x": 1184,
+      "y": 32,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "UI Pause",
+      "name": "PauseText",
+      "persistentUuid": "e6dbd554-efe2-4ad9-a293-74c8a8935d1c",
+      "width": 0,
+      "x": 448,
+      "y": 320,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "editionSettings": {
+    "grid": true,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": true,
+    "zoomFactor": 0.546875,
+    "windowMask": false,
+    "selectedLayer": "UI Pause"
+  }
+}
