@@ -202,14 +202,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/NewSprite.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "NewSprite",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/gestures/Directional Arrow Quarter Circle.png",
         "kind": "image",
         "metadata": "",
@@ -232,6 +224,30 @@
         "name": "ExitInspect",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Pause button.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Pause button.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/On-Screen Controls/Sprites/Flat Light/60c7bc247835ebeb940075c63655df2f90960476dd500b4313cbe782fac826cb_Pause button.png",
+          "name": "Pause button.png"
+        }
+      },
+      {
+        "file": "assets/Pause button2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Pause button.png2",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/On-Screen Controls/Sprites/Shaded Light/a94ca243972d43eda47eeee117973b9f0d13c77241d64e4abc5e957997423a24_Pause button.png",
+          "name": "Pause button.png"
+        }
       }
     ],
     "resourceFolders": []
@@ -730,11 +746,134 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "PauseButton",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "CursorHover",
+          "type": "CursorType::CursorHover",
+          "CursorType": "pointer"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Pause button.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 48,
+                        "y": 0
+                      },
+                      {
+                        "x": 48,
+                        "y": 48
+                      },
+                      {
+                        "x": 0,
+                        "y": 48
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "PauseText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Game Paused",
+      "font": "assets/BilkoOpti-Regular.otf",
+      "textAlignment": "left",
+      "characterSize": 71,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Game Paused",
+        "font": "assets/BilkoOpti-Regular.otf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 71,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
+      {
+        "folderName": "UI",
+        "children": [
+          {
+            "objectName": "PauseText"
+          },
+          {
+            "objectName": "ExitInspect"
+          },
+          {
+            "objectName": "PauseButton"
+          }
+        ]
+      },
       {
         "folderName": "Clickable",
         "children": [
@@ -748,9 +887,6 @@
       },
       {
         "objectName": "Background"
-      },
-      {
-        "objectName": "ExitInspect"
       }
     ]
   },
@@ -782,6 +918,11 @@
       "name": "CurrentInspect",
       "type": "string",
       "value": "\"\""
+    },
+    {
+      "name": "CurrentScene",
+      "type": "string",
+      "value": ""
     }
   ],
   "layouts": [
@@ -830,5 +971,10 @@
       "referenceTo": "/eventsFunctionsExtensions/mousehelper"
     }
   ],
-  "externalLayouts": []
+  "externalLayouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/ui"
+    }
+  ]
 }
