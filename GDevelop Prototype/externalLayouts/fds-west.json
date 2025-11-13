@@ -86,42 +86,31 @@
           "name": "targetInspect",
           "persistentUuid": "fea88182-55ae-40e8-8695-c7cefc4b54c5",
           "type": "string",
-          "value": "FDStatue"
+          "value": "FDStatueInspect"
         }
       ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 576,
-      "keepRatio": true,
-      "layer": "Inspect",
-      "name": "InspectImage",
-      "persistentUuid": "2458bd04-7424-4869-b7c0-026ad795a693",
-      "width": 424,
-      "x": 416,
-      "y": 32,
-      "zOrder": 5,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
     },
     {
       "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "Inspect",
-      "name": "InspectText",
-      "persistentUuid": "e2ac33db-de8c-421c-adfe-0de949777d27",
+      "layer": "SceneObjects",
+      "name": "InspectObject",
+      "persistentUuid": "9204e1ff-0ed1-477f-a735-205786452eac",
       "width": 0,
       "x": 320,
-      "y": 641,
-      "zOrder": 6,
+      "y": 48,
+      "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
-      "initialVariables": []
+      "initialVariables": [
+        {
+          "name": "targetInspect",
+          "type": "string",
+          "value": "SkyInspect"
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -134,8 +123,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.6244537826599987,
+    "zoomFactor": 0.5290357402156839,
     "windowMask": false,
-    "selectedLayer": "SceneObjects"
+    "selectedLayer": "Inspect"
   }
 }
