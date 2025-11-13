@@ -1,5 +1,5 @@
 {
-  "associatedLayout": "Base Template",
+  "associatedLayout": "Game",
   "name": "UI",
   "instances": [
     {
@@ -23,7 +23,7 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "UI Pause",
+      "layer": "PauseMenu",
       "name": "PauseText",
       "persistentUuid": "e6dbd554-efe2-4ad9-a293-74c8a8935d1c",
       "width": 0,

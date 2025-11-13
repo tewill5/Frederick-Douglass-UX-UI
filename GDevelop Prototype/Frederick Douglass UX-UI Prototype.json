@@ -248,6 +248,22 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/On-Screen Controls/Sprites/Shaded Light/a94ca243972d43eda47eeee117973b9f0d13c77241d64e4abc5e957997423a24_Pause button.png",
           "name": "Pause button.png"
         }
+      },
+      {
+        "file": "images/FDS Statue Inspect.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "images\\FDS Statue Inspect.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/keys/Letter Key_X.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\keys\\Letter Key_X.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -476,7 +492,7 @@
       "updateIfNotVisible": false,
       "variables": [
         {
-          "name": "targetScene",
+          "name": "targetLayout",
           "type": "string",
           "value": ""
         }
@@ -707,7 +723,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "ExitInspect",
+                  "image": "assets\\keys\\Letter Key_X.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -723,20 +739,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 5,
-                        "y": 1
+                        "x": 13,
+                        "y": 14
                       },
                       {
-                        "x": 57,
-                        "y": 1
+                        "x": 87,
+                        "y": 14
                       },
                       {
-                        "x": 57,
-                        "y": 32
+                        "x": 87,
+                        "y": 86
                       },
                       {
-                        "x": 5,
-                        "y": 32
+                        "x": 13,
+                        "y": 86
                       }
                     ]
                   ]
@@ -855,6 +871,66 @@
         "lineHeight": 0,
         "color": "255;255;255"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "InspectImage",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "FDStatue",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "images\\FDS Statue Inspect.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 707,
+                        "y": 0
+                      },
+                      {
+                        "x": 707,
+                        "y": 960
+                      },
+                      {
+                        "x": 0,
+                        "y": 960
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -887,6 +963,9 @@
       },
       {
         "objectName": "Background"
+      },
+      {
+        "objectName": "InspectImage"
       }
     ]
   },
@@ -920,9 +999,14 @@
       "value": "\"\""
     },
     {
-      "name": "CurrentScene",
+      "name": "CurrentLayout",
       "type": "string",
-      "value": ""
+      "value": "FDS North"
+    },
+    {
+      "name": "DarkEffect",
+      "type": "boolean",
+      "value": false
     }
   ],
   "layouts": [
@@ -932,31 +1016,10 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/base-template"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/fds-north"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/fds-east"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/fds-south"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/fds-west"
+      "referenceTo": "/layouts/game"
     }
   ],
-  "externalEvents": [
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalEvents/global-events"
-    }
-  ],
+  "externalEvents": [],
   "eventsFunctionsExtensions": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
@@ -969,12 +1032,32 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/mousehelper"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/alignobject"
     }
   ],
   "externalLayouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalLayouts/ui"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/fds-north"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/fds-east"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/fds-south"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/fds-west"
     }
   ]
 }

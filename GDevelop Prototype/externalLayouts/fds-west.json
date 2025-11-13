@@ -1,0 +1,141 @@
+{
+  "associatedLayout": "Game",
+  "name": "FDS West",
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "4ef4e486-fd7f-4d45-8186-d84d23ac9795",
+      "width": 0,
+      "x": 1120,
+      "y": 368,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "FDS North"
+        }
+      ]
+    },
+    {
+      "angle": 180,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "4f456e68-4ab5-49c8-b8ac-452c192d43a2",
+      "width": 0,
+      "x": 96,
+      "y": 368,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "FDS South"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "Background",
+      "name": "Background",
+      "persistentUuid": "58fde8d2-5f6f-4c67-b388-713e3239ba9d",
+      "width": 0,
+      "x": 0,
+      "y": -64,
+      "zOrder": 1,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 3
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "InspectObject",
+      "persistentUuid": "218ae879-694d-42ca-b323-c18785f056d2",
+      "width": 0,
+      "x": 1088,
+      "y": 528,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspect",
+          "persistentUuid": "fea88182-55ae-40e8-8695-c7cefc4b54c5",
+          "type": "string",
+          "value": "FDStatue"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 576,
+      "keepRatio": true,
+      "layer": "Inspect",
+      "name": "InspectImage",
+      "persistentUuid": "2458bd04-7424-4869-b7c0-026ad795a693",
+      "width": 424,
+      "x": 416,
+      "y": 32,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "Inspect",
+      "name": "InspectText",
+      "persistentUuid": "e2ac33db-de8c-421c-adfe-0de949777d27",
+      "width": 0,
+      "x": 320,
+      "y": 641,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "editionSettings": {
+    "grid": true,
+    "gridType": "rectangular",
+    "gridWidth": 16,
+    "gridHeight": 16,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.4,
+    "snap": true,
+    "zoomFactor": 0.6244537826599987,
+    "windowMask": false,
+    "selectedLayer": "SceneObjects"
+  }
+}
