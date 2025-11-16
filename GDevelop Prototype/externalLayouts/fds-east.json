@@ -81,7 +81,13 @@
       "zOrder": 4,
       "numberProperties": [],
       "stringProperties": [],
-      "initialVariables": []
+      "initialVariables": [
+        {
+          "name": "uniqueID",
+          "type": "string",
+          "value": "FDS East 1"
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -96,6 +102,6 @@
     "snap": true,
     "zoomFactor": 0.4950840073748888,
     "windowMask": false,
-    "selectedLayer": "SceneObjects"
+    "selectedLayer": "PauseMenu"
   }
 }
