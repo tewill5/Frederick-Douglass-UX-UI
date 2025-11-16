@@ -17,22 +17,6 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "PauseMenu",
-      "name": "PauseText",
-      "persistentUuid": "901bd502-1cba-428f-b44a-b74be0b7b456",
-      "width": 0,
-      "x": 428,
-      "y": 288,
-      "zOrder": 2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
     }
   ],
   "editionSettings": {

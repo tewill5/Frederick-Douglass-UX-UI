@@ -24,7 +24,7 @@
     "author": "",
     "windowWidth": 1280,
     "windowHeight": 720,
-    "latestCompilationDirectory": "",
+    "latestCompilationDirectory": "D:\\Documents\\Classwork\\2025 Fall\\INST 490\\Frederick-Douglass-UX-UI\\docs",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -612,11 +612,6 @@
           "rightEdgeAnchor": 0,
           "topEdgeAnchor": 0,
           "useLegacyBottomAndRightAnchors": false
-        },
-        {
-          "name": "CursorHover",
-          "type": "CursorType::CursorHover",
-          "CursorType": "pointer"
         }
       ],
       "animations": [
@@ -742,11 +737,6 @@
           "rightEdgeAnchor": 0,
           "topEdgeAnchor": 0,
           "useLegacyBottomAndRightAnchors": false
-        },
-        {
-          "name": "CursorHover",
-          "type": "CursorType::CursorHover",
-          "CursorType": "pointer"
         }
       ],
       "animations": [
@@ -808,13 +798,7 @@
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
-      "behaviors": [
-        {
-          "name": "CursorHover",
-          "type": "CursorType::CursorHover",
-          "CursorType": "pointer"
-        }
-      ],
+      "behaviors": [],
       "animations": [
         {
           "name": "ExitInspect",
@@ -875,13 +859,7 @@
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
-      "behaviors": [
-        {
-          "name": "CursorHover",
-          "type": "CursorType::CursorHover",
-          "CursorType": "pointer"
-        }
-      ],
+      "behaviors": [],
       "animations": [
         {
           "name": "",
@@ -1153,13 +1131,7 @@
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
-      "behaviors": [
-        {
-          "name": "CursorHover",
-          "type": "CursorType::CursorHover",
-          "CursorType": "pointer"
-        }
-      ],
+      "behaviors": [],
       "animations": [
         {
           "name": "StatueCollectiblePlaceholder",
@@ -1286,35 +1258,9 @@
   ],
   "variables": [
     {
-      "name": "GameState",
-      "type": "structure",
-      "children": [
-        {
-          "name": "CurrentInspect",
-          "type": "string",
-          "value": ""
-        },
-        {
-          "name": "CurrentLayout",
-          "type": "string",
-          "value": "Test"
-        },
-        {
-          "name": "DarkEffect",
-          "type": "boolean",
-          "value": false
-        },
-        {
-          "name": "Inspecting",
-          "type": "boolean",
-          "value": false
-        },
-        {
-          "name": "Paused",
-          "type": "boolean",
-          "value": false
-        }
-      ]
+      "name": "DataInitialized",
+      "type": "boolean",
+      "value": false
     }
   ],
   "layouts": [
@@ -1325,12 +1271,16 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/game"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/pause-screen"
     }
   ],
   "externalEvents": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalEvents/global-events"
+      "referenceTo": "/externalEvents/global-eventsjs"
     }
   ],
   "eventsFunctionsExtensions": [
@@ -1341,10 +1291,6 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/panelspritebutton"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/eventsFunctionsExtensions/mousehelper"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
@@ -1363,10 +1309,6 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalLayouts/fds-north"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/test"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,

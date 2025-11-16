@@ -19,6 +19,10 @@ gdjs.Main_32MenuCode.GDPauseTextObjects1= [];
 gdjs.Main_32MenuCode.GDPauseTextObjects2= [];
 gdjs.Main_32MenuCode.GDInspectImageObjects1= [];
 gdjs.Main_32MenuCode.GDInspectImageObjects2= [];
+gdjs.Main_32MenuCode.GDInspectBackgroundObjects1= [];
+gdjs.Main_32MenuCode.GDInspectBackgroundObjects2= [];
+gdjs.Main_32MenuCode.GDStatueCollectibleObjects1= [];
+gdjs.Main_32MenuCode.GDStatueCollectibleObjects2= [];
 
 
 gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDYellowButtonObjects1Objects = Hashtable.newFrom({"YellowButton": gdjs.Main_32MenuCode.GDYellowButtonObjects1});
@@ -66,6 +70,10 @@ gdjs.Main_32MenuCode.GDPauseTextObjects1.length = 0;
 gdjs.Main_32MenuCode.GDPauseTextObjects2.length = 0;
 gdjs.Main_32MenuCode.GDInspectImageObjects1.length = 0;
 gdjs.Main_32MenuCode.GDInspectImageObjects2.length = 0;
+gdjs.Main_32MenuCode.GDInspectBackgroundObjects1.length = 0;
+gdjs.Main_32MenuCode.GDInspectBackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDStatueCollectibleObjects1.length = 0;
+gdjs.Main_32MenuCode.GDStatueCollectibleObjects2.length = 0;
 
 gdjs.Main_32MenuCode.eventsList0(runtimeScene);
 gdjs.Main_32MenuCode.GDYellowButtonObjects1.length = 0;
@@ -86,6 +94,10 @@ gdjs.Main_32MenuCode.GDPauseTextObjects1.length = 0;
 gdjs.Main_32MenuCode.GDPauseTextObjects2.length = 0;
 gdjs.Main_32MenuCode.GDInspectImageObjects1.length = 0;
 gdjs.Main_32MenuCode.GDInspectImageObjects2.length = 0;
+gdjs.Main_32MenuCode.GDInspectBackgroundObjects1.length = 0;
+gdjs.Main_32MenuCode.GDInspectBackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDStatueCollectibleObjects1.length = 0;
+gdjs.Main_32MenuCode.GDStatueCollectibleObjects2.length = 0;
 
 
 return;

@@ -35,7 +35,7 @@
       "include": {
         "includeConfig": 0
       },
-      "target": "Global Events"
+      "target": "Global EventsJS"
     }
   ],
   "layers": [
@@ -87,7 +87,7 @@
           "effectType": "Brightness",
           "name": "Darken",
           "doubleParameters": {
-            "brightness": 1
+            "brightness": 0.5
           },
           "stringParameters": {},
           "booleanParameters": {}
@@ -114,7 +114,7 @@
           "effectType": "Brightness",
           "name": "Darken",
           "doubleParameters": {
-            "brightness": 1
+            "brightness": 0.5
           },
           "stringParameters": {},
           "booleanParameters": {}
@@ -168,34 +168,7 @@
           "effectType": "Brightness",
           "name": "Darken",
           "doubleParameters": {
-            "brightness": 1
-          },
-          "stringParameters": {},
-          "booleanParameters": {}
-        }
-      ]
-    },
-    {
-      "ambientLightColorB": 200,
-      "ambientLightColorG": 200,
-      "ambientLightColorR": 200,
-      "camera3DFarPlaneDistance": 10000,
-      "camera3DFieldOfView": 45,
-      "camera3DNearPlaneDistance": 3,
-      "cameraType": "",
-      "followBaseLayerCamera": false,
-      "isLightingLayer": false,
-      "isLocked": false,
-      "name": "PauseMenu",
-      "renderingType": "2d",
-      "visibility": true,
-      "cameras": [],
-      "effects": [
-        {
-          "effectType": "Brightness",
-          "name": "Darken",
-          "doubleParameters": {
-            "brightness": 1
+            "brightness": 0.5
           },
           "stringParameters": {},
           "booleanParameters": {}
