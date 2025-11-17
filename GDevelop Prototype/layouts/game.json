@@ -22,22 +22,7 @@
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   },
-  "objectsGroups": [
-    {
-      "name": "Inspect",
-      "objects": [
-        {
-          "name": "InspectImage"
-        },
-        {
-          "name": "InspectBackground"
-        },
-        {
-          "name": "InspectText"
-        }
-      ]
-    }
-  ],
+  "objectsGroups": [],
   "variables": [],
   "instances": [],
   "objects": [],

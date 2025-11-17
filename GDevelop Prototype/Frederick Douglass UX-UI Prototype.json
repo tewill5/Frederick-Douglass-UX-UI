@@ -194,38 +194,6 @@
         "userAdded": false
       },
       {
-        "file": "images/FDS Statue Inspect.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "images/FDS Statue Inspect.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/gestures/Directional Arrow Quarter Circle.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/gestures/Directional Arrow Quarter Circle.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/gestures/Directional Arrow Straight.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/gestures/Directional Arrow Straight.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/ExitInspect.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "ExitInspect",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/Pause button.png",
         "kind": "image",
         "metadata": "",
@@ -238,62 +206,10 @@
         }
       },
       {
-        "file": "assets/Pause button2.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Pause button.png2",
-        "smoothed": true,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/On-Screen Controls/Sprites/Shaded Light/a94ca243972d43eda47eeee117973b9f0d13c77241d64e4abc5e957997423a24_Pause button.png",
-          "name": "Pause button.png"
-        }
-      },
-      {
-        "file": "images/FDS Statue Inspect.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "images\\FDS Statue Inspect.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/keys/Letter Key_X.png",
         "kind": "image",
         "metadata": "",
         "name": "assets\\keys\\Letter Key_X.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "images/FDS Sky Inspect.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "images/FDS Sky Inspect.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "images/FD StatueInspect.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "images/FD StatueInspect.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "images/FD West SkyInspect.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "images/FD West SkyInspect.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "images/FDS West SkyInspect.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "images/FDS West SkyInspect.png",
         "smoothed": true,
         "userAdded": false
       },
@@ -335,6 +251,13 @@
         "metadata": "",
         "name": "images\\FDS Sky Inspect.JPG",
         "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/fonts/BilkoOpti-Regular.otf",
+        "kind": "font",
+        "metadata": "",
+        "name": "assets/fonts/BilkoOpti-Regular.otf",
         "userAdded": false
       }
     ],
@@ -1192,7 +1115,7 @@
       "effects": [],
       "behaviors": [],
       "string": "Insert Text Here",
-      "font": "assets/BilkoOpti-Regular.otf",
+      "font": "assets/fonts/BilkoOpti-Regular.otf",
       "textAlignment": "center",
       "characterSize": 40,
       "color": {
@@ -1215,7 +1138,7 @@
         "smoothed": true,
         "underlined": false,
         "text": "Insert Text Here",
-        "font": "assets/BilkoOpti-Regular.otf",
+        "font": "assets/fonts/BilkoOpti-Regular.otf",
         "textAlignment": "center",
         "verticalTextAlignment": "center",
         "characterSize": 40,
@@ -1230,23 +1153,6 @@
       {
         "folderName": "UI",
         "children": [
-          {
-            "folderName": "Inspect",
-            "children": [
-              {
-                "objectName": "InspectText"
-              },
-              {
-                "objectName": "InspectImage"
-              },
-              {
-                "objectName": "InspectBackground"
-              },
-              {
-                "objectName": "ExitInspect"
-              }
-            ]
-          },
           {
             "objectName": "PauseButton"
           }
@@ -1267,11 +1173,43 @@
         ]
       },
       {
+        "folderName": "Inspect",
+        "children": [
+          {
+            "objectName": "InspectText"
+          },
+          {
+            "objectName": "InspectImage"
+          },
+          {
+            "objectName": "InspectBackground"
+          },
+          {
+            "objectName": "ExitInspect"
+          }
+        ]
+      },
+      {
         "objectName": "Background"
       }
     ]
   },
-  "objectsGroups": [],
+  "objectsGroups": [
+    {
+      "name": "Inspect",
+      "objects": [
+        {
+          "name": "InspectImage"
+        },
+        {
+          "name": "InspectBackground"
+        },
+        {
+          "name": "InspectText"
+        }
+      ]
+    }
+  ],
   "variables": [
     {
       "name": "DataInitialized",

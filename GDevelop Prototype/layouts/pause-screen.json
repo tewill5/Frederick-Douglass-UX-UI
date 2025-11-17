@@ -31,7 +31,7 @@
       "height": 0,
       "keepRatio": true,
       "layer": "",
-      "name": "PauseText2",
+      "name": "PauseText",
       "persistentUuid": "82f4ff1a-bef8-4575-8a45-4d79cd9a2627",
       "width": 0,
       "x": 540,
@@ -63,7 +63,7 @@
       "assetStoreId": "",
       "bold": false,
       "italic": false,
-      "name": "PauseText2",
+      "name": "PauseText",
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
@@ -71,7 +71,7 @@
       "effects": [],
       "behaviors": [],
       "string": "Game Paused",
-      "font": "assets/BilkoOpti-Regular.otf",
+      "font": "assets/fonts/BilkoOpti-Regular.otf",
       "textAlignment": "left",
       "characterSize": 40,
       "color": {
@@ -94,7 +94,7 @@
         "smoothed": true,
         "underlined": false,
         "text": "Game Paused",
-        "font": "assets/BilkoOpti-Regular.otf",
+        "font": "assets/fonts/BilkoOpti-Regular.otf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
         "characterSize": 40,
@@ -107,7 +107,7 @@
     "folderName": "__ROOT",
     "children": [
       {
-        "objectName": "PauseText2"
+        "objectName": "PauseText"
       }
     ]
   },
