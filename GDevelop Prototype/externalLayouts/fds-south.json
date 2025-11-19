@@ -1,5 +1,5 @@
 {
-  "associatedLayout": "Game",
+  "associatedLayout": "Exploration",
   "name": "FDS South",
   "instances": [
     {
@@ -56,7 +56,7 @@
       "persistentUuid": "58fde8d2-5f6f-4c67-b388-713e3239ba9d",
       "width": 0,
       "x": 0,
-      "y": -64,
+      "y": 0,
       "zOrder": 1,
       "numberProperties": [
         {
