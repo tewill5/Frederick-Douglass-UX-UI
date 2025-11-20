@@ -1,5 +1,5 @@
 {
-  "associatedLayout": "Game",
+  "associatedLayout": "Exploration",
   "name": "FDS North",
   "instances": [
     {
@@ -56,7 +56,7 @@
       "persistentUuid": "58fde8d2-5f6f-4c67-b388-713e3239ba9d",
       "width": 0,
       "x": 0,
-      "y": -64,
+      "y": 0,
       "zOrder": 1,
       "numberProperties": [],
       "stringProperties": [],
@@ -64,7 +64,7 @@
     }
   ],
   "editionSettings": {
-    "grid": false,
+    "grid": true,
     "gridType": "rectangular",
     "gridWidth": 32,
     "gridHeight": 32,
@@ -72,7 +72,7 @@
     "gridOffsetY": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": false,
+    "snap": true,
     "zoomFactor": 0.5290357402156838,
     "windowMask": false,
     "selectedLayer": ""
