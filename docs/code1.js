@@ -14,7 +14,7 @@ gdjs.Pause_32ScreenCode.GDCycleInventoryObjects2= [];
 
 
 gdjs.Pause_32ScreenCode.mapOfGDgdjs_9546Pause_959532ScreenCode_9546GDPauseButtonObjects1Objects = Hashtable.newFrom({"PauseButton": gdjs.Pause_32ScreenCode.GDPauseButtonObjects1});
-gdjs.Pause_32ScreenCode.userFunc0x8ec738 = function GDJSInlineCode(runtimeScene) {
+gdjs.Pause_32ScreenCode.userFunc0xa17918 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.getGame().getRenderer().getCanvas().style.cursor = "pointer";
 
@@ -24,7 +24,7 @@ gdjs.Pause_32ScreenCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.Pause_32ScreenCode.userFunc0x8ec738(runtimeScene);
+gdjs.Pause_32ScreenCode.userFunc0xa17918(runtimeScene);
 
 }
 
@@ -44,7 +44,7 @@ if (isConditionTrue_0) {
 
 
 };gdjs.Pause_32ScreenCode.mapOfGDgdjs_9546Pause_959532ScreenCode_9546GDPauseButtonObjects1Objects = Hashtable.newFrom({"PauseButton": gdjs.Pause_32ScreenCode.GDPauseButtonObjects1});
-gdjs.Pause_32ScreenCode.userFunc0x9c8960 = function GDJSInlineCode(runtimeScene) {
+gdjs.Pause_32ScreenCode.userFunc0xa19458 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.getGame().getRenderer().getCanvas().style.cursor = "default";
 
@@ -54,7 +54,7 @@ gdjs.Pause_32ScreenCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Pause_32ScreenCode.userFunc0x9c8960(runtimeScene);
+gdjs.Pause_32ScreenCode.userFunc0xa19458(runtimeScene);
 
 }
 

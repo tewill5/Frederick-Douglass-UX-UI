@@ -39,7 +39,7 @@ gdjs.ExplorationCode.GDCycleInventoryObjects2= [];
 gdjs.ExplorationCode.GDCycleInventoryObjects3= [];
 
 
-gdjs.ExplorationCode.userFunc0x906258 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0xa19170 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 if (!runtimeScene.getGame().getVariables().get("DataInitialized").getAsBoolean()) { // All persistent data is attached to gdjs so that it isn't reset on scene change
     gdjs.FDGameData = {};
@@ -120,12 +120,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x906258(runtimeScene);
+gdjs.ExplorationCode.userFunc0xa19170(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x8fcfa8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xa19310 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -501,12 +501,12 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x8fcfa8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xa19310(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x8fd078 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xa194c8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 if (!runtimeScene.getGame().getVariables().get("DataInitialized").getAsBoolean()) {
     const FDSG = gdjs.FDGameData;
@@ -590,7 +590,7 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x8fd078(runtimeScene);
+gdjs.ExplorationCode.userFunc0xa194c8(runtimeScene);
 
 }
 
@@ -618,7 +618,7 @@ gdjs.ExplorationCode.eventsList2(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0x973fc0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xa196d0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -637,7 +637,7 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x973fc0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xa196d0(runtimeScene);
 
 }
 

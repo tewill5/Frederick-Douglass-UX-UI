@@ -553,11 +553,11 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/exploration"
+      "referenceTo": "/layouts/pause-screen"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/pause-screen"
+      "referenceTo": "/layouts/exploration"
     }
   ],
   "externalEvents": [
