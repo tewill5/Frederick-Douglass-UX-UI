@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.4481978045410367,
+    "zoomFactor": 0.5117784035210188,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -72,7 +72,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images/FDS North.JPG",
+                  "image": "assets\\images\\FDS North.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -120,7 +120,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images/FDS East.JPG",
+                  "image": "assets\\images\\FDS East.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -168,7 +168,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images/FDS South.JPG",
+                  "image": "assets\\images\\FDS South.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -216,7 +216,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images/FDS West.JPG",
+                  "image": "assets\\images\\FDS West.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -293,7 +293,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets/Right arrow round button.png",
+                  "image": "assets\\ui\\Arrow_Right.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -309,20 +309,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 18,
+                        "y": 26
                       },
                       {
-                        "x": 80,
-                        "y": 0
+                        "x": 450,
+                        "y": 26
                       },
                       {
-                        "x": 80,
-                        "y": 80
+                        "x": 450,
+                        "y": 459
                       },
                       {
-                        "x": 0,
-                        "y": 80
+                        "x": 18,
+                        "y": 459
                       }
                     ]
                   ]
@@ -341,7 +341,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets/Target round button.png",
+                  "image": "assets\\ui\\Inspect.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -357,20 +357,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 18,
+                        "y": 26
                       },
                       {
-                        "x": 80,
-                        "y": 0
+                        "x": 450,
+                        "y": 26
                       },
                       {
-                        "x": 80,
-                        "y": 80
+                        "x": 450,
+                        "y": 459
                       },
                       {
-                        "x": 0,
-                        "y": 80
+                        "x": 18,
+                        "y": 459
                       }
                     ]
                   ]
@@ -418,7 +418,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets/Target round button.png",
+                  "image": "assets\\ui\\Inspect.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -434,20 +434,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 7,
+                        "y": 3
                       },
                       {
-                        "x": 80,
-                        "y": 0
+                        "x": 60,
+                        "y": 3
                       },
                       {
-                        "x": 80,
-                        "y": 80
+                        "x": 60,
+                        "y": 56
                       },
                       {
-                        "x": 0,
-                        "y": 80
+                        "x": 7,
+                        "y": 56
                       }
                     ]
                   ]
@@ -479,7 +479,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\keys\\Letter Key_X.png",
+                  "image": "assets\\ui\\X.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -495,20 +495,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 13,
-                        "y": 14
+                        "x": 1,
+                        "y": 2
                       },
                       {
-                        "x": 87,
-                        "y": 14
+                        "x": 63,
+                        "y": 2
                       },
                       {
-                        "x": 87,
-                        "y": 86
+                        "x": 63,
+                        "y": 62
                       },
                       {
-                        "x": 13,
-                        "y": 86
+                        "x": 1,
+                        "y": 62
                       }
                     ]
                   ]
@@ -545,7 +545,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images\\FDS Statue Zoom.JPG",
+                  "image": "assets\\images\\FDS Statue Zoom.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -593,7 +593,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images\\FDS Sky Inspect.JPG",
+                  "image": "assets\\images\\FDS Sky Inspect.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -660,7 +660,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "Black Square",
+                  "image": "assets\\objects\\Black Square.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -680,16 +680,16 @@
                         "y": 0
                       },
                       {
-                        "x": 64,
+                        "x": 960,
                         "y": 0
                       },
                       {
-                        "x": 64,
-                        "y": 64
+                        "x": 960,
+                        "y": 540
                       },
                       {
                         "x": 0,
-                        "y": 64
+                        "y": 540
                       }
                     ]
                   ]
@@ -721,7 +721,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "StatueCollectiblePlaceholder",
+                  "image": "assets\\objects\\StatueCollectiblePlaceholder.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -814,6 +814,73 @@
         "lineHeight": 0,
         "color": "255;255;255"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "ItemObject",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "itemName",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Placeholder",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Placeholder",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 5,
+                        "y": 6
+                      },
+                      {
+                        "x": 59,
+                        "y": 6
+                      },
+                      {
+                        "x": 59,
+                        "y": 57
+                      },
+                      {
+                        "x": 5,
+                        "y": 57
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -822,6 +889,9 @@
       {
         "folderName": "Clickable",
         "children": [
+          {
+            "objectName": "ItemObject"
+          },
           {
             "objectName": "StatueCollectible"
           },
@@ -987,7 +1057,7 @@
       "isLocked": false,
       "name": "InspectObjects",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": [
         {
@@ -1014,7 +1084,7 @@
       "isLocked": false,
       "name": "InspectUI",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": []
     }

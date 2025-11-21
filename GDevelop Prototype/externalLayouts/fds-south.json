@@ -25,8 +25,9 @@
       ]
     },
     {
-      "angle": 180,
+      "angle": 0,
       "customSize": false,
+      "flippedX": true,
       "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
@@ -66,6 +67,28 @@
       ],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "ItemObject",
+      "persistentUuid": "8b403a04-a555-4a27-8274-dde2d0be56c8",
+      "width": 0,
+      "x": 608,
+      "y": 576,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "itemName",
+          "type": "string",
+          "value": "Key"
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -78,8 +101,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.814188120370991,
+    "zoomFactor": 0.5843784410740935,
     "windowMask": false,
-    "selectedLayer": ""
+    "selectedLayer": "SceneObjects"
   }
 }
