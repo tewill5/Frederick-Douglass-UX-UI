@@ -108,7 +108,7 @@
           "value": "FDS North Chest"
         },
         {
-          "name": "interactionName",
+          "name": "targetInteraction",
           "type": "string",
           "value": "FDS North Chest"
         },
@@ -146,7 +146,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "closedChest"
         }
@@ -174,7 +174,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "closedChest"
         }
@@ -196,7 +196,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "closedChest"
         },
@@ -229,7 +229,7 @@
           "value": "The chest is locked"
         },
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "closedChest"
         }
@@ -251,7 +251,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "openChest"
         }
@@ -279,7 +279,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "openChest"
         }
@@ -306,7 +306,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "openChest"
         },
@@ -339,7 +339,7 @@
           "value": "You opened the chest. There was a statue inside!"
         },
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "openChest"
         }
@@ -361,7 +361,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "emptyChest"
         }
@@ -389,7 +389,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "emptyChest"
         }
@@ -416,7 +416,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "emptyChest"
         },
@@ -449,7 +449,7 @@
           "value": "The chest is empty"
         },
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "emptyChest"
         }
@@ -476,12 +476,12 @@
           "value": "ChestStatue"
         },
         {
-          "name": "interactionName",
+          "name": "targetInteraction",
           "type": "string",
           "value": "FDS North Chest"
         },
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "openChest"
         }

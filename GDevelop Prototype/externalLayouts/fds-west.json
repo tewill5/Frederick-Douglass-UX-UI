@@ -91,7 +91,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "StatueInspection"
         }
@@ -114,7 +114,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "StatueInspection"
         },
@@ -147,7 +147,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "SkyInspection"
         }
@@ -170,7 +170,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "SkyInspection"
         },
@@ -241,7 +241,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "StatueInspection"
         }
@@ -263,7 +263,7 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectionName",
+          "name": "targetInspection",
           "type": "string",
           "value": "SkyInspection"
         }

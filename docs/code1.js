@@ -7,22 +7,22 @@ gdjs.Pause_32ScreenCode.GDStatuesCollectedCounterObjects1= [];
 gdjs.Pause_32ScreenCode.GDStatuesCollectedCounterObjects2= [];
 gdjs.Pause_32ScreenCode.GDPauseButtonObjects1= [];
 gdjs.Pause_32ScreenCode.GDPauseButtonObjects2= [];
-gdjs.Pause_32ScreenCode.GDCycleInventoryRightObjects1= [];
-gdjs.Pause_32ScreenCode.GDCycleInventoryRightObjects2= [];
+gdjs.Pause_32ScreenCode.GDCycleInventoryNextObjects1= [];
+gdjs.Pause_32ScreenCode.GDCycleInventoryNextObjects2= [];
 gdjs.Pause_32ScreenCode.GDInventoryBackgroundObjects1= [];
 gdjs.Pause_32ScreenCode.GDInventoryBackgroundObjects2= [];
 gdjs.Pause_32ScreenCode.GDInventoryItemObjects1= [];
 gdjs.Pause_32ScreenCode.GDInventoryItemObjects2= [];
 gdjs.Pause_32ScreenCode.GDUIBackgroundObjects1= [];
 gdjs.Pause_32ScreenCode.GDUIBackgroundObjects2= [];
-gdjs.Pause_32ScreenCode.GDCycleInventoryLeftObjects1= [];
-gdjs.Pause_32ScreenCode.GDCycleInventoryLeftObjects2= [];
+gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects1= [];
+gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects2= [];
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects1= [];
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects2= [];
 
 
 gdjs.Pause_32ScreenCode.mapOfGDgdjs_9546Pause_959532ScreenCode_9546GDPauseButtonObjects1Objects = Hashtable.newFrom({"PauseButton": gdjs.Pause_32ScreenCode.GDPauseButtonObjects1});
-gdjs.Pause_32ScreenCode.userFunc0x7dadb8 = function GDJSInlineCode(runtimeScene) {
+gdjs.Pause_32ScreenCode.userFunc0x86ebc8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.getGame().getRenderer().getCanvas().style.cursor = "pointer";
 
@@ -32,7 +32,7 @@ gdjs.Pause_32ScreenCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.Pause_32ScreenCode.userFunc0x7dadb8(runtimeScene);
+gdjs.Pause_32ScreenCode.userFunc0x86ebc8(runtimeScene);
 
 }
 
@@ -52,7 +52,7 @@ if (isConditionTrue_0) {
 
 
 };gdjs.Pause_32ScreenCode.mapOfGDgdjs_9546Pause_959532ScreenCode_9546GDPauseButtonObjects1Objects = Hashtable.newFrom({"PauseButton": gdjs.Pause_32ScreenCode.GDPauseButtonObjects1});
-gdjs.Pause_32ScreenCode.userFunc0xa4c268 = function GDJSInlineCode(runtimeScene) {
+gdjs.Pause_32ScreenCode.userFunc0x9fcef8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.getGame().getRenderer().getCanvas().style.cursor = "default";
 
@@ -62,7 +62,7 @@ gdjs.Pause_32ScreenCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.Pause_32ScreenCode.userFunc0xa4c268(runtimeScene);
+gdjs.Pause_32ScreenCode.userFunc0x9fcef8(runtimeScene);
 
 }
 
@@ -112,16 +112,16 @@ gdjs.Pause_32ScreenCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDPauseButtonObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDPauseButtonObjects2.length = 0;
-gdjs.Pause_32ScreenCode.GDCycleInventoryRightObjects1.length = 0;
-gdjs.Pause_32ScreenCode.GDCycleInventoryRightObjects2.length = 0;
+gdjs.Pause_32ScreenCode.GDCycleInventoryNextObjects1.length = 0;
+gdjs.Pause_32ScreenCode.GDCycleInventoryNextObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDInventoryBackgroundObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDInventoryBackgroundObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDInventoryItemObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDInventoryItemObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDUIBackgroundObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDUIBackgroundObjects2.length = 0;
-gdjs.Pause_32ScreenCode.GDCycleInventoryLeftObjects1.length = 0;
-gdjs.Pause_32ScreenCode.GDCycleInventoryLeftObjects2.length = 0;
+gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects1.length = 0;
+gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects2.length = 0;
 
@@ -132,16 +132,16 @@ gdjs.Pause_32ScreenCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDPauseButtonObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDPauseButtonObjects2.length = 0;
-gdjs.Pause_32ScreenCode.GDCycleInventoryRightObjects1.length = 0;
-gdjs.Pause_32ScreenCode.GDCycleInventoryRightObjects2.length = 0;
+gdjs.Pause_32ScreenCode.GDCycleInventoryNextObjects1.length = 0;
+gdjs.Pause_32ScreenCode.GDCycleInventoryNextObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDInventoryBackgroundObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDInventoryBackgroundObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDInventoryItemObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDInventoryItemObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDUIBackgroundObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDUIBackgroundObjects2.length = 0;
-gdjs.Pause_32ScreenCode.GDCycleInventoryLeftObjects1.length = 0;
-gdjs.Pause_32ScreenCode.GDCycleInventoryLeftObjects2.length = 0;
+gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects1.length = 0;
+gdjs.Pause_32ScreenCode.GDCycleInventoryPreviousObjects2.length = 0;
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects1.length = 0;
 gdjs.Pause_32ScreenCode.GDSelectedItemBorderObjects2.length = 0;
 
