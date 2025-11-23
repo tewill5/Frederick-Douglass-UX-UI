@@ -18,22 +18,22 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.4481978045410367,
+    "zoomFactor": 0.5117784035210188,
     "windowMask": false,
     "selectedLayer": ""
   },
   "objectsGroups": [
     {
-      "name": "Inspect",
+      "name": "Inspection",
       "objects": [
         {
-          "name": "InspectImage"
+          "name": "InspectionImage"
         },
         {
-          "name": "InspectBackground"
+          "name": "InspectionText"
         },
         {
-          "name": "InspectText"
+          "name": "InspectionBackground"
         }
       ]
     }
@@ -49,18 +49,7 @@
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
-      "behaviors": [
-        {
-          "name": "Anchor",
-          "type": "AnchorBehavior::AnchorBehavior",
-          "relativeToOriginalWindowSize": true,
-          "bottomEdgeAnchor": 0,
-          "leftEdgeAnchor": 0,
-          "rightEdgeAnchor": 0,
-          "topEdgeAnchor": 0,
-          "useLegacyBottomAndRightAnchors": false
-        }
-      ],
+      "behaviors": [],
       "animations": [
         {
           "name": "FDS North",
@@ -72,7 +61,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images/FDS North.JPG",
+                  "image": "assets\\images\\FDS North.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -120,7 +109,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images/FDS East.JPG",
+                  "image": "assets\\images\\FDS East.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -168,7 +157,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images/FDS South.JPG",
+                  "image": "assets\\images\\FDS South.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -216,7 +205,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images/FDS West.JPG",
+                  "image": "assets\\images\\FDS West.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -270,18 +259,7 @@
         }
       ],
       "effects": [],
-      "behaviors": [
-        {
-          "name": "Anchor",
-          "type": "AnchorBehavior::AnchorBehavior",
-          "bottomEdgeAnchor": 0,
-          "leftEdgeAnchor": 0,
-          "relativeToOriginalWindowSize": true,
-          "rightEdgeAnchor": 0,
-          "topEdgeAnchor": 0,
-          "useLegacyBottomAndRightAnchors": false
-        }
-      ],
+      "behaviors": [],
       "animations": [
         {
           "name": "Arrow",
@@ -293,7 +271,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets/Right arrow round button.png",
+                  "image": "assets\\ui\\Arrow_Right.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -309,20 +287,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 18,
+                        "y": 26
                       },
                       {
-                        "x": 80,
-                        "y": 0
+                        "x": 450,
+                        "y": 26
                       },
                       {
-                        "x": 80,
-                        "y": 80
+                        "x": 450,
+                        "y": 459
                       },
                       {
-                        "x": 0,
-                        "y": 80
+                        "x": 18,
+                        "y": 459
                       }
                     ]
                   ]
@@ -341,7 +319,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets/Target round button.png",
+                  "image": "assets\\ui\\Inspect.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -357,20 +335,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 18,
+                        "y": 26
                       },
                       {
-                        "x": 80,
-                        "y": 0
+                        "x": 450,
+                        "y": 26
                       },
                       {
-                        "x": 80,
-                        "y": 80
+                        "x": 450,
+                        "y": 459
                       },
                       {
-                        "x": 0,
-                        "y": 80
+                        "x": 18,
+                        "y": 459
                       }
                     ]
                   ]
@@ -384,32 +362,31 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "InspectObject",
+      "name": "InteractionObject",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [
         {
-          "name": "targetInspect",
+          "name": "instanceID",
           "type": "string",
           "value": ""
+        },
+        {
+          "name": "interactionName",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "flags",
+          "type": "structure",
+          "children": []
         }
       ],
       "effects": [],
-      "behaviors": [
-        {
-          "name": "Anchor",
-          "type": "AnchorBehavior::AnchorBehavior",
-          "bottomEdgeAnchor": 0,
-          "leftEdgeAnchor": 0,
-          "relativeToOriginalWindowSize": true,
-          "rightEdgeAnchor": 0,
-          "topEdgeAnchor": 0,
-          "useLegacyBottomAndRightAnchors": false
-        }
-      ],
+      "behaviors": [],
       "animations": [
         {
-          "name": "Target",
+          "name": "ChestClosed",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -418,7 +395,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets/Target round button.png",
+                  "image": "assets\\objects\\Chest_Closed.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -435,19 +412,115 @@
                     [
                       {
                         "x": 0,
-                        "y": 0
+                        "y": 45
                       },
                       {
-                        "x": 80,
-                        "y": 0
+                        "x": 128,
+                        "y": 45
                       },
                       {
-                        "x": 80,
-                        "y": 80
+                        "x": 128,
+                        "y": 128
                       },
                       {
                         "x": 0,
-                        "y": 80
+                        "y": 128
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ChestOpen",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\objects\\Chest_Open_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 45
+                      },
+                      {
+                        "x": 128,
+                        "y": 45
+                      },
+                      {
+                        "x": 128,
+                        "y": 128
+                      },
+                      {
+                        "x": 0,
+                        "y": 128
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Statue",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\objects\\Trophy_Idle.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 45
+                      },
+                      {
+                        "x": 128,
+                        "y": 45
+                      },
+                      {
+                        "x": 128,
+                        "y": 128
+                      },
+                      {
+                        "x": 0,
+                        "y": 128
                       }
                     ]
                   ]
@@ -461,7 +534,7 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "ExitInspect",
+      "name": "ExitInspection",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -479,7 +552,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\keys\\Letter Key_X.png",
+                  "image": "assets\\ui\\X.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -495,20 +568,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 13,
-                        "y": 14
+                        "x": 1,
+                        "y": 2
                       },
                       {
-                        "x": 87,
-                        "y": 14
+                        "x": 63,
+                        "y": 2
                       },
                       {
-                        "x": 87,
-                        "y": 86
+                        "x": 63,
+                        "y": 62
                       },
                       {
-                        "x": 13,
-                        "y": 86
+                        "x": 1,
+                        "y": 62
                       }
                     ]
                   ]
@@ -522,21 +595,34 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "InspectImage",
+      "name": "InspectionImage",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [
         {
-          "name": "inspectName",
+          "name": "inspectionName",
           "type": "string",
           "value": ""
         }
       ],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Effect",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 4
+          },
+          "stringParameters": {
+            "color": "3;3;3"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "animations": [
         {
-          "name": "FDS West StatueInspect",
+          "name": "FDS West StatueInspection",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -545,7 +631,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images\\FDS Statue Zoom.JPG",
+                  "image": "assets\\images\\FDS Statue Zoom.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -584,7 +670,7 @@
           ]
         },
         {
-          "name": "FDS West SkyInspect",
+          "name": "FDS West SkyInspection",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -593,7 +679,55 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "images\\FDS Sky Inspect.JPG",
+                  "image": "assets\\images\\FDS Sky Inspect.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 397,
+                        "y": 0
+                      },
+                      {
+                        "x": 397,
+                        "y": 540
+                      },
+                      {
+                        "x": 0,
+                        "y": 540
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "FDS North ClosedChestInspection",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\FDS North.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -635,74 +769,7 @@
     },
     {
       "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "",
-      "name": "InspectBackground",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [
-        {
-          "name": "inspectName",
-          "type": "string",
-          "value": ""
-        }
-      ],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "Black Square",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "metadata": "{\"pskl\":{}}",
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Black Square",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 0
-                      },
-                      {
-                        "x": 64,
-                        "y": 64
-                      },
-                      {
-                        "x": 0,
-                        "y": 64
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "",
+      "assetStoreId": "34eec54d95bb3dbc9dd5a6700ea8d30dd6c5e40f03643285082a170024444dd6",
       "name": "StatueCollectible",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -711,17 +778,16 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "StatueCollectiblePlaceholder",
+          "name": "Idle",
           "useMultipleDirections": false,
           "directions": [
             {
               "looping": false,
-              "metadata": "{\"pskl\":{}}",
-              "timeBetweenFrames": 0.08,
+              "timeBetweenFrames": 0.025,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "StatueCollectiblePlaceholder",
+                  "image": "assets\\objects\\Trophy_Idle.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -737,20 +803,68 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 17,
-                        "y": 12
+                        "x": 9,
+                        "y": 20
                       },
                       {
-                        "x": 46,
-                        "y": 12
+                        "x": 55,
+                        "y": 20
                       },
                       {
-                        "x": 46,
-                        "y": 61
+                        "x": 55,
+                        "y": 64
                       },
                       {
-                        "x": 17,
-                        "y": 61
+                        "x": 9,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "StatueCollectiblePlaceholder",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\objects\\StatueCollectiblePlaceholder.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 9,
+                        "y": 20
+                      },
+                      {
+                        "x": 55,
+                        "y": 20
+                      },
+                      {
+                        "x": 55,
+                        "y": 64
+                      },
+                      {
+                        "x": 9,
+                        "y": 64
                       }
                     ]
                   ]
@@ -765,7 +879,7 @@
       "assetStoreId": "",
       "bold": true,
       "italic": false,
-      "name": "InspectText",
+      "name": "InspectionText",
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
@@ -776,7 +890,7 @@
           "value": "Insert Text Here"
         },
         {
-          "name": "inspectName",
+          "name": "inspectionName",
           "type": "string",
           "value": ""
         }
@@ -814,14 +928,345 @@
         "lineHeight": 0,
         "color": "255;255;255"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "ItemObject",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "itemName",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "itemDescription",
+          "type": "string",
+          "value": "Insert Description Here"
+        },
+        {
+          "name": "removeOnPickup",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "showPickupPrompt",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Key",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/objects/ItemObjectPlaceholder.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 8
+                      },
+                      {
+                        "x": 57,
+                        "y": 8
+                      },
+                      {
+                        "x": 57,
+                        "y": 55
+                      },
+                      {
+                        "x": 7,
+                        "y": 55
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "InspectionObject",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Target",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\ui\\Inspect.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 3
+                      },
+                      {
+                        "x": 60,
+                        "y": 3
+                      },
+                      {
+                        "x": 60,
+                        "y": 56
+                      },
+                      {
+                        "x": 7,
+                        "y": 56
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 20,
+      "height": 540,
+      "leftMargin": 20,
+      "name": "InspectionBackground",
+      "rightMargin": 20,
+      "texture": "assets/ui/InspectionBackgroundFlat.png",
+      "tiled": false,
+      "topMargin": 20,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 960,
+      "variables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 20,
+      "height": 540,
+      "leftMargin": 20,
+      "name": "ItemPopupBackground",
+      "rightMargin": 20,
+      "texture": "assets\\ui\\InventoryUI.png",
+      "tiled": false,
+      "topMargin": 20,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 960,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "ItemNameText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "ItemNameHere",
+      "font": "assets/fonts/BilkoOpti-Regular.otf",
+      "textAlignment": "left",
+      "characterSize": 40,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "ItemNameHere",
+        "font": "assets/fonts/BilkoOpti-Regular.otf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "center",
+        "characterSize": 40,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "ItemDescriptionText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Item Description Goes Here",
+      "font": "assets\\fonts\\BilkoOpti-Regular.otf",
+      "textAlignment": "center",
+      "characterSize": 30,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Item Description Goes Here",
+        "font": "assets\\fonts\\BilkoOpti-Regular.otf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 30,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
+      "name": "ItemPopupPickupButton",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "StartButton",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 16,
+        "RightPadding": 16,
+        "PressedLabelOffsetY": 10,
+        "BottomPadding": 32,
+        "TopPadding": 16,
+        "HoveredFadeOutDuration": 0.25,
+        "LabelText": "Pick up"
+      }
+    },
+    {
+      "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
+      "name": "ItemPopupExitButton",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "StartButton",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 16,
+        "RightPadding": 16,
+        "PressedLabelOffsetY": 10,
+        "BottomPadding": 32,
+        "TopPadding": 16,
+        "HoveredFadeOutDuration": 0.25,
+        "LabelText": "Leave"
+      }
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
       {
+        "folderName": "ItemPopup",
+        "children": [
+          {
+            "objectName": "ItemPopupPickupButton"
+          },
+          {
+            "objectName": "ItemPopupExitButton"
+          },
+          {
+            "objectName": "ItemPopupBackground"
+          },
+          {
+            "objectName": "ItemNameText"
+          },
+          {
+            "objectName": "ItemDescriptionText"
+          }
+        ]
+      },
+      {
         "folderName": "Clickable",
         "children": [
+          {
+            "objectName": "ItemObject"
+          },
           {
             "objectName": "StatueCollectible"
           },
@@ -829,24 +1274,27 @@
             "objectName": "TransitionObject"
           },
           {
-            "objectName": "InspectObject"
+            "objectName": "InteractionObject"
+          },
+          {
+            "objectName": "InspectionObject"
           }
         ]
       },
       {
-        "folderName": "Inspect",
+        "folderName": "Inspection",
         "children": [
           {
-            "objectName": "InspectText"
+            "objectName": "InspectionText"
           },
           {
-            "objectName": "InspectImage"
+            "objectName": "InspectionImage"
           },
           {
-            "objectName": "InspectBackground"
+            "objectName": "InspectionBackground"
           },
           {
-            "objectName": "ExitInspect"
+            "objectName": "ExitInspection"
           }
         ]
       },
@@ -985,7 +1433,7 @@
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
       "isLocked": false,
-      "name": "InspectObjects",
+      "name": "InspectionObjects",
       "renderingType": "2d",
       "visibility": true,
       "cameras": [],
@@ -1012,7 +1460,41 @@
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
       "isLocked": false,
-      "name": "InspectUI",
+      "name": "InspectionUI",
+      "renderingType": "2d",
+      "visibility": true,
+      "cameras": [],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "ItemPopup",
+      "renderingType": "2d",
+      "visibility": false,
+      "cameras": [],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "MouseCursor",
       "renderingType": "2d",
       "visibility": true,
       "cameras": [],
@@ -1020,10 +1502,6 @@
     }
   ],
   "behaviorsSharedData": [
-    {
-      "name": "Anchor",
-      "type": "AnchorBehavior::AnchorBehavior"
-    },
     {
       "name": "Animation",
       "type": "AnimatableCapability::AnimatableBehavior"

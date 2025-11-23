@@ -11,7 +11,7 @@
       "name": "TransitionObject",
       "persistentUuid": "4ef4e486-fd7f-4d45-8186-d84d23ac9795",
       "width": 0,
-      "x": 1120,
+      "x": 1112,
       "y": 368,
       "zOrder": 2,
       "numberProperties": [],
@@ -25,15 +25,16 @@
       ]
     },
     {
-      "angle": 180,
+      "angle": 0,
       "customSize": false,
+      "flippedX": true,
       "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "TransitionObject",
       "persistentUuid": "4f456e68-4ab5-49c8-b8ac-452c192d43a2",
       "width": 0,
-      "x": 80,
+      "x": 72,
       "y": 368,
       "zOrder": 3,
       "numberProperties": [],
@@ -66,6 +67,33 @@
       ],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "ItemObject",
+      "persistentUuid": "8b403a04-a555-4a27-8274-dde2d0be56c8",
+      "width": 0,
+      "x": 608,
+      "y": 576,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "itemDescription",
+          "type": "string",
+          "value": "A small golden key"
+        },
+        {
+          "name": "itemName",
+          "type": "string",
+          "value": "Key"
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -78,8 +106,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.814188120370991,
+    "zoomFactor": 0.5843784410740935,
     "windowMask": false,
-    "selectedLayer": ""
+    "selectedLayer": "SceneObjects"
   }
 }

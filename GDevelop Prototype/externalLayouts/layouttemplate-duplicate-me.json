@@ -4,22 +4,6 @@
   "instances": [
     {
       "angle": 0,
-      "customSize": true,
-      "depth": 0,
-      "height": 96,
-      "layer": "Background",
-      "name": "UIBackground",
-      "persistentUuid": "3ab387ea-e751-458a-9ea7-706601cd8e93",
-      "width": 1280,
-      "x": 0,
-      "y": 0,
-      "zOrder": 50,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
@@ -28,8 +12,26 @@
       "persistentUuid": "f5d0205d-4ccd-4dde-9851-5867884be3e7",
       "width": 0,
       "x": 0,
-      "y": 0,
+      "y": 96,
       "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "flippedX": true,
+      "height": 96,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "UIBackground",
+      "persistentUuid": "ac7ebf7d-ac3b-4d9a-942b-1ad6b47b701e",
+      "width": 1280,
+      "x": 0,
+      "y": 0,
+      "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -45,7 +47,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.4481978045410363,
+    "zoomFactor": 0.3111974942445209,
     "windowMask": false,
     "selectedLayer": "Background"
   }

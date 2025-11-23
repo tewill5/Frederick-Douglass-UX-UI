@@ -18,29 +18,13 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.546875,
+    "zoomFactor": 0.6897782140104495,
     "windowMask": false,
     "selectedLayer": ""
   },
   "objectsGroups": [],
   "variables": [],
   "instances": [
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
-      "name": "YellowButton",
-      "persistentUuid": "3edaaa2a-b919-45b6-a218-69c156bbce98",
-      "width": 0,
-      "x": 512,
-      "y": 320,
-      "zOrder": 1,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
     {
       "angle": 0,
       "customSize": false,
@@ -56,33 +40,26 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 96,
+      "height": 96,
+      "keepRatio": true,
+      "layer": "",
+      "name": "YellowButton",
+      "persistentUuid": "5aebedf3-0c2f-4cec-9d78-822c10de13bd",
+      "width": 384,
+      "x": 448,
+      "y": 320,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
-    {
-      "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
-      "name": "YellowButton",
-      "type": "PanelSpriteButton::PanelSpriteButton",
-      "variant": "Yellow button",
-      "variables": [],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "CursorHover",
-          "type": "CursorType::CursorHover",
-          "CursorType": "pointer"
-        }
-      ],
-      "content": {
-        "LeftPadding": 16,
-        "RightPadding": 16,
-        "PressedLabelOffsetY": 10,
-        "BottomPadding": 32,
-        "TopPadding": 16,
-        "HoveredFadeOutDuration": 0.25,
-        "LabelText": "Start"
-      }
-    },
     {
       "assetStoreId": "",
       "bold": true,
@@ -125,16 +102,34 @@
         "lineHeight": 0,
         "color": "0;0;0"
       }
+    },
+    {
+      "assetStoreId": "615de0316452630b9f4f6a39decc82e2449b82c1afd1ff24d6470dad2922177b",
+      "name": "YellowButton",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "StartButton",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "LeftPadding": 16,
+        "RightPadding": 16,
+        "PressedLabelOffsetY": 10,
+        "BottomPadding": 32,
+        "TopPadding": 16,
+        "HoveredFadeOutDuration": 0.25,
+        "LabelText": "Start"
+      }
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
       {
-        "objectName": "YellowButton"
+        "objectName": "Title"
       },
       {
-        "objectName": "Title"
+        "objectName": "YellowButton"
       }
     ]
   },
@@ -247,10 +242,6 @@
     {
       "name": "Animation",
       "type": "AnimatableCapability::AnimatableBehavior"
-    },
-    {
-      "name": "CursorHover",
-      "type": "CursorType::CursorHover"
     },
     {
       "name": "Effect",

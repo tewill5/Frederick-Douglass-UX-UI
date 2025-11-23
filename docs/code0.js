@@ -1,18 +1,26 @@
 gdjs.Main_32MenuCode = {};
 gdjs.Main_32MenuCode.localVariables = [];
 gdjs.Main_32MenuCode.idToCallbackMap = new Map();
-gdjs.Main_32MenuCode.GDYellowButtonObjects1= [];
-gdjs.Main_32MenuCode.GDYellowButtonObjects2= [];
 gdjs.Main_32MenuCode.GDTitleObjects1= [];
 gdjs.Main_32MenuCode.GDTitleObjects2= [];
-gdjs.Main_32MenuCode.GDUIBackgroundObjects1= [];
-gdjs.Main_32MenuCode.GDUIBackgroundObjects2= [];
+gdjs.Main_32MenuCode.GDYellowButtonObjects1= [];
+gdjs.Main_32MenuCode.GDYellowButtonObjects2= [];
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects1= [];
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects2= [];
 gdjs.Main_32MenuCode.GDPauseButtonObjects1= [];
 gdjs.Main_32MenuCode.GDPauseButtonObjects2= [];
-gdjs.Main_32MenuCode.GDCycleInventoryObjects1= [];
-gdjs.Main_32MenuCode.GDCycleInventoryObjects2= [];
+gdjs.Main_32MenuCode.GDCycleInventoryRightObjects1= [];
+gdjs.Main_32MenuCode.GDCycleInventoryRightObjects2= [];
+gdjs.Main_32MenuCode.GDInventoryBackgroundObjects1= [];
+gdjs.Main_32MenuCode.GDInventoryBackgroundObjects2= [];
+gdjs.Main_32MenuCode.GDInventoryItemObjects1= [];
+gdjs.Main_32MenuCode.GDInventoryItemObjects2= [];
+gdjs.Main_32MenuCode.GDUIBackgroundObjects1= [];
+gdjs.Main_32MenuCode.GDUIBackgroundObjects2= [];
+gdjs.Main_32MenuCode.GDCycleInventoryLeftObjects1= [];
+gdjs.Main_32MenuCode.GDCycleInventoryLeftObjects2= [];
+gdjs.Main_32MenuCode.GDSelectedItemBorderObjects1= [];
+gdjs.Main_32MenuCode.GDSelectedItemBorderObjects2= [];
 
 
 gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDYellowButtonObjects1Objects = Hashtable.newFrom({"YellowButton": gdjs.Main_32MenuCode.GDYellowButtonObjects1});
@@ -42,32 +50,48 @@ if (isConditionTrue_0) {
 gdjs.Main_32MenuCode.func = function(runtimeScene) {
 runtimeScene.getOnceTriggers().startNewFrame();
 
-gdjs.Main_32MenuCode.GDYellowButtonObjects1.length = 0;
-gdjs.Main_32MenuCode.GDYellowButtonObjects2.length = 0;
 gdjs.Main_32MenuCode.GDTitleObjects1.length = 0;
 gdjs.Main_32MenuCode.GDTitleObjects2.length = 0;
-gdjs.Main_32MenuCode.GDUIBackgroundObjects1.length = 0;
-gdjs.Main_32MenuCode.GDUIBackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDYellowButtonObjects1.length = 0;
+gdjs.Main_32MenuCode.GDYellowButtonObjects2.length = 0;
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.Main_32MenuCode.GDPauseButtonObjects1.length = 0;
 gdjs.Main_32MenuCode.GDPauseButtonObjects2.length = 0;
-gdjs.Main_32MenuCode.GDCycleInventoryObjects1.length = 0;
-gdjs.Main_32MenuCode.GDCycleInventoryObjects2.length = 0;
+gdjs.Main_32MenuCode.GDCycleInventoryRightObjects1.length = 0;
+gdjs.Main_32MenuCode.GDCycleInventoryRightObjects2.length = 0;
+gdjs.Main_32MenuCode.GDInventoryBackgroundObjects1.length = 0;
+gdjs.Main_32MenuCode.GDInventoryBackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDInventoryItemObjects1.length = 0;
+gdjs.Main_32MenuCode.GDInventoryItemObjects2.length = 0;
+gdjs.Main_32MenuCode.GDUIBackgroundObjects1.length = 0;
+gdjs.Main_32MenuCode.GDUIBackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDCycleInventoryLeftObjects1.length = 0;
+gdjs.Main_32MenuCode.GDCycleInventoryLeftObjects2.length = 0;
+gdjs.Main_32MenuCode.GDSelectedItemBorderObjects1.length = 0;
+gdjs.Main_32MenuCode.GDSelectedItemBorderObjects2.length = 0;
 
 gdjs.Main_32MenuCode.eventsList0(runtimeScene);
-gdjs.Main_32MenuCode.GDYellowButtonObjects1.length = 0;
-gdjs.Main_32MenuCode.GDYellowButtonObjects2.length = 0;
 gdjs.Main_32MenuCode.GDTitleObjects1.length = 0;
 gdjs.Main_32MenuCode.GDTitleObjects2.length = 0;
-gdjs.Main_32MenuCode.GDUIBackgroundObjects1.length = 0;
-gdjs.Main_32MenuCode.GDUIBackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDYellowButtonObjects1.length = 0;
+gdjs.Main_32MenuCode.GDYellowButtonObjects2.length = 0;
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.Main_32MenuCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.Main_32MenuCode.GDPauseButtonObjects1.length = 0;
 gdjs.Main_32MenuCode.GDPauseButtonObjects2.length = 0;
-gdjs.Main_32MenuCode.GDCycleInventoryObjects1.length = 0;
-gdjs.Main_32MenuCode.GDCycleInventoryObjects2.length = 0;
+gdjs.Main_32MenuCode.GDCycleInventoryRightObjects1.length = 0;
+gdjs.Main_32MenuCode.GDCycleInventoryRightObjects2.length = 0;
+gdjs.Main_32MenuCode.GDInventoryBackgroundObjects1.length = 0;
+gdjs.Main_32MenuCode.GDInventoryBackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDInventoryItemObjects1.length = 0;
+gdjs.Main_32MenuCode.GDInventoryItemObjects2.length = 0;
+gdjs.Main_32MenuCode.GDUIBackgroundObjects1.length = 0;
+gdjs.Main_32MenuCode.GDUIBackgroundObjects2.length = 0;
+gdjs.Main_32MenuCode.GDCycleInventoryLeftObjects1.length = 0;
+gdjs.Main_32MenuCode.GDCycleInventoryLeftObjects2.length = 0;
+gdjs.Main_32MenuCode.GDSelectedItemBorderObjects1.length = 0;
+gdjs.Main_32MenuCode.GDSelectedItemBorderObjects2.length = 0;
 
 
 return;

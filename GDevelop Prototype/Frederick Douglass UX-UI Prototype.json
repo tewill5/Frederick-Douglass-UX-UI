@@ -92,161 +92,6 @@
   "resources": {
     "resources": [
       {
-        "file": "images/FDS North.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "images/FDS North.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "images/FDS East.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "images/FDS East.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "images/FDS South.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "images/FDS South.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "images/FDS West.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "images/FDS West.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/Right arrow round button.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/Right arrow round button.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/Target round button.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/Target round button.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/CantoraOne-Regular2.ttf",
-        "kind": "font",
-        "metadata": "",
-        "name": "CantoraOne-Regular.ttf",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/05b0c1364a92b436b86ca819e66b63480d1bc2fb399f6c0cf8bffbf8199ccc2a_CantoraOne-Regular.ttf",
-          "name": "CantoraOne-Regular.ttf"
-        }
-      },
-      {
-        "file": "assets/Yellow Button_Hovered.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Yellow Button_Hovered.png",
-        "smoothed": true,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/c1e14acb64b9963341656c997853154dc4c86cd1c46fb12bfbe012d99712ef61_Yellow Button_Hovered.png",
-          "name": "Yellow Button_Hovered.png"
-        }
-      },
-      {
-        "file": "assets/Yellow Button_Idle.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Yellow Button_Idle.png",
-        "smoothed": true,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/1cacfd123a1eb708837337c27982f6871f5127c5890dbf0775e0f411958fcbf1_Yellow Button_Idle.png",
-          "name": "Yellow Button_Idle.png"
-        }
-      },
-      {
-        "file": "assets/Yellow Button_Pressed.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Yellow Button_Pressed.png",
-        "smoothed": true,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/928c3ea4db1da835c9f8cc5b7089a47228350209d2ff489e1484c31e5ce41b3d_Yellow Button_Pressed.png",
-          "name": "Yellow Button_Pressed.png"
-        }
-      },
-      {
-        "file": "assets/Pause button.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Pause button.png",
-        "smoothed": true,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/On-Screen Controls/Sprites/Flat Light/60c7bc247835ebeb940075c63655df2f90960476dd500b4313cbe782fac826cb_Pause button.png",
-          "name": "Pause button.png"
-        }
-      },
-      {
-        "file": "assets/keys/Letter Key_X.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\keys\\Letter Key_X.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/Black Square.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "Black Square",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/StatueCollectiblePlaceholder.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "StatueCollectiblePlaceholder",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "images/FDS Statue.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "images/FDS Statue.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "images/FDS Statue Zoom.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "images\\FDS Statue Zoom.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "images/FDS Sky Inspect.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "images\\FDS Sky Inspect.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/fonts/BilkoOpti-Regular.otf",
         "kind": "font",
         "metadata": "",
@@ -254,18 +99,233 @@
         "userAdded": false
       },
       {
-        "file": "assets/Black Square.png",
+        "file": "assets/images/FDS North.JPG",
         "kind": "image",
         "metadata": "",
-        "name": "assets/Black Square.png",
+        "name": "assets\\images\\FDS North.JPG",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/keys/Arrow Key_Right.png",
+        "file": "assets/images/FDS East.JPG",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\keys\\Arrow Key_Right.png",
+        "name": "assets\\images\\FDS East.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS South.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS South.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS West.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS West.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/Arrow_Right.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\Arrow_Right.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/Inspect.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\Inspect.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/Yellow Button_Idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\Yellow Button_Idle.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/Yellow Button_Hovered.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\Yellow Button_Hovered.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/Yellow Button_Pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\Yellow Button_Pressed.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/fonts/BilkoOpti-Regular.otf",
+        "kind": "font",
+        "metadata": "",
+        "name": "assets\\fonts\\BilkoOpti-Regular.otf",
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/Arrow_Right_White.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\Arrow_Right_White.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/InventoryUI.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\InventoryUI.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/Pause.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\Pause.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/Black Square.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\Black Square.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS Statue Zoom.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS Statue Zoom.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS Sky Inspect.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS Sky Inspect.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/X.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\X.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/Pause button.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\Pause button.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/Right arrow round button.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\Right arrow round button.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/Arrow_Up.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\Arrow_Up.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/Arrow_Left.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\Arrow_Left.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/ItemObjectPlaceholder.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/ItemObjectPlaceholder.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/Arrow_Left_White.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/Arrow_Left_White.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/InspectionBackgroundFlat.png",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"assets/ui/InspectionBackgroundFlat.png\",\"extension\":\".png\",\"pskl\":{}}",
+        "name": "assets/ui/InspectionBackgroundFlat.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/inventory_select.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\inventory_select.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/Chest_Closed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\Chest_Closed.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/Chest_Open_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\Chest_Open_2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/Trophy_Idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\Trophy_Idle.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/StatueCollectiblePlaceholder.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\StatueCollectiblePlaceholder.png",
         "smoothed": true,
         "userAdded": false
       }
@@ -273,79 +333,6 @@
     "resourceFolders": []
   },
   "objects": [
-    {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "",
-      "name": "UIBackground",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [
-        {
-          "effectType": "ColorReplace",
-          "name": "Effect",
-          "doubleParameters": {
-            "epsilon": 0.4
-          },
-          "stringParameters": {
-            "newColor": "226;24;51",
-            "originalColor": "0;0;0"
-          },
-          "booleanParameters": {}
-        }
-      ],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets/Black Square.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 960,
-                        "y": 0
-                      },
-                      {
-                        "x": 960,
-                        "y": 540
-                      },
-                      {
-                        "x": 0,
-                        "y": 540
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
     {
       "assetStoreId": "",
       "bold": true,
@@ -361,7 +348,20 @@
           "value": 0
         }
       ],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Effect",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "0;0;0"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "string": "Statues Collected: 0",
       "font": "assets/fonts/BilkoOpti-Regular.otf",
@@ -389,7 +389,7 @@
         "text": "Statues Collected: 0",
         "font": "assets/fonts/BilkoOpti-Regular.otf",
         "textAlignment": "left",
-        "verticalTextAlignment": "top",
+        "verticalTextAlignment": "center",
         "characterSize": 30,
         "lineHeight": 0,
         "color": "255;255;255"
@@ -415,7 +415,473 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "Pause button.png",
+                  "image": "assets\\ui\\Pause.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 12,
+                        "y": 2
+                      },
+                      {
+                        "x": 53,
+                        "y": 2
+                      },
+                      {
+                        "x": 53,
+                        "y": 63
+                      },
+                      {
+                        "x": 12,
+                        "y": 63
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "CycleInventoryRight",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "Adjustment",
+          "name": "Disable",
+          "doubleParameters": {
+            "alpha": 1,
+            "blue": 1,
+            "brightness": 0.2,
+            "contrast": 1,
+            "gamma": 1,
+            "green": 1,
+            "red": 1,
+            "saturation": 1
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\ui\\Arrow_Right_White.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 2,
+                        "y": 3
+                      },
+                      {
+                        "x": 60,
+                        "y": 3
+                      },
+                      {
+                        "x": 60,
+                        "y": 61
+                      },
+                      {
+                        "x": 2,
+                        "y": 61
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 50,
+      "height": 129,
+      "leftMargin": 20,
+      "name": "InventoryBackground",
+      "rightMargin": 20,
+      "texture": "assets\\ui\\InventoryUI.png",
+      "tiled": false,
+      "topMargin": 50,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 960,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "InventoryItem",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "itemName",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "inventoryIndex",
+          "type": "number",
+          "value": -1
+        },
+        {
+          "name": "isCursor",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Key",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets/objects/ItemObjectPlaceholder.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "1",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\Pause button.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\Arrow_Right.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "3",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\Right arrow round button.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "4",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\Arrow_Up.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "5",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\InventoryUI.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "6",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\Inspect.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "7",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\Right arrow round button.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "8",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\Arrow_Left.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Empty",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "UIBackground",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "ColorReplace",
+          "name": "Effect",
+          "doubleParameters": {
+            "epsilon": 0.4
+          },
+          "stringParameters": {
+            "newColor": "0;0;0",
+            "originalColor": "0;0;0"
+          },
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "default",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\objects\\Black Square.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -435,16 +901,16 @@
                         "y": 0
                       },
                       {
-                        "x": 48,
+                        "x": 960,
                         "y": 0
                       },
                       {
-                        "x": 48,
-                        "y": 48
+                        "x": 960,
+                        "y": 540
                       },
                       {
                         "x": 0,
-                        "y": 48
+                        "y": 540
                       }
                     ]
                   ]
@@ -458,7 +924,85 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "CycleInventory",
+      "name": "CycleInventoryLeft",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "Adjustment",
+          "name": "Disable",
+          "doubleParameters": {
+            "alpha": 1,
+            "blue": 1,
+            "brightness": 0.2,
+            "contrast": 1,
+            "gamma": 1,
+            "green": 1,
+            "red": 1,
+            "saturation": 1
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "0",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/ui/Arrow_Left_White.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 3,
+                        "y": 3
+                      },
+                      {
+                        "x": 61,
+                        "y": 3
+                      },
+                      {
+                        "x": 61,
+                        "y": 61
+                      },
+                      {
+                        "x": 3,
+                        "y": 61
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "SelectedItemBorder",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -475,7 +1019,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\keys\\Arrow Key_Right.png",
+                  "image": "assets\\ui\\inventory_select.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -491,20 +1035,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 13,
-                        "y": 14
+                        "x": 0,
+                        "y": 0
                       },
                       {
-                        "x": 87,
-                        "y": 14
+                        "x": 128,
+                        "y": 0
                       },
                       {
-                        "x": 87,
-                        "y": 86
+                        "x": 128,
+                        "y": 128
                       },
                       {
-                        "x": 13,
-                        "y": 86
+                        "x": 0,
+                        "y": 128
                       }
                     ]
                   ]
@@ -523,16 +1067,33 @@
         "folderName": "UI",
         "children": [
           {
-            "objectName": "CycleInventory"
+            "folderName": "Inventory",
+            "children": [
+              {
+                "objectName": "SelectedItemBorder"
+              },
+              {
+                "objectName": "CycleInventoryRight"
+              },
+              {
+                "objectName": "CycleInventoryLeft"
+              },
+              {
+                "objectName": "InventoryItem"
+              },
+              {
+                "objectName": "InventoryBackground"
+              }
+            ]
+          },
+          {
+            "objectName": "UIBackground"
           },
           {
             "objectName": "StatuesCollectedCounter"
           },
           {
             "objectName": "PauseButton"
-          },
-          {
-            "objectName": "UIBackground"
           }
         ]
       }
@@ -544,6 +1105,11 @@
       "name": "DataInitialized",
       "type": "boolean",
       "value": false
+    },
+    {
+      "name": "DEBUG",
+      "type": "boolean",
+      "value": true
     }
   ],
   "layouts": [
