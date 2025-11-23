@@ -11,7 +11,7 @@
       "name": "TransitionObject",
       "persistentUuid": "4ef4e486-fd7f-4d45-8186-d84d23ac9795",
       "width": 0,
-      "x": 1120,
+      "x": 1112,
       "y": 368,
       "zOrder": 2,
       "numberProperties": [],
@@ -34,7 +34,7 @@
       "name": "TransitionObject",
       "persistentUuid": "4f456e68-4ab5-49c8-b8ac-452c192d43a2",
       "width": 0,
-      "x": 80,
+      "x": 72,
       "y": 368,
       "zOrder": 3,
       "numberProperties": [],
@@ -71,82 +71,16 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 508,
       "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "InspectObject",
-      "persistentUuid": "218ae879-694d-42ca-b323-c18785f056d2",
-      "width": 0,
-      "x": 1088,
-      "y": 528,
-      "zOrder": 4,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetInspect",
-          "persistentUuid": "fea88182-55ae-40e8-8695-c7cefc4b54c5",
-          "type": "string",
-          "value": "StatueInspect"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "InspectObject",
-      "persistentUuid": "9204e1ff-0ed1-477f-a735-205786452eac",
-      "width": 0,
-      "x": 576,
-      "y": 176,
-      "zOrder": 5,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetInspect",
-          "type": "string",
-          "value": "SkyInspect"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "InspectObjects",
-      "name": "InspectBackground",
-      "persistentUuid": "95ec803f-994a-485e-8027-a66877bbc1e4",
-      "width": 0,
-      "x": 1568,
-      "y": -28,
-      "zOrder": 6,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "inspectName",
-          "type": "string",
-          "value": "StatueInspect"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "InspectObjects",
-      "name": "InspectImage",
+      "layer": "InspectionObjects",
+      "name": "InspectionImage",
       "persistentUuid": "93ccdc51-ec0d-4154-bd31-f767dc30cebc",
-      "width": 0,
-      "x": 1568,
-      "y": -28,
+      "width": 373.47407407407417,
+      "x": 1584,
+      "y": 16,
       "zOrder": 7,
       "numberProperties": [
         {
@@ -157,9 +91,9 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectName",
+          "name": "inspectionName",
           "type": "string",
-          "value": "StatueInspect"
+          "value": "StatueInspection"
         }
       ]
     },
@@ -169,8 +103,8 @@
       "depth": 1,
       "height": 46,
       "keepRatio": true,
-      "layer": "InspectObjects",
-      "name": "InspectText",
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
       "persistentUuid": "220befcf-9eeb-4c8b-9a0d-be1d5fbf189a",
       "width": 464,
       "x": 2016,
@@ -180,36 +114,14 @@
       "stringProperties": [],
       "initialVariables": [
         {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "StatueInspection"
+        },
+        {
           "name": "innerText",
           "type": "string",
           "value": "A large statue of Frederick Douglass"
-        },
-        {
-          "name": "inspectName",
-          "type": "string",
-          "value": "StatueInspect"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "InspectObjects",
-      "name": "InspectBackground",
-      "persistentUuid": "32d145c1-010d-454f-869b-ea7fbbbcf30f",
-      "width": 0,
-      "x": 1568,
-      "y": 544,
-      "zOrder": 9,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "inspectName",
-          "type": "string",
-          "value": "SkyInspect"
         }
       ]
     },
@@ -217,14 +129,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 393,
+      "height": 380,
       "keepRatio": true,
-      "layer": "InspectObjects",
-      "name": "InspectImage",
+      "layer": "InspectionObjects",
+      "name": "InspectionImage",
       "persistentUuid": "7600dbb5-e037-4f36-97d5-c9c86260feda",
-      "width": 960,
-      "x": 1568,
-      "y": 544,
+      "width": 928,
+      "x": 1584,
+      "y": 560,
       "zOrder": 10,
       "numberProperties": [
         {
@@ -235,9 +147,9 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectName",
+          "name": "inspectionName",
           "type": "string",
-          "value": "SkyInspect"
+          "value": "SkyInspection"
         }
       ]
     },
@@ -247,8 +159,8 @@
       "depth": 1,
       "height": 47,
       "keepRatio": true,
-      "layer": "InspectObjects",
-      "name": "InspectText",
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
       "persistentUuid": "dfc59eac-56cb-4c18-b57d-16cdaac15b88",
       "width": 864,
       "x": 1616,
@@ -258,9 +170,9 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "inspectName",
+          "name": "inspectionName",
           "type": "string",
-          "value": "SkyInspect"
+          "value": "SkyInspection"
         },
         {
           "name": "innerText",
@@ -268,20 +180,108 @@
           "value": "The sky is clear today"
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "InspectionObject",
+      "persistentUuid": "c65c2a88-b6a1-407c-985b-ae30cbd0c44d",
+      "width": 0,
+      "x": 1072,
+      "y": 528,
+      "zOrder": 12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "StatueInspection"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "InspectionObject",
+      "persistentUuid": "d8dcd0d3-c516-48b7-9b3a-fc69147559ef",
+      "width": 0,
+      "x": 560,
+      "y": 176,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetInspection",
+          "type": "string",
+          "value": "SkyInspection"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "308fda06-4def-401e-9eb9-800e65f1e00a",
+      "width": 0,
+      "x": 1568,
+      "y": 0,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "StatueInspection"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "a77ff5a5-f740-4009-9dc1-bfbbbe6ff204",
+      "width": 0,
+      "x": 1568,
+      "y": 544,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "SkyInspection"
+        }
+      ]
     }
   ],
   "editionSettings": {
     "grid": true,
     "gridType": "rectangular",
-    "gridWidth": 16,
-    "gridHeight": 16,
+    "gridWidth": 8,
+    "gridHeight": 8,
     "gridOffsetX": 0,
     "gridOffsetY": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.6040838749988886,
+    "zoomFactor": 0.433577430470242,
     "windowMask": false,
-    "selectedLayer": "InspectObjects"
+    "selectedLayer": "SceneObjects"
   }
 }

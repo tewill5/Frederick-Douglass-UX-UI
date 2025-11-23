@@ -11,7 +11,7 @@
       "name": "TransitionObject",
       "persistentUuid": "4ef4e486-fd7f-4d45-8186-d84d23ac9795",
       "width": 0,
-      "x": 1120,
+      "x": 1112,
       "y": 368,
       "zOrder": 2,
       "numberProperties": [],
@@ -34,7 +34,7 @@
       "name": "TransitionObject",
       "persistentUuid": "4f456e68-4ab5-49c8-b8ac-452c192d43a2",
       "width": 0,
-      "x": 80,
+      "x": 72,
       "y": 368,
       "zOrder": 3,
       "numberProperties": [],
@@ -65,23 +65,68 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
+      "customSize": true,
+      "depth": 1,
+      "flippedX": true,
+      "height": 96,
+      "keepRatio": true,
+      "layer": "UI",
+      "name": "UIBackground",
+      "persistentUuid": "f388c8d7-800e-4511-b9b3-08c3fde600be",
+      "width": 1280,
+      "x": 0,
+      "y": 0,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 2,
+      "height": 224,
       "keepRatio": true,
       "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "3baccd98-50e6-416f-ba89-2056a0a13902",
-      "width": 0,
-      "x": 800,
-      "y": 608,
+      "name": "InteractionObject",
+      "persistentUuid": "133342d1-dbad-40c5-92f6-4480d97c5659",
+      "width": 224,
+      "x": 576,
+      "y": 480,
       "zOrder": 4,
-      "numberProperties": [],
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 0
+        }
+      ],
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "itemName",
+          "name": "interactionName",
           "type": "string",
-          "value": "5"
+          "value": "FDS North Chest"
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "FDS North Chest"
+        },
+        {
+          "name": "flags",
+          "type": "structure",
+          "children": [
+            {
+              "name": "isClosed",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "name": "statueCollected",
+              "type": "boolean",
+              "value": false
+            }
+          ]
         }
       ]
     },
@@ -90,57 +135,36 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "ddc66561-6a6a-4274-a09a-269ff8d3cef0",
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "f14aa0d4-15f8-4757-aa26-a220184d0369",
       "width": 0,
-      "x": 768,
-      "y": 384,
+      "x": 1440,
+      "y": -32,
       "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "itemName",
+          "name": "inspectionName",
           "type": "string",
-          "value": "6"
+          "value": "closedChest"
         }
       ]
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 384,
       "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "21be433b-37be-46f3-9253-5bcd6152126e",
-      "width": 0,
-      "x": 384,
-      "y": 448,
+      "layer": "InspectionObjects",
+      "name": "InspectionImage",
+      "persistentUuid": "6c94f034-7d72-4760-a80c-2f19fbde4c64",
+      "width": 512,
+      "x": 1472,
+      "y": 32,
       "zOrder": 6,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "itemName",
-          "type": "string",
-          "value": "3"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "f6502b70-f8b1-4307-8248-27dfcdcca06b",
-      "width": 0,
-      "x": 416,
-      "y": 224,
-      "zOrder": 7,
       "numberProperties": [
         {
           "name": "animation",
@@ -150,9 +174,9 @@
       "stringProperties": [],
       "initialVariables": [
         {
-          "name": "itemName",
+          "name": "inspectionName",
           "type": "string",
-          "value": "1"
+          "value": "closedChest"
         }
       ]
     },
@@ -161,106 +185,321 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "fc60fd4a-491b-4570-8268-8016193cc89f",
+      "layer": "InspectionObjects",
+      "name": "InteractionObject",
+      "persistentUuid": "c66b5b27-597b-4e88-b95a-d1abaf4992ef",
       "width": 0,
-      "x": 512,
-      "y": 544,
+      "x": 1664,
+      "y": 224,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "closedChest"
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": false
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 384,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "c72fdc1e-0946-45e9-9ed7-f141032a8fbd",
+      "width": 320,
+      "x": 2016,
+      "y": 224,
       "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
-      "initialVariables": []
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "The chest is locked"
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "closedChest"
+        }
+      ]
     },
     {
       "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "a8869c6e-ed5f-429a-94fb-4e0a8ab28a0c",
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "596e3f06-ed56-4cce-ae29-89392adaedf9",
       "width": 0,
-      "x": 832,
-      "y": 160,
+      "x": 1440,
+      "y": 544,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "openChest"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 384,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionImage",
+      "persistentUuid": "26d9b8df-c90e-46a4-a099-3d36061a61c0",
+      "width": 512,
+      "x": 1472,
+      "y": 608,
+      "zOrder": 6,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 2
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "openChest"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionObject",
+      "persistentUuid": "3106f55a-fbc3-494b-92e9-8a06ce267267",
+      "width": 0,
+      "x": 1664,
+      "y": 800,
+      "zOrder": 7,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "openChest"
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": false
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 384,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "9d877cd3-1df4-47c1-ad49-833adc377bf7",
+      "width": 320,
+      "x": 2016,
+      "y": 800,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "You opened the chest. There was a statue inside!"
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "openChest"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionBackground",
+      "persistentUuid": "7cece53a-0f03-4f51-b2d2-2937e928156b",
+      "width": 0,
+      "x": 1440,
+      "y": 1136,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "emptyChest"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 384,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionImage",
+      "persistentUuid": "c9d60482-c2a9-4b48-9203-bb721f5085be",
+      "width": 512,
+      "x": 1472,
+      "y": 1200,
+      "zOrder": 6,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 2
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "emptyChest"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InteractionObject",
+      "persistentUuid": "8326897e-565c-4536-a3a0-00ceda9d1209",
+      "width": 0,
+      "x": 1664,
+      "y": 1392,
+      "zOrder": 7,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "emptyChest"
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": false
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 384,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "InspectionText",
+      "persistentUuid": "77dc7e43-0c9c-4cb0-8c2d-c259cb044073",
+      "width": 320,
+      "x": 2016,
+      "y": 1392,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": "The chest is empty"
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "emptyChest"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "StatueCollectible",
+      "persistentUuid": "735db474-3cd0-4c62-8e45-97a6e77ef98f",
+      "width": 0,
+      "x": 1696,
+      "y": 784,
       "zOrder": 9,
       "numberProperties": [],
       "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "c70ea207-3aa5-4f41-9d7a-bc46748df200",
-      "width": 0,
-      "x": 576,
-      "y": 256,
-      "zOrder": 10,
-      "numberProperties": [],
-      "stringProperties": [],
       "initialVariables": [
         {
-          "name": "itemName",
+          "name": "instanceID",
           "type": "string",
-          "value": "4"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "d7f6b978-dc8b-41d7-b428-7f8be72626ac",
-      "width": 0,
-      "x": 160,
-      "y": 160,
-      "zOrder": 11,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
+          "value": "ChestStatue"
+        },
         {
-          "name": "itemName",
+          "name": "interactionName",
           "type": "string",
-          "value": "2"
+          "value": "FDS North Chest"
+        },
+        {
+          "name": "inspectionName",
+          "type": "string",
+          "value": "openChest"
         }
       ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "b674b3b3-2286-46bf-a9fd-961dd9cd4d5b",
-      "width": 0,
-      "x": 640,
-      "y": 128,
-      "zOrder": 12,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
     }
   ],
   "editionSettings": {
     "grid": true,
     "gridType": "rectangular",
-    "gridWidth": 32,
-    "gridHeight": 32,
+    "gridWidth": 16,
+    "gridHeight": 16,
     "gridOffsetX": 0,
     "gridOffsetY": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5290357402156838,
+    "zoomFactor": 0.5653158055126322,
     "windowMask": false,
-    "selectedLayer": "SceneObjects"
+    "selectedLayer": "InspectionObjects"
   }
 }
