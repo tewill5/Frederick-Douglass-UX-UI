@@ -740,7 +740,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "assets\\images\\FDS North.JPG",
+                  "image": "assets/images/Hornbake FDS Statue.JPG",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -760,16 +760,16 @@
                         "y": 0
                       },
                       {
-                        "x": 1280,
+                        "x": 5184,
                         "y": 0
                       },
                       {
-                        "x": 1280,
-                        "y": 960
+                        "x": 5184,
+                        "y": 3456
                       },
                       {
                         "x": 0,
-                        "y": 960
+                        "y": 3456
                       }
                     ]
                   ]
@@ -808,16 +808,16 @@
                         "y": 0
                       },
                       {
-                        "x": 1280,
+                        "x": 5184,
                         "y": 0
                       },
                       {
-                        "x": 1280,
-                        "y": 960
+                        "x": 5184,
+                        "y": 3456
                       },
                       {
                         "x": 0,
-                        "y": 960
+                        "y": 3456
                       }
                     ]
                   ]
@@ -856,16 +856,16 @@
                         "y": 0
                       },
                       {
-                        "x": 1280,
+                        "x": 5184,
                         "y": 0
                       },
                       {
-                        "x": 1280,
-                        "y": 960
+                        "x": 5184,
+                        "y": 3456
                       },
                       {
                         "x": 0,
-                        "y": 960
+                        "y": 3456
                       }
                     ]
                   ]
@@ -904,16 +904,16 @@
                         "y": 0
                       },
                       {
-                        "x": 1280,
+                        "x": 5184,
                         "y": 0
                       },
                       {
-                        "x": 1280,
-                        "y": 960
+                        "x": 5184,
+                        "y": 3456
                       },
                       {
                         "x": 0,
-                        "y": 960
+                        "y": 3456
                       }
                     ]
                   ]
@@ -1887,7 +1887,7 @@
     {
       "assetStoreId": "",
       "bottomMargin": 32,
-      "height": 540,
+      "height": 544,
       "leftMargin": 32,
       "name": "InspectionBackground",
       "rightMargin": 32,
@@ -2364,7 +2364,12 @@
         }
       ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "Idle",
@@ -2493,7 +2498,12 @@
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "",

@@ -527,6 +527,14 @@
         "name": "assets/ui/map.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/images/Hornbake FDS Statue.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/images/Hornbake FDS Statue.JPG",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -720,19 +728,7 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/fds-north"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/fds-east"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/fds-south"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/fds-west"
+      "referenceTo": "/externalLayouts/frederick-douglass-square"
     }
   ]
 }

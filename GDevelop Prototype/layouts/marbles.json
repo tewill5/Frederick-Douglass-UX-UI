@@ -4009,7 +4009,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Main Game",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -5230,7 +5229,6 @@
                       "colorG": 176,
                       "colorR": 74,
                       "creationTime": 0,
-                      "folded": true,
                       "name": "Player Turn",
                       "source": "",
                       "type": "BuiltinCommonInstructions::Group",
@@ -5773,7 +5771,7 @@
                                             "",
                                             "assets\\sfx\\shoot_marble.wav",
                                             "",
-                                            "75*(chargeValue/maxCharge)",
+                                            "75*(chargeValue/maxCharge)/2",
                                             "3 - 3*(chargeValue/maxCharge)"
                                           ]
                                         }
@@ -6484,7 +6482,7 @@
                                                     "",
                                                     "assets\\sfx\\shoot_marble.wav",
                                                     "",
-                                                    "75*(chargeValue/maxCharge)",
+                                                    "75*(chargeValue/maxCharge)/2",
                                                     "3 - 3*(chargeValue/maxCharge)"
                                                   ]
                                                 }
@@ -7017,7 +7015,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Sound Effects",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -7046,7 +7043,7 @@
                 "",
                 "assets\\sfx\\marble_collide.wav",
                 "",
-                "Marbles.Physics2::LinearVelocity()",
+                "Marbles.Physics2::LinearVelocity()/2",
                 "1"
               ]
             }
