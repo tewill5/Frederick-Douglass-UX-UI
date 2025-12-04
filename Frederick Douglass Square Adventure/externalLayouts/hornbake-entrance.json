@@ -1,0 +1,38 @@
+{
+  "associatedLayout": "Exploration",
+  "name": "Hornbake Entrance",
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "Background",
+      "name": "Background",
+      "persistentUuid": "f5d0205d-4ccd-4dde-9851-5867884be3e7",
+      "width": 0,
+      "x": 0,
+      "y": 96,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "editionSettings": {
+    "grid": true,
+    "gridType": "rectangular",
+    "gridWidth": 16,
+    "gridHeight": 16,
+    "gridDepth": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridOffsetZ": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": true,
+    "zoomFactor": 0.546875000000003,
+    "windowMask": false,
+    "selectedLayer": "Background"
+  }
+}
