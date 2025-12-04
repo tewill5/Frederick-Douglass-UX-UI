@@ -1797,7 +1797,7 @@ gdjs.copyArray(gdjs.MarblesCode.GDPlayerMarbleObjects2, gdjs.MarblesCode.GDPlaye
     gdjs.MarblesCode.GDPlayerMarbleObjects3[i].getBehavior("Effect").enableEffect("selected", false);
 }
 }
-{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\shoot_marble.wav", false, 75 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()), 3 - 3 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()));
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\shoot_marble.wav", false, 75 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()) / 4, 3 - 3 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()));
 }
 }
 
@@ -2176,7 +2176,7 @@ if (isConditionTrue_0) {
 }
 {gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "compPlaceTimer");
 }
-{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\shoot_marble.wav", false, 75 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()), 3 - 3 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()));
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\shoot_marble.wav", false, 75 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()) / 4, 3 - 3 * (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()));
 }
 }
 
@@ -2747,7 +2747,7 @@ if (isConditionTrue_0) {
 /* Reuse gdjs.MarblesCode.GDComputerMarbleObjects1 */
 /* Reuse gdjs.MarblesCode.GDMarbleObjects1 */
 /* Reuse gdjs.MarblesCode.GDPlayerMarbleObjects1 */
-{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\marble_collide.wav", false, (( gdjs.MarblesCode.GDComputerMarbleObjects1.length === 0 ) ? (( gdjs.MarblesCode.GDPlayerMarbleObjects1.length === 0 ) ? (( gdjs.MarblesCode.GDMarbleObjects1.length === 0 ) ? 0 :gdjs.MarblesCode.GDMarbleObjects1[0].getBehavior("Physics2").getLinearVelocityLength()) :gdjs.MarblesCode.GDPlayerMarbleObjects1[0].getBehavior("Physics2").getLinearVelocityLength()) :gdjs.MarblesCode.GDComputerMarbleObjects1[0].getBehavior("Physics2").getLinearVelocityLength()), 1);
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\marble_collide.wav", false, (( gdjs.MarblesCode.GDComputerMarbleObjects1.length === 0 ) ? (( gdjs.MarblesCode.GDPlayerMarbleObjects1.length === 0 ) ? (( gdjs.MarblesCode.GDMarbleObjects1.length === 0 ) ? 0 :gdjs.MarblesCode.GDMarbleObjects1[0].getBehavior("Physics2").getLinearVelocityLength()) :gdjs.MarblesCode.GDPlayerMarbleObjects1[0].getBehavior("Physics2").getLinearVelocityLength()) :gdjs.MarblesCode.GDComputerMarbleObjects1[0].getBehavior("Physics2").getLinearVelocityLength()) / 2, 1);
 }
 }
 

@@ -121,10 +121,10 @@ gdjs.ExplorationCode.GDInspectionImageBorderObjects1= [];
 gdjs.ExplorationCode.GDInspectionImageBorderObjects2= [];
 gdjs.ExplorationCode.GDInspectionImageBorderObjects3= [];
 gdjs.ExplorationCode.GDInspectionImageBorderObjects4= [];
-gdjs.ExplorationCode.GDInspectionPropObjects1= [];
-gdjs.ExplorationCode.GDInspectionPropObjects2= [];
-gdjs.ExplorationCode.GDInspectionPropObjects3= [];
-gdjs.ExplorationCode.GDInspectionPropObjects4= [];
+gdjs.ExplorationCode.GDImagePropObjects1= [];
+gdjs.ExplorationCode.GDImagePropObjects2= [];
+gdjs.ExplorationCode.GDImagePropObjects3= [];
+gdjs.ExplorationCode.GDImagePropObjects4= [];
 gdjs.ExplorationCode.GDBackpackObjects1= [];
 gdjs.ExplorationCode.GDBackpackObjects2= [];
 gdjs.ExplorationCode.GDBackpackObjects3= [];
@@ -147,7 +147,7 @@ gdjs.ExplorationCode.GDExitMinigameButtonObjects3= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0x10f30f8 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0x98b598 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -179,12 +179,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x10f30f8(runtimeScene);
+gdjs.ExplorationCode.userFunc0x98b598(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x10f67f0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xc81478 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -372,14 +372,36 @@ FDSG.jsToGDVar = function(jsValue, gdVar) {
     else if (typeof jsValue === "boolean") gdVar.setBoolean(jsValue);
     else gdVar.setString("");
 }
-// FDSG.convertVariablesToJS = function(obj) {
-//     const variables = obj.getVariables();
-//     const allVars = variables.getAllChildren();
-//     for (const variable in allVars) {
 
-//     }
+/**
+ * Just a faster way to get object flags. They must be a child of a structure variable named "flags"
+ *      @param {RuntimeObject} obj The object instance to check
+ *      @param {string} flag The name of the flag
+ *      @param {"number"|"string"|"boolean"|null} returnType? The type of value to return. Leave as default to get the objectVariables object instead
+ *      @returns {any} The variable object or flag state
+ */
+FDSG.getFlag = function(obj, flagName, returnType = null) {
+    if (!obj.getVariables().has("flags") || !obj.getVariables().get("flags").hasChild(flagName)) {
+        FDSG.debugPrint("warn",`object ${obj.getName()} does not have flag ${flagName}`);
+    } else if (returnType != null && obj.getVariables().get("flags").getChildNamed(flagName).getType() != returnType) {
+        FDSG.debugPrint("warn",`object flag ${flagName} is not of type ${returnType}`);
+    }
+    const flag = obj.getVariables().get("flags").getChildNamed(flagName);
+    if (returnType == null) {
+        return flag;
+    }
+    switch (returnType) {
+        case("boolean"):
+            return flag.getAsBoolean();
+            break;
+        case("string"):
+            return flag.getAsString();
+            break;
+        case("number"):
+            return flag.getAsNumber();
+    }
+}
 
-// }
 
 /**
  * Prints a message to the console only if the DEBUG is set to true
@@ -402,27 +424,28 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x10f67f0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xc81478(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe3ec48 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xc5a778 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
 const Game = GameVars.runtimeScene.getGame();
 
 Object.assign(GameVars.Constants, {
-    STARTING_LAYOUT: "FDS North", // First layout to load
-    FIRST_TRANSITION_FADE_DURATION: 1000, // The duration of the fade from the Main Menu
-    TRANSITION_FADE_DURATION: 150
+    STARTING_LAYOUT: "Frederick Douglass Square", // First layout to load
+    FIRST_TRANSITION_FADE_DURATION: 1500, // The duration of the fade from the Main Menu
+    TRANSITION_FADE_DURATION: 250
 });
 
 Object.assign(GameVars, {
     startLayout: GameVars.Constants.STARTING_LAYOUT, // The starting layout
     _currentLayout: GameVars.Constants.STARTING_LAYOUT, // This is used to load the corrent layout on transitions
     _isFading: false, // Used to halt input while fading in or out
+    loadMinigame: null, // Used to set a minigame to be loaded
     _currentLoadedMinigame: null // Used to track whether to check minigame flags on resuming this scene
 });
 
@@ -519,6 +542,7 @@ FDSG.initScene = function() {
                 instance.getVariables().get("enabled").setBoolean(true);
             }
         }
+        backpack.setAnimationName("Open");
     }
     FDSG.PlayerInventory._selectedItemName = null; // Remove stale references
     FDSG.PlayerInventory._selectedItemIndex = null;
@@ -647,19 +671,26 @@ FDSG.getInstanceFromID = function(id) {
  *      @param {boolean} fadeIn fadeIn Set as true to fade in, false to fade out
  */
 FDSG.initFade = function(duration, fadeIn) {
+    FDSG.debugPrint("log", "initiating fade effect");
     const cameraWidth = gdjs.evtTools.camera.getCameraWidth(GameVars.runtimeScene, "", 0); 
     const cameraHeight = gdjs.evtTools.camera.getCameraHeight(GameVars.runtimeScene, "", 0);
     const fadeScreen = GameVars.runtimeScene.createObject("FadeScreen");
     fadeScreen.setLayer("SceneObjects");
     fadeScreen.setZOrder(99);
+    fadeScreen.setX(0);
+    fadeScreen.setY(0);
     fadeScreen.setWidth(cameraWidth); // Make the fadeScreen cover the screen
     fadeScreen.setHeight(cameraHeight);
+    let tween = fadeScreen.getBehavior("Tween");
     if (fadeIn) {
-        fadeScreen.getVariables().get("Opacity").setNumber(1);
-        fadeScreen.getVariables().get("FadeDuration").setNumber(duration);
+        fadeScreen.setOpacity(255);
+        tween.addObjectOpacityTween("fadeIn", 0, "linear", duration, false);
     } else {
-        fadeScreen.getVariables().get("Opacity").setNumber(0);
-        fadeScreen.getVariables().get("FadeDuration").setNumber(-duration);
+        fadeScreen.setOpacity(0);
+        tween.addObjectOpacityTween("fadeOut", 255, "linear", duration, false);
+        if (GameVars.loadMinigame == null && GameVars._currentLoadedMinigame == null) {
+            gdjs.evtTools.sound.playSound(GameVars.runtimeScene, "whoosh4.wav", false, 25, .70);
+        }
     }
     GameVars._isFading = true;
 }
@@ -683,9 +714,9 @@ FDSG.registerOnLayoutLoadFunction = function(layoutName, onLayoutLoadFunction) {
  */
 FDSG.loadMinigame = function(minigameName) {
     FDSG.debugPrint("log",`Loading minigame ${minigameName}`);
-    GameVars._currentLoadedMinigame = minigameName;
-    FDSG.initFade(GameVars.Constants.FIRST_TRANSITION_FADE_DURATION/2, true); /* Set so the game will fade back in on return */
-    gdjs.evtTools.runtimeScene.pushScene(GameVars.runtimeScene, minigameName);
+    GameVars.isInspecting = false;
+    GameVars.loadMinigame = minigameName;
+    FDSG.initFade(GameVars.Constants.FIRST_TRANSITION_FADE_DURATION, false); /* Set so the game will fade back in on return */
 }
 
 
@@ -705,12 +736,12 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe3ec48(runtimeScene);
+gdjs.ExplorationCode.userFunc0xc5a778(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc41810 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xa3ed58 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -888,11 +919,11 @@ FDSG.handlePlayerInput = function() {
     if (!GameVars._isFading) { // Don't allow inputs during transition fade
         for (const object in FDSG.Input.ClickableObjects) { // Check each object to determine which object the mouse is hovering over (if any)
             const clickObject = FDSG.Input.ClickableObjects[object]; // Simpler reference variable
-            const instances = GameVars.runtimeScene.getInstancesOf(object);
+            const instances = GameVars.runtimeScene.getInstancesOf(object).slice();
             for (const instance of instances) { // Check each instance of the object
                 instance.removeEffect("hoverEffect");
                 if (!clickObject.enabled) { continue } // Check if the object is disabled
-                if (instance.getVariables().has("enabled") && !instance.getVariables().get("enabled").getAsBoolean()) { continue }
+                if (instance.getVariables().has("enabled") && instance.getVariables().get("enabled").getAsBoolean() == false) { continue }
                     // Skip if instance is disabled
                 if (selectedItemIndex != null
                 && instance.getName() != "InspectInventoryItem"
@@ -923,7 +954,6 @@ FDSG.handlePlayerInput = function() {
             }
         }
     }
-    
     // This is all so that you don't accidentally release on an object you didn't click
     if ((!isPressed && !isReleased) || (touchJustStarted)) {
         FDSG.Input._lastObjectPressed = hoveredInstance;
@@ -962,6 +992,7 @@ FDSG.handlePlayerInput = function() {
 
         // HOVER FUNCTIONS
         for (const func of FDSG.Input.ClickableObjects[hoveredInstance.getName()].hoverFunctions) {
+            // FDSG.debugPrint("log", `running hover function for: ${hoveredInstance.getName()}`);
             func(hoveredInstance);
         }
 
@@ -979,7 +1010,9 @@ FDSG.handlePlayerInput = function() {
                         && hoveredInstance.getName() != "InteractionButton"
                         && hoveredInstance.getVariables().has("targetInteraction")) {
                             // Run interactions tied to the object. We skip interaction objects to avoid running them twice
-                            const interactionData = FDSG.Interactions[hoveredInstance.getVariables().get("targetInteraction").getAsString()];
+                            const interactionName = hoveredInstance.getVariables().get("targetInteraction").getAsString();
+                            const interactionData = FDSG.Interactions[interactionName];
+                            FDSG.debugPrint("log", `running interactionFunction ${interactionName} from ${hoveredInstance.getName()}`);
                             interactionData.interactionFunction(hoveredInstance);
                             if (!interactionData.runUsual) {
                                 continue;
@@ -1091,26 +1124,28 @@ FDSG.handleHoverTooltip = function(hoveredInstance) {
             hoverTooltip = null; // Don't bother doing anything if the tooltip already exists
         } else if (instanceVars.has("hoverTooltip")) { // If the instance or object has been given hoverTooltip
             var hoverTooltipData = instanceVars.get("hoverTooltip");
-            var text = hoverTooltipData.getChild("text").getAsString();
-            var bold = hoverTooltipData.getChild("bold").getAsBoolean();
-            var outlineThickness = hoverTooltipData.getChild("outlineThickness").getAsNumber();
-            var outlineColor = hoverTooltipData.getChild("outlineColor").getAsString();
+            var text = hoverTooltipData.getChildNamed("text").getAsString();
+            var bold = hoverTooltipData.getChildNamed("bold").getAsBoolean();
+            var outlineThickness = hoverTooltipData.getChildNamed("outlineThickness").getAsNumber();
+            var outlineColor = hoverTooltipData.getChildNamed("outlineColor").getAsString();
+            var outlineEnabled = false;
             if (text != "null" && text != null) {
-                var font = hoverTooltipData.getChild("font").getAsString();
-                var fontSize = hoverTooltipData.getChild("fontSize").getAsNumber();
+                var font = hoverTooltipData.getChildNamed("font").getAsString();
+                var fontSize = hoverTooltipData.getChildNamed("fontSize").getAsNumber();
                 if (font == "0") { font = null } // Leave as default if unset
                 if (fontSize == 0) { fontSize = null }
-                if (outlineColor == "0") { outlineColor = "0;0;0" }
+                if (outlineColor == "0") { outlineColor = "0,0,0" }
+                if (outlineThickness > 0) { outlineEnabled = true }
                 hoverTooltip = {
                     text: text,
-                    x: hoverTooltipData.getChild("x").getAsNumber(),
-                    y: hoverTooltipData.getChild("y").getAsNumber(),
+                    x: hoverTooltipData.getChildNamed("x").getAsNumber(),
+                    y: hoverTooltipData.getChildNamed("y").getAsNumber(),
                     font: font,
                     fontSize: fontSize,
                     bold: bold,
                     outlineThickness: outlineThickness,
-                    //outlineColor: outlineColor
-
+                    outlineColor: outlineColor,
+                    outlineEnabled: outlineEnabled
                 }
             }
         } else if (hoveredInstance.getName() in FDSG.Input.HoverTooltips) {
@@ -1123,8 +1158,9 @@ FDSG.handleHoverTooltip = function(hoveredInstance) {
             hoverTooltipObj.setX(hoveredInstance.getX() + hoverTooltip.x);
             hoverTooltipObj.setY(hoveredInstance.getY() + hoverTooltip.y);
             hoverTooltipObj.setText(hoverTooltip.text);
-            hoverTooltipObj.setOutlineThickness(hoverTooltipData.outlineThickness);
-            //hoverTooltipObj.setOutlineColor(hoverTooltipData.outlineColor);
+            hoverTooltipObj.setOutlineThickness(hoverTooltip.outlineThickness);
+            hoverTooltipObj.setOutlineColor(`rgb(${hoverTooltip.outlineColor})`);
+            hoverTooltipObj.setOutlineEnabled(hoverTooltip.outlineEnabled);
             if (hoverTooltip.font != null) { hoverTooltipObj.setFontName(hoverTooltip.font) }
             if (hoverTooltip.fontSize != null) { hoverTooltipObj.setCharacterSize(hoverTooltip.fontSize) }
             
@@ -1138,12 +1174,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc41810(runtimeScene);
+gdjs.ExplorationCode.userFunc0xa3ed58(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x10f2eb8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xa3ef10 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1175,6 +1211,7 @@ Object.defineProperty(GameVars, 'isInspecting', {
         inspectionUILayer.show(value);
         FDSG.enableLayerClick(["InspectionObjects", "InspectionUI"], value); // Enable/Disable the relevant layers clicks
         FDSG.enableLayerClick(["UI", "SceneObjects"], !value);
+        gdjs.evtTools.sound.playSound(GameVars.runtimeScene, "whoosh1.wav", false, 25, 1.3);
         if (!value) {
             FDSG.clearInspectionFromView();
         } 
@@ -1200,12 +1237,32 @@ FDSG.getLayoutInspections = function() {
         and create a map tying each object instance to its associated inspection. Then we just register
         the initial x and y positions of the InstanceGroup in the layout so we can move them into the camera view when they activate,
         and move them back when they exit
+
+        Since every inspection is going to be contained within an InspectionBackground object, we're also
+        including objects that don't necessarily have the "targetInspection" variable to make creating inspections easier.
     */
     const layoutInspections = {}; // Holds all inspections and their InstanceGroup
     const allInstances = FDSG.getAllSceneInstances("InspectionObjects"); // Get all instances on the InspectionObjects layer
     const inspectionInstances = {}; // Temporary object to map inspections to their associated instances
+    const backgroundBounds = {};
+    for (const inspectionBackground of GameVars.runtimeScene.getInstancesOf("InspectionBackground")) {
+            // We're assuming objects are all contained within InspectionBackground objects, so we're getting the bounds of those to
+            // check instance included within them
+        const inspection = inspectionBackground.getVariables().get("inspectionName").getAsString();
+        backgroundBounds[inspection] = inspectionBackground;
+    }
     for (const instance of allInstances) {
         if (!instance.getVariables().has("inspectionName")) { // Check if the instance is associated with an inspection
+            for (const inspection in backgroundBounds) {
+                let bounds = backgroundBounds[inspection];
+                if (bounds.insideObject(instance.getX(), instance.getY())) {
+                    if (!(inspection in inspectionInstances)) {
+                        inspectionInstances[inspection] = []; // This will store the object instances tied to this inspection
+                    }
+                    inspectionInstances[inspection].push(instance);
+                    break;
+                }
+            }
             continue;
         }
         const inspection = instance.getVariables().get("inspectionName").getAsString();
@@ -1268,8 +1325,9 @@ FDSG.bringInspectionIntoView = function(inspectionName, activateInspection = tru
 
 /**
  * Clears the loaded inspection and resets its objects to their initial positions
+ *      @param {boolean} disableInspecting? Whether to turn off isInspecting. Defaults to true
  */
-FDSG.clearInspectionFromView = function() {
+FDSG.clearInspectionFromView = function(disableInspecting = true) {
     if (GameVars._loadedInspection == null) { // Don't unload if no inspections are loaded
         FDSG.debugPrint(`No inspection loaded`);
         return;
@@ -1286,6 +1344,9 @@ FDSG.clearInspectionFromView = function() {
         }
     }
     GameVars._loadedInspection = null;
+    if (disableInspecting) {
+        GameVars.isInspecting = null;
+    }
 }
 
 /**
@@ -1325,12 +1386,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x10f2eb8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xa3ef10(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc445e0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xc816a8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1398,12 +1459,12 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc445e0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xc816a8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x10f3930 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xc80e58 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1596,9 +1657,9 @@ FDSG.showItemPopup = function(itemName, itemDescription, canPickup = true) {
     const itemObject = FDSG.GameVars._itemPopupData.itemObject; // Get the original item object
     // console.log(itemObject);
     const inventoryItem = itemPopupData.inventoryItem; // Get the instance of the InventoryItem used for the popup sprite
-    const previousAnim = inventoryItem.getAnimation(); // Used to check if the given animation is valid
+    const previousAnimName = inventoryItem.getAnimationName(); // Used to check if the given animation is valid
     inventoryItem.setAnimationName(itemName); // Set the sprite
-    if (previousAnim != 0 && inventoryItem.getAnimation() == previousAnim) {
+    if (previousAnimName != itemName && inventoryItem.getAnimationName() == previousAnimName) {
         FDSG.debugPrint("warn",`invalid animation for item: ${itemName}`);
     }
     inventoryItem.setWidth(GameVars.Constants.ITEM_POPUP_SIZE); // Resize the sprite to fit the popup
@@ -1625,28 +1686,40 @@ FDSG.showItemPopup = function(itemName, itemDescription, canPickup = true) {
  * Add an item to the player inventory and redraw it
  *      @param {string} itemName The name of the item to add
  *      @param {string} itemDescription The description of the item being added
- *      @param {Object} animationData Data for playing the tween backpack animation. Defaults to null for no animation
  */
-FDSG.addItemToInventory = function(itemName, itemDescription, animationData = null) {
+FDSG.addItemToInventory = function(itemName, itemDescription) {
     FDSG.debugPrint("log",`Adding ${itemName} to inventory`);
     const itemData = { // Holds all the item information
         itemName: itemName, // The item name
         itemDescription: itemDescription, // The item description
     }
     FDSG.PlayerInventory.itemData.push(itemData);
-    if (animationData) {
-        FDSG.playItemCollectionAnimation(animationData);
-    }
     FDSG.redrawInventory();
-    FDSG.showInventory(true);
+    const backpack = GameVars.runtimeScene.getInstancesOf("Backpack")[0];
+    FDSG.playObjectShakeAnimation(backpack);
 }
 
 /**
  * Remove an item to the player inventory
- *      @param {string} itemName The name of the item to add
+ *      @param {string|number} item The name or index of the item to add
  */
-FDSG.removeItemFromInventory = function(inventoryIndex) {
+FDSG.removeItemFromInventory = function(item) {
     const inventory = FDSG.PlayerInventory;
+    var inventoryIndex = null;
+    if (typeof item === 'string') {
+        for (let i = 0; i < inventory.itemData.length; i++) {
+            const itemData = inventory.itemData[i];
+            if (itemData.itemName == item) {
+                inventoryIndex = i;
+                break;
+            }
+        }
+        if (inventoryIndex == null) {
+            return; // Player does not have item
+        }
+    } else {
+        inventoryIndex = item;
+    }
     FDSG.debugPrint("log",`Removing ${inventory.itemData[inventoryIndex].itemName} from inventory`);
     inventory.itemData.splice(inventoryIndex, 1);
     if (inventory._scrollIndex >= inventory.itemData.length) {
@@ -1662,7 +1735,7 @@ FDSG.removeItemFromInventory = function(inventoryIndex) {
  */
 
 FDSG.isItemInInventory = function(itemName) {
-    const numItemInInventory = 0; // How many of the given item are in the players inventory
+    let numItemInInventory = 0; // How many of the given item are in the players inventory
     for (const itemData of FDSG.PlayerInventory.itemData) {
         if (itemData.itemName == itemName) {
             numItemInInventory += 1;
@@ -1750,9 +1823,11 @@ FDSG.showInventory = function(show) {
     if (show) {
         targetX = backpack.getX() + GameVars.Constants.INVENTORY_OPEN_X_OFFSET;
         targetY = backpack.getY() + GameVars.Constants.INVENTORY_OPEN_Y_OFFSET;
+        backpack.setAnimationName("Open");
     } else {
         targetX = backpack.getX() + GameVars.Constants.INVENTORY_CLOSED_X_OFFSET;
         targetY = backpack.getY() + GameVars.Constants.INVENTORY_CLOSED_Y_OFFSET;
+        backpack.setAnimation("Open");
     }
     FDSG.debugPrint("log",`initiating inventory object tween`);
     for (const instance of inventoryInstances) {
@@ -1766,52 +1841,72 @@ FDSG.showInventory = function(show) {
         tween.addObjectPositionTween("inventoryTween", targetX + relativeX, targetY + relativeY,"easeFromTo", duration, false);
         if (instance.getName() != "InspectInventoryItem") {
             instance.getVariables().get("enabled").setBoolean(show);
-
         }
     }
     inventory._isInventoryShowing = show;
 }
 
-
 /**
- * Plays the animation of an item floating into the backpack
- *      @param {Object} itemData An object with the necessary data
- *      @param {string} itemData.itemImageName The animation name of the items sprite
- *      @param {number} itemData.fromX X position to start the animation from
- *      @param {number} itemData.fromY Y position to start the animation from
- *      @param {number} itemData.startWidth The initial width of the animating item
- *      @param {number} itemData.startHeight The initial height of the animating item
- *      @param {number} itemData.toX? The target X position of the animation. Defaults to the backpacks position
- *      @param {number} itemData.toY? The target Y position of the animation. Defaults to the backpacks position 
- *      @param {number} itemData.targetXScale? The final Y scale of the animating item. Defaults to 0
- *      @param {number} itemData.targetYScale? The final X scale of the animating item. Defaults to 0     
+ * Shake the given object
+ *      @param {RuntimeObject} object The object to shake
  */
-FDSG.playItemCollectionAnimation = function(itemData) {
-    const backpack = GameVars.runtimeScene.getInstancesOf("Backpack")[0];
-    const fromX = itemData.fromX;
-    const fromY = itemData.fromY;
-    const fromWidth = itemData.startWidth;
-    const fromHeight = itemData.startHeight;
-    const animItem = GameVars.runtimeScene.createObject("InventoryItem");
-    animItem.getVariables().get("enabled").setBoolean(false);
-    animItem.setLayer("UI");
-    animItem.setWidth(fromWidth);
-    animItem.setHeight(fromHeight);
-    animItem.setX(fromX);
-    animItem.setY(fromY);
-    animItem.setAnimationName(itemData.itemImageName);
-    let targetX = backpack.getX() + backpack.getCenterX();
-    let targetY = backpack.getY() + backpack.getCenterY();
-    let targetXScale = 0;
-    let targetYScale = 0;
-    if ("toX" in itemData) { targetX = itemData.toX }
-    if ("toY" in itemData) { targetY = itemData.toY }
-    if ("targetXScale" in itemData) { targetWidth = itemData.targetXScale }
-    if ("targetYScale" in itemData) { targetHeight = itemData.targetYScale }
-    let tween = animItem.getBehavior("Tween");
-    tween.addObjectPositionTween("collectPositionTween", targetX, targetY, "linear", 750, true);
-    tween.addObjectScaleTween("collectScaleTween", targetXScale, targetYScale, "linear", 1000, false, true);
+FDSG.playObjectShakeAnimation = async function(object) {
+    const tween = object.getBehavior("Tween");
+    const tweenDurationMS = 100;
+    const tweenAngle = 15;
+    tween.addObjectAngleTween("backpackShake", tweenAngle, "bouncePast", tweenDurationMS, false);
+    FDSG.debugPrint("log", "playing backpack shake animation 1");
+    window.setTimeout(() => {
+        tween.addObjectAngleTween("backpackShake", -tweenAngle, "bouncePast", tweenDurationMS, false);
+        window.setTimeout(() => {
+                tween.addObjectAngleTween("backpackShake", tweenAngle, "bouncePast", tweenDurationMS, false);
+                window.setTimeout(() => {
+                    tween.addObjectAngleTween("backpackShake", 0, "bouncePast", tweenDurationMS, false);
+                }, tweenDurationMS);
+        }, tweenDurationMS);
+    }, tweenDurationMS);
 }
+
+
+// /**
+//  * Plays the animation of an item floating into the backpack
+//  *      @param {Object} itemData An object with the necessary data
+//  *      @param {string} itemData.itemImageName The animation name of the items sprite
+//  *      @param {number} itemData.fromX X position to start the animation from
+//  *      @param {number} itemData.fromY Y position to start the animation from
+//  *      @param {number} itemData.startWidth The initial width of the animating item
+//  *      @param {number} itemData.startHeight The initial height of the animating item
+//  *      @param {number} itemData.toX? The target X position of the animation. Defaults to the backpacks position
+//  *      @param {number} itemData.toY? The target Y position of the animation. Defaults to the backpacks position 
+//  *      @param {number} itemData.targetXScale? The final Y scale of the animating item. Defaults to 0
+//  *      @param {number} itemData.targetYScale? The final X scale of the animating item. Defaults to 0     
+//  */
+// FDSG.playItemCollectionAnimation = function(itemData) {
+//     const backpack = GameVars.runtimeScene.getInstancesOf("Backpack")[0];
+//     const fromX = itemData.fromX;
+//     const fromY = itemData.fromY;
+//     const fromWidth = itemData.startWidth;
+//     const fromHeight = itemData.startHeight;
+//     const animItem = GameVars.runtimeScene.createObject("InventoryItem");
+//     animItem.getVariables().get("enabled").setBoolean(false);
+//     animItem.setLayer("UI");
+//     animItem.setWidth(fromWidth);
+//     animItem.setHeight(fromHeight);
+//     animItem.setX(fromX);
+//     animItem.setY(fromY);
+//     animItem.setAnimationName(itemData.itemImageName);
+//     let targetX = backpack.getX() + backpack.getCenterX();
+//     let targetY = backpack.getY() + backpack.getCenterY();
+//     let targetXScale = 0;
+//     let targetYScale = 0;
+//     if ("toX" in itemData) { targetX = itemData.toX }
+//     if ("toY" in itemData) { targetY = itemData.toY }
+//     if ("targetXScale" in itemData) { targetWidth = itemData.targetXScale }
+//     if ("targetYScale" in itemData) { targetHeight = itemData.targetYScale }
+//     let tween = animItem.getBehavior("Tween");
+//     tween.addObjectPositionTween("collectPositionTween", targetX, targetY, "linear", 750, true);
+//     tween.addObjectScaleTween("collectScaleTween", targetXScale, targetYScale, "linear", 1000, false, true);
+// }
 
 
 };
@@ -1820,12 +1915,12 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x10f3930(runtimeScene);
+gdjs.ExplorationCode.userFunc0xc80e58(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x10f3a00 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xc80fe8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1845,12 +1940,32 @@ gdjs.ExplorationCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x10f3a00(runtimeScene);
+gdjs.ExplorationCode.userFunc0xc80fe8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xa3e220 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData;
+const GameVars = FDSG.GameVars;
+
+
+FDSG.LocationSounds = { // Here we put the sound effect to play for each layout. If the sound is not specified, the game will continue playing the sounds of the previous layout
+    // "Frederick Douglass Square": 
+}
+};
+gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0xa3e220(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 
 {
 
@@ -1901,7 +2016,14 @@ gdjs.ExplorationCode.eventsList7(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0x10f3fc0 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.eventsList8(runtimeScene);
+}
+
+
+};gdjs.ExplorationCode.userFunc0xc5ad28 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1960,6 +2082,7 @@ FDSG.registerClickableObject({
     clickFunction: (obj) => {
         const targetInteraction = obj.getVariables().get("targetInteraction").getAsString();
         if (targetInteraction in FDSG.Interactions) {
+            FDSG.debugPrint("log", `running interactionFunction ${targetInteraction} from ${obj.getName()}`);
             FDSG.Interactions[targetInteraction].interactionFunction(obj); // Run the interaction
         } else {
             FDSG.debugPrint("warn",`interaction ${targetInteraction} not registered`);
@@ -2029,8 +2152,14 @@ FDSG.registerClickableObject({
     object: "Backpack",
     duration: "released",
     clickFunction: (obj) => {
+        
         let inventoryShowing = FDSG.PlayerInventory._isInventoryShowing;
         FDSG.showInventory(!inventoryShowing);
+        if (inventoryShowing) {
+            gdjs.evtTools.sound.playSound(GameVars.runtimeScene, "zip_closed.wav", false, 50, 1);
+        } else {
+            gdjs.evtTools.sound.playSound(GameVars.runtimeScene, "zip_open.wav", false, 50, 1);
+        }
     },
     hoverEffect: structuredClone(outlineHoverEffect)
 });
@@ -2085,20 +2214,11 @@ FDSG.registerClickableObject({
         const itemPopupData = GameVars._itemPopupData;
         const itemName = itemPopupData.itemObject.getVariables().get("itemName").getAsString();
         const itemDescription = itemPopupData.itemDescriptionText.getString();
-        // const animationData = {
-        //     itemImageName: itemName,
-        //     fromX: itemPopupData.itemObject.getX(),
-        //     fromY: itemPopupData.itemObject.getY(),
-        //     startWidth: itemPopupData.itemObject.getWidth(),
-        //     startHeight: itemPopupData.itemObject.getHeight(),
-        // }
         if (itemPopupData.itemObject.getName() == "StatueCollectible") { // If the item is a figurine (statue)
             FDSG.GameVars.statuesCollected += 1; // Increase statues collected counter
             FDSG.updateStatueCounter();
-            // const statueIcon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0];
-            // animationData.toX = statueIcon.getX() + statueIcon.getCenterX();
-            // animationData.toY = statueIcon.getY() + statueIcon.getCenterY();
-            // FDSG.playItemCollectionAnimation(animationData);
+            const statueIcon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0];
+            FDSG.playObjectShakeAnimation(statueIcon);
             FDSG.collectObject(itemPopupData.itemObject);
         } else {
             FDSG.addItemToInventory(itemName, itemDescription); // Add the item to inventory
@@ -2126,6 +2246,7 @@ FDSG.registerClickableObject({
     clickFunction: (obj) => {
         const targetInteraction = obj.getVariables().get("targetInteraction").getAsString();
         if (targetInteraction in FDSG.Interactions) {
+            FDSG.debugPrint("log", `running interactionFunction ${targetInteraction} from ${obj.getName()}`);
             FDSG.Interactions[targetInteraction].interactionFunction(obj); // Run the interaction
         } else {
             FDSG.debugPrint("warn",`interaction ${targetInteraction} not registered`);
@@ -2135,17 +2256,17 @@ FDSG.registerClickableObject({
 });
 
 };
-gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0x10f3fc0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xc5ad28(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x10f4138 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xc5afc8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2153,93 +2274,127 @@ const Game = GameVars.runtimeScene.getGame();
 
 // INTERACTIONS ############################################################################################################################################
 /*
-Interactions are just an easy way to easily and dynamically allow an InteractionObject (or other objects) to run different code
-based on the value of its "targetInteraction" property and its flags/variables. All this really does is allow me to
-avoid having to make a bunch of unique objects for every interaction.
-!!! If you just want to load an inspection into view without any conditions or extra code, just use an Inspection instead !!!
+    Interactions are just an easy way to easily and dynamically allow an InteractionObject (or other objects) to run different code
+    based on the value of its "targetInteraction" property and its flags/variables. All this really does is allow me to
+    avoid having to make a bunch of unique objects for every interaction.
+    !!! If you just want to load an inspection into view without any conditions or extra code, just use an Inspection instead !!!
 */
 
-function getFlag(obj, flagName, type = null) { // Just a helper function for getting instance flags, since it's going to be pretty common
-    const flag = obj.getVariables().get("flags").getChild(flagName);
-    if (type == null) {
-        return flag;
-    }
-    switch (type) {
-        case("boolean"):
-            return flag.getAsBoolean();
-            break;
-        case("string"):
-            return flag.getAsString();
-            break;
-        case("number"):
-            return flag.getAsNumber();
-    }
-}
-
-
-// Player tries to open chest in FDS North
-FDSG.registerInteraction("FDS North Chest", (obj) => {
-    if (obj.getVariables().get("instanceID").getAsString() == "FDS North Chest") { // Check if the player clicked the chest or the statue
-        const isClosed = getFlag(obj, "isClosed", "boolean");
-        if (isClosed) {
-            if (FDSG.PlayerInventory.selectedItem != "Key") {
-                FDSG.bringInspectionIntoView("closedChest");
-            } else {
-                getFlag(obj, "isClosed").setBoolean(false);
-                obj.setAnimationName("ChestOpen");
-                const keyIndex = FDSG.PlayerInventory.selectedItemIndex;
-                FDSG.PlayerInventory.selectedItem = null;
-                FDSG.removeItemFromInventory(keyIndex);
-                FDSG.bringInspectionIntoView("openChest");
-            }
-        } else {
-            const isStatueCollected = getFlag(obj, "statueCollected", "boolean");
-            if (!isStatueCollected) {
-                FDSG.bringInspectionIntoView("openChest");
-            } else {
-                FDSG.bringInspectionIntoView("emptyChest");
-            }
-        }
-    } else {
-        const chest = FDSG.getInstanceFromID("FDS North Chest");
-        getFlag(chest, "statueCollected").setBoolean(true);
-        FDSG.isInspecting = false;
-    }
-});
-
-
-FDSG.registerInteraction("quoteMinigame", (obj) => {
+FDSG.registerInteraction("QuoteMinigame", (obj) => {
     const instanceID = obj.getVariables().get("instanceID").getAsString();
     if (instanceID == "librarian") {
-        const quoteMinigameFlag = GameVars.runtimeScene.getGame().getVariables().get("MinigameFlags").getChild("Fill In The Quote").getAsBoolean();
+        const quoteMinigameFlag = Game.getVariables().get("MinigameFlags").getChild("Fill In The Quote").getAsBoolean();
         if (quoteMinigameFlag) {
-            FDSG.bringInspectionIntoView("winQuoteMinigame");
+            FDSG.bringInspectionIntoView("WinQuoteMinigame");
         } else {
             FDSG.bringInspectionIntoView("librarian");
         }
-    } else if (instanceID == "quoteButton") {
-        GameVars.isInspecting = false;
+    } else if (instanceID == "QuoteButton") {
         FDSG.loadMinigame("Fill In The Quote");
-    } else if (instanceID == "quoteStatue") {
+    } else if (instanceID == "QuoteStatue") {
         let librarian = FDSG.getInstanceFromID("librarian");
         librarian.getVariables().get("enabled").setBoolean(false);
     }   
 }, true);
+
+
+FDSG.registerInteraction("MarblesMinigame", (obj) => {
+    const instanceID = obj.getVariables().get("instanceID").getAsString();
+    const marblesNPC = FDSG.getInstanceFromID("marblesNPC");
+    switch(instanceID) {
+        case("marblesNPC"): // First time approaching
+            if (Game.getVariables().get("MinigameFlags").getChildNamed("Marbles").getAsBoolean()){ // Player has already won
+                FDSG.bringInspectionIntoView("MarblesMinigameWin");
+            } else if (FDSG.getFlag(marblesNPC, "playerLost", "boolean")) {
+                FDSG.getInstanceFromID("marblesReturnText").setText('"Back for a rematch?"')
+                FDSG.bringInspectionIntoView("MarblesNPCReturn");
+            } else if (FDSG.getFlag(marblesNPC, "hasBeenSpokenTo", "boolean")) { // If the player has spoken to them before
+                const acceptButton = FDSG.getInstanceFromID("marblesReturnAcceptButton");
+                if (FDSG.isItemInInventory("Marbles")) { // If the player found marbles
+                    acceptButton.getVariables().get("enabled").setBoolean(true);
+                    acceptButton.removeEffect("disabled");
+                } else if (acceptButton.getVariables().get("enabled").getAsBoolean()) {
+                        acceptButton.getVariables().get("enabled").setBoolean(false);
+                        acceptButton.addEffect({"effectType":"Brightness","name":"disabled","doubleParameters":{"brightness":0.2}});
+                }
+                FDSG.bringInspectionIntoView("MarblesNPCReturn");
+            } else {
+                FDSG.bringInspectionIntoView("MarblesNPCApproach");
+            }
+            break;
+        case("approachButton"): // Approaching the young man
+                FDSG.bringInspectionIntoView("MarblesNPC");
+            break;
+        case("marblesLeaveButton"): // Leaving
+            FDSG.clearInspectionFromView();
+            break;
+        case("marblesAcceptButton"): // Accepting the game
+            FDSG.getFlag(marblesNPC, "hasBeenSpokenTo").setBoolean(true);
+            if (FDSG.isItemInInventory("Marbles")) { // Player has marbles
+                FDSG.loadMinigame("Marbles");
+            } else {
+                FDSG.bringInspectionIntoView("NoMarbles"); // Player does not have marbles
+            }
+            break;
+        case("marblesReturnAcceptButton"):
+            const acceptButton = FDSG.getInstanceFromID("marblesReturnAcceptButton");
+            FDSG.loadMinigame("Marbles");
+            break;
+        case("marblesFigurine"):
+            marblesNPC.getVariables().get("enabled").setBoolean(false);
+            FDSG.clearInspectionFromView();
+            break;
+    }
+}, true);
 };
-gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList11 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0x10f4138(runtimeScene);
+gdjs.ExplorationCode.userFunc0xc5afc8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc9ad80 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x97ba88 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
+const Game = GameVars.runtimeScene.getGame();
+
+};
+gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0x97ba88(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.eventsList11(runtimeScene);
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList12(runtimeScene);
+}
+
+
+};gdjs.ExplorationCode.userFunc0x953bb8 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData;
+const GameVars = FDSG.GameVars;
+const Game = GameVars.runtimeScene.getGame();
 
 /*
     Here's where you can easily register code to run when returning from a minigame. Check the MinigameFlags Global Variable
@@ -2247,25 +2402,37 @@ const GameVars = FDSG.GameVars;
 */
 
 FDSG.registerOnReturnFromMinigame("Fill In The Quote", () => {
-    const wasCompleted = GameVars.runtimeScene.getGame().getVariables().get("MinigameFlags").getChild("Fill In The Quote").getAsBoolean();
+    const wasCompleted = Game.getVariables().get("MinigameFlags").getChild("Fill In The Quote").getAsBoolean();
     if (wasCompleted) {
         FDSG.bringInspectionIntoView("winQuoteMinigame");
     } else {
         FDSG.bringInspectionIntoView("loseQuoteMinigame");
     }
 });
+
+
+FDSG.registerOnReturnFromMinigame("Marbles", () => {
+    const wasCompleted = Game.getVariables().get("MinigameFlags").getChild("Marbles").getAsBoolean();
+    if (wasCompleted) {
+        FDSG.bringInspectionIntoView("MarblesMinigameWin");
+    } else {
+        const marblesNPC = FDSG.getInstanceFromID("marblesNPC");
+        FDSG.getFlag(marblesNPC, "playerLost").setBoolean(true);
+        FDSG.bringInspectionIntoView("MarblesMinigameLose");
+    }
+});
 };
-gdjs.ExplorationCode.eventsList11 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xc9ad80(runtimeScene);
+gdjs.ExplorationCode.userFunc0x953bb8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x8ea268 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xa3e198 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2302,17 +2469,17 @@ FDSG.registerKeyPressFunction({
     }
 });
 };
-gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0x8ea268(runtimeScene);
+gdjs.ExplorationCode.userFunc0xa3e198(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
 
 {
 
@@ -2324,25 +2491,18 @@ isConditionTrue_0 = false;
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.ExplorationCode.eventsList12(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList15(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
 
 {
 
 
 gdjs.ExplorationCode.eventsList0(runtimeScene);
-}
-
-
-{
-
-
-gdjs.ExplorationCode.eventsList8(runtimeScene);
 }
 
 
@@ -2363,14 +2523,21 @@ gdjs.ExplorationCode.eventsList10(runtimeScene);
 {
 
 
-gdjs.ExplorationCode.eventsList11(runtimeScene);
+gdjs.ExplorationCode.eventsList13(runtimeScene);
 }
 
 
 {
 
 
-gdjs.ExplorationCode.eventsList13(runtimeScene);
+gdjs.ExplorationCode.eventsList14(runtimeScene);
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList16(runtimeScene);
 }
 
 
@@ -2388,7 +2555,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList18 = function(runtimeScene) {
 
 {
 
@@ -2400,13 +2567,13 @@ isConditionTrue_0 = false;
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.ExplorationCode.eventsList14(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList17(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcac2d8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xa5ce98 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -2417,7 +2584,6 @@ if (gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene)) { // Runs only at 
     GameVars.runtimeScene = runtimeScene; // Update the current RuntimeScene object
     FDSG.initScene();
     FDSG.debugPrint("log","Scene initialized");
-    GameVars.isInspecting = false;
     var fadeDuration = GameVars.Constants.TRANSITION_FADE_DURATION;
     if (!Game.getVariables().get("FirstSceneInitialized").getAsBoolean()) { // Fade into the game should be nice and long
         fadeDuration = GameVars.Constants.FIRST_TRANSITION_FADE_DURATION;
@@ -2430,6 +2596,7 @@ var thisLayout = GameVars.currentLayout; // Store the layout to see if it change
 
 if (!GameVars._isFading && GameVars._currentLoadedMinigame != null) { // Check if we're returning from a minigame
     const minigameName = GameVars._currentLoadedMinigame;
+    FDSG.debugPrint("log", `returning from ${minigameName}`);
     if (minigameName in FDSG.OnReturnFromMinigame) {
         FDSG.OnReturnFromMinigame[minigameName](); // Run any registered function
     }
@@ -2438,30 +2605,34 @@ if (!GameVars._isFading && GameVars._currentLoadedMinigame != null) { // Check i
 FDSG.handlePlayerInput(); // Handle all registered functions associated with clicking objects and pressing keys
 if (GameVars._isFading) {
     var fadeEffect = runtimeScene.getInstancesOf("FadeScreen")[0];
-    const fadeDuration = fadeEffect.getVariables().get("FadeDuration").getAsNumber();
-    const fadeOpacity = fadeEffect.getVariables().get("Opacity").getAsNumber();
-    if (fadeDuration < 0 && fadeOpacity >= 1) {
+    let fadeTween = fadeEffect.getBehavior("Tween");
+    if (fadeTween.exists("fadeOut") && fadeTween.hasFinished("fadeOut")) {
         GameVars._isFading = false;
-        gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, runtimeScene.getName());
-    } else if (fadeDuration > 0 && fadeOpacity <= 0) {
-        GameVars._isFading = false;
+        if (GameVars.loadMinigame != null) {
+            let minigame = GameVars.loadMinigame;
+            FDSG.debugPrint("log", `loading minigame ${minigame}`)
+            FDSG.initFade(GameVars.Constants.FIRST_TRANSITION_FADE_DURATION, true); /* Set so the game will fade back in on return */
+            GameVars._currentLoadedMinigame = minigame;
+            GameVars.loadMinigame = null;
+            fadeEffect.deleteFromScene();
+            gdjs.evtTools.runtimeScene.pushScene(GameVars.runtimeScene, minigame);
+        } else {
+            gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, runtimeScene.getName());
+        }
+    } else if (fadeTween.exists("fadeIn") && fadeTween.hasFinished("fadeIn")) {
         fadeEffect.deleteFromScene();
-    } else {
-        const deltaTime = fadeEffect.getElapsedTime(runtimeScene);
-        let newOpacity = fadeOpacity - (1/fadeDuration)*deltaTime;
-        fadeEffect.setEffectDoubleParameter("Opacity", "alpha", newOpacity);
-        fadeEffect.getVariables().get("Opacity").setNumber(newOpacity);
+        GameVars._isFading = false;
     }
 }
 };
-gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
 
-};gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList20 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xcac2d8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xa5ce98(runtimeScene);
 
 }
 
@@ -2497,7 +2668,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.ExplorationCode.eventsList18 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList21 = function(runtimeScene) {
 
 {
 
@@ -2509,14 +2680,14 @@ if (isConditionTrue_0) {
 {
 
 
-gdjs.ExplorationCode.eventsList15(runtimeScene);
+gdjs.ExplorationCode.eventsList18(runtimeScene);
 }
 
 
 {
 
 
-gdjs.ExplorationCode.eventsList17(runtimeScene);
+gdjs.ExplorationCode.eventsList20(runtimeScene);
 }
 
 
@@ -2637,10 +2808,10 @@ gdjs.ExplorationCode.GDInspectionImageBorderObjects1.length = 0;
 gdjs.ExplorationCode.GDInspectionImageBorderObjects2.length = 0;
 gdjs.ExplorationCode.GDInspectionImageBorderObjects3.length = 0;
 gdjs.ExplorationCode.GDInspectionImageBorderObjects4.length = 0;
-gdjs.ExplorationCode.GDInspectionPropObjects1.length = 0;
-gdjs.ExplorationCode.GDInspectionPropObjects2.length = 0;
-gdjs.ExplorationCode.GDInspectionPropObjects3.length = 0;
-gdjs.ExplorationCode.GDInspectionPropObjects4.length = 0;
+gdjs.ExplorationCode.GDImagePropObjects1.length = 0;
+gdjs.ExplorationCode.GDImagePropObjects2.length = 0;
+gdjs.ExplorationCode.GDImagePropObjects3.length = 0;
+gdjs.ExplorationCode.GDImagePropObjects4.length = 0;
 gdjs.ExplorationCode.GDBackpackObjects1.length = 0;
 gdjs.ExplorationCode.GDBackpackObjects2.length = 0;
 gdjs.ExplorationCode.GDBackpackObjects3.length = 0;
@@ -2662,7 +2833,7 @@ gdjs.ExplorationCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects4.length = 0;
 
-gdjs.ExplorationCode.eventsList18(runtimeScene);
+gdjs.ExplorationCode.eventsList21(runtimeScene);
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects3.length = 0;
@@ -2775,10 +2946,10 @@ gdjs.ExplorationCode.GDInspectionImageBorderObjects1.length = 0;
 gdjs.ExplorationCode.GDInspectionImageBorderObjects2.length = 0;
 gdjs.ExplorationCode.GDInspectionImageBorderObjects3.length = 0;
 gdjs.ExplorationCode.GDInspectionImageBorderObjects4.length = 0;
-gdjs.ExplorationCode.GDInspectionPropObjects1.length = 0;
-gdjs.ExplorationCode.GDInspectionPropObjects2.length = 0;
-gdjs.ExplorationCode.GDInspectionPropObjects3.length = 0;
-gdjs.ExplorationCode.GDInspectionPropObjects4.length = 0;
+gdjs.ExplorationCode.GDImagePropObjects1.length = 0;
+gdjs.ExplorationCode.GDImagePropObjects2.length = 0;
+gdjs.ExplorationCode.GDImagePropObjects3.length = 0;
+gdjs.ExplorationCode.GDImagePropObjects4.length = 0;
 gdjs.ExplorationCode.GDBackpackObjects1.length = 0;
 gdjs.ExplorationCode.GDBackpackObjects2.length = 0;
 gdjs.ExplorationCode.GDBackpackObjects3.length = 0;
