@@ -969,36 +969,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/sfx/ui_pop1.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ui_pop1.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_multipop2.mp3",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ui_multipop2.mp3",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_multipop.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ui_multipop.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
         "file": "assets/images/FDS Statue.JPG",
         "kind": "image",
         "metadata": "",
@@ -1079,6 +1049,76 @@
         "kind": "audio",
         "metadata": "",
         "name": "assets\\sfx\\outdoor_ambience.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop3.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sfx/ui_pop3.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop_1_close.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sfx/ui_pop_1_close.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop_1_open.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sfx/ui_pop_1_open.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop_2_close.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sfx/ui_pop_2_close.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop_2_open.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sfx/ui_pop_2_open.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop_3_close.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sfx/ui_pop_3_close.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop_3_open.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sfx/ui_pop_3_open.wav",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,

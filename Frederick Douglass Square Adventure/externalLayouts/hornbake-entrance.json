@@ -71,7 +71,7 @@
             {
               "name": "x",
               "type": "number",
-              "value": 0
+              "value": -36
             },
             {
               "name": "y",
@@ -187,7 +187,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.1343715797161011,
+    "zoomFactor": 0.6672773998330014,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }
