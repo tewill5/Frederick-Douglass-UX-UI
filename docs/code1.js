@@ -189,7 +189,7 @@ gdjs.ExplorationCode.GDExitMinigameButtonObjects3= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0x88d0a8 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0xccbd10 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -217,6 +217,15 @@ FDSG.ObjectGroups = {
         "ItemPopupPickupButton",
         "ItemPopupExitButton",
         "InteractionButton"
+    ],
+    DynamicText: [ // Text objects with properties that are dynamically set at runtime
+        "StatuesCollectedCounter",
+        "HoverTooltip",
+        "InspectionText",
+        "ItemNameText",
+        "ItemDescriptionText",
+        "LocationNameText",
+        "DebugText"
     ]
 }
 };
@@ -225,12 +234,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x88d0a8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xccbd10(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc51928 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xccbb40 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -420,6 +429,43 @@ FDSG.jsToGDVar = function(jsValue, gdVar) {
 }
 
 /**
+ * Sets text properties based on its instance variables
+ *      @param {TextRuntimeObject} textObject The text object to initialize
+ */
+FDSG.initializeTextObject = function(textObject) {
+    const iVars = textObject.getVariables();
+    let innerText = iVars.get("innerText").getAsString();
+    let textAlign = iVars.get("textAlign").getAsString();
+    let fontSize = iVars.get("fontSize").getAsNumber();
+    let outlineColor = iVars.get("outlineColor").getAsString();
+    let outlineThickness = iVars.get("outlineThickness").getAsNumber();
+    let lineHeight = iVars.get("lineHeight").getAsNumber();
+    let isBold = iVars.get("isBold").getAsBoolean();
+    let outlineEnabled = false;
+    if (innerText != "0" && innerText != "null") { textObject.setText(innerText) }
+    if (fontSize != 0) { textObject.setCharacterSize(fontSize) }
+    if (outlineColor != "0") { textObject.setOutlineColor(`rgb(${outlineColor})`); outlineEnabled = true }
+    if (outlineThickness != 0) { textObject.setOutlineThickness(outlineThickness); outlineEnabled = true }
+    if (isBold) { textObject.setBold(true) }
+    textObject.update();
+    if (textAlign == "center" || textAlign == "right") {
+        let x = textObject.getX();
+        let y = textObject.getY();
+        let width = textObject.getWidth();
+        if (textAlign == "center") {
+            textObject.setX(x - width/2);
+        } else {
+            textObject.setX(x - width);
+        }
+    }
+    if (lineHeight !=0) { textObject.setLineHeight(lineHeight)}
+    else { textObject.setLineHeight(textObject.getCharacterSize()*1.15) }
+        /* The default line height seems to be different across devices, so setting it manually
+        like this seems to be the only way to keep it consistent*/ 
+}
+
+
+/**
  * Just a faster way to get object flags. They must be a child of a structure variable named "flags"
  *      @param {RuntimeObject} obj The object instance to check
  *      @param {string} flag The name of the flag
@@ -470,12 +516,12 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc51928(runtimeScene);
+gdjs.ExplorationCode.userFunc0xccbb40(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd4e040 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd7cc8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -517,12 +563,13 @@ FDSG.OnReturnFromMinigame = {}; // Used to hold functions that will run when ret
  */
 FDSG.initScene = function() {
     // Loads proper layouts and initializes necessary values
-    FDSG.debugPrint("log",`initializing ${FDSG.GameVars.currentLayout}`);
+    FDSG.debugPrint("log",`initializing ${GameVars.currentLayout}`);
     gdjs.evtTools.runtimeScene.createObjectsFromExternalLayout(GameVars.runtimeScene, "UI", 0, 0, false); // Load the UI
     gdjs.evtTools.runtimeScene.createObjectsFromExternalLayout(GameVars.runtimeScene, GameVars.currentLayout, 0, 0, false);
         // Load the layout for the current area
         
     // Disable the darkening effects
+    FDSG.debugPrint("log", "initializing layer properties");
     const backgroundLayer = GameVars.runtimeScene.getLayer("Background");
     const objectsLayer = GameVars.runtimeScene.getLayer("SceneObjects");
     const uiLayer = GameVars.runtimeScene.getLayer("UI");
@@ -537,6 +584,7 @@ FDSG.initScene = function() {
         runtimeLayer.show(FDSG.Input.ClickableLayers[layer]);
     }
 
+    FDSG.debugPrint("log", "initializing layout data");
     // Run layout specific functions
     if (!(GameVars.currentLayout in FDSG._LayoutData)) {
         FDSG._LayoutData[GameVars.currentLayout] = {};
@@ -546,29 +594,25 @@ FDSG.initScene = function() {
         layoutData.onLayoutLoad(); // Run layout load function
     }
 
+    FDSG.debugPrint("log", "checking collectibles");
     // COLLECTIBLES HANDLING
     FDSG.removeCollectedObjects(); // Removes any collected objects from the layout
 
     FDSG.updateStatueCounter(); // Update the StatuesCollectedCounter to the proper value
 
     // INSPECTIONS HANDLING
+    FDSG.debugPrint("log", "initializing inspections");
     FDSG._LayoutInspections = FDSG.getLayoutInspections(); // Registers all inspections and their objects for the current layout
     GameVars._loadedInspection = null; // No inspections are loaded on scene init
     GameVars._isInspecting = false; // Reset flag
 
+    FDSG.debugPrint("log", "initializing text objects")
     // Set instance specific innerText on text objects
     // (this has to be done after InstanceGroups are created since changing text changes the size of text objects)
-    for (const instance of FDSG.getAllSceneInstances()) { // Check for text objects and replace their text with the instance specific text
-        if (instance.getVariables().has("innerText")) {
-            const iVars = instance.getVariables();
-            let innerText = iVars.get("innerText").getAsString();
-            instance.setText(innerText); // Replace the text
-            if (iVars.has("fontSize")) { instance.setCharacterSize(iVars.get("fontSize").getAsNumber()) }
-            instance.setLineHeight(instance.getCharacterSize()*1.15);
-                /* The default line height seems to be different across devices, so setting it manually
-                like this seems to be the only way to keep it consistent*/ 
-            if (iVars.has("outlineThickness")) { instance.setOutlineThickness(iVars.get("outlineThickness").getAsNumber()) }
-            if (iVars.has("outlineColor")) {instance.setOutlineColor(iVars.get("outlineColor").getAsString()) }
+    for (const textObject of FDSG.ObjectGroups.DynamicText) {
+        for (const instance of GameVars.runtimeScene.getInstancesOf(textObject)) {
+            // Check for text objects and replace their text with the instance specific text
+            FDSG.initializeTextObject(instance);
         }
     }
 
@@ -810,12 +854,12 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd4e040(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcd7cc8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd4fb78 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd98e80 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1283,12 +1327,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd4fb78(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd98e80(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc8ecf8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd98f50 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1320,9 +1364,10 @@ Object.defineProperty(GameVars, 'isInspecting', {
         inspectionUILayer.show(value);
         FDSG.enableLayerClick(["InspectionObjects", "InspectionUI"], value); // Enable/Disable the relevant layers clicks
         FDSG.enableLayerClick(["UI", "SceneObjects"], !value);
-        FDSG.playSFX("Inspection");
-        if (!value) {
-            FDSG.clearInspectionFromView();
+        if (value) {
+            FDSG.playSFX("Inspection");
+        } else {
+            FDSG.clearInspectionFromView(false);
         } 
     }
 });
@@ -1454,7 +1499,7 @@ FDSG.clearInspectionFromView = function(disableInspecting = true) {
     }
     GameVars._loadedInspection = null;
     if (disableInspecting) {
-        GameVars.isInspecting = null;
+        GameVars.isInspecting = false;
     }
 }
 
@@ -1496,12 +1541,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc8ecf8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd98f50(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x88d830 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd90a10 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1572,12 +1617,12 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x88d830(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd90a10(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x92e298 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd90bc8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2030,12 +2075,12 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x92e298(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd90bc8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x92e360 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdadc78 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2163,12 +2208,12 @@ gdjs.ExplorationCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x92e360(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdadc78(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xaf33e0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd90c90 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2200,12 +2245,12 @@ gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xaf33e0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd90c90(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc53858 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd90e08 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2229,15 +2274,16 @@ FDSG.Sounds.LocationSounds = { // Here we put the sound effect to play for each 
 // This is a simple way to map sound effects to a single name
 FDSG.Sounds.SFX = { 
     Transition: { soundFile: "whoosh4.wav", volume: 50, pitch: .75},
-    Inspection: { soundFile: "ui_multipop.wav", volume: 25, pitch: 1},
+    Inspection: { soundFile: "ui_pop_1_open.wav", volume: 25, pitch: 1},
+    CloseInspection: { soundFile: "ui_pop_1_close.wav", volume: 50, pitch: 1},
     VisibilityToggle: { soundFile: "whoosh1.wav", volume: 50, pitch: .75},
     CloseInventory: { soundFile: "zip_closed.wav", volume: 50, pitch: 1 },
     OpenInventory: { soundFile: "zip_open.wav", volume: 50, pitch: 1 },
     ItemAdded: { soundFile: "zip_closed.wav", volume: 50, pitch: 1 },
     Select: { soundFile: "ui_pop10.wav", volume: 50, pitch: 1 },
     StatueCollected: { soundFile: "win.wav", volume: 50, pitch: 1.5 },
-    ItemPopup: { soundFile: "ui_pop1.wav", volume: 50, pitch: 1 },
-    ClosePopup: { soundFile: "ui_pop5.wav", volume: 50, pitch: 1 },
+    ItemPopup: { soundFile: "ui_pop_3_open.wav", volume: 50, pitch: 1 },
+    ClosePopup: { soundFile: "ui_pop_3_close.wav", volume: 50, pitch: 1 },
     OpenMap: { soundFile: "open_map.wav", volume: 50, pitch: 1 },
     CloseMap: { soundFile: "close_map.wav", volume: 50, pitch: 1 },
     OutdoorAmbience: { soundFile: "outdoor_ambience.wav", volume: 50, pitch: 1},
@@ -2278,7 +2324,7 @@ FDSG.handleLocationSounds = function() {
     }
     let locationSoundName = FDSG.Sounds.LocationSounds[GameVars.currentLayout];
     if (locationSoundName == false) {
-        gdjs.evtTools.sound.stopSoundOnChannel(GameVars.runtimeScene, locationSoundChannel); // Stop the current sound
+        gdjs.evtTools.sound.stopMusicOnChannel(GameVars.runtimeScene, locationSoundChannel); // Stop the current sound
         GameVars.currentLocationSoundData = null;
         return;
     }
@@ -2286,11 +2332,11 @@ FDSG.handleLocationSounds = function() {
     if ( currentSoundData == null || locationSoundData.soundFile != currentSoundData.soundFile
     || locationSoundData.volume != currentSoundData.volume
     || locationSoundData.pitch != currentSoundData.pitch) {
-        let soundOffset = gdjs.evtTools.sound.getSoundOnChannelPlayingOffset(GameVars.runtimeScene, locationSoundChannel);
-        gdjs.evtTools.sound.stopSoundOnChannel(GameVars.runtimeScene, locationSoundChannel); // Stop the current sound
-        gdjs.evtTools.sound.playSoundOnChannel(GameVars.runtimeScene, locationSoundData.soundFile, locationSoundChannel, true, locationSoundData.volume, locationSoundData.pitch);
+        let soundOffset = gdjs.evtTools.sound.getMusicOnChannelPlayingOffset(GameVars.runtimeScene, locationSoundChannel);
+        gdjs.evtTools.sound.stopMusicOnChannel(GameVars.runtimeScene, locationSoundChannel); // Stop the current sound
+        gdjs.evtTools.sound.playMusicOnChannel(GameVars.runtimeScene, locationSoundData.soundFile, locationSoundChannel, true, locationSoundData.volume, locationSoundData.pitch);
         if (currentSoundData != null && locationSoundData.soundFile == currentSoundData.soundFile) {
-            gdjs.evtTools.sound.setSoundOnChannelPlayingOffset(GameVars.runtimeScene, locationSoundChannel, soundOffset);
+            gdjs.evtTools.sound.setMusicOnChannelPlayingOffset(GameVars.runtimeScene, locationSoundChannel, soundOffset);
         }
         GameVars.currentLocationSoundData = locationSoundData;
     }
@@ -2303,7 +2349,7 @@ gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc53858(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd90e08(runtimeScene);
 
 }
 
@@ -2387,7 +2433,7 @@ gdjs.ExplorationCode.eventsList9(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xaf1750 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xccbf18 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2490,6 +2536,7 @@ FDSG.registerClickableObject({
     object: "ExitInspection",
     duration: "released",
     clickFunction: (obj) => {
+        FDSG.playSFX("CloseInspection");
         GameVars.isInspecting = false;
     },
     hoverEffect: structuredClone(outlineHoverEffect)
@@ -2691,12 +2738,12 @@ gdjs.ExplorationCode.eventsList11 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xaf1750(runtimeScene);
+gdjs.ExplorationCode.userFunc0xccbf18(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd4f928 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x8e43d8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2782,12 +2829,12 @@ gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd4f928(runtimeScene);
+gdjs.ExplorationCode.userFunc0x8e43d8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc51c30 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcfd318 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2799,7 +2846,7 @@ gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc51c30(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcfd318(runtimeScene);
 
 }
 
@@ -2820,7 +2867,7 @@ gdjs.ExplorationCode.eventsList13(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xcc6e80 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd99248 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2857,12 +2904,12 @@ gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xcc6e80(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd99248(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc8c270 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdbfaf0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2904,7 +2951,7 @@ gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc8c270(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdbfaf0(runtimeScene);
 
 }
 
@@ -3003,7 +3050,7 @@ gdjs.ExplorationCode.eventsList18(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.ExplorationCode.userFunc0xc8eb30 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xdd10f8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -3030,7 +3077,7 @@ if (!GameVars._isFading && GameVars._currentLoadedMinigame != null) { // Check i
     let locationSoundData = GameVars.currentLocationSoundData;
     if (locationSoundData != null) {
         let locationSoundChannel = GameVars.Constants.LOCATION_SOUND_CHANNEL;
-        gdjs.evtTools.sound.playSoundOnChannel(GameVars.runtimeScene, locationSoundData.soundFile, locationSoundChannel, true, locationSoundData.volume, locationSoundData.pitch);
+        gdjs.evtTools.sound.playMusicOnChannel(GameVars.runtimeScene, locationSoundData.soundFile, locationSoundChannel, true, locationSoundData.volume, locationSoundData.pitch);
     }
     if (minigameName in FDSG.OnReturnFromMinigame) {
         FDSG.OnReturnFromMinigame[minigameName](); // Run any registered function
@@ -3067,7 +3114,7 @@ gdjs.ExplorationCode.eventsList20 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xc8eb30(runtimeScene);
+gdjs.ExplorationCode.userFunc0xdd10f8(runtimeScene);
 
 }
 
@@ -3224,6 +3271,16 @@ gdjs.ExplorationCode.eventsList19(runtimeScene);
 
 
 gdjs.ExplorationCode.eventsList21(runtimeScene);
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+}
+
 }
 
 

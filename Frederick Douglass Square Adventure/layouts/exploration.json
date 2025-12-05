@@ -40,7 +40,7 @@
       ]
     },
     {
-      "name": "CanBeDisabled",
+      "name": "Clickable",
       "objects": [
         {
           "name": "CycleInventoryNext"
@@ -86,6 +86,21 @@
         },
         {
           "name": "Backpack"
+        },
+        {
+          "name": "MapEnterButton"
+        },
+        {
+          "name": "CycleMapNext"
+        },
+        {
+          "name": "CycleMapPrevious"
+        },
+        {
+          "name": "ExitMinigameButton"
+        },
+        {
+          "name": "VisibilityToggle"
         }
       ]
     },
@@ -116,6 +131,32 @@
           "name": "MapEnterButton"
         }
       ]
+    },
+    {
+      "name": "DynamicText",
+      "objects": [
+        {
+          "name": "StatuesCollectedCounter"
+        },
+        {
+          "name": "HoverTooltip"
+        },
+        {
+          "name": "InspectionText"
+        },
+        {
+          "name": "ItemNameText"
+        },
+        {
+          "name": "ItemDescriptionText"
+        },
+        {
+          "name": "DebugText"
+        },
+        {
+          "name": "LocationNameText"
+        }
+      ]
     }
   ],
   "variables": [],
@@ -134,6 +175,36 @@
           "name": "value",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
         }
       ],
       "effects": [
@@ -536,7 +607,38 @@
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "string": "",
@@ -1457,6 +1559,31 @@
           "name": "inspectionName",
           "type": "string",
           "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
         }
       ],
       "effects": [],
@@ -1755,7 +1882,38 @@
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "string": "ItemNameHere",
@@ -1798,7 +1956,38 @@
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "string": "Item Description Goes Here",
@@ -2073,6 +2262,31 @@
           "name": "innerText",
           "type": "string",
           "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
         }
       ],
       "effects": [],
@@ -2344,7 +2558,15 @@
       "name": "VisibilityToggle",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "hasMixedValues": true,
+          "name": "enabled",
+          "persistentUuid": "250185bb-081a-4805-9b8b-cb2361f0a9c1",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "effects": [
         {
           "effectType": "Outline",
@@ -2416,7 +2638,38 @@
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "innerText",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "fontSize",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineThickness",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "outlineColor",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "font",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "textAlign",
+          "type": "string",
+          "value": ""
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "string": "LocationNameHere",
@@ -2565,7 +2818,15 @@
       "name": "CycleMapNext",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "hasMixedValues": true,
+          "name": "enabled",
+          "persistentUuid": "250185bb-081a-4805-9b8b-cb2361f0a9c1",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "effects": [
         {
           "effectType": "Adjustment",
@@ -2643,7 +2904,15 @@
       "name": "CycleMapPrevious",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "hasMixedValues": true,
+          "name": "enabled",
+          "persistentUuid": "250185bb-081a-4805-9b8b-cb2361f0a9c1",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "effects": [
         {
           "effectType": "Adjustment",
@@ -2829,6 +3098,26 @@
     "folderName": "__ROOT",
     "children": [
       {
+        "folderName": "InspectionObjects",
+        "children": [
+          {
+            "objectName": "InspectionText"
+          },
+          {
+            "objectName": "InspectionImage"
+          },
+          {
+            "objectName": "InspectionImageBorder"
+          },
+          {
+            "objectName": "ExitInspection"
+          },
+          {
+            "objectName": "InspectionBackground"
+          }
+        ]
+      },
+      {
         "folderName": "UI",
         "children": [
           {
@@ -2936,7 +3225,7 @@
         ]
       },
       {
-        "folderName": "Clickable",
+        "folderName": "SceneObjects",
         "children": [
           {
             "objectName": "InteractionButton"
@@ -2959,30 +3248,15 @@
         ]
       },
       {
-        "folderName": "Inspection",
+        "folderName": "StaticImages",
         "children": [
           {
-            "objectName": "InspectionText"
+            "objectName": "Background"
           },
           {
-            "objectName": "InspectionImage"
-          },
-          {
-            "objectName": "InspectionImageBorder"
-          },
-          {
-            "objectName": "ExitInspection"
-          },
-          {
-            "objectName": "InspectionBackground"
+            "objectName": "ImageProp"
           }
         ]
-      },
-      {
-        "objectName": "ImageProp"
-      },
-      {
-        "objectName": "Background"
       }
     ]
   },
