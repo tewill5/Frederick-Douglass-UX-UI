@@ -703,16 +703,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/sfx/zip.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\zip.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
         "file": "assets/sfx/zip_closed.wav",
         "kind": "audio",
         "metadata": "",
@@ -797,22 +787,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/ui/toggle_visibility.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/ui/toggle_visibility.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/ui/eye.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/ui/eye.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/ui/ui_background_border_bottom_gold.png",
         "kind": "image",
         "metadata": "",
@@ -866,6 +840,162 @@
         "metadata": "",
         "name": "assets/ui/ui_background_border_bottom.png",
         "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/eye_black.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\eye_black.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/eye_open.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\eye_open.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/fast_whoosh.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\fast_whoosh.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/pickup.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\pickup.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ux_soft.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ux_soft.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/button.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\button.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/close_menu.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\close_menu.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop10.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop10.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop7.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop7.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop5.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop5.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop4.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop4.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop3.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop3.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop2.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop2.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_pop1.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_pop1.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_multipop2.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_multipop2.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/ui_multipop.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\ui_multipop.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
         "userAdded": false
       }
     ]

@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.3437520241612324,
+    "zoomFactor": 0.3673257545058831,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -2318,8 +2318,8 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets/ui/eye_grey.png",
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\eye_open.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -2339,6 +2339,65 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 20,
+      "height": 540,
+      "leftMargin": 20,
+      "name": "MapPopupBackground",
+      "rightMargin": 20,
+      "texture": "assets/ui/ui_background_border_gold.png",
+      "tiled": false,
+      "topMargin": 20,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 960,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "LocationNameText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "ItemNameHere",
+      "font": "assets/fonts/BilkoOpti-Regular.otf",
+      "textAlignment": "left",
+      "characterSize": 40,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "ItemNameHere",
+        "font": "assets/fonts/BilkoOpti-Regular.otf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "center",
+        "characterSize": 40,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -2347,6 +2406,17 @@
       {
         "folderName": "UI",
         "children": [
+          {
+            "folderName": "MapPopup",
+            "children": [
+              {
+                "objectName": "LocationNameText"
+              },
+              {
+                "objectName": "MapPopupBackground"
+              }
+            ]
+          },
           {
             "folderName": "ItemPopup",
             "children": [
@@ -2579,10 +2649,10 @@
       "cameraType": "",
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
-      "isLocked": true,
+      "isLocked": false,
       "name": "InventoryUI",
       "renderingType": "2d",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": []
     },
@@ -2608,6 +2678,34 @@
           "name": "Darken",
           "doubleParameters": {
             "brightness": 0.5
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera2DPlaneMaxDrawingDistance": 5000,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "ActiveDuringInspectionUI",
+      "renderingType": "2d",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Darken",
+          "doubleParameters": {
+            "brightness": 1
           },
           "stringParameters": {},
           "booleanParameters": {}
@@ -2656,7 +2754,7 @@
       "isLocked": false,
       "name": "InspectionUI",
       "renderingType": "2d",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": []
     },
