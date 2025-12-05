@@ -997,6 +997,92 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/images/FDS Statue.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\FDS Statue.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/fds_hornbake_close2.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\fds_hornbake_close2.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/arrow_right.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\arrow_right.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/arrow_left.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\arrow_left.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/gray_rounded_cornerns.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\gray_rounded_cornerns.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/map.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\map.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/close_map.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\close_map.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/open_map.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\open_map.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_entrance_wide.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_entrance_wide.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sfx/outdoor_ambience.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\outdoor_ambience.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ]
   },

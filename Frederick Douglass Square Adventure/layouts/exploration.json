@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.3673257545058831,
+    "zoomFactor": 0.24672586957406328,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -97,6 +97,23 @@
         },
         {
           "name": "InteractionButton"
+        }
+      ]
+    },
+    {
+      "name": "Buttons",
+      "objects": [
+        {
+          "name": "ItemPopupPickupButton"
+        },
+        {
+          "name": "ItemPopupExitButton"
+        },
+        {
+          "name": "InteractionButton"
+        },
+        {
+          "name": "MapEnterButton"
         }
       ]
     }
@@ -397,7 +414,6 @@
       "effects": [
         {
           "effectType": "Adjustment",
-          "folded": true,
           "name": "Disable",
           "doubleParameters": {
             "alpha": 1,
@@ -1827,6 +1843,11 @@
           "name": "enabled",
           "type": "boolean",
           "value": true
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "null"
         }
       ],
       "effects": [],
@@ -1851,6 +1872,11 @@
           "name": "enabled",
           "type": "boolean",
           "value": true
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "null"
         }
       ],
       "effects": [],
@@ -1982,7 +2008,20 @@
           "value": true
         }
       ],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "mapToggled",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "animations": [
         {
@@ -2306,7 +2345,20 @@
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "visibilityToggleEffect",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "animations": [
         {
@@ -2367,7 +2419,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "ItemNameHere",
+      "string": "LocationNameHere",
       "font": "assets/fonts/BilkoOpti-Regular.otf",
       "textAlignment": "left",
       "characterSize": 40,
@@ -2390,7 +2442,7 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "ItemNameHere",
+        "text": "LocationNameHere",
         "font": "assets/fonts/BilkoOpti-Regular.otf",
         "textAlignment": "left",
         "verticalTextAlignment": "center",
@@ -2398,6 +2450,379 @@
         "lineHeight": 0,
         "color": "255;255;255"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "MapImage",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "FDS",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\fds_hornbake_close2.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hornbake",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\hornbake_entrance_wide.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "CycleMapNext",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "Adjustment",
+          "folded": true,
+          "name": "Disabled",
+          "doubleParameters": {
+            "alpha": 1,
+            "blue": 1,
+            "brightness": 0.2,
+            "contrast": 1,
+            "gamma": 1,
+            "green": 1,
+            "red": 1,
+            "saturation": 1
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\ui\\arrow_right.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 5,
+                        "y": 5
+                      },
+                      {
+                        "x": 91,
+                        "y": 5
+                      },
+                      {
+                        "x": 91,
+                        "y": 91
+                      },
+                      {
+                        "x": 5,
+                        "y": 91
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "CycleMapPrevious",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "Adjustment",
+          "name": "Disabled",
+          "doubleParameters": {
+            "alpha": 1,
+            "blue": 1,
+            "brightness": 0.2,
+            "contrast": 1,
+            "gamma": 1,
+            "green": 1,
+            "red": 1,
+            "saturation": 1
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\ui\\arrow_left.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 5,
+                        "y": 5
+                      },
+                      {
+                        "x": 91,
+                        "y": 5
+                      },
+                      {
+                        "x": 91,
+                        "y": 91
+                      },
+                      {
+                        "x": 5,
+                        "y": 91
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "ExitMap",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Effect",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\map.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "MapEnterButton",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "UMDButton",
+      "variables": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "null"
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Disabled",
+          "doubleParameters": {
+            "brightness": 0.5
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "content": {
+        "LabelText": "Go To Location"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 32,
+      "height": 32,
+      "leftMargin": 32,
+      "name": "MapImageBorder",
+      "rightMargin": 32,
+      "texture": "assets\\ui\\gray_rounded_cornerns.png",
+      "tiled": false,
+      "topMargin": 32,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 64,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
     }
   ],
   "objectsFolderStructure": {
@@ -2409,6 +2834,24 @@
           {
             "folderName": "MapPopup",
             "children": [
+              {
+                "objectName": "ExitMap"
+              },
+              {
+                "objectName": "MapEnterButton"
+              },
+              {
+                "objectName": "MapImage"
+              },
+              {
+                "objectName": "MapImageBorder"
+              },
+              {
+                "objectName": "CycleMapNext"
+              },
+              {
+                "objectName": "CycleMapPrevious"
+              },
               {
                 "objectName": "LocationNameText"
               },
@@ -2528,10 +2971,10 @@
             "objectName": "InspectionImageBorder"
           },
           {
-            "objectName": "InspectionBackground"
+            "objectName": "ExitInspection"
           },
           {
-            "objectName": "ExitInspection"
+            "objectName": "InspectionBackground"
           }
         ]
       },
@@ -2670,7 +3113,7 @@
       "isLocked": false,
       "name": "UI",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": [
         {
@@ -2698,7 +3141,7 @@
       "isLocked": false,
       "name": "ActiveDuringInspectionUI",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": [
         {
@@ -2754,7 +3197,7 @@
       "isLocked": false,
       "name": "InspectionUI",
       "renderingType": "2d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": []
     },
