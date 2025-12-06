@@ -1216,7 +1216,6 @@
                   "colorG": 176,
                   "colorR": 74,
                   "creationTime": 0,
-                  "folded": true,
                   "name": "Inspections and Interactions",
                   "source": "",
                   "type": "BuiltinCommonInstructions::Group",
@@ -1237,6 +1236,7 @@
                         "Object.assign(GameVars, {",
                         "    _loadedInspection: null, // Used to track which Inspection is currently loaded",
                         "    _isInspecting: false,",
+                        "    _previousInspections: [] // Used for sub-inspections and info popups",
                         "});",
                         "",
                         "Object.defineProperty(GameVars, 'isInspecting', {",
@@ -1257,6 +1257,7 @@
                         "        if (value) {",
                         "            FDSG.playSFX(\"Inspection\");",
                         "        } else {",
+                        "            GameVars._previousInspections = [];",
                         "            FDSG.clearInspectionFromView(false);",
                         "        } ",
                         "    }",
@@ -1338,8 +1339,13 @@
                         "        FDSG.debugPrint(`Inspection ${inspectionName} not registered`);",
                         "        return;",
                         "    }",
-                        "    if (GameVars._loadedInspection != null) { ",
+                        "    if (GameVars._loadedInspection != null) {",
+                        "        GameVars._previousInspections.push(GameVars._loadedInspection); // Store the previous Inspection",
                         "        FDSG.clearInspectionFromView(); // Clear any currently loaded inspection",
+                        "    }",
+                        "    if (GameVars.isItemPopupShowing) {",
+                        "        GameVars._isItemPopupShowing = false;",
+                        "        GameVars._previousInspections.push(\"ItemPopup\");",
                         "    }",
                         "    FDSG.debugPrint(`Loading inspection ${inspectionName}`);",
                         "    const cameraWidth = gdjs.evtTools.camera.getCameraWidth(GameVars.runtimeScene, \"\", 0); // Get camera properties to properly center Inspections",
@@ -1744,6 +1750,19 @@
                         "        pickupButton.hide(false);",
                         "        pickupButton.getVariables().get(\"enabled\").setBoolean(true);",
                         "        leaveButton.setX(720); // Move the \"leave\" button to the center of the screen",
+                        "    }",
+                        "    const itemInfoObject = FDSG.getInstanceFromID(\"itemPopupInfo\");",
+                        "    // Here we see if the item has any infoText, which is basically just a special Inspection that allows items to show educational text",
+                        "    if (itemObject.getVariables().has(\"infoText\") && itemObject.getVariables().get(\"infoText\").getAsString() != \"null\") {",
+                        "        const infoText = itemObject.getVariables().get(\"infoText\").getAsString();",
+                        "        const infoTextObject = FDSG.getInstanceFromID(\"infoPopupText\");",
+                        "        itemInfoObject.hide(false);",
+                        "        itemInfoObject.getVariables().get(\"enabled\").setBoolean(true);",
+                        "        infoTextObject.setText(infoText);",
+                        "        infoTextObject.setLineHeight(infoTextObject.getCharacterSize()*1.15);",
+                        "    } else {",
+                        "        itemInfoObject.hide(true);",
+                        "        itemInfoObject.getVariables().get(\"enabled\").setBoolean(false);",
                         "    }",
                         "    FDSG.playSFX(\"ItemPopup\");",
                         "    GameVars.isItemPopupShowing = true;",
@@ -2326,7 +2345,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Clickable Object Registration",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -2424,10 +2442,41 @@
                     "    duration: \"released\",",
                     "    clickFunction: (obj) => {",
                     "        const targetInspection = obj.getVariables().get(\"targetInspection\").getAsString();",
+                    "        const exitInspect = GameVars.runtimeScene.getInstancesOf(\"ExitInspection\")[0];",
+                    "        if (obj.getVariables().has(\"instanceID\") && obj.getVariables().get(\"instanceID\").getAsString() == \"itemPopupInfo\") {",
+                    "            GameVars._previousInspections.push(\"itemPopup\");",
+                    "            GameVars.isItemPopupShowing = false;",
+                    "            exitInspect.getVariables().get(\"enabled\").setBoolean(false);",
+                    "            exitInspect.hide(true);",
+                    "        } else {",
+                    "            exitInspect.getVariables().get(\"enabled\").setBoolean(true);",
+                    "            exitInspect.hide(false);",
+                    "        }",
                     "        FDSG.bringInspectionIntoView(targetInspection);",
                     "        GameVars.isInspecting = true;",
                     "    },",
                     "    cursor: \"help\",",
+                    "    hoverEffect: structuredClone(outlineHoverEffect)",
+                    "});",
+                    "",
+                    "FDSG.registerClickableObject({",
+                    "    object: \"PreviousInspection\",",
+                    "    duration: \"released\",",
+                    "    clickFunction: (obj) => {",
+                    "        if (GameVars._previousInspections.length == 0) {",
+                    "            GameVars.isInspecting = false;",
+                    "            return;",
+                    "        }",
+                    "        const previousInspection = GameVars._previousInspections.pop();",
+                    "        if (previousInspection == \"itemPopup\") {",
+                    "            GameVars.isItemPopupShowing = true;",
+                    "            GameVars.isInspecting = false;",
+                    "        } else {",
+                    "            FDSG.bringInspectionIntoView(previousInspection);",
+                    "            GameVars._previousInspections.pop(); // Make sure the current inspection is removed ",
+                    "        }",
+                    "    },",
+                    "    cursor: \"pointer\",",
                     "    hoverEffect: structuredClone(outlineHoverEffect)",
                     "});",
                     "",
@@ -2943,7 +2992,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Main Game Loop",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3052,6 +3100,267 @@
                 "=",
                 "Buttons.labelText",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "DEBUG",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Num1\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "LayerVisible"
+                      },
+                      "parameters": [
+                        "",
+                        "\"InspectionObjects\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "HideLayer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"InspectionObjects\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "LayerVisible"
+                      },
+                      "parameters": [
+                        "",
+                        "\"InspectionObjects\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ShowLayer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"InspectionObjects\""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "",
+                    "DebugCamera",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"c\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "DebugCamera",
+                    "CameraWidth()/2",
+                    "CameraHeight()/2",
+                    "\"InspectionObjects\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "",
+                    "DebugCamera",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "CentreCamera"
+                  },
+                  "parameters": [
+                    "",
+                    "DebugCamera",
+                    "",
+                    "\"InspectionObjects\"",
+                    "0"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Left\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreX"
+                      },
+                      "parameters": [
+                        "DebugCamera",
+                        "-",
+                        "5"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Up\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreY"
+                      },
+                      "parameters": [
+                        "DebugCamera",
+                        "-",
+                        "5"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Right\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreX"
+                      },
+                      "parameters": [
+                        "DebugCamera",
+                        "+",
+                        "5"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Down\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreY"
+                      },
+                      "parameters": [
+                        "DebugCamera",
+                        "+",
+                        "5"
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ]

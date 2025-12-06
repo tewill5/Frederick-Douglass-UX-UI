@@ -1139,6 +1139,30 @@
         "name": "assets/images/IMG_0895.jpg",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/textures/circle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\textures\\circle.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/questionmark.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\questionmark.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/arrow_left_small.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\arrow_left_small.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },

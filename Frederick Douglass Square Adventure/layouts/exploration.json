@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.21607397323875494,
+    "zoomFactor": 0.17130934511241908,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -1627,6 +1627,11 @@
           "name": "enabled",
           "type": "boolean",
           "value": true
+        },
+        {
+          "name": "infoText",
+          "type": "string",
+          "value": "null"
         }
       ],
       "effects": [],
@@ -1782,7 +1787,7 @@
           ]
         },
         {
-          "name": "Return",
+          "name": "InfoPopup",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1791,7 +1796,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets/ui/arrow_left_small.png",
+                  "image": "assets\\ui\\questionmark.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -3104,6 +3109,107 @@
       "variables": [],
       "effects": [],
       "behaviors": []
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "DebugCamera",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\textures\\circle.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 256,
+                        "y": 0
+                      },
+                      {
+                        "x": 256,
+                        "y": 256
+                      },
+                      {
+                        "x": 0,
+                        "y": 256
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "PreviousInspection",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\ui\\arrow_left_small.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -3112,6 +3218,9 @@
       {
         "folderName": "InspectionObjects",
         "children": [
+          {
+            "objectName": "PreviousInspection"
+          },
           {
             "objectName": "InspectionText"
           },
@@ -3269,6 +3378,9 @@
             "objectName": "ImageProp"
           }
         ]
+      },
+      {
+        "objectName": "DebugCamera"
       }
     ]
   },
@@ -3519,7 +3631,7 @@
       "isLocked": false,
       "name": "ItemPopup",
       "renderingType": "2d",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": []
     },

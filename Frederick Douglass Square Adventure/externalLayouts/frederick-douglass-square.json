@@ -460,34 +460,6 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 64,
-      "keepRatio": true,
-      "layer": "InspectionObjects",
-      "name": "InspectionObject",
-      "persistentUuid": "93da81a5-4473-4d5c-9da8-50462c462856",
-      "width": 64,
-      "x": 2368,
-      "y": 592,
-      "zOrder": 20,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "QuotesInspect"
-        }
-      ]
-    },
-    {
-      "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
@@ -505,34 +477,6 @@
           "name": "inspectionName",
           "type": "string",
           "value": "QuoteInspect2"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 64,
-      "keepRatio": true,
-      "layer": "InspectionObjects",
-      "name": "InspectionObject",
-      "persistentUuid": "c5808101-60af-444c-a53f-a02017daf154",
-      "width": 64,
-      "x": 3344,
-      "y": 592,
-      "zOrder": 20,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "QuotesInspect"
         }
       ]
     },
@@ -561,34 +505,6 @@
           "name": "inspectionName",
           "type": "string",
           "value": "QuoteInspect2"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 64,
-      "keepRatio": true,
-      "layer": "InspectionObjects",
-      "name": "InspectionObject",
-      "persistentUuid": "4237493e-c608-497c-9fae-9dd3dc30c878",
-      "width": 64,
-      "x": 4320,
-      "y": 592,
-      "zOrder": 20,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetInspection",
-          "type": "string",
-          "value": "QuotesInspect"
         }
       ]
     },
@@ -683,7 +599,7 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "You see a young game programmer playing with a set of marbles. He appears to be holding a small figurine of Frederick Douglass."
+          "value": "You see a young programmer playing with a set of marbles. He appears to be holding a small figurine of Frederick Douglass."
         },
         {
           "name": "inspectionName",
@@ -1080,7 +996,7 @@
         {
           "name": "innerText",
           "type": "string",
-          "value": "\"Well, looks like you beat me fair and square. Here, you've earned it.\""
+          "value": "\"Well, looks like you beat me fair and square. Here, you've earned it. Did you know that Frederick Douglass learned how to read while playing games like this?\""
         },
         {
           "name": "inspectionName",
@@ -1244,6 +1160,55 @@
           "value": "MarblesMinigameWin"
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "PreviousInspection",
+      "persistentUuid": "91bf050f-fafd-4b51-805e-c363fb209119",
+      "width": 0,
+      "x": 2384,
+      "y": 608,
+      "zOrder": 41,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "PreviousInspection",
+      "persistentUuid": "6331dad2-e212-47f3-b295-efbbf2548fca",
+      "width": 64,
+      "x": 3360,
+      "y": 608,
+      "zOrder": 42,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "InspectionObjects",
+      "name": "PreviousInspection",
+      "persistentUuid": "9b3b62d0-31cc-443b-8e0c-d9c8537a0dda",
+      "width": 0,
+      "x": 4336,
+      "y": 608,
+      "zOrder": 43,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -1258,7 +1223,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.3325387091250822,
+    "zoomFactor": 0.43357743047024444,
     "windowMask": false,
     "selectedLayer": "InspectionObjects"
   }
