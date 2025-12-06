@@ -589,6 +589,23 @@
           "value": "infoPopup"
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 2,
+      "height": 104,
+      "keepRatio": true,
+      "layer": "ActiveDuringInspectionUI",
+      "name": "SoundToggle",
+      "persistentUuid": "5e5473c3-4771-4a32-a8a4-dfdf61c6a7fe",
+      "width": 104,
+      "x": 1144,
+      "y": -8,
+      "zOrder": 33,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -603,8 +620,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.8993607583666934,
+    "zoomFactor": 0.713037763069065,
     "windowMask": false,
-    "selectedLayer": "InspectionObjects"
+    "selectedLayer": "ActiveDuringInspectionUI"
   }
 }
