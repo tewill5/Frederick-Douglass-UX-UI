@@ -500,8 +500,6 @@ gdjs.Painting_32PuzzleCode.GDStartButtonObjects1.length = k;
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("ExitMinigameButton"), gdjs.Painting_32PuzzleCode.GDExitMinigameButtonObjects1);
 /* Reuse gdjs.Painting_32PuzzleCode.GDStartButtonObjects1 */
-{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
-}
 {runtimeScene.getScene().getVariables().getFromIndex(3).setBoolean(true);
 }
 {gdjs.evtTools.camera.hideLayer(runtimeScene, "Tutorial");
@@ -600,8 +598,6 @@ gdjs.Painting_32PuzzleCode.GDStayButtonObjects2.length = k;
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("LeaveButton"), gdjs.Painting_32PuzzleCode.GDLeaveButtonObjects2);
 /* Reuse gdjs.Painting_32PuzzleCode.GDStayButtonObjects2 */
-{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
-}
 {for(var i = 0, len = gdjs.Painting_32PuzzleCode.GDLeaveButtonObjects2.length ;i < len;++i) {
     gdjs.Painting_32PuzzleCode.GDLeaveButtonObjects2[i].Activate(false, null);
 }
@@ -632,8 +628,6 @@ for (var i = 0, k = 0, l = gdjs.Painting_32PuzzleCode.GDLeaveButtonObjects1.leng
 }
 gdjs.Painting_32PuzzleCode.GDLeaveButtonObjects1.length = k;
 if (isConditionTrue_0) {
-{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
-}
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }
 }
@@ -1261,8 +1255,6 @@ for (var i = 0, k = 0, l = gdjs.Painting_32PuzzleCode.GDLeaveButtonObjects1.leng
 }
 gdjs.Painting_32PuzzleCode.GDLeaveButtonObjects1.length = k;
 if (isConditionTrue_0) {
-{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\ui_pop3.wav", false, 50, 1);
-}
 {gdjs.evtTools.runtimeScene.popScene(runtimeScene);
 }
 }
@@ -1284,7 +1276,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "gameOver") >= 3.5;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15453428);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15135372);
 }
 }
 }
