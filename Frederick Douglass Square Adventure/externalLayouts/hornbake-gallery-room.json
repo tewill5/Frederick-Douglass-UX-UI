@@ -1,191 +1,35 @@
 {
   "associatedLayout": "Exploration",
-  "name": "Hornbake Entrance",
+  "name": "Hornbake Gallery Room",
   "instances": [
     {
       "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "Background",
-      "name": "Background",
-      "persistentUuid": "f5d0205d-4ccd-4dde-9851-5867884be3e7",
+      "layer": "SceneObjects",
+      "name": "Background4",
+      "persistentUuid": "e64f7c1c-036a-4169-a1a2-2cfd3cacca22",
       "width": 0,
       "x": 0,
       "y": 0,
-      "zOrder": 2,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
+      "zOrder": 3,
+      "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
     },
     {
-      "angle": 0,
+      "angle": 270,
       "customSize": false,
       "flippedX": true,
       "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "TransitionObject",
-      "persistentUuid": "f4a2d1d5-d8fd-44b3-9163-13353bc626b9",
+      "persistentUuid": "2be50eb4-aac1-4b29-8cea-8a17c85cbe70",
       "width": 0,
-      "x": 48,
-      "y": 416,
-      "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetLayout",
-          "type": "string",
-          "value": "Frederick Douglass Square"
-        },
-        {
-          "name": "hoverTooltip",
-          "type": "structure",
-          "children": [
-            {
-              "name": "font",
-              "type": "string",
-              "value": ""
-            },
-            {
-              "name": "fontSize",
-              "type": "number",
-              "value": 25
-            },
-            {
-              "name": "text",
-              "type": "string",
-              "value": "null"
-            },
-            {
-              "name": "textAlign",
-              "type": "string",
-              "value": "left"
-            },
-            {
-              "name": "x",
-              "type": "number",
-              "value": -36
-            },
-            {
-              "name": "y",
-              "type": "number",
-              "value": -86
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "angle": 54,
-      "customSize": false,
-      "flippedX": true,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "TransitionObject",
-      "persistentUuid": "f9d1d9ef-460b-4f3d-8e2b-9fa43990c471",
-      "width": 0,
-      "x": 333,
-      "y": 349,
-      "zOrder": 4,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 0
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetLayout",
-          "type": "string",
-          "value": "Hornbake Stairwell Main Floor"
-        },
-        {
-          "name": "hoverTooltip",
-          "type": "structure",
-          "children": [
-            {
-              "name": "font",
-              "type": "string",
-              "value": ""
-            },
-            {
-              "name": "fontSize",
-              "type": "number",
-              "value": 25
-            },
-            {
-              "name": "text",
-              "type": "string",
-              "value": "To Stairwell"
-            },
-            {
-              "name": "textAlign",
-              "type": "string",
-              "value": "center"
-            },
-            {
-              "name": "x",
-              "type": "number",
-              "value": 0
-            },
-            {
-              "name": "y",
-              "type": "number",
-              "value": -86
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 0,
-      "height": 32,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "c159502b-b986-47db-8a81-7c0f97fa7dd4",
-      "width": 32,
-      "x": 1001,
-      "y": 375,
-      "zOrder": 5,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "itemDescription",
-          "type": "string",
-          "value": "A bag of colorful marbles."
-        },
-        {
-          "name": "itemName",
-          "type": "string",
-          "value": "Marbles"
-        }
-      ]
-    },
-    {
-      "angle": 128,
-      "customSize": false,
-      "flippedX": true,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "TransitionObject",
-      "persistentUuid": "cd71f334-5e21-4a82-93eb-4fbdbeafdae3",
-      "width": 0,
-      "x": 499,
-      "y": 381,
+      "x": 432,
+      "y": 624,
       "zOrder": 4,
       "numberProperties": [
         {
@@ -237,6 +81,70 @@
           ]
         }
       ]
+    },
+    {
+      "angle": 45,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "eda10f14-7371-4c8b-9402-23c5a5cf3f06",
+      "width": 0,
+      "x": 1040,
+      "y": 560,
+      "zOrder": 4,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 0
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Hornbake Back Gallery Room"
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "font",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "fontSize",
+              "type": "number",
+              "value": 25
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "View Back"
+            },
+            {
+              "name": "textAlign",
+              "type": "string",
+              "value": "center"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -86
+            }
+          ]
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -251,7 +159,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6897782140104538,
+    "zoomFactor": 0.5843784410740955,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

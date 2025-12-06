@@ -62,6 +62,29 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 52,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "6caaa88b-a871-4497-be47-1b9125188a62",
+      "width": 0,
+      "x": 947,
+      "y": 397,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Hornbake Exit"
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -76,7 +99,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.9934433498259619,
+    "zoomFactor": 0.7876290101673792,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

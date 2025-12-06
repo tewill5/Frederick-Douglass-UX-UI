@@ -1123,6 +1123,110 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/images/OutsideSpecialCollections1_Hornbake.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\OutsideSpecialCollections1_Hornbake.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/OutsideSpecialCollections1_Hornbake_Resized.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\OutsideSpecialCollections1_Hornbake_Resized.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_OutsideSpecialCollections1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_OutsideSpecialCollections1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_LostAndFoundDesk.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_LostAndFoundDesk.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_SpecialCollectionsInside1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_SpecialCollectionsInside1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_GalleryRoom.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_GalleryRoom.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_exit_hall.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_exit_hall.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_MarylandRoomLeft.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_MarylandRoomLeft.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_MarylandRoomRight.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_MarylandRoomRight.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_MarylandRoomRightBack.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_MarylandRoomRightBack.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_MarylandRoomBack.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_MarylandRoomBack.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_MarylandRoomLeftBack.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_MarylandRoomLeftBack.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_GalleryRoomBack.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_GalleryRoomBack.jpg",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -1322,6 +1426,50 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalLayouts/layouttemplate-duplicate-me"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-back-gallery-room"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-back-left-maryland-room"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-back-maryland-room"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-back-right-maryland-room"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-right-side-maryland-room"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-left-side-maryland-room"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-exit"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-gallery-room"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-maryland-room-entrance"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-lost-and-found-desk"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-special-collections-entrance"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,

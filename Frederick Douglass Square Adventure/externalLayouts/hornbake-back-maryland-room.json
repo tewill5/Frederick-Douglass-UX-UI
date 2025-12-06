@@ -1,99 +1,35 @@
 {
   "associatedLayout": "Exploration",
-  "name": "Hornbake Entrance",
+  "name": "Hornbake Back Maryland Room",
   "instances": [
     {
       "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "Background",
-      "name": "Background",
-      "persistentUuid": "f5d0205d-4ccd-4dde-9851-5867884be3e7",
+      "layer": "SceneObjects",
+      "name": "Background9",
+      "persistentUuid": "713f76ab-a379-4e20-99a0-cc8923c5425f",
       "width": 0,
       "x": 0,
       "y": 0,
-      "zOrder": 2,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
+      "zOrder": 3,
+      "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
     },
     {
-      "angle": 0,
+      "angle": 270,
       "customSize": false,
       "flippedX": true,
       "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "TransitionObject",
-      "persistentUuid": "f4a2d1d5-d8fd-44b3-9163-13353bc626b9",
+      "persistentUuid": "562fbb12-15f3-48be-acf2-e19c34c1d463",
       "width": 0,
-      "x": 48,
-      "y": 416,
-      "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "targetLayout",
-          "type": "string",
-          "value": "Frederick Douglass Square"
-        },
-        {
-          "name": "hoverTooltip",
-          "type": "structure",
-          "children": [
-            {
-              "name": "font",
-              "type": "string",
-              "value": ""
-            },
-            {
-              "name": "fontSize",
-              "type": "number",
-              "value": 25
-            },
-            {
-              "name": "text",
-              "type": "string",
-              "value": "null"
-            },
-            {
-              "name": "textAlign",
-              "type": "string",
-              "value": "left"
-            },
-            {
-              "name": "x",
-              "type": "number",
-              "value": -36
-            },
-            {
-              "name": "y",
-              "type": "number",
-              "value": -86
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "angle": 54,
-      "customSize": false,
-      "flippedX": true,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "TransitionObject",
-      "persistentUuid": "f9d1d9ef-460b-4f3d-8e2b-9fa43990c471",
-      "width": 0,
-      "x": 333,
-      "y": 349,
+      "x": 576,
+      "y": 624,
       "zOrder": 4,
       "numberProperties": [
         {
@@ -106,7 +42,7 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "Hornbake Stairwell Main Floor"
+          "value": "Hornbake Back Right Maryland Room"
         },
         {
           "name": "hoverTooltip",
@@ -125,7 +61,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "To Stairwell"
+              "value": "View Back Right Wall"
             },
             {
               "name": "textAlign",
@@ -147,45 +83,17 @@
       ]
     },
     {
-      "angle": 0,
-      "customSize": true,
-      "depth": 0,
-      "height": 32,
-      "keepRatio": true,
-      "layer": "SceneObjects",
-      "name": "ItemObject",
-      "persistentUuid": "c159502b-b986-47db-8a81-7c0f97fa7dd4",
-      "width": 32,
-      "x": 1001,
-      "y": 375,
-      "zOrder": 5,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "itemDescription",
-          "type": "string",
-          "value": "A bag of colorful marbles."
-        },
-        {
-          "name": "itemName",
-          "type": "string",
-          "value": "Marbles"
-        }
-      ]
-    },
-    {
-      "angle": 128,
+      "angle": 67,
       "customSize": false,
       "flippedX": true,
       "height": 0,
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "TransitionObject",
-      "persistentUuid": "cd71f334-5e21-4a82-93eb-4fbdbeafdae3",
+      "persistentUuid": "41b281ca-d80f-4a55-a73a-25b32f1b7f5b",
       "width": 0,
-      "x": 499,
-      "y": 381,
+      "x": 575,
+      "y": 369,
       "zOrder": 4,
       "numberProperties": [
         {
@@ -198,7 +106,7 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "Hornbake Special Collections Entrance"
+          "value": "Hornbake Back Left Maryland Room"
         },
         {
           "name": "hoverTooltip",
@@ -217,7 +125,7 @@
             {
               "name": "text",
               "type": "string",
-              "value": "To Special Collections"
+              "value": "View Back Left Wall"
             },
             {
               "name": "textAlign",
@@ -251,7 +159,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6897782140104538,
+    "zoomFactor": 0.7370816317994066,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }
