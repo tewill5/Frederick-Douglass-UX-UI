@@ -703,6 +703,16 @@
         "userAdded": false
       },
       {
+        "file": "assets/sfx/zip.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\sfx\\zip.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
         "file": "assets/sfx/zip_closed.wav",
         "kind": "audio",
         "metadata": "",
@@ -787,6 +797,22 @@
         "userAdded": false
       },
       {
+        "file": "assets/ui/toggle_visibility.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/toggle_visibility.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/eye.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ui/eye.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
         "file": "assets/ui/ui_background_border_bottom_gold.png",
         "kind": "image",
         "metadata": "",
@@ -843,285 +869,99 @@
         "userAdded": false
       },
       {
-        "file": "assets/ui/eye_black.png",
+        "file": "029.JPG",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\ui\\eye_black.png",
+        "name": "029.JPG",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/ui/eye_open.png",
+        "file": "Stamp Testudo Statue.JPG",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\ui\\eye_open.png",
+        "name": "Stamp Testudo Statue.JPG",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/sfx/fast_whoosh.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\fast_whoosh.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/pickup.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\pickup.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ux_soft.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ux_soft.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/button.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\button.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/close_menu.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\close_menu.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop10.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ui_pop10.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop7.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ui_pop7.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop5.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ui_pop5.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop4.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ui_pop4.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop3.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ui_pop3.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop2.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\ui_pop2.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/images/FDS Statue.JPG",
+        "file": "IMG_0959.jpg",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\images\\FDS Statue.JPG",
+        "name": "IMG_0959.jpg",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/images/fds_hornbake_close2.jpg",
+        "file": "IMG_0988.jpg",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\images\\fds_hornbake_close2.jpg",
+        "name": "IMG_0988.jpg",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/ui/arrow_right.png",
+        "file": "IMG_0899.jpg",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\ui\\arrow_right.png",
+        "name": "IMG_0899.jpg",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/ui/arrow_left.png",
+        "file": "IMG_0902.jpg",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\ui\\arrow_left.png",
+        "name": "IMG_0902.jpg",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/ui/gray_rounded_cornerns.png",
+        "file": "IMG_0954.jpg",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\ui\\gray_rounded_cornerns.png",
+        "name": "IMG_0954.jpg",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/ui/map.png",
+        "file": "IMG_0987.jpg",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\ui\\map.png",
+        "name": "IMG_0987.jpg",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/sfx/close_map.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\close_map.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/open_map.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets\\sfx\\open_map.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/images/hornbake_entrance_wide.jpg",
+        "file": "IMG_0979.jpg",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\images\\hornbake_entrance_wide.jpg",
+        "name": "IMG_0979.jpg",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/sfx/outdoor_ambience.wav",
-        "kind": "audio",
+        "file": "IMG_0980.jpg",
+        "kind": "image",
         "metadata": "",
-        "name": "assets\\sfx\\outdoor_ambience.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
+        "name": "IMG_0980.jpg",
+        "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/sfx/ui_pop3.wav",
-        "kind": "audio",
+        "file": "IMG_0986.jpg",
+        "kind": "image",
         "metadata": "",
-        "name": "assets/sfx/ui_pop3.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
+        "name": "IMG_0986.jpg",
+        "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/sfx/ui_pop_1_close.wav",
-        "kind": "audio",
+        "file": "IMG_0945.jpg",
+        "kind": "image",
         "metadata": "",
-        "name": "assets/sfx/ui_pop_1_close.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop_1_open.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets/sfx/ui_pop_1_open.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop_2_close.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets/sfx/ui_pop_2_close.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop_2_open.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets/sfx/ui_pop_2_open.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop_3_close.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets/sfx/ui_pop_3_close.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/sfx/ui_pop_3_open.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "assets/sfx/ui_pop_3_open.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
+        "name": "IMG_0945.jpg",
+        "smoothed": true,
         "userAdded": false
       }
     ]
@@ -1334,6 +1174,54 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalLayouts/hornbake-stairwell-main-floor"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/stamp-entrance"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/stamp-main-hallway"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hallway-to-stamp-art-gallery"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/entrance-to-stamp-art-gallery"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/inside-art-gallery1"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/inside-art-gallery2"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hallway-to-mica1"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hallway-to-mica2"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hallway-to-mica3"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/entrance-to-mica"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/inside-mica1"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/inside-mica2"
     }
   ]
 }
