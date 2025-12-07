@@ -2,11 +2,14 @@
   "name": "The Frederick Douglass Square Adventure",
   "short_name": "The Frederick Douglass Square Adventure",
   "id": "com.example.gamename",
-  "description": "",
+  "description": "An adventure around UMD to restore the legacy of Frederick Douglass",
   "orientation": "landscape",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "black",
   "categories": ["games", "entertainment"],
-  "icons": []
+  "icons": [{
+        "src": "gold_frederick_douglass_statue.png",
+        "sizes": "512x512"
+      }]
 }

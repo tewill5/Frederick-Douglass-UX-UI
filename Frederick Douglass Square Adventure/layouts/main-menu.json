@@ -574,20 +574,20 @@
         },
         {
           "type": {
-            "value": "TouchSimulateMouse"
-          },
-          "parameters": [
-            "",
-            "no"
-          ]
-        },
-        {
-          "type": {
             "value": "HideLayer"
           },
           "parameters": [
             "",
             "\"Credits\""
+          ]
+        },
+        {
+          "type": {
+            "value": "TouchSimulateMouse"
+          },
+          "parameters": [
+            "",
+            "yes"
           ]
         }
       ],

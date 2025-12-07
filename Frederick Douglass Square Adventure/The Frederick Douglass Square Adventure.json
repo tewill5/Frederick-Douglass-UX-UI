@@ -20,7 +20,7 @@
     "templateSlug": "",
     "version": "1.0.0",
     "name": "The Frederick Douglass Square Adventure",
-    "description": "",
+    "description": "An adventure around UMD to restore the legacy of Frederick Douglass",
     "author": "",
     "windowWidth": 1280,
     "windowHeight": 720,
@@ -36,7 +36,7 @@
       "android-icon-72": "",
       "android-icon-96": "",
       "android-windowSplashScreenAnimatedIcon": "",
-      "desktop-icon-512": "",
+      "desktop-icon-512": "assets\\objects\\gold_frederick_douglass_statue.png",
       "ios-icon-100": "",
       "ios-icon-1024": "",
       "ios-icon-114": "",
@@ -70,7 +70,7 @@
       "progressBarMaxWidth": 200,
       "progressBarMinWidth": 40,
       "progressBarWidthPercent": 30,
-      "showGDevelopSplash": true,
+      "showGDevelopSplash": false,
       "showProgressBar": true
     },
     "watermark": {
@@ -110,30 +110,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/images/FDS East.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\images\\FDS East.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/images/FDS South.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\images\\FDS South.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/images/FDS West.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\images\\FDS West.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/fonts/BilkoOpti-Regular.otf",
         "kind": "font",
         "metadata": "",
@@ -149,26 +125,10 @@
         "userAdded": false
       },
       {
-        "file": "assets/images/FDS Sky Inspect.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\images\\FDS Sky Inspect.JPG",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/objects/ItemObjectPlaceholder.png",
         "kind": "image",
         "metadata": "",
         "name": "assets/objects/ItemObjectPlaceholder.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/stickman.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/objects/stickman.png",
         "smoothed": true,
         "userAdded": false
       },
@@ -425,14 +385,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/objects/chest_open.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/objects/chest_open.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/ui/black_background_round.png",
         "kind": "image",
         "metadata": "",
@@ -513,14 +465,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/ui/arrow_left_small.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/ui/arrow_left_small.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/ui/inventory_bag_open.png",
         "kind": "image",
         "metadata": "",
@@ -529,138 +473,130 @@
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-1-column-1.png",
+        "file": "assets/objects/photo_scraps/row-1-column-2.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-1-column-1.png",
+        "name": "assets\\objects\\photo_scraps\\row-1-column-2.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-1-column-2.png",
+        "file": "assets/objects/photo_scraps/row-1-column-3.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-1-column-2.png",
+        "name": "assets\\objects\\photo_scraps\\row-1-column-3.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-1-column-3.png",
+        "file": "assets/objects/photo_scraps/row-1-column-4.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-1-column-3.png",
+        "name": "assets\\objects\\photo_scraps\\row-1-column-4.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-1-column-4.png",
+        "file": "assets/objects/photo_scraps/row-2-column-1.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-1-column-4.png",
+        "name": "assets\\objects\\photo_scraps\\row-2-column-1.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-2-column-1.png",
+        "file": "assets/objects/photo_scraps/row-2-column-2.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-2-column-1.png",
+        "name": "assets\\objects\\photo_scraps\\row-2-column-2.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-2-column-2.png",
+        "file": "assets/objects/photo_scraps/row-2-column-3.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-2-column-2.png",
+        "name": "assets\\objects\\photo_scraps\\row-2-column-3.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-2-column-3.png",
+        "file": "assets/objects/photo_scraps/row-2-column-4.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-2-column-3.png",
+        "name": "assets\\objects\\photo_scraps\\row-2-column-4.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-2-column-4.png",
+        "file": "assets/objects/photo_scraps/row-3-column-1.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-2-column-4.png",
+        "name": "assets\\objects\\photo_scraps\\row-3-column-1.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-3-column-1.png",
+        "file": "assets/objects/photo_scraps/row-3-column-2.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-3-column-1.png",
+        "name": "assets\\objects\\photo_scraps\\row-3-column-2.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-3-column-2.png",
+        "file": "assets/objects/photo_scraps/row-3-column-3.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-3-column-2.png",
+        "name": "assets\\objects\\photo_scraps\\row-3-column-3.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-3-column-3.png",
+        "file": "assets/objects/photo_scraps/row-3-column-4.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-3-column-3.png",
+        "name": "assets\\objects\\photo_scraps\\row-3-column-4.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-3-column-4.png",
+        "file": "assets/objects/photo_scraps/row-4-column-1.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-3-column-4.png",
+        "name": "assets\\objects\\photo_scraps\\row-4-column-1.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-4-column-1.png",
+        "file": "assets/objects/photo_scraps/row-4-column-2.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-4-column-1.png",
+        "name": "assets\\objects\\photo_scraps\\row-4-column-2.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-4-column-2.png",
+        "file": "assets/objects/photo_scraps/row-4-column-3.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-4-column-2.png",
+        "name": "assets\\objects\\photo_scraps\\row-4-column-3.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-4-column-3.png",
+        "file": "assets/objects/photo_scraps/row-4-column-4.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-4-column-3.png",
+        "name": "assets\\objects\\photo_scraps\\row-4-column-4.png",
         "smoothed": true,
         "userAdded": false
       },
       {
-        "file": "assets/objects/painting_scraps/row-4-column-4.png",
+        "file": "assets/objects/photo_scraps/table_background.jpg",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\row-4-column-4.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/objects/painting_scraps/table_background.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\objects\\painting_scraps\\table_background.jpg",
+        "name": "assets\\objects\\photo_scraps\\table_background.jpg",
         "smoothed": true,
         "userAdded": false
       },
@@ -763,14 +699,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/images/hornbake_entrance.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/images/hornbake_entrance.jpg",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/images/hornbake_stairwell_floor1.jpg",
         "kind": "image",
         "metadata": "",
@@ -795,22 +723,6 @@
         "userAdded": false
       },
       {
-        "file": "assets/ui/eye_black.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/ui/eye_black.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/ui/eye_grey.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/ui/eye_grey.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
         "file": "assets/ui/ui_background_black_border_bottom_gold.png",
         "kind": "image",
         "metadata": "",
@@ -831,22 +743,6 @@
         "kind": "image",
         "metadata": "",
         "name": "assets/ui/ui_background_border_gold.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/ui/ui_background_border_bottom.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/ui/ui_background_border_bottom.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/ui/eye_black.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\ui\\eye_black.png",
         "smoothed": true,
         "userAdded": false
       },
@@ -966,14 +862,6 @@
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/images/FDS Statue.JPG",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\images\\FDS Statue.JPG",
-        "smoothed": true,
         "userAdded": false
       },
       {
@@ -1211,6 +1099,190 @@
         "name": "assets\\ui\\sound_off.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/images/Driskell Entrance.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Driskell Entrance.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Diskell East.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Diskell East.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Driskell Mural.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Driskell Mural.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Driskell Art Gallery North 1.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Driskell Art Gallery North 1.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Driskell Art Gallery North 2.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Driskell Art Gallery North 2.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/STAMP Entrance.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\STAMP Entrance.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/STAMP Main Hallway.JPG",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\STAMP Main Hallway.JPG",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Hallway to STAMP Art Gallery.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Hallway to STAMP Art Gallery.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Entrance to STAMP Art Gallery.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Entrance to STAMP Art Gallery.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Inside Art Gallery1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Inside Art Gallery1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Inside Art Gallery2.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Inside Art Gallery2.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Hallway to MICA1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Hallway to MICA1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Entrance to MICA.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Entrance to MICA.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/Inside MICA1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\Inside MICA1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_GalleryRoom.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_GalleryRoom.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_exit.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_exit.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_OutsideSpecialCollections1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_OutsideSpecialCollections1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/hornbake_SpecialCollectionsInside1.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\hornbake_SpecialCollectionsInside1.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/images/props/mica_trashcan.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\images\\props\\mica_trashcan.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/paper_scrap.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\paper_scrap.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/stickman.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\stickman.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/photo_scraps/row-1-column-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\objects\\photo_scraps\\row-1-column-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ui/x.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\ui\\x.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -1224,6 +1296,7 @@
       "variables": [
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -1327,6 +1400,7 @@
       "value": false
     },
     {
+      "folded": true,
       "name": "MinigameFlags",
       "type": "structure",
       "children": [
@@ -1341,7 +1415,7 @@
           "value": false
         },
         {
-          "name": "Painting Puzzle",
+          "name": "Photo Puzzle",
           "type": "boolean",
           "value": false
         }
@@ -1376,7 +1450,7 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/painting-puzzle"
+      "referenceTo": "/layouts/photo-puzzle"
     }
   ],
   "externalEvents": [
@@ -1418,11 +1492,11 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/layouttemplate-duplicate-me"
+      "referenceTo": "/externalLayouts/frederick-douglass-square"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/frederick-douglass-square"
+      "referenceTo": "/externalLayouts/layouttemplate-duplicate-me"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
@@ -1430,7 +1504,75 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalLayouts/hornbake-stairwell-main-floor"
+      "referenceTo": "/externalLayouts/hornbake-stairwell"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-special-collections"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-gallery-room"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-maryland-room"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hornbake-exit"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/driskell-entrance"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/driskell-starting-point"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/driskell-mural"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/driskell-art-gallery"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/driskell-art-gallery-2"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/stamp-entrance"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/stamp-main-hallway"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hallway-to-stamp-art-gallery"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/stamp-art-gallery"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/stamp-art-gallery-2"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/hallway-to-mica"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/mica-entrance"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/inside-mica"
     }
   ]
 }

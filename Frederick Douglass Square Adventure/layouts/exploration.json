@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.4,
     "snap": true,
-    "zoomFactor": 0.17130934511241908,
+    "zoomFactor": 0.23089183385224935,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -151,9 +151,6 @@
           "name": "ItemDescriptionText"
         },
         {
-          "name": "DebugText"
-        },
-        {
           "name": "LocationNameText"
         }
       ]
@@ -263,6 +260,7 @@
       "variables": [
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -439,6 +437,35 @@
           ]
         },
         {
+          "name": "Scrap of Photo",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\objects\\paper_scrap.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Key",
           "useMultipleDirections": false,
           "directions": [
@@ -478,6 +505,7 @@
       "variables": [
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -682,8 +710,9 @@
       "variables": [
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
-          "value": false
+          "value": true
         }
       ],
       "effects": [
@@ -754,7 +783,7 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "FDS North",
+          "name": "Frederick Douglass Square",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -850,7 +879,7 @@
           ]
         },
         {
-          "name": "",
+          "name": "Hornbake Stairwell Main Floor",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -860,6 +889,870 @@
                 {
                   "hasCustomCollisionMask": true,
                   "image": "assets/images/hornbake_stairwell_floor1.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hornbake Exit",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\hornbake_exit.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Driskell Entrance",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Driskell Entrance.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Driskell Starting Point",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Diskell East.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Driskell Mural",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Driskell Mural.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Driskell Art Gallery",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Driskell Art Gallery North 1.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Driskell Art Gallery 2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Driskell Art Gallery North 2.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "STAMP Entrance",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\STAMP Entrance.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "STAMP Main Hallway",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\STAMP Main Hallway.JPG",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hallway to STAMP Art Gallery",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Hallway to STAMP Art Gallery.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Entrance to STAMP Art Gallery",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Entrance to STAMP Art Gallery.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "STAMP Art Gallery",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Inside Art Gallery1.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "STAMP Art Gallery 2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Inside Art Gallery2.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hallway to MICA",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Hallway to MICA1.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Entrance to MICA",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Entrance to MICA.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Inside MICA",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\Inside MICA1.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hornbake Special Collections",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\hornbake_OutsideSpecialCollections1.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hornbake Gallery Room",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\hornbake_GalleryRoom.jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 0
+                      },
+                      {
+                        "x": 1280,
+                        "y": 720
+                      },
+                      {
+                        "x": 0,
+                        "y": 720
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hornbake Maryland Room",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\hornbake_SpecialCollectionsInside1.jpg",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -916,11 +1809,6 @@
           "type": "structure",
           "children": [
             {
-              "name": "font",
-              "type": "string",
-              "value": ""
-            },
-            {
               "name": "fontSize",
               "type": "number",
               "value": 25
@@ -949,8 +1837,14 @@
         },
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
+        },
+        {
+          "name": "longTransitionFade",
+          "type": "boolean",
+          "value": false
         }
       ],
       "effects": [],
@@ -1024,7 +1918,7 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "ChestClosed",
+          "name": "NPC",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1033,7 +1927,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets/objects/chest_closed.png",
+                  "image": "assets\\objects\\stickman.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1092,6 +1986,7 @@
       "variables": [
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -1474,6 +2369,7 @@
         },
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         },
@@ -1481,6 +2377,11 @@
           "name": "showPopup",
           "type": "boolean",
           "value": true
+        },
+        {
+          "name": "infoText",
+          "type": "string",
+          "value": "null"
         }
       ],
       "effects": [],
@@ -1686,6 +2587,54 @@
           ]
         },
         {
+          "name": "Scrap of Photo",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\objects\\paper_scrap.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 96,
+                        "y": 0
+                      },
+                      {
+                        "x": 96,
+                        "y": 96
+                      },
+                      {
+                        "x": 0,
+                        "y": 96
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Key",
           "useMultipleDirections": false,
           "directions": [
@@ -1750,6 +2699,7 @@
         },
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -2011,6 +2961,7 @@
       "variables": [
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         },
@@ -2040,6 +2991,7 @@
       "variables": [
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         },
@@ -2144,6 +3096,7 @@
         },
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         },
@@ -2174,6 +3127,7 @@
       "variables": [
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -2184,7 +3138,7 @@
           "name": "mapToggled",
           "doubleParameters": {
             "padding": 0,
-            "thickness": 2
+            "thickness": 4
           },
           "stringParameters": {
             "color": "255;255;255"
@@ -2236,36 +3190,6 @@
       "variables": [
         {
           "name": "instanceID",
-          "type": "string",
-          "value": "cursorPosition"
-        },
-        {
-          "name": "innerText",
-          "type": "string",
-          "value": ""
-        },
-        {
-          "name": "fontSize",
-          "type": "number",
-          "value": 0
-        },
-        {
-          "name": "outlineThickness",
-          "type": "number",
-          "value": 0
-        },
-        {
-          "name": "outlineColor",
-          "type": "string",
-          "value": ""
-        },
-        {
-          "name": "font",
-          "type": "string",
-          "value": ""
-        },
-        {
-          "name": "textAlign",
           "type": "string",
           "value": ""
         }
@@ -2383,6 +3307,54 @@
               ]
             }
           ]
+        },
+        {
+          "name": "mica_trashcan",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\images\\props\\mica_trashcan.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 5
+                      },
+                      {
+                        "x": 65,
+                        "y": 5
+                      },
+                      {
+                        "x": 65,
+                        "y": 92
+                      },
+                      {
+                        "x": 4,
+                        "y": 92
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2395,6 +3367,7 @@
       "variables": [
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -2495,7 +3468,20 @@
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "statueRemaining",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "226;24;51"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [
         {
           "name": "Tween",
@@ -2577,9 +3563,8 @@
       "updateIfNotVisible": false,
       "variables": [
         {
-          "hasMixedValues": true,
           "name": "enabled",
-          "persistentUuid": "250185bb-081a-4805-9b8b-cb2361f0a9c1",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -2724,7 +3709,7 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "MapImage",
+      "name": "MapImage_dont_use_",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -2837,9 +3822,8 @@
       "updateIfNotVisible": false,
       "variables": [
         {
-          "hasMixedValues": true,
           "name": "enabled",
-          "persistentUuid": "250185bb-081a-4805-9b8b-cb2361f0a9c1",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -2923,9 +3907,8 @@
       "updateIfNotVisible": false,
       "variables": [
         {
-          "hasMixedValues": true,
           "name": "enabled",
-          "persistentUuid": "250185bb-081a-4805-9b8b-cb2361f0a9c1",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         }
@@ -3013,20 +3996,7 @@
           "value": true
         }
       ],
-      "effects": [
-        {
-          "effectType": "Outline",
-          "name": "Effect",
-          "doubleParameters": {
-            "padding": 0,
-            "thickness": 2
-          },
-          "stringParameters": {
-            "color": "255;255;255"
-          },
-          "booleanParameters": {}
-        }
-      ],
+      "effects": [],
       "behaviors": [],
       "animations": [
         {
@@ -3039,8 +4009,8 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": false,
-                  "image": "assets\\ui\\map.png",
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\ui\\x.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -3069,6 +4039,7 @@
       "variables": [
         {
           "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         },
@@ -3359,7 +4330,7 @@
                 "objectName": "MapEnterButton"
               },
               {
-                "objectName": "MapImage"
+                "objectName": "MapImage_dont_use_"
               },
               {
                 "objectName": "MapImageBorder"
@@ -3431,10 +4402,16 @@
             "objectName": "StatuesCollectedCounter"
           },
           {
+            "objectName": "StatueIcon"
+          },
+          {
             "objectName": "Backpack"
           },
           {
             "objectName": "Map"
+          },
+          {
+            "objectName": "SoundToggle"
           },
           {
             "objectName": "VisibilityToggle"
@@ -3447,9 +4424,6 @@
           },
           {
             "objectName": "FadeScreen"
-          },
-          {
-            "objectName": "StatueIcon"
           }
         ]
       },
@@ -3473,9 +4447,6 @@
           },
           {
             "objectName": "InspectionObject"
-          },
-          {
-            "objectName": "SoundToggle"
           }
         ]
       },
@@ -3760,7 +4731,7 @@
       "isLocked": false,
       "name": "MapPopup",
       "renderingType": "2d",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": []
     }

@@ -195,8 +195,8 @@
       "name": "InspectionObject",
       "persistentUuid": "1d7473c9-131e-4d57-ab30-4668b489cff1",
       "width": 0,
-      "x": 144,
-      "y": 608,
+      "x": 416,
+      "y": 560,
       "zOrder": 9,
       "numberProperties": [],
       "stringProperties": [],
@@ -1209,6 +1209,76 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "dd525bfc-daa1-4ff5-b319-de4406b265eb",
+      "width": 0,
+      "x": 112,
+      "y": 416,
+      "zOrder": 44,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "enabled",
+          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "longTransitionFade",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "STAMP Entrance"
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "fontSize",
+              "type": "number",
+              "value": 25
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "Head to STAMP Union Hall"
+            },
+            {
+              "name": "textAlign",
+              "type": "string",
+              "value": "left"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -86
+            }
+          ]
+        },
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "STAMP Transition"
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -1223,8 +1293,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5653158055126403,
+    "zoomFactor": 0.7619362677197727,
     "windowMask": false,
-    "selectedLayer": "InspectionObjects"
+    "selectedLayer": "SceneObjects"
   }
 }

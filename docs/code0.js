@@ -196,9 +196,9 @@ gdjs.copyArray(runtimeScene.getObjects("Title"), gdjs.Main_32MenuCode.GDTitleObj
     gdjs.Main_32MenuCode.GDTitleObjects1[i].setLineHeight((gdjs.Main_32MenuCode.GDTitleObjects1[i].getCharacterSize()) * 1.5);
 }
 }
-{gdjs.evtTools.input.touchSimulateMouse(runtimeScene, false);
-}
 {gdjs.evtTools.camera.hideLayer(runtimeScene, "Credits");
+}
+{gdjs.evtTools.input.touchSimulateMouse(runtimeScene, true);
 }
 
 { //Subevents
