@@ -365,23 +365,6 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "depth": 0,
-      "height": 360,
-      "keepRatio": true,
-      "layer": "MapPopup",
-      "name": "MapImage",
-      "persistentUuid": "96e43f94-58d6-45b9-bfa5-bf349cac53ac",
-      "width": 640,
-      "x": 320,
-      "y": 216,
-      "zOrder": 22,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
@@ -606,6 +589,39 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 360,
+      "keepRatio": true,
+      "layer": "MapPopup",
+      "name": "Background",
+      "persistentUuid": "353ea302-a341-40aa-b3a1-f7ad66235374",
+      "width": 640,
+      "x": 320,
+      "y": 216,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "MapPopup",
+      "name": "ExitMap",
+      "persistentUuid": "84f83705-22e3-4cbb-8693-dfe00ab04d04",
+      "width": 0,
+      "x": 64,
+      "y": 108,
+      "zOrder": 34,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "editionSettings": {
@@ -620,8 +636,8 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.713037763069065,
+    "zoomFactor": 1.026942587498143,
     "windowMask": false,
-    "selectedLayer": "ActiveDuringInspectionUI"
+    "selectedLayer": "MapPopup"
   }
 }

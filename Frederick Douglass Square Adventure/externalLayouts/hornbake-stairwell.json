@@ -1,6 +1,6 @@
 {
   "associatedLayout": "Exploration",
-  "name": "Hornbake Stairwell Main Floor",
+  "name": "Hornbake Stairwell",
   "instances": [
     {
       "angle": 0,
@@ -24,7 +24,7 @@
       "initialVariables": []
     },
     {
-      "angle": 0,
+      "angle": 327,
       "customSize": false,
       "flippedX": true,
       "height": 0,
@@ -33,8 +33,8 @@
       "name": "TransitionObject",
       "persistentUuid": "9cb78b79-6a6d-469f-a613-fc52579c77c6",
       "width": 0,
-      "x": 144,
-      "y": 448,
+      "x": 226,
+      "y": 558,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -48,17 +48,40 @@
     },
     {
       "angle": 0,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "c31c9e6f-7e61-4661-9429-fab7d5a6020b",
+      "width": 0,
+      "x": 976,
+      "y": 288,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Hornbake Exit"
+        }
+      ]
+    },
+    {
+      "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 64,
+      "height": 39,
       "keepRatio": true,
       "layer": "SceneObjects",
       "name": "StatueCollectible",
-      "persistentUuid": "d14ba3f0-525c-4dff-94dd-95fa228a67dc",
-      "width": 64,
-      "x": 576,
-      "y": 368,
-      "zOrder": 4,
+      "persistentUuid": "edd48632-2726-4df9-a40d-23d8e54a8713",
+      "width": 39,
+      "x": 201,
+      "y": 293,
+      "zOrder": 6,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -76,7 +99,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.9934433498259619,
+    "zoomFactor": 0.5653158055126343,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

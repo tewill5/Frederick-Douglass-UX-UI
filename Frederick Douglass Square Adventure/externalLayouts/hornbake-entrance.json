@@ -106,7 +106,7 @@
         {
           "name": "targetLayout",
           "type": "string",
-          "value": "Hornbake Stairwell Main Floor"
+          "value": "Hornbake Stairwell"
         },
         {
           "name": "hoverTooltip",
@@ -178,6 +178,60 @@
           "value": "Marbles"
         }
       ]
+    },
+    {
+      "angle": 130,
+      "customSize": false,
+      "flippedX": true,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "SceneObjects",
+      "name": "TransitionObject",
+      "persistentUuid": "694348ac-ab82-4dfb-b62d-8eadaaa38435",
+      "width": 0,
+      "x": 684,
+      "y": 348,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "targetLayout",
+          "type": "string",
+          "value": "Hornbake Special Collections"
+        },
+        {
+          "name": "hoverTooltip",
+          "type": "structure",
+          "children": [
+            {
+              "name": "fontSize",
+              "type": "number",
+              "value": 25
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "To Special Collections"
+            },
+            {
+              "name": "textAlign",
+              "type": "string",
+              "value": "center"
+            },
+            {
+              "name": "x",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "y",
+              "type": "number",
+              "value": -86
+            }
+          ]
+        }
+      ]
     }
   ],
   "editionSettings": {
@@ -192,7 +246,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.7370816317994073,
+    "zoomFactor": 0.6244537826600031,
     "windowMask": false,
     "selectedLayer": "SceneObjects"
   }

@@ -159,10 +159,10 @@ gdjs.ExplorationCode.GDLocationNameTextObjects1= [];
 gdjs.ExplorationCode.GDLocationNameTextObjects2= [];
 gdjs.ExplorationCode.GDLocationNameTextObjects3= [];
 gdjs.ExplorationCode.GDLocationNameTextObjects4= [];
-gdjs.ExplorationCode.GDMapImageObjects1= [];
-gdjs.ExplorationCode.GDMapImageObjects2= [];
-gdjs.ExplorationCode.GDMapImageObjects3= [];
-gdjs.ExplorationCode.GDMapImageObjects4= [];
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects1= [];
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects2= [];
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects3= [];
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects4= [];
 gdjs.ExplorationCode.GDCycleMapNextObjects1= [];
 gdjs.ExplorationCode.GDCycleMapNextObjects2= [];
 gdjs.ExplorationCode.GDCycleMapNextObjects3= [];
@@ -201,7 +201,7 @@ gdjs.ExplorationCode.GDExitMinigameButtonObjects3= [];
 gdjs.ExplorationCode.GDExitMinigameButtonObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0x932068 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0x124d560 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -211,6 +211,7 @@ const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler
 FDSG.GameVars = { // This holds variables that are important for tracking/managing the current game flags and variables
     runtimeScene: runtimeScene,
         // Used for accessing the current RuntimeScene object, since otherwise the definitions here will try and access the old object
+    windowActive: true, // Whether window in the browser is currently active
 }
 const GameVars = FDSG.GameVars; // Simpler reference variable
 const Game = GameVars.runtimeScene.getGame();
@@ -242,8 +243,6 @@ FDSG.ObjectGroups = {
     ]
 }
 
-
-
 /*
     To any future InfoSci students who might pick up this project, I hope I've made it easy enough for you to accomplish whatever
     your goal is. If you need help understanding part of the system, feel free to reach out to me, the main developer, at chrissor@umd.edu.
@@ -256,12 +255,19 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x932068(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x932478 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.userFunc0x124d560(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0xb13688 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -392,64 +398,6 @@ FDSG.getAllObjects = function() {
     return objectList;
 }
 
-FDSG.gdVartoJS = function(gdVar) {
-    // Arrays
-    if (gdVar.isArray()) {
-        const arr = [];
-        const children = gdVar.getAllChildren();
-        for (const key in children) {
-            const child = children[key];
-            arr.push(gdVarToJS(child));
-        }
-        return arr;
-    }
-
-    // Structures
-    if (gdVar.isStructure()) {
-        const obj = {};
-        const children = gdVar.getAllChildren();
-        for (const key in children) {
-            obj[key] = gdVarToJS(children[key]);
-        }
-        return obj;
-    }
-
-    // Primitives
-    if (gdVar.isNumber()) return gdVar.getAsNumber();
-    if (gdVar.isString()) return gdVar.getAsString();
-    if (gdVar.isBoolean()) return gdVar.getAsBoolean();
-
-    return null;
-}
-
-FDSG.jsToGDVar = function(jsValue, gdVar) {
-    if (Array.isArray(jsValue)) {
-        // Clear existing and rebuild as array
-        gdVar.clearChildren();
-        jsValue.forEach((v, i) => {
-            const child = gdVar.getChild(i.toString());
-            FDSG.jsToGDVar(v, child);
-        });
-        return;
-    }
-
-    if (jsValue && typeof jsValue === "object") {
-        // Structure: clear and rebuild
-        gdVar.clearChildren();
-        for (const key in jsValue) {
-            const child = gdVar.getChild(key);
-            FDSG.jsToGDVar(jsValue[key], child);
-        }
-        return;
-    }
-
-    // Primitives
-    if (typeof jsValue === "number") gdVar.setNumber(jsValue);
-    else if (typeof jsValue === "string") gdVar.setString(jsValue);
-    else if (typeof jsValue === "boolean") gdVar.setBoolean(jsValue);
-    else gdVar.setString("");
-}
-
 /**
  * Sets text properties based on its instance variables
  *      @param {TextRuntimeObject} textObject The text object to initialize
@@ -538,12 +486,19 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x932478(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd08e60 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.userFunc0xb13688(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0xdc9ab0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -552,6 +507,7 @@ const Game = GameVars.runtimeScene.getGame();
 Object.assign(GameVars.Constants, {
     STARTING_LAYOUT: "Frederick Douglass Square", // First layout to load
     FIRST_TRANSITION_FADE_DURATION: 1500, // The duration of the fade from the Main Menu
+    LONG_TRANSITION_FADE_DURATION: 750,
     TRANSITION_FADE_DURATION: 250
 });
 
@@ -559,6 +515,7 @@ Object.assign(GameVars, {
     startLayout: GameVars.Constants.STARTING_LAYOUT, // The starting layout
     _currentLayout: GameVars.Constants.STARTING_LAYOUT, // This is used to load the corrent layout on transitions
     _isFading: false, // Used to halt input while fading in or out
+    _longFade: false, // Whether to use a long transition or a short one. This is just used by TransitionObjects
     loadMinigame: null, // Used to set a minigame to be loaded
     _currentLoadedMinigame: null // Used to track whether to check minigame flags on resuming this scene
 });
@@ -567,7 +524,11 @@ Object.defineProperty(GameVars, 'currentLayout', {
     get() { return this._currentLayout },
     set(newLayout) {
         FDSG.saveLayoutInstanceData();
-        FDSG.initFade(GameVars.Constants.TRANSITION_FADE_DURATION, false);
+        let fadeDuration = GameVars.Constants.TRANSITION_FADE_DURATION;
+        if (GameVars._longFade) {
+            fadeDuration = GameVars.Constants.LONG_TRANSITION_FADE_DURATION;
+        }
+        FDSG.initFade(fadeDuration, false);
         this._currentLayout = newLayout;
     }
 });
@@ -589,6 +550,13 @@ FDSG.initScene = function() {
     gdjs.evtTools.runtimeScene.createObjectsFromExternalLayout(GameVars.runtimeScene, "UI", 0, 0, false); // Load the UI
     gdjs.evtTools.runtimeScene.createObjectsFromExternalLayout(GameVars.runtimeScene, GameVars.currentLayout, 0, 0, false);
         // Load the layout for the current area
+
+    for (const background of GameVars.runtimeScene.getInstancesOf("Background")) {
+        if (background.getLayer() == "Background") {
+            background.setAnimationName(GameVars.currentLayout); // Set the background for the layout
+            break;
+        }
+    }
         
     // Disable the darkening effects
     FDSG.debugPrint("log", "initializing layer properties");
@@ -605,16 +573,6 @@ FDSG.initScene = function() {
     for (const layer in FDSG.Input.ClickableLayers) {
         const runtimeLayer = GameVars.runtimeScene.getLayer(layer);
         runtimeLayer.show(FDSG.Input.ClickableLayers[layer]);
-    }
-
-    FDSG.debugPrint("log", "initializing layout data");
-    // Run layout specific functions
-    if (!(GameVars.currentLayout in FDSG._LayoutData)) {
-        FDSG._LayoutData[GameVars.currentLayout] = {};
-    }
-    const layoutData = FDSG._LayoutData[GameVars.currentLayout];
-    if ("onLayoutLoad" in layoutData) { // Check if layout functions have been registered
-        layoutData.onLayoutLoad(); // Run layout load function
     }
 
     FDSG.debugPrint("log", "checking collectibles");
@@ -693,6 +651,16 @@ FDSG.initScene = function() {
     const mapButton = GameVars.runtimeScene.getInstancesOf("Map")[0];
     mapButton.enableEffect("mapToggled", false); // Disable toggle effect
     GameVars._visitedLayouts[GameVars.currentLayout] = true; // Mark this layout as visited
+
+    FDSG.debugPrint("log", "initializing layout data");
+    // Run layout specific functions
+    if (!(GameVars.currentLayout in FDSG._LayoutData)) {
+        FDSG._LayoutData[GameVars.currentLayout] = {};
+    }
+    const layoutData = FDSG._LayoutData[GameVars.currentLayout];
+    if ("onLayoutLoad" in layoutData) { // Check if layout functions have been registered
+        layoutData.onLayoutLoad(); // Run layout load function
+    }
     
 }
 
@@ -702,17 +670,20 @@ FDSG.initScene = function() {
 FDSG.saveLayoutInstanceData = function() {
     const layoutInstanceData = {};
     for (const instance of FDSG.getAllSceneInstances(["SceneObjects", "InspectionObjects"])) {
+        let instanceID = null;
         if (instance.getVariables().has("instanceID")) {
-            const instanceID = instance.getVariables().get("instanceID").getAsString();
-            const instanceData = {};
-            for (const variable in instance.getVariables()._variables.items) {
-                instanceData[variable] = JSON.stringify(instance.getVariables().get(variable).toJSObject());
-            }
-            if (instance.getAnimationIndex != undefined) {
-                instanceData.animation = instance.getAnimationIndex();
-            }
-            layoutInstanceData[instanceID] = instanceData;
+            instanceID = instance.getVariables().get("instanceID").getAsString();
+        } else {
+            instanceID = `${instance.getName()}-${GameVars.currentLayout}-${instance.getX()}-${instance.getY()}`;
         }
+        const instanceData = {};
+        for (const variable in instance.getVariables()._variables.items) {
+            instanceData[variable] = JSON.stringify(instance.getVariables().get(variable).toJSObject());
+        }
+        if (instance.getAnimationIndex != undefined) {
+            instanceData.animation = instance.getAnimationIndex();
+        }
+        layoutInstanceData[instanceID] = instanceData;
     }
     if (!(GameVars.currentLayout in FDSG._LayoutData)) {
         FDSG._LayoutData[GameVars.currentLayout] = {};
@@ -730,20 +701,57 @@ FDSG.loadLayoutInstanceData = function() {
     }
     const layoutInstanceData = FDSG._LayoutData[GameVars.currentLayout].instanceData;
     for (const instance of FDSG.getAllSceneInstances(["SceneObjects", "InspectionObjects"])) {
+        let instanceID = null;
         if (instance.getVariables().has("instanceID")) {
-            const instanceID = instance.getVariables().get("instanceID").getAsString();
-            for (const variable in layoutInstanceData[instanceID]) {
-                if (variable == "animation") {
-                    instance.setAnimationIndex(layoutInstanceData[instanceID].animation);
-                    continue;
-                }
-                const data = JSON.parse(layoutInstanceData[instanceID][variable]);
-                FDSG.jsToGDVar(data, instance.getVariables().get(variable));
+            instanceID = instance.getVariables().get("instanceID").getAsString();
+        } else {
+            instanceID = `${instance.getName()}-${GameVars.currentLayout}-${instance.getX()}-${instance.getY()}`;
+        }
+        for (const variable in layoutInstanceData[instanceID]) {
+            if (variable == "animation") {
+                instance.setAnimationIndex(layoutInstanceData[instanceID].animation);
+                continue;
             }
+            const data = JSON.parse(layoutInstanceData[instanceID][variable]);
+            instance.getVariables().get(variable).fromJSObject(data);
         }
     }
 }
 
+
+/**
+ * Stores a layout-specific variable or flag
+ *      @param {string} layout The name of the layout
+ *      @param {string} flagName The name of the flag
+ *      @param {any} flagValue The value to assign to the flag
+ */
+FDSG.setLayoutFlag = function(layout, flagName, flagValue) {
+    if (!(layout in FDSG._LayoutData)) {
+        FDSG._LayoutData[layout] = {};
+    }
+    if (!("layoutFlags" in FDSG._LayoutData[layout])) {
+        FDSG._LayoutData[layout].layoutFlags = {};
+    }
+    FDSG._LayoutData[layout].layoutFlags[flagName] = flagValue;
+}
+
+
+/**
+ * Retrieves a layout specific variable or flag
+ *      @param {string} layout The name of the layout
+ *      @param {string} flagName The name of the flag
+ *      @returns {any} The value of the layoutFlag
+ */
+FDSG.getLayoutFlag = function(layout, flagName) {
+    if ((!(layout in FDSG._LayoutData))
+    || (!("layoutFlags" in FDSG._LayoutData[layout]))
+    || (!(flagName in FDSG._LayoutData[layout].layoutFlags))) {
+        FDSG.debugPrint("warn", `layout ${layout} does not contain flag ${flagName}`);
+        return;
+    } else {
+        return FDSG._LayoutData[layout].layoutFlags[flagName];
+    }
+}
 
 /**
  * Returns all instances of any object in the current scene
@@ -850,7 +858,6 @@ FDSG.registerOnLayoutLoadFunction = function(layoutName, onLayoutLoadFunction) {
         FDSG._LayoutData[layoutName] = {};
     }
     FDSG._LayoutData[layoutName].onLayoutLoad = onLayoutLoadFunction;
-
 }
 
 /**
@@ -881,28 +888,39 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd08e60(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd08ff0 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.userFunc0xdc9ab0(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0xdc9c90 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
-
-GameVars.runtimeScene.getGame().getInputManager().touchSimulateMouse(false); // Disable the touch inputs from simulating mouse clicks
 
 FDSG.Input = { // Stores objects and variables for handling player input
     _currentHoveredInstance: null, // The instance that is currently selected by mouse or touch
     _lastObjectPressed: null, /* This stores the last object that was clicked. We use this to ensure that in order to click an object,
                                 the mouse has to be hovering over it before any input, so as to avoid dragging clicks or
                                 in the case of a UI element appearing underneath the cursor while clicking */
+    _isAcceptingNewInstance: true,
     _deviceSupportsTouch: ('ontouchstart' in window || navigator.maxTouchPoints > 0), // If the device supports touchscreen
-    _lastTouchX: null,
-    _lastTouchY: null,
-    _currentInputMethod: "Mouse", // This is for knowing whether or not we're using the touchscreen
+    currentInputMethod: "mouse",
+    lastTouchX: 0,
+    lastTouchY: 0
 }
+
+window.addEventListener("pointerdown", e => { // js method for determining input type
+    FDSG.Input.currentInputMethod = e.pointerType;
+}, { passive: true });
+
 
 FDSG.Input.ClickableObjects = {}; // Stores registered actions to run when objects are clicked
 
@@ -925,7 +943,6 @@ GameVars.Constants.SHOW_MOUSE_COORDS = true;
 
 
 const input = GameVars.runtimeScene.getGame().getInputManager();
-
 
 /**
  * Registers a function to run when an object is clicked or tapped.
@@ -1024,48 +1041,12 @@ FDSG.handlePlayerInput = function() {
     let hoveredInstance = null; // Which instance is currently being hovered over
     let selectedItemIndex = FDSG.PlayerInventory.selectedItemIndex; // The currently selected inventory item
 
-    let touchIDs = input.getAllTouchIdentifiers(); // Currently active touchscreen inputs
-    let touchJustStartedIDs = input.getStartedTouchIdentifiers(); // Touchscreen inputs that began this frame
-    let isTouchActive = false;
-    let touchJustEnded = false;
+    let currentInputMethod = FDSG.Input.currentInputMethod;
+    let inputVars = FDSG.Input;
 
     let isPressed = gdjs.evtTools.input.isMouseButtonPressed(GameVars.runtimeScene, "Left"); // If a touch or click is active this frame
     let isReleased = gdjs.evtTools.input.isMouseButtonReleased(GameVars.runtimeScene, "Left"); // If a touch or click was released this frame
-    let touchJustStarted = false; // If the touch just began this frame
 
-    // Determine input method and status
-    /* !!IMPORTANT!! GDEVELOP TREATS MOUSE CLICKS AS TOUCH INPUTS, BUT THEY WILL ALWAYS HAVE THE ID OF 1!
-        ACTUAL TOUCHSCREEN INPUTS WILL ALWAYS HAVE AN ID > 1!! */
-    if (touchIDs.includes(2)) { // Gets the status of the touchscreen to determine input.
-        if (FDSG.Input._currentInputMethod != "Touch") {
-            FDSG.debugPrint("log","Changing input method to Touch");
-            FDSG.Input._currentInputMethod = "Touch";
-        }
-        isTouchActive = true; // Whether the touchscreen is currently being used
-        if (input.hasTouchEnded(2)) {
-            isReleased = true;
-            touchJustEnded = true;
-        } else {
-            isPressed = true;
-            FDSG.Input._lastTouchX = input.getTouchX(2);
-            FDSG.Input._lastTouchY = input.getTouchY(2);
-        } if (touchJustStartedIDs.includes(2)) {
-            touchJustStarted = true;
-        }
-    } else { // No touch input
-        if (FDSG.Input._lastTouchX != null) { // Experimental touch just ended check
-            touchJustEnded = true;
-            isReleased = true;
-        } else {
-            if (gdjs.evtTools.input.isMouseButtonPressed(GameVars.runtimeScene, "Left")
-            || gdjs.evtTools.input.isMouseButtonReleased(GameVars.runtimeScene, "Left")) {
-                if (FDSG.Input._currentInputMethod != "Mouse") {
-                    FDSG.debugPrint("log","Changing input method to Mouse");
-                    FDSG.Input._currentInputMethod = "Mouse";
-                }
-            }
-        }  
-    }
     // Determine currently hovered object
     if (!GameVars._isFading) { // Don't allow inputs during transition fade
         for (const object in FDSG.Input.ClickableObjects) { // Check each object to determine which object the mouse is hovering over (if any)
@@ -1092,19 +1073,8 @@ FDSG.handlePlayerInput = function() {
                 } else if (instance.hasEffect("visibilityEffect")) {
                     instance.removeEffect("visibilityEffect");
                 }
-                    // Now that we know this instance is clickable, we see if the instance is being hovered 
-                if (isTouchActive) { // If Touchscreen is being used
-                    var touchX = input.getTouchX(2);
-                    var touchY = input.getTouchY(2);
-                } else {
-                    var touchX = null; // Tracks the currently touched screen position
-                    var touchY = null;
-                }
-                let lastTouchX = FDSG.Input._lastTouchX;
-                let lastTouchY = FDSG.Input._lastTouchY;
-                if ((FDSG.Input._currentInputMethod == "Mouse" && instance.cursorOnObject())
-                || (touchX != null && instance.isCollidingWithPoint(touchX, touchY))
-                || (touchX == null && instance.isCollidingWithPoint(lastTouchX, lastTouchY))) {
+                    // Now that we know this instance is clickable, we see if the instance is being hovered or touched
+                if (instance.cursorOnObject() && (currentInputMethod == "mouse" || (currentInputMethod == "touch" && isPressed))) {
                     // Check if the cursor is on the object and if its layer is not disabled
                     let zOrder = instance.getZOrder(); // This determines which objects are shown in front of/behind other objects
                     if (zOrder > highestZOrder) { // Only set cursor for the object with the highest Z order
@@ -1115,15 +1085,23 @@ FDSG.handlePlayerInput = function() {
             }
         }
     }
-    // This is all so that you don't accidentally release on an object you didn't click
-    if ((!isPressed && !isReleased) || (touchJustStarted)) {
-        FDSG.Input._lastObjectPressed = hoveredInstance;
-    } else if (isPressed && hoveredInstance != FDSG.Input._lastObjectPressed) {
+    
+    
+    if (inputVars._isAcceptingNewInstance) {
+        inputVars._lastObjectPressed = hoveredInstance;
+    } else if (hoveredInstance != inputVars._lastObjectPressed && (currentInputMethod == "mouse"
+    || (currentInputMethod == "touch" && isPressed))) {
         enableClickFunctions = false;
-        FDSG.Input._lastObjectPressed = null;
-    } else if (isReleased && hoveredInstance != FDSG.Input._lastObjectPressed) {
-        enableClickFunctions = false;
-        FDSG.Input._lastObjectPressed = null;
+        inputVars._lastObjectPressed = null;
+    } else if (currentInputMethod == "touch" && isReleased) {
+        hoveredInstance = inputVars._lastObjectPressed;
+        inputVars._lastObjectPressed = null;
+    }
+
+    if (isPressed) {
+        inputVars._isAcceptingNewInstance = false;
+    } else {
+        inputVars._isAcceptingNewInstance = true;
     }
 
     GameVars.runtimeScene.getGame().getRenderer().getCanvas().style.cursor = cursor; // Change the cursor
@@ -1170,16 +1148,16 @@ FDSG.handlePlayerInput = function() {
             const clickObject = FDSG.Input.ClickableObjects[hoveredInstance.getName()]; // Simpler reference variable
             if (FDSG.PlayerInventory.selectedItem == null
             || hoveredInstance.getName() == "InspectInventoryItem"
-            || (hoveredInstance.getVariables().has("targetInteraction"))
-                && hoveredInstance.getVariables().get("canUseItems").getAsBoolean()) {
+            || (instanceVars.has("targetInteraction"))
+                && instanceVars.get("canUseItems").getAsBoolean()) {
                 // We only check interaction objects that accept items while an item is selected
                 for (const clickDuration in clickObject.clickFunctions) {
                     if ((clickDuration == "pressed" && isPressed) || (clickDuration == "released" && isReleased)) {
                         if (hoveredInstance.getName() != "InteractionObject"
                         && hoveredInstance.getName() != "InteractionButton"
-                        && hoveredInstance.getVariables().has("targetInteraction")) {
+                        && instanceVars.has("targetInteraction")) {
                             // Run interactions tied to the object. We skip interaction objects to avoid running them twice
-                            const interactionName = hoveredInstance.getVariables().get("targetInteraction").getAsString();
+                            const interactionName = instanceVars.get("targetInteraction").getAsString();
                             const interactionData = FDSG.Interactions[interactionName];
                             FDSG.debugPrint("log", `running interactionFunction ${interactionName} from ${hoveredInstance.getName()}`);
                             interactionData.interactionFunction(hoveredInstance);
@@ -1221,11 +1199,6 @@ FDSG.handlePlayerInput = function() {
                 }
             }
         }
-    }
-
-    if (touchJustEnded) {
-        FDSG.Input._lastTouchX = null;
-        FDSG.Input._lastTouchY = null;
     }
 }
 
@@ -1363,12 +1336,19 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd08ff0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd79a10 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.userFunc0xdc9c90(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0x1259c30 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1404,6 +1384,7 @@ Object.defineProperty(GameVars, 'isInspecting', {
         if (value) {
             FDSG.playSFX("Inspection");
         } else {
+            FDSG.playSFX("CloseInspection");
             GameVars._previousInspections = [];
             FDSG.clearInspectionFromView(false);
         } 
@@ -1585,12 +1566,19 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd79a10(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x931150 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.userFunc0x1259c30(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0x1259ef8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1603,8 +1591,24 @@ Object.assign(GameVars, {
 });
 
 Object.assign(GameVars.Constants, {
-    TOTAL_STATUES: 2 // How many figurines/statues are in the game
+    TOTAL_STATUES: 0 // How many figurines/statues are in the game. This is updated automatically at the start of the game
 });
+
+
+FDSG.FDFacts = [ // This is a list of Frederick Douglass facts used to populate the information text of Frederick Douglass Figurines
+    "Frederick Douglass never knew his real birthday. Douglass chose to celebrate his birthday on February 14th, which is part of the reason why Black History Month is celebrated in February.",
+
+    "Fredrick Douglass was originally known as Frederick Augustus Washington Bailey. After escaping slavery in 1838, he chose the name Douglass from the poem \"The Lady of the Lake\" by Sir Walter Scott.",
+
+    "Less than 24 hours passed between the time that Frederick Douglass escaped from his plantation in Baltimore and arrived in New York, where he was sheltered in a safe house by David Ruggles, another African-American abolitionist.",
+
+    "One of the first friends Frederick Douglass made in the north was William Lloyd Garrison, a prominent white abolitionist and women's rights advocate.",
+
+    "The first autobiography that Frederick Douglass wrote, \"Narrative of the Life of Frederick Douglass, an American Slave\", was published in 1845. It became a bestseller, with 11,000 copies circulating the United States. The autobiography was reprinted 9 times, and was translated into French and Dutch. The money Douglass earned from this release allowed him to gain legal freedom the following year.",
+
+    "After Frederick Douglass gave a speech at the unveiling of the Emancipation Memorial, he was gifted the late Abraham Lincoln's favorite walking stick by his widow, Mary Lincoln. That walking stick still rests in Douglass' final residence in Cedar Hill, Washington DC."
+]
+
 
 /**
  * Removes a collectible object from the scene and marks it as collected.
@@ -1657,7 +1661,15 @@ FDSG.updateStatueCounter = function() {
     statueCounter.setText(`: ${GameVars.statuesCollected}/${GameVars.Constants.TOTAL_STATUES}`);
     if (GameVars.statuesCollected >= GameVars.Constants.TOTAL_STATUES) { // If the game is over
         Game.getVariables().get("GameOver").setBoolean(true);
+        GameVars.isInspecting = false;
+        GameVars.isItemPopupShowing = false;
         FDSG.initFade(GameVars.Constants.FIRST_TRANSITION_FADE_DURATION, false, false);
+    }
+    const icon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0]; // Highlight the statue icon if there are any figurines still in the scene
+    if (GameVars.runtimeScene.getInstancesOf("StatueCollectible").length > 0) {
+        icon.enableEffect("statueRemaining", true);
+    } else {
+        icon.enableEffect("statueRemaining", false);
     }
 }
 };
@@ -1666,12 +1678,19 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x931150(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9312e0 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.userFunc0x1259ef8(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0x125ed08 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1886,7 +1905,9 @@ FDSG.showItemPopup = function(itemName, itemDescription, canPickup = true) {
     }
     const itemInfoObject = FDSG.getInstanceFromID("itemPopupInfo");
     // Here we see if the item has any infoText, which is basically just a special Inspection that allows items to show educational text
-    if (itemObject.getVariables().has("infoText") && itemObject.getVariables().get("infoText").getAsString() != "null") {
+    if (itemObject.getVariables().has("infoText")
+    && itemObject.getVariables().get("infoText").getAsString() != "null"
+    && itemObject.getVariables().get("infoText").getAsString() != "0") {
         const infoText = itemObject.getVariables().get("infoText").getAsString();
         const infoTextObject = FDSG.getInstanceFromID("infoPopupText");
         itemInfoObject.hide(false);
@@ -2137,12 +2158,19 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9312e0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd08578 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.userFunc0x125ed08(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0x124df80 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2181,23 +2209,36 @@ Object.defineProperty(GameVars, "isMapShowing", {
 
 /*
 Here's where we define MapLocations for use with the Map feature. Each location is defined with the location name as a key,
-with an object containing "animName" as the animation name of the map image and an array named "layouts" containing the names of all associated Layouts.
+and an array containing the names of all associated Layouts.
 The first layout in the array will always be the one loaded when teleporting to this location using the in-game map
 */
 FDSG.MapLocations = {
-    "Frederick Douglass Square": {
-        animName: "FDS",
-        layouts: [
+    "Frederick Douglass Square": [
             "Frederick Douglass Square"
-        ]
-    },
-    "Hornbake": {
-        animName: "Hornbake",
-        layouts: [
+    ],
+    "Hornbake": [
             "Hornbake Entrance",
-            "Hornbake Stairwell Main Floor"
-        ]
-    }
+            "Hornbake Stairwell Main Floor",
+            "Hornbake Entrance"
+    ],
+    "STAMP Union Hall": [
+        "STAMP Entrance",
+        "STAMP Main Hallway",
+        "Hallway to STAMP Art Gallery",
+        "Inside Art Gallery",
+        "Inside Art Gallery 2",
+        "Hallway to MICA",
+        "MICA Entrance",
+        "Inside MICA"
+    ],
+    "David C. Driskell Center": [
+        "Driskell Entrance",
+        "Driskell Starting Point",
+        "Driskell Mural",
+        "Driskell Art Gallery",
+        "Driskell Art Gallery 2",
+        
+    ]
 }
 
 
@@ -2215,8 +2256,8 @@ FDSG.updateMapPopup = function() {
             case("LocationNameText"):
                 instance.setText(currentMapLocation);
                 break;
-            case("MapImage"):
-                instance.setAnimationName(FDSG.MapLocations[currentMapLocation].animName);
+            case("Background"):
+                instance.setAnimationName(FDSG.MapLocations[currentMapLocation][0]);
                 instance.setWidth(640);
                 instance.setHeight(360);
                 break;
@@ -2231,7 +2272,7 @@ FDSG.updateMapPopup = function() {
                 instance.getVariables().get("enabled").setBoolean(enabled);
                 break;
             case("MapEnterButton"):
-                let firstLayout = FDSG.MapLocations[currentMapLocation].layouts[0];
+                let firstLayout = FDSG.MapLocations[currentMapLocation][0];
                 enabled = (GameVars.currentLayout != firstLayout);
                 instance.enableEffect("Disabled", !enabled);
                 instance.getVariables().get("enabled").setBoolean(enabled);
@@ -2251,7 +2292,7 @@ FDSG.updateMapPopup = function() {
 FDSG.updateVisitedMapLocations = function() {
     const visitedLocations = []; // All locations the player has visited
     for (const mapLocation in FDSG.MapLocations) { // Check each location
-        for (const mapLayout of FDSG.MapLocations[mapLocation].layouts) { // Check each layout tied to the location to see if one has been visited
+        for (const mapLayout of FDSG.MapLocations[mapLocation]) { // Check each layout tied to the location to see if one has been visited
             if (GameVars._visitedLayouts[mapLayout]) { // If this layout has been visited
                 visitedLocations.push(mapLocation); // Add this mapLocation as visited
                 break; // We don't need to keep checking for this location
@@ -2270,12 +2311,19 @@ gdjs.ExplorationCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd08578(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xeefa20 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.userFunc0x124df80(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0x12598c0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2307,12 +2355,19 @@ gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xeefa20(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xefaaf0 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.userFunc0x12598c0(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0xeac370 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2326,19 +2381,39 @@ Object.assign(GameVars, {
     currentGameVolume: 100 // The current volume of the game
 })
 
+document.addEventListener("visibilitychange", () => { // This automatically handles muting and restoring the volume whenever the game is minimized or closed
+    GameVars.windowActive = !document.hidden;
+    if (document.hidden) {
+        gdjs.evtTools.sound.setGlobalVolume(GameVars.runtimeScene, 0);
+    } else {
+        if (gdjs.evtTools.sound.getGlobalVolume(GameVars.runtimeScene) != GameVars.currentGameVolume) {
+            gdjs.evtTools.sound.setGlobalVolume(GameVars.runtimeScene, GameVars.currentGameVolume); // See if the volume was muted from losing focus
+        }
+    }
+});
+
 FDSG.Sounds = {} // Used to store sound related data;
 
 
 FDSG.Sounds.LocationSounds = { // Here we put the sound effect to play for each layout. If the sound is not specified, the game will continue playing the sounds of the previous layout
-    "Frederick Douglass Square": "OutdoorAmbience",
-    "Hornbake Entrance": "IndoorAmbience"
+    "OutdoorAmbience": [
+        "Frederick Douglass Square",
+        "STAMP Entrance",
+        "Driskell Entrance"
+    ],
+    "IndoorAmbience": [
+        "Hornbake Entrance",
+        "Driskell Starting Point",
+        "STAMP Main Hallway"
+    ],
+    "None": [] // Put the location here if you want no ambient sound to play
 }
 
 // This is a simple way to map sound effects to a single name
 FDSG.Sounds.SFX = { 
     Transition: { soundFile: "whoosh4.wav", volume: 50, pitch: .75},
     Inspection: { soundFile: "ui_pop_1_open.wav", volume: 25, pitch: 1},
-    CloseInspection: { soundFile: "ui_pop_1_close.wav", volume: 50, pitch: 1},
+    CloseInspection: { soundFile: "ui_pop_1_close.wav", volume: 25, pitch: 1},
     VisibilityToggle: { soundFile: "whoosh1.wav", volume: 50, pitch: .75},
     CloseInventory: { soundFile: "zip_closed.wav", volume: 50, pitch: 1 },
     OpenInventory: { soundFile: "zip_open.wav", volume: 50, pitch: 1 },
@@ -2352,6 +2427,14 @@ FDSG.Sounds.SFX = {
     ChangeMap: { soundFile: "swipe.wav", volume: 50, pitch: 1.3},
     OutdoorAmbience: { soundFile: "outdoor_ambience.wav", volume: 50, pitch: 1},
     IndoorAmbience: { soundFile: "muffled_voices_indoors.wav", volume: 75, pitch: 1 }
+}
+
+
+// Preload sounds
+for (let sound in FDSG.Sounds.SFX) {
+    if (sound != "OutdoorAmbience" && sound != "IndoorAmbience") {
+        gdjs.evtTools.sound.playSound(runtimeScene, FDSG.Sounds.SFX[sound].soundFile, false, 0, 1); // We play all the sounds at 0 volume to preload them
+    } 
 }
 
 /**
@@ -2383,11 +2466,19 @@ FDSG.playSFX = function(soundName, loop = false) {
 FDSG.handleLocationSounds = function() {
     let currentSoundData = GameVars.currentLocationSoundData;
     const locationSoundChannel = GameVars.Constants.LOCATION_SOUND_CHANNEL;
-    if (!(GameVars.currentLayout in FDSG.Sounds.LocationSounds)) {
+    let locationHasSound = false;
+    let locationSoundName = null;
+    for (const sound in FDSG.Sounds.LocationSounds) {
+        if (FDSG.Sounds.LocationSounds[sound].includes(GameVars.currentLayout)) {
+            locationHasSound = true;
+            locationSoundName = sound;
+            break;
+        }
+    }
+    if (!locationHasSound) {
         return; // Just keep playing the current sound if none is registered
     }
-    let locationSoundName = FDSG.Sounds.LocationSounds[GameVars.currentLayout];
-    if (locationSoundName == false) {
+    if (locationSoundName == "None") {
         gdjs.evtTools.sound.stopMusicOnChannel(GameVars.runtimeScene, locationSoundChannel); // Stop the current sound
         GameVars.currentLocationSoundData = null;
         return;
@@ -2412,7 +2503,14 @@ gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xefaaf0(runtimeScene);
+
+}
+
+
+{
+
+
+gdjs.ExplorationCode.userFunc0xeac370(runtimeScene);
 
 }
 
@@ -2431,7 +2529,149 @@ gdjs.ExplorationCode.userFunc0xefaaf0(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd4b990 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData;
+const GameVars = FDSG.GameVars;
+
+const layoutNames = [
+    "Frederick Douglass Square",
+    "Hornbake Entrance",
+    "Hornbake Stairwell",
+    "Hornbake Special Collections",
+    "Hornbake Gallery Room",
+    "Hornbake Maryland Room",
+    "Hornbake Exit",
+    "Driskell Entrance",
+    "Driskell Starting Point",
+    "Driskell Mural",
+    "Driskell Art Gallery",
+    "Driskell Art Gallery 2",
+    "STAMP Entrance",
+    "STAMP Main Hallway",
+    "Hallway to STAMP Art Gallery",
+    "STAMP Art Gallery",
+    "STAMP Art Gallery 2",
+    "Hallway to MICA",
+    "MICA Entrance",
+    "Inside MICA"
+]
+
+
+for (const instance of FDSG.getAllSceneInstances()) { // First we delete everything in case this layout was selected before previewing. This only makes development easier and doesn't affect the game
+    instance.deleteFromScene();
+}
+
+for (let layout of layoutNames) {
+    gdjs.evtTools.runtimeScene.createObjectsFromExternalLayout(runtimeScene, layout, 0, 0, 0); // We just load every single layout so we can count all the statues before deleting them all
+    // This is dumb and its probably better to just manually count all the figurines, but I am tired and stupid
+    // If you want to add statues that are in other scenes or something, just change the initial value of TOTAL_STATUES to compensate
+}
+
+const figurines = runtimeScene.getInstancesOf("StatueCollectible");
+GameVars.Constants.TOTAL_STATUES += figurines.length;
+
+for (const instance of FDSG.getAllSceneInstances()) {
+    instance.deleteFromScene();
+}
+};
+gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
+
+{
+
+
+
+}
+
+
+{
+
+
+gdjs.ExplorationCode.userFunc0xd4b990(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0xb24128 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData;
+const GameVars = FDSG.GameVars;
+console.log("registering keys");
+FDSG.registerKeyPressFunction({
+    key: "f",
+    duration: "justPressed",
+    keyPressFunction: () => {
+        FDSG.debugPrint("log", FDSG);
+    }
+});
+
+FDSG.registerKeyPressFunction({
+    key: "v",
+    duration: "justPressed",
+    keyPressFunction: () => {
+        FDSG.debugPrint("log", GameVars);
+    }
+});
+
+FDSG.registerKeyPressFunction({
+    key: "r",
+    duration: "justPressed",
+    keyPressFunction: () => {
+        FDSG.debugPrint("log", GameVars.runtimeScene);
+    }
+});
+
+FDSG.registerKeyPressFunction({
+    key: "i",
+    duration: "justPressed",
+    keyPressFunction: () => {
+        FDSG.debugPrint("log", FDSG.Input);
+    }
+});
+};
+gdjs.ExplorationCode.eventsList11 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0xb24128(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
+
+{
+
+
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+{isConditionTrue_0 = runtimeScene.getGame().getVariables().getFromIndex(2).getAsBoolean();
+}
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.ExplorationCode.eventsList11(runtimeScene);} //End of subevents
+}
+
+}
+
+
+};gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
+
+{
+
+
+
+}
+
 
 {
 
@@ -2496,7 +2736,21 @@ gdjs.ExplorationCode.eventsList9(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xef37b0 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.eventsList10(runtimeScene);
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList12(runtimeScene);
+}
+
+
+};gdjs.ExplorationCode.userFunc0xb273f8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2544,6 +2798,8 @@ FDSG.registerClickableObject({
     object: "TransitionObject",
     duration: "released",
     clickFunction: (obj) => {
+        let longFade = obj.getVariables().get("longTransitionFade").getAsBoolean();
+        if (longFade) { GameVars._longFade = true }
         GameVars.currentLayout = obj.getVariables().get("targetLayout").getAsString();
             // Changes the currentLayout to the layout associated with the TransitionObject and reloads the scene
     },
@@ -2615,8 +2871,8 @@ FDSG.registerClickableObject({
         }
         const previousInspection = GameVars._previousInspections.pop();
         if (previousInspection == "itemPopup") {
-            GameVars.isItemPopupShowing = true;
             GameVars.isInspecting = false;
+            GameVars.isItemPopupShowing = true;
             FDSG.playSFX("CloseInspection");
         } else {
             FDSG.bringInspectionIntoView(previousInspection);
@@ -2647,14 +2903,21 @@ FDSG.registerClickableObject({
         if (objVariables.get("showPopup").getAsBoolean()) {
             const itemName = objVariables.get("itemName").getAsString();
             const itemDescription = objVariables.get("itemDescription").getAsString();
+            if (FDSG.FDFacts.length > 0 && (obj.getVariables().get("infoText").getAsString() == "0" // Load a random Frederick Douglass fact into the infoText
+            || obj.getVariables().get("infoText").getAsString() == "null")) {
+                let randomIndex = Math.floor(Math.random()*FDSG.FDFacts.length);
+                let fact = FDSG.FDFacts[randomIndex];
+                FDSG.FDFacts.splice(randomIndex, 1);
+                obj.getVariables().get("infoText").setString(fact);
+            }
             GameVars._itemPopupData.itemObject = obj;
             FDSG.showItemPopup(itemName, itemDescription);
         } else {
             FDSG.GameVars.statuesCollected += 1; // Increase statues collected counter
+            FDSG.collectObject(obj);
             FDSG.updateStatueCounter();
             const statueIcon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0];
             FDSG.playObjectShakeAnimation(statueIcon);
-            FDSG.collectObject(obj);
             FDSG.playSFX("StatueCollected");
         }
     },
@@ -2751,11 +3014,11 @@ FDSG.registerClickableObject({
         const itemName = itemPopupData.itemObject.getVariables().get("itemName").getAsString();
         const itemDescription = itemPopupData.itemDescriptionText.getString();
         if (itemPopupData.itemObject.getName() == "StatueCollectible") { // If the item is a figurine (statue)
+            FDSG.collectObject(itemPopupData.itemObject);
             FDSG.GameVars.statuesCollected += 1; // Increase statues collected counter
             FDSG.updateStatueCounter();
             const statueIcon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0];
             FDSG.playObjectShakeAnimation(statueIcon);
-            FDSG.collectObject(itemPopupData.itemObject);
             FDSG.playSFX("StatueCollected");
         } else {
             FDSG.addItemToInventory(itemName, itemDescription); // Add the item to inventory
@@ -2794,6 +3057,16 @@ FDSG.registerClickableObject({
 });
 
 FDSG.registerClickableObject({
+    object: "ExitMap",
+    duration: "released",
+    clickFunction: (obj) => {
+        FDSG.playSFX("CloseMap");
+        GameVars.isMapShowing = false;
+    },
+    hoverEffect: structuredClone(outlineHoverEffect)
+});
+
+FDSG.registerClickableObject({
     object: "CycleMapNext",
     duration: "released",
     clickFunction: (obj) => {
@@ -2820,7 +3093,8 @@ FDSG.registerClickableObject({
     duration: "released",
     clickFunction: (obj) => {
         const currentMapLocation = GameVars.availableMapLocations[GameVars.currentMapIndex];
-        const firstLayout = FDSG.MapLocations[currentMapLocation].layouts[0];
+        const firstLayout = FDSG.MapLocations[currentMapLocation][0];
+        GameVars._longFade = true;
         GameVars.isMapShowing = false;
         GameVars.currentLayout = firstLayout;
     },
@@ -2859,17 +3133,24 @@ FDSG.registerClickableObject({
 });
 
 };
-gdjs.ExplorationCode.eventsList11 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xef37b0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd590e0 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.userFunc0xb273f8(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0xe6afa8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2883,23 +3164,19 @@ const Game = GameVars.runtimeScene.getGame();
     !!! If you just want to load an inspection into view without any conditions or extra code, just use an Inspection instead !!!
 */
 
-FDSG.registerInteraction("QuoteMinigame", (obj) => {
-    const instanceID = obj.getVariables().get("instanceID").getAsString();
-    if (instanceID == "librarian") {
-        const quoteMinigameFlag = Game.getVariables().get("MinigameFlags").getChild("Fill In The Quote").getAsBoolean();
-        if (quoteMinigameFlag) {
-            FDSG.bringInspectionIntoView("WinQuoteMinigame");
-        } else {
-            FDSG.bringInspectionIntoView("librarian");
-        }
-    } else if (instanceID == "QuoteButton") {
-        FDSG.loadMinigame("Fill In The Quote");
-    } else if (instanceID == "QuoteStatue") {
-        let librarian = FDSG.getInstanceFromID("librarian");
-        librarian.getVariables().get("enabled").setBoolean(false);
-    }   
-}, true);
 
+FDSG.setLayoutFlag("Frederick Douglass Square", "isCulturalCenterAvailable", false); // The transition to the cultural center is not available until the Hornbake Exit has been visited
+
+FDSG.registerOnLayoutLoadFunction("Frederick Douglass Square", () => {
+    const stampTransition = FDSG.getInstanceFromID("STAMP Transition");
+    if (!FDSG.getLayoutFlag("Hornbake Exit", "hasBeenVisited")) {
+        stampTransition.setOpacity(0);
+        stampTransition.getVariables().get("enabled").setBoolean(false);
+    } else {
+        stampTransition.setOpacity(255);
+        stampTransition.getVariables().get("enabled").setBoolean(true);
+    }
+})
 
 FDSG.registerInteraction("MarblesMinigame", (obj) => {
     const instanceID = obj.getVariables().get("instanceID").getAsString();
@@ -2949,50 +3226,156 @@ FDSG.registerInteraction("MarblesMinigame", (obj) => {
     }
 }, true);
 };
-gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xd590e0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe6afa8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd59240 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x8f8848 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData;
+const GameVars = FDSG.GameVars;
+const Game = GameVars.runtimeScene.getGame();
+
+
+FDSG.setLayoutFlag("Hornbake Exit", "hasBeenVisited", false);
+
+FDSG.registerOnLayoutLoadFunction("Hornbake Exit", () => {
+    FDSG.setLayoutFlag("Hornbake Exit", "hasBeenVisited", true);
+});
+};
+gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0x8f8848(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0xb1b478 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData;
+const GameVars = FDSG.GameVars;
+const Game = GameVars.runtimeScene.getGame();
+
+/*
+    FUN IDEA: MAKE THE MARBLES A REWARD FOR COMPLETING THE PICTURE GAME OR QUOTES GAME. HAVING ONE MINIGAME LEAD INTO THE NEXT WILL GIVE PEOPLE A FUN "AHA" MOMENT WHEN THEY GET THE MARBLES
+*/
+
+FDSG.registerInteraction("QuoteMinigame", (obj) => {
+    const instanceID = obj.getVariables().get("instanceID").getAsString();
+    if (instanceID == "librarian") {
+        const quoteMinigameFlag = Game.getVariables().get("MinigameFlags").getChild("Fill In The Quote").getAsBoolean();
+        if (quoteMinigameFlag) {
+            FDSG.bringInspectionIntoView("WinQuoteMinigame");
+        } else {
+            FDSG.bringInspectionIntoView("librarian");
+        }
+    } else if (instanceID == "QuoteButton") {
+        FDSG.loadMinigame("Fill In The Quote");
+    } else if (instanceID == "QuoteStatue") {
+        let librarian = FDSG.getInstanceFromID("librarian");
+        librarian.getVariables().get("enabled").setBoolean(false);
+    }   
+}, true);
+};
+gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0xb1b478(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0x1021390 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+const FDSG = gdjs.FDGameData;
+const GameVars = FDSG.GameVars;
+const Game = GameVars.runtimeScene.getGame();
+
+
+};
+gdjs.ExplorationCode.eventsList18 = function(runtimeScene) {
+
+{
+
+
+gdjs.ExplorationCode.userFunc0x1021390(runtimeScene);
+
+}
+
+
+};gdjs.ExplorationCode.userFunc0x12647e8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
 const Game = GameVars.runtimeScene.getGame();
 
 };
-gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xd59240(runtimeScene);
+gdjs.ExplorationCode.userFunc0x12647e8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList20 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.eventsList12(runtimeScene);
+
 }
 
 
 {
 
 
-gdjs.ExplorationCode.eventsList13(runtimeScene);
+gdjs.ExplorationCode.eventsList15(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0x938718 = function GDJSInlineCode(runtimeScene) {
+{
+
+
+gdjs.ExplorationCode.eventsList16(runtimeScene);
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList17(runtimeScene);
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList18(runtimeScene);
+}
+
+
+{
+
+
+gdjs.ExplorationCode.eventsList19(runtimeScene);
+}
+
+
+};gdjs.ExplorationCode.userFunc0x1264170 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3024,82 +3407,24 @@ FDSG.registerOnReturnFromMinigame("Marbles", () => {
     }
 });
 };
-gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList21 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0x938718(runtimeScene);
 
 }
 
-
-};gdjs.ExplorationCode.userFunc0xd087a8 = function GDJSInlineCode(runtimeScene) {
-"use strict";
-const FDSG = gdjs.FDGameData;
-const GameVars = FDSG.GameVars;
-console.log("registering keys");
-FDSG.registerKeyPressFunction({
-    key: "f",
-    duration: "justPressed",
-    keyPressFunction: () => {
-        FDSG.debugPrint("log", FDSG);
-    }
-});
-
-FDSG.registerKeyPressFunction({
-    key: "v",
-    duration: "justPressed",
-    keyPressFunction: () => {
-        FDSG.debugPrint("log", GameVars);
-    }
-});
-
-FDSG.registerKeyPressFunction({
-    key: "r",
-    duration: "justPressed",
-    keyPressFunction: () => {
-        FDSG.debugPrint("log", GameVars.runtimeScene);
-    }
-});
-
-FDSG.registerKeyPressFunction({
-    key: "i",
-    duration: "justPressed",
-    keyPressFunction: () => {
-        FDSG.debugPrint("log", FDSG.Input);
-    }
-});
-};
-gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0xd087a8(runtimeScene);
+gdjs.ExplorationCode.userFunc0x1264170(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getGame().getVariables().getFromIndex(2).getAsBoolean();
-}
-if (isConditionTrue_0) {
-
-{ //Subevents
-gdjs.ExplorationCode.eventsList16(runtimeScene);} //End of subevents
-}
-
-}
-
-
-};gdjs.ExplorationCode.eventsList18 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList22 = function(runtimeScene) {
 
 {
 
@@ -3111,14 +3436,14 @@ gdjs.ExplorationCode.eventsList0(runtimeScene);
 {
 
 
-gdjs.ExplorationCode.eventsList10(runtimeScene);
+gdjs.ExplorationCode.eventsList13(runtimeScene);
 }
 
 
 {
 
 
-gdjs.ExplorationCode.eventsList11(runtimeScene);
+
 }
 
 
@@ -3132,14 +3457,14 @@ gdjs.ExplorationCode.eventsList14(runtimeScene);
 {
 
 
-gdjs.ExplorationCode.eventsList15(runtimeScene);
+gdjs.ExplorationCode.eventsList20(runtimeScene);
 }
 
 
 {
 
 
-gdjs.ExplorationCode.eventsList17(runtimeScene);
+gdjs.ExplorationCode.eventsList21(runtimeScene);
 }
 
 
@@ -3157,7 +3482,14 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList23 = function(runtimeScene) {
+
+{
+
+
+
+}
+
 
 {
 
@@ -3167,33 +3499,37 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = !runtimeScene.getGame().getVariables().getFromIndex(0).getAsBoolean();
 }
 if (isConditionTrue_0) {
+{gdjs.evtTools.input.touchSimulateMouse(runtimeScene, true);
+}
 
 { //Subevents
-gdjs.ExplorationCode.eventsList18(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList22(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x92dc68 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xb5b148 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
 const Game = runtimeScene.getGame();
-
 
 if (gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene)) { // Runs only at the beginning of the scene
     GameVars.runtimeScene = runtimeScene; // Update the current RuntimeScene object
     FDSG.initScene();
     FDSG.debugPrint("log","Scene initialized");
     var fadeDuration = GameVars.Constants.TRANSITION_FADE_DURATION;
+    if (GameVars._longFade) {
+        fadeDuration = GameVars.Constants.LONG_TRANSITION_FADE_DURATION;
+        GameVars._longFade = false;
+    }
     if (!Game.getVariables().get("FirstSceneInitialized").getAsBoolean()) { // Fade into the game should be nice and long
         fadeDuration = GameVars.Constants.FIRST_TRANSITION_FADE_DURATION;
         Game.getVariables().get("FirstSceneInitialized").setBoolean(true);
     }
     FDSG.initFade(fadeDuration, true, false);
 }
-
 var thisLayout = GameVars.currentLayout; // Store the layout to see if it changes with player input
 
 if (!GameVars._isFading && GameVars._currentLoadedMinigame != null) { // Check if we're returning from a minigame
@@ -3210,7 +3546,10 @@ if (!GameVars._isFading && GameVars._currentLoadedMinigame != null) { // Check i
     }
     GameVars._currentLoadedMinigame = null;
 }
-FDSG.handlePlayerInput(); // Handle all registered functions associated with clicking objects and pressing keys
+
+if (GameVars.windowActive) { // If the window is currently focused and active
+    FDSG.handlePlayerInput(); // Handle all registered functions associated with clicking objects and pressing keys
+}
 if (GameVars._isFading) {
     var fadeEffect = runtimeScene.getInstancesOf("FadeScreen")[0];
     let fadeTween = fadeEffect.getBehavior("Tween");
@@ -3238,9 +3577,9 @@ if (GameVars._isFading) {
     }
 }
 };
-gdjs.ExplorationCode.eventsList20 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList24 = function(runtimeScene) {
 
-};gdjs.ExplorationCode.eventsList21 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList25 = function(runtimeScene) {
 
 {
 
@@ -3273,7 +3612,7 @@ if (isConditionTrue_0) {
 };gdjs.ExplorationCode.mapOfEmptyGDDebugCameraObjects = Hashtable.newFrom({"DebugCamera": []});
 gdjs.ExplorationCode.mapOfGDgdjs_9546ExplorationCode_9546GDDebugCameraObjects2Objects = Hashtable.newFrom({"DebugCamera": gdjs.ExplorationCode.GDDebugCameraObjects2});
 gdjs.ExplorationCode.mapOfEmptyGDDebugCameraObjects = Hashtable.newFrom({"DebugCamera": []});
-gdjs.ExplorationCode.eventsList22 = function(runtimeScene) {
+gdjs.ExplorationCode.eventsList26 = function(runtimeScene) {
 
 {
 
@@ -3346,7 +3685,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.ExplorationCode.eventsList23 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList27 = function(runtimeScene) {
 
 {
 
@@ -3357,7 +3696,7 @@ isConditionTrue_0 = gdjs.evtTools.input.wasKeyReleased(runtimeScene, "Num1");
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.ExplorationCode.eventsList21(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList25(runtimeScene);} //End of subevents
 }
 
 }
@@ -3395,18 +3734,25 @@ gdjs.copyArray(runtimeScene.getObjects("DebugCamera"), gdjs.ExplorationCode.GDDe
 }
 
 { //Subevents
-gdjs.ExplorationCode.eventsList22(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList26(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.ExplorationCode.eventsList24 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList28 = function(runtimeScene) {
 
 {
 
 
-gdjs.ExplorationCode.userFunc0x92dc68(runtimeScene);
+
+}
+
+
+{
+
+
+gdjs.ExplorationCode.userFunc0xb5b148(runtimeScene);
 
 }
 
@@ -3546,6 +3892,13 @@ for(var i = 0, len = gdjs.ExplorationCode.GDMapEnterButtonObjects3.length ;i < l
 {
 
 
+
+}
+
+
+{
+
+
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 {isConditionTrue_0 = runtimeScene.getGame().getVariables().getFromIndex(2).getAsBoolean();
@@ -3553,13 +3906,13 @@ isConditionTrue_0 = false;
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.ExplorationCode.eventsList23(runtimeScene);} //End of subevents
+gdjs.ExplorationCode.eventsList27(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.ExplorationCode.eventsList25 = function(runtimeScene) {
+};gdjs.ExplorationCode.eventsList29 = function(runtimeScene) {
 
 {
 
@@ -3571,14 +3924,14 @@ gdjs.ExplorationCode.eventsList23(runtimeScene);} //End of subevents
 {
 
 
-gdjs.ExplorationCode.eventsList19(runtimeScene);
+gdjs.ExplorationCode.eventsList23(runtimeScene);
 }
 
 
 {
 
 
-gdjs.ExplorationCode.eventsList24(runtimeScene);
+gdjs.ExplorationCode.eventsList28(runtimeScene);
 }
 
 
@@ -3731,10 +4084,10 @@ gdjs.ExplorationCode.GDLocationNameTextObjects1.length = 0;
 gdjs.ExplorationCode.GDLocationNameTextObjects2.length = 0;
 gdjs.ExplorationCode.GDLocationNameTextObjects3.length = 0;
 gdjs.ExplorationCode.GDLocationNameTextObjects4.length = 0;
-gdjs.ExplorationCode.GDMapImageObjects1.length = 0;
-gdjs.ExplorationCode.GDMapImageObjects2.length = 0;
-gdjs.ExplorationCode.GDMapImageObjects3.length = 0;
-gdjs.ExplorationCode.GDMapImageObjects4.length = 0;
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects1.length = 0;
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects2.length = 0;
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects3.length = 0;
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects4.length = 0;
 gdjs.ExplorationCode.GDCycleMapNextObjects1.length = 0;
 gdjs.ExplorationCode.GDCycleMapNextObjects2.length = 0;
 gdjs.ExplorationCode.GDCycleMapNextObjects3.length = 0;
@@ -3772,7 +4125,7 @@ gdjs.ExplorationCode.GDExitMinigameButtonObjects2.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects3.length = 0;
 gdjs.ExplorationCode.GDExitMinigameButtonObjects4.length = 0;
 
-gdjs.ExplorationCode.eventsList25(runtimeScene);
+gdjs.ExplorationCode.eventsList29(runtimeScene);
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects1.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects2.length = 0;
 gdjs.ExplorationCode.GDStatuesCollectedCounterObjects3.length = 0;
@@ -3917,10 +4270,10 @@ gdjs.ExplorationCode.GDLocationNameTextObjects1.length = 0;
 gdjs.ExplorationCode.GDLocationNameTextObjects2.length = 0;
 gdjs.ExplorationCode.GDLocationNameTextObjects3.length = 0;
 gdjs.ExplorationCode.GDLocationNameTextObjects4.length = 0;
-gdjs.ExplorationCode.GDMapImageObjects1.length = 0;
-gdjs.ExplorationCode.GDMapImageObjects2.length = 0;
-gdjs.ExplorationCode.GDMapImageObjects3.length = 0;
-gdjs.ExplorationCode.GDMapImageObjects4.length = 0;
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects1.length = 0;
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects2.length = 0;
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects3.length = 0;
+gdjs.ExplorationCode.GDMapImage_9595dont_9595use_9595Objects4.length = 0;
 gdjs.ExplorationCode.GDCycleMapNextObjects1.length = 0;
 gdjs.ExplorationCode.GDCycleMapNextObjects2.length = 0;
 gdjs.ExplorationCode.GDCycleMapNextObjects3.length = 0;

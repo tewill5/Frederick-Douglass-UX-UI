@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.2530387740589986,
+    "zoomFactor": 1.134371579716108,
     "windowMask": false,
     "selectedLayer": "Lose"
   },
@@ -138,14 +138,14 @@
       "value": false
     },
     {
-      "name": "isTouching",
-      "type": "boolean",
-      "value": true
+      "name": "inputX",
+      "type": "number",
+      "value": 0
     },
     {
-      "name": "touchEnded",
-      "type": "boolean",
-      "value": false
+      "name": "inputY",
+      "type": "number",
+      "value": 0
     },
     {
       "name": "isGameRunning",
@@ -3551,7 +3551,6 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -3564,15 +3563,6 @@
             }
           ],
           "actions": [
-            {
-              "type": {
-                "value": "TouchSimulateMouse"
-              },
-              "parameters": [
-                "",
-                "no"
-              ]
-            },
             {
               "type": {
                 "value": "Physics2::TimeScale"
@@ -3767,6 +3757,30 @@
                   "value": 0.6
                 }
               ]
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "folded": true,
+              "name": "Input Method Handling",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "window.addEventListener(\"pointerdown\", e => { // js method for determining input type",
+                    "    runtimeScene.getVariables().get(\"isUsingTouchscreen\").setBoolean(e.pointerType == \"touch\"); // This distinguishes between touch and mouse input",
+                    "}, { passive: true }); // This is for performance reasons"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                }
+              ],
+              "parameters": []
             }
           ],
           "variables": [
@@ -3774,170 +3788,6 @@
               "name": "randomPositionModifier",
               "type": "number",
               "value": 10
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
-      "folded": true,
-      "name": "Touchscreen Handling",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BooleanVariable"
-              },
-              "parameters": [
-                "touchEnded",
-                "True",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "touchEnded",
-                "False",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "isTouching",
-                "False",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "HasAnyTouchOrMouseStarted"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "isUsingTouchscreen",
-                "True",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "isTouching",
-                "True",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "HasTouchEnded"
-              },
-              "parameters": [
-                "",
-                "2"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "touchEnded",
-                "True",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Or"
-              },
-              "parameters": [],
-              "subInstructions": [
-                {
-                  "type": {
-                    "value": "CursorMovement::CursorIsMoving"
-                  },
-                  "parameters": [
-                    "",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "MouseButtonFromTextPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Left\""
-                  ]
-                }
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "isUsingTouchscreen",
-                "False",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "isTouching",
-                "False",
-                ""
-              ]
             }
           ]
         }
@@ -4068,6 +3918,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Main Game",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -5288,6 +5139,7 @@
                       "colorG": 176,
                       "colorR": 74,
                       "creationTime": 0,
+                      "folded": true,
                       "name": "Player Turn",
                       "source": "",
                       "type": "BuiltinCommonInstructions::Group",
@@ -5358,6 +5210,7 @@
                               "colorG": 176,
                               "colorR": 74,
                               "creationTime": 0,
+                              "folded": true,
                               "name": "Player Shooting Marble",
                               "source": "",
                               "type": "BuiltinCommonInstructions::Group",
@@ -5399,12 +5252,11 @@
                                           "conditions": [
                                             {
                                               "type": {
-                                                "value": "BooleanVariable"
+                                                "value": "MouseButtonFromTextPressed"
                                               },
                                               "parameters": [
-                                                "isTouching",
-                                                "True",
-                                                ""
+                                                "",
+                                                "\"Left\""
                                               ]
                                             }
                                           ],
@@ -5425,7 +5277,7 @@
                                               "parameters": [
                                                 "inputX",
                                                 "=",
-                                                "TouchX(2)"
+                                                "CursorX()"
                                               ]
                                             },
                                             {
@@ -5435,7 +5287,7 @@
                                               "parameters": [
                                                 "inputY",
                                                 "=",
-                                                "TouchY(2)"
+                                                "CursorY()"
                                               ]
                                             },
                                             {
@@ -5456,12 +5308,12 @@
                                           "conditions": [
                                             {
                                               "type": {
-                                                "value": "BooleanVariable"
+                                                "inverted": true,
+                                                "value": "MouseButtonFromTextPressed"
                                               },
                                               "parameters": [
-                                                "isTouching",
-                                                "False",
-                                                ""
+                                                "",
+                                                "\"Left\""
                                               ]
                                             }
                                           ],
@@ -5742,28 +5594,11 @@
                                       "conditions": [
                                         {
                                           "type": {
-                                            "value": "BuiltinCommonInstructions::Or"
+                                            "value": "MouseButtonFromTextReleased"
                                           },
-                                          "parameters": [],
-                                          "subInstructions": [
-                                            {
-                                              "type": {
-                                                "value": "MouseButtonFromTextReleased"
-                                              },
-                                              "parameters": [
-                                                "",
-                                                "\"Left\""
-                                              ]
-                                            },
-                                            {
-                                              "type": {
-                                                "value": "HasTouchEnded"
-                                              },
-                                              "parameters": [
-                                                "",
-                                                "2"
-                                              ]
-                                            }
+                                          "parameters": [
+                                            "",
+                                            "\"Left\""
                                           ]
                                         },
                                         {
@@ -5836,18 +5671,6 @@
                                         }
                                       ]
                                     }
-                                  ],
-                                  "variables": [
-                                    {
-                                      "name": "inputX",
-                                      "type": "number",
-                                      "value": 0
-                                    },
-                                    {
-                                      "name": "inputY",
-                                      "type": "number",
-                                      "value": 0
-                                    }
                                   ]
                                 }
                               ],
@@ -5914,12 +5737,47 @@
                                       "conditions": [
                                         {
                                           "type": {
-                                            "value": "BooleanVariable"
+                                            "value": "BuiltinCommonInstructions::Or"
                                           },
-                                          "parameters": [
-                                            "isUsingTouchscreen",
-                                            "False",
-                                            ""
+                                          "parameters": [],
+                                          "subInstructions": [
+                                            {
+                                              "type": {
+                                                "value": "BooleanVariable"
+                                              },
+                                              "parameters": [
+                                                "isUsingTouchscreen",
+                                                "False",
+                                                ""
+                                              ]
+                                            },
+                                            {
+                                              "type": {
+                                                "value": "BuiltinCommonInstructions::And"
+                                              },
+                                              "parameters": [],
+                                              "subInstructions": [
+                                                {
+                                                  "type": {
+                                                    "value": "BooleanVariable"
+                                                  },
+                                                  "parameters": [
+                                                    "isUsingTouchscreen",
+                                                    "True",
+                                                    ""
+                                                  ]
+                                                },
+                                                {
+                                                  "type": {
+                                                    "value": "MouseButtonFromTextPressed"
+                                                  },
+                                                  "parameters": [
+                                                    "",
+                                                    "\"Left\""
+                                                  ]
+                                                }
+                                              ]
+                                            }
                                           ]
                                         }
                                       ],
@@ -5948,53 +5806,6 @@
                                     },
                                     {
                                       "type": "BuiltinCommonInstructions::Standard",
-                                      "conditions": [
-                                        {
-                                          "type": {
-                                            "value": "BooleanVariable"
-                                          },
-                                          "parameters": [
-                                            "isUsingTouchscreen",
-                                            "True",
-                                            ""
-                                          ]
-                                        },
-                                        {
-                                          "type": {
-                                            "value": "BooleanVariable"
-                                          },
-                                          "parameters": [
-                                            "isTouching",
-                                            "True",
-                                            ""
-                                          ]
-                                        }
-                                      ],
-                                      "actions": [
-                                        {
-                                          "type": {
-                                            "value": "SetNumberVariable"
-                                          },
-                                          "parameters": [
-                                            "inputX",
-                                            "=",
-                                            "TouchX(2)"
-                                          ]
-                                        },
-                                        {
-                                          "type": {
-                                            "value": "SetNumberVariable"
-                                          },
-                                          "parameters": [
-                                            "inputY",
-                                            "=",
-                                            "TouchY(2)"
-                                          ]
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "type": "BuiltinCommonInstructions::Standard",
                                       "conditions": [],
                                       "actions": [
                                         {
@@ -6015,28 +5826,11 @@
                                       "conditions": [
                                         {
                                           "type": {
-                                            "value": "BuiltinCommonInstructions::Or"
+                                            "value": "MouseButtonFromTextReleased"
                                           },
-                                          "parameters": [],
-                                          "subInstructions": [
-                                            {
-                                              "type": {
-                                                "value": "MouseButtonFromTextReleased"
-                                              },
-                                              "parameters": [
-                                                "",
-                                                "\"Left\""
-                                              ]
-                                            },
-                                            {
-                                              "type": {
-                                                "value": "HasTouchEnded"
-                                              },
-                                              "parameters": [
-                                                "",
-                                                "2"
-                                              ]
-                                            }
+                                          "parameters": [
+                                            "",
+                                            "\"Left\""
                                           ]
                                         }
                                       ],
@@ -6065,18 +5859,6 @@
                                         }
                                       ]
                                     }
-                                  ],
-                                  "variables": [
-                                    {
-                                      "name": "inputX",
-                                      "type": "number",
-                                      "value": 0
-                                    },
-                                    {
-                                      "name": "inputY",
-                                      "type": "number",
-                                      "value": 0
-                                    }
                                   ]
                                 }
                               ],
@@ -6092,6 +5874,7 @@
                       "colorG": 176,
                       "colorR": 74,
                       "creationTime": 0,
+                      "folded": true,
                       "name": "Computer Turn",
                       "source": "",
                       "type": "BuiltinCommonInstructions::Group",

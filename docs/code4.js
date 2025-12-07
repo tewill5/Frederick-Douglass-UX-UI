@@ -473,8 +473,24 @@ if (isConditionTrue_0) {
 };gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects1Objects = Hashtable.newFrom({"Marble": gdjs.MarblesCode.GDMarbleObjects1});
 gdjs.MarblesCode.eventsList10 = function(runtimeScene) {
 
-};gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects1ObjectsGDgdjs_9546MarblesCode_9546GDPlayerMarbleObjects1ObjectsGDgdjs_9546MarblesCode_9546GDComputerMarbleObjects1Objects = Hashtable.newFrom({"Marble": gdjs.MarblesCode.GDMarbleObjects1, "PlayerMarble": gdjs.MarblesCode.GDPlayerMarbleObjects1, "ComputerMarble": gdjs.MarblesCode.GDComputerMarbleObjects1});
+};gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDPlayerMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDComputerMarbleObjects2Objects = Hashtable.newFrom({"Marble": gdjs.MarblesCode.GDMarbleObjects2, "PlayerMarble": gdjs.MarblesCode.GDPlayerMarbleObjects2, "ComputerMarble": gdjs.MarblesCode.GDComputerMarbleObjects2});
+gdjs.MarblesCode.userFunc0xb598b0 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+window.addEventListener("pointerdown", e => { // js method for determining input type
+    runtimeScene.getVariables().get("isUsingTouchscreen").setBoolean(e.pointerType == "touch"); // This distinguishes between touch and mouse input
+}, { passive: true }); // This is for performance reasons
+};
 gdjs.MarblesCode.eventsList11 = function(runtimeScene) {
+
+{
+
+
+gdjs.MarblesCode.userFunc0xb598b0(runtimeScene);
+
+}
+
+
+};gdjs.MarblesCode.eventsList12 = function(runtimeScene) {
 
 {
 
@@ -509,9 +525,12 @@ if (true) {
 
 {
 
-/* Reuse gdjs.MarblesCode.GDComputerMarbleObjects1 */
-/* Reuse gdjs.MarblesCode.GDMarbleObjects1 */
-/* Reuse gdjs.MarblesCode.GDPlayerMarbleObjects1 */
+gdjs.copyArray(gdjs.MarblesCode.GDComputerMarbleObjects1, gdjs.MarblesCode.GDComputerMarbleObjects2);
+
+gdjs.copyArray(gdjs.MarblesCode.GDMarbleObjects1, gdjs.MarblesCode.GDMarbleObjects2);
+
+gdjs.copyArray(gdjs.MarblesCode.GDPlayerMarbleObjects1, gdjs.MarblesCode.GDPlayerMarbleObjects2);
+
 
 {
 const variables = new gdjs.VariablesContainer();
@@ -529,29 +548,29 @@ gdjs.MarblesCode.localVariables.push(variables);
 }
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.pickAllObjects(runtimeScene, gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects1ObjectsGDgdjs_9546MarblesCode_9546GDPlayerMarbleObjects1ObjectsGDgdjs_9546MarblesCode_9546GDComputerMarbleObjects1Objects);
+isConditionTrue_0 = gdjs.evtTools.object.pickAllObjects(runtimeScene, gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDPlayerMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDComputerMarbleObjects2Objects);
 if (isConditionTrue_0) {
-/* Reuse gdjs.MarblesCode.GDComputerMarbleObjects1 */
-/* Reuse gdjs.MarblesCode.GDMarbleObjects1 */
-/* Reuse gdjs.MarblesCode.GDPlayerMarbleObjects1 */
-{for(var i = 0, len = gdjs.MarblesCode.GDMarbleObjects1.length ;i < len;++i) {
-    gdjs.MarblesCode.GDMarbleObjects1[i].getBehavior("Physics2").setRestitution(gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber());
+/* Reuse gdjs.MarblesCode.GDComputerMarbleObjects2 */
+/* Reuse gdjs.MarblesCode.GDMarbleObjects2 */
+/* Reuse gdjs.MarblesCode.GDPlayerMarbleObjects2 */
+{for(var i = 0, len = gdjs.MarblesCode.GDMarbleObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDMarbleObjects2[i].getBehavior("Physics2").setRestitution(gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber());
 }
-for(var i = 0, len = gdjs.MarblesCode.GDPlayerMarbleObjects1.length ;i < len;++i) {
-    gdjs.MarblesCode.GDPlayerMarbleObjects1[i].getBehavior("Physics2").setRestitution(gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber());
+for(var i = 0, len = gdjs.MarblesCode.GDPlayerMarbleObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDPlayerMarbleObjects2[i].getBehavior("Physics2").setRestitution(gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber());
 }
-for(var i = 0, len = gdjs.MarblesCode.GDComputerMarbleObjects1.length ;i < len;++i) {
-    gdjs.MarblesCode.GDComputerMarbleObjects1[i].getBehavior("Physics2").setRestitution(gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber());
+for(var i = 0, len = gdjs.MarblesCode.GDComputerMarbleObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDComputerMarbleObjects2[i].getBehavior("Physics2").setRestitution(gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber());
 }
 }
-{for(var i = 0, len = gdjs.MarblesCode.GDMarbleObjects1.length ;i < len;++i) {
-    gdjs.MarblesCode.GDMarbleObjects1[i].getBehavior("Physics2").setLinearDamping(gdjs.MarblesCode.localVariables[1].getFromIndex(0).getAsNumber());
+{for(var i = 0, len = gdjs.MarblesCode.GDMarbleObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDMarbleObjects2[i].getBehavior("Physics2").setLinearDamping(gdjs.MarblesCode.localVariables[1].getFromIndex(0).getAsNumber());
 }
-for(var i = 0, len = gdjs.MarblesCode.GDPlayerMarbleObjects1.length ;i < len;++i) {
-    gdjs.MarblesCode.GDPlayerMarbleObjects1[i].getBehavior("Physics2").setLinearDamping(gdjs.MarblesCode.localVariables[1].getFromIndex(0).getAsNumber());
+for(var i = 0, len = gdjs.MarblesCode.GDPlayerMarbleObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDPlayerMarbleObjects2[i].getBehavior("Physics2").setLinearDamping(gdjs.MarblesCode.localVariables[1].getFromIndex(0).getAsNumber());
 }
-for(var i = 0, len = gdjs.MarblesCode.GDComputerMarbleObjects1.length ;i < len;++i) {
-    gdjs.MarblesCode.GDComputerMarbleObjects1[i].getBehavior("Physics2").setLinearDamping(gdjs.MarblesCode.localVariables[1].getFromIndex(0).getAsNumber());
+for(var i = 0, len = gdjs.MarblesCode.GDComputerMarbleObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDComputerMarbleObjects2[i].getBehavior("Physics2").setLinearDamping(gdjs.MarblesCode.localVariables[1].getFromIndex(0).getAsNumber());
 }
 }
 }
@@ -560,7 +579,14 @@ gdjs.MarblesCode.localVariables.pop();
 }
 
 
-};gdjs.MarblesCode.eventsList12 = function(runtimeScene) {
+{
+
+
+gdjs.MarblesCode.eventsList11(runtimeScene);
+}
+
+
+};gdjs.MarblesCode.eventsList13 = function(runtimeScene) {
 
 {
 
@@ -588,8 +614,6 @@ gdjs.copyArray(runtimeScene.getObjects("PlayerMarble"), gdjs.MarblesCode.GDPlaye
 gdjs.copyArray(runtimeScene.getObjects("PlayerScoreText"), gdjs.MarblesCode.GDPlayerScoreTextObjects1);
 gdjs.copyArray(runtimeScene.getObjects("TutorialHeaderText"), gdjs.MarblesCode.GDTutorialHeaderTextObjects1);
 gdjs.copyArray(runtimeScene.getObjects("TutorialText"), gdjs.MarblesCode.GDTutorialTextObjects1);
-{gdjs.evtTools.input.touchSimulateMouse(runtimeScene, false);
-}
 {gdjs.physics2.setTimeScale(gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects1Objects, "Physics2", 1);
 }
 {gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "marbleTimer");
@@ -637,90 +661,9 @@ for(var i = 0, len = gdjs.MarblesCode.GDDirectionalArrowBaseObjects1.length ;i <
 }
 
 { //Subevents
-gdjs.MarblesCode.eventsList11(runtimeScene);} //End of subevents
+gdjs.MarblesCode.eventsList12(runtimeScene);} //End of subevents
 }
 gdjs.MarblesCode.localVariables.pop();
-
-}
-
-
-};gdjs.MarblesCode.eventsList13 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getScene().getVariables().getFromIndex(14).getAsBoolean();
-}
-if (isConditionTrue_0) {
-{runtimeScene.getScene().getVariables().getFromIndex(14).setBoolean(false);
-}
-{runtimeScene.getScene().getVariables().getFromIndex(13).setBoolean(false);
-}
-}
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.hasAnyTouchOrMouseStarted(runtimeScene);
-if (isConditionTrue_0) {
-{runtimeScene.getScene().getVariables().getFromIndex(12).setBoolean(true);
-}
-{runtimeScene.getScene().getVariables().getFromIndex(13).setBoolean(true);
-}
-}
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.hasTouchEnded(runtimeScene, 2);
-if (isConditionTrue_0) {
-{runtimeScene.getScene().getVariables().getFromIndex(14).setBoolean(true);
-}
-}
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
-isConditionTrue_0 = false;
-{
-isConditionTrue_1 = gdjs.evtsExt__CursorMovement__CursorIsMoving.func(runtimeScene, null);
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-isConditionTrue_1 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-}
-}
-if (isConditionTrue_0) {
-{runtimeScene.getScene().getVariables().getFromIndex(12).setBoolean(false);
-}
-{runtimeScene.getScene().getVariables().getFromIndex(13).setBoolean(false);
-}
-}
 
 }
 
@@ -1536,8 +1479,7 @@ gdjs.MarblesCode.localVariables.pop();
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getScene().getVariables().getFromIndex(13).getAsBoolean();
-}
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("DirectionalArrowBase"), gdjs.MarblesCode.GDDirectionalArrowBaseObjects5);
 gdjs.copyArray(runtimeScene.getObjects("DirectionalArrowHead"), gdjs.MarblesCode.GDDirectionalArrowHeadObjects5);
@@ -1550,9 +1492,9 @@ for(var i = 0, len = gdjs.MarblesCode.GDDirectionalArrowBaseObjects5.length ;i <
     gdjs.MarblesCode.GDDirectionalArrowBaseObjects5[i].hide(false);
 }
 }
-{gdjs.MarblesCode.localVariables[1].getFromIndex(0).setNumber(gdjs.evtTools.input.getTouchX(runtimeScene, 2, "", 0));
+{runtimeScene.getScene().getVariables().getFromIndex(13).setNumber(gdjs.evtTools.input.getCursorX(runtimeScene, "", 0));
 }
-{gdjs.MarblesCode.localVariables[1].getFromIndex(1).setNumber(gdjs.evtTools.input.getTouchY(runtimeScene, 2, "", 0));
+{runtimeScene.getScene().getVariables().getFromIndex(14).setNumber(gdjs.evtTools.input.getCursorY(runtimeScene, "", 0));
 }
 {for(var i = 0, len = gdjs.MarblesCode.GDPlayerMarbleObjects5.length ;i < len;++i) {
     gdjs.MarblesCode.GDPlayerMarbleObjects5[i].getBehavior("Effect").enableEffect("selected", false);
@@ -1568,8 +1510,7 @@ for(var i = 0, len = gdjs.MarblesCode.GDDirectionalArrowBaseObjects5.length ;i <
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = !runtimeScene.getScene().getVariables().getFromIndex(13).getAsBoolean();
-}
+isConditionTrue_0 = !(gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left"));
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("DirectionalArrowBase"), gdjs.MarblesCode.GDDirectionalArrowBaseObjects4);
 gdjs.copyArray(runtimeScene.getObjects("DirectionalArrowHead"), gdjs.MarblesCode.GDDirectionalArrowHeadObjects4);
@@ -1601,9 +1542,9 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() < runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber() * 0.50);
 }
 if (isConditionTrue_0) {
-{gdjs.MarblesCode.localVariables[2].getFromIndex(0).setNumber((2 * gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()) * 255);
+{gdjs.MarblesCode.localVariables[1].getFromIndex(0).setNumber((2 * gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()) * 255);
 }
-{gdjs.MarblesCode.localVariables[2].getFromIndex(1).setNumber(255);
+{gdjs.MarblesCode.localVariables[1].getFromIndex(1).setNumber(255);
 }
 }
 
@@ -1618,9 +1559,9 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() >= runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber() * 0.50);
 }
 if (isConditionTrue_0) {
-{gdjs.MarblesCode.localVariables[2].getFromIndex(0).setNumber(255);
+{gdjs.MarblesCode.localVariables[1].getFromIndex(0).setNumber(255);
 }
-{gdjs.MarblesCode.localVariables[2].getFromIndex(1).setNumber(255 * (2 - 2 * gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()));
+{gdjs.MarblesCode.localVariables[1].getFromIndex(1).setNumber(255 * (2 - 2 * gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() / runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()));
 }
 }
 
@@ -1635,10 +1576,10 @@ let isConditionTrue_0 = false;
 gdjs.copyArray(runtimeScene.getObjects("DirectionalArrowBase"), gdjs.MarblesCode.GDDirectionalArrowBaseObjects4);
 gdjs.copyArray(runtimeScene.getObjects("DirectionalArrowHead"), gdjs.MarblesCode.GDDirectionalArrowHeadObjects4);
 {for(var i = 0, len = gdjs.MarblesCode.GDDirectionalArrowHeadObjects4.length ;i < len;++i) {
-    gdjs.MarblesCode.GDDirectionalArrowHeadObjects4[i].getBehavior("Effect").setEffectStringParameter("chargeColor", "newColor", gdjs.evtTools.common.toString(gdjs.MarblesCode.localVariables[2].getFromIndex(0).getAsNumber()) + ";" + gdjs.evtTools.common.toString(gdjs.MarblesCode.localVariables[2].getFromIndex(1).getAsNumber()) + ";0");
+    gdjs.MarblesCode.GDDirectionalArrowHeadObjects4[i].getBehavior("Effect").setEffectStringParameter("chargeColor", "newColor", gdjs.evtTools.common.toString(gdjs.MarblesCode.localVariables[1].getFromIndex(0).getAsNumber()) + ";" + gdjs.evtTools.common.toString(gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber()) + ";0");
 }
 for(var i = 0, len = gdjs.MarblesCode.GDDirectionalArrowBaseObjects4.length ;i < len;++i) {
-    gdjs.MarblesCode.GDDirectionalArrowBaseObjects4[i].getBehavior("Effect").setEffectStringParameter("chargeColor", "newColor", gdjs.evtTools.common.toString(gdjs.MarblesCode.localVariables[2].getFromIndex(0).getAsNumber()) + ";" + gdjs.evtTools.common.toString(gdjs.MarblesCode.localVariables[2].getFromIndex(1).getAsNumber()) + ";0");
+    gdjs.MarblesCode.GDDirectionalArrowBaseObjects4[i].getBehavior("Effect").setEffectStringParameter("chargeColor", "newColor", gdjs.evtTools.common.toString(gdjs.MarblesCode.localVariables[1].getFromIndex(0).getAsNumber()) + ";" + gdjs.evtTools.common.toString(gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber()) + ";0");
 }
 }
 }
@@ -1683,9 +1624,9 @@ for(var i = 0, len = gdjs.MarblesCode.GDDirectionalArrowBaseObjects4.length ;i <
     gdjs.MarblesCode.GDDirectionalArrowBaseObjects4[i].hide(false);
 }
 }
-{gdjs.MarblesCode.localVariables[1].getFromIndex(0).setNumber(gdjs.evtTools.input.getCursorX(runtimeScene, "", 0));
+{runtimeScene.getScene().getVariables().getFromIndex(13).setNumber(gdjs.evtTools.input.getCursorX(runtimeScene, "", 0));
 }
-{gdjs.MarblesCode.localVariables[1].getFromIndex(1).setNumber(gdjs.evtTools.input.getCursorY(runtimeScene, "", 0));
+{runtimeScene.getScene().getVariables().getFromIndex(14).setNumber(gdjs.evtTools.input.getCursorY(runtimeScene, "", 0));
 }
 {for(var i = 0, len = gdjs.MarblesCode.GDPlayerMarbleObjects4.length ;i < len;++i) {
     gdjs.MarblesCode.GDPlayerMarbleObjects4[i].getBehavior("Effect").enableEffect("selected", true);
@@ -1705,9 +1646,9 @@ gdjs.copyArray(runtimeScene.getObjects("DirectionalArrowBase"), gdjs.MarblesCode
 gdjs.copyArray(runtimeScene.getObjects("DirectionalArrowHead"), gdjs.MarblesCode.GDDirectionalArrowHeadObjects4);
 gdjs.copyArray(gdjs.MarblesCode.GDPlayerMarbleObjects2, gdjs.MarblesCode.GDPlayerMarbleObjects4);
 
-{gdjs.MarblesCode.localVariables[0].getFromIndex(1).setNumber(gdjs.toDegrees(Math.atan2((( gdjs.MarblesCode.GDPlayerMarbleObjects4.length === 0 ) ? 0 :gdjs.MarblesCode.GDPlayerMarbleObjects4[0].getPointY("")) - gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber(), (( gdjs.MarblesCode.GDPlayerMarbleObjects4.length === 0 ) ? 0 :gdjs.MarblesCode.GDPlayerMarbleObjects4[0].getPointX("")) - gdjs.MarblesCode.localVariables[1].getFromIndex(0).getAsNumber())));
+{gdjs.MarblesCode.localVariables[0].getFromIndex(1).setNumber(gdjs.toDegrees(Math.atan2((( gdjs.MarblesCode.GDPlayerMarbleObjects4.length === 0 ) ? 0 :gdjs.MarblesCode.GDPlayerMarbleObjects4[0].getPointY("")) - runtimeScene.getScene().getVariables().getFromIndex(14).getAsNumber(), (( gdjs.MarblesCode.GDPlayerMarbleObjects4.length === 0 ) ? 0 :gdjs.MarblesCode.GDPlayerMarbleObjects4[0].getPointX("")) - runtimeScene.getScene().getVariables().getFromIndex(13).getAsNumber())));
 }
-{gdjs.MarblesCode.localVariables[0].getFromIndex(0).setNumber(gdjs.evtTools.common.clamp(0, (gdjs.evtTools.common.distanceBetweenPositions(gdjs.MarblesCode.localVariables[1].getFromIndex(0).getAsNumber(), gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber(), (( gdjs.MarblesCode.GDPlayerMarbleObjects4.length === 0 ) ? 0 :gdjs.MarblesCode.GDPlayerMarbleObjects4[0].getPointX("")), (( gdjs.MarblesCode.GDPlayerMarbleObjects4.length === 0 ) ? 0 :gdjs.MarblesCode.GDPlayerMarbleObjects4[0].getPointY(""))) - gdjs.MarblesCode.localVariables[0].getFromIndex(3).getAsNumber()) * gdjs.MarblesCode.localVariables[0].getFromIndex(4).getAsNumber(), runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()));
+{gdjs.MarblesCode.localVariables[0].getFromIndex(0).setNumber(gdjs.evtTools.common.clamp(0, (gdjs.evtTools.common.distanceBetweenPositions(runtimeScene.getScene().getVariables().getFromIndex(13).getAsNumber(), runtimeScene.getScene().getVariables().getFromIndex(14).getAsNumber(), (( gdjs.MarblesCode.GDPlayerMarbleObjects4.length === 0 ) ? 0 :gdjs.MarblesCode.GDPlayerMarbleObjects4[0].getPointX("")), (( gdjs.MarblesCode.GDPlayerMarbleObjects4.length === 0 ) ? 0 :gdjs.MarblesCode.GDPlayerMarbleObjects4[0].getPointY(""))) - gdjs.MarblesCode.localVariables[0].getFromIndex(3).getAsNumber()) * gdjs.MarblesCode.localVariables[0].getFromIndex(4).getAsNumber(), runtimeScene.getScene().getVariables().getFromIndex(1).getAsNumber()));
 }
 {for(var i = 0, len = gdjs.MarblesCode.GDDirectionalArrowHeadObjects4.length ;i < len;++i) {
     gdjs.MarblesCode.GDDirectionalArrowHeadObjects4[i].setAngle(gdjs.MarblesCode.localVariables[0].getFromIndex(1).getAsNumber());
@@ -1770,23 +1711,7 @@ gdjs.MarblesCode.localVariables.pop();
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
-isConditionTrue_0 = false;
-{
-isConditionTrue_1 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-isConditionTrue_1 = gdjs.evtTools.input.hasTouchEnded(runtimeScene, 2);
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-}
-}
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 {isConditionTrue_0 = (gdjs.MarblesCode.localVariables[0].getFromIndex(0).getAsNumber() > 0);
@@ -1819,20 +1744,6 @@ gdjs.copyArray(gdjs.MarblesCode.GDPlayerMarbleObjects2, gdjs.MarblesCode.GDPlaye
 {
 
 
-{
-const variables = new gdjs.VariablesContainer();
-{
-const variable = new gdjs.Variable();
-variable.setNumber(0);
-variables._declare("inputX", variable);
-}
-{
-const variable = new gdjs.Variable();
-variable.setNumber(0);
-variables._declare("inputY", variable);
-}
-gdjs.MarblesCode.localVariables.push(variables);
-}
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 {isConditionTrue_0 = !runtimeScene.getScene().getVariables().getFromIndex(4).getAsBoolean();
@@ -1842,7 +1753,6 @@ if (isConditionTrue_0) {
 { //Subevents
 gdjs.MarblesCode.eventsList34(runtimeScene);} //End of subevents
 }
-gdjs.MarblesCode.localVariables.pop();
 
 }
 
@@ -1854,34 +1764,37 @@ gdjs.MarblesCode.localVariables.pop();
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = !runtimeScene.getScene().getVariables().getFromIndex(12).getAsBoolean();
-}
-if (isConditionTrue_0) {
-{gdjs.MarblesCode.localVariables[1].getFromIndex(0).setNumber(gdjs.evtTools.input.getCursorX(runtimeScene, "", 0));
-}
-{gdjs.MarblesCode.localVariables[1].getFromIndex(1).setNumber(gdjs.evtTools.input.getCursorY(runtimeScene, "", 0));
-}
-}
-
-}
-
-
+{let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
 {
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getScene().getVariables().getFromIndex(12).getAsBoolean();
+{isConditionTrue_1 = !runtimeScene.getScene().getVariables().getFromIndex(12).getAsBoolean();
+}
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+{let isConditionTrue_2 = false;
+isConditionTrue_2 = false;
+{isConditionTrue_2 = runtimeScene.getScene().getVariables().getFromIndex(12).getAsBoolean();
+}
+if (isConditionTrue_2) {
+isConditionTrue_2 = false;
+isConditionTrue_2 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
+}
+isConditionTrue_1 = isConditionTrue_2;
+}
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+}
+}
+{
+}
 }
 if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getScene().getVariables().getFromIndex(13).getAsBoolean();
+{runtimeScene.getScene().getVariables().getFromIndex(13).setNumber(gdjs.evtTools.input.getCursorX(runtimeScene, "", 0));
 }
-}
-if (isConditionTrue_0) {
-{gdjs.MarblesCode.localVariables[1].getFromIndex(0).setNumber(gdjs.evtTools.input.getTouchX(runtimeScene, 2, "", 0));
-}
-{gdjs.MarblesCode.localVariables[1].getFromIndex(1).setNumber(gdjs.evtTools.input.getTouchY(runtimeScene, 2, "", 0));
+{runtimeScene.getScene().getVariables().getFromIndex(14).setNumber(gdjs.evtTools.input.getCursorY(runtimeScene, "", 0));
 }
 }
 
@@ -1897,7 +1810,7 @@ gdjs.copyArray(runtimeScene.getObjects("Circle"), gdjs.MarblesCode.GDCircleObjec
 gdjs.copyArray(gdjs.MarblesCode.GDPlayerMarbleObjects2, gdjs.MarblesCode.GDPlayerMarbleObjects3);
 
 {for(var i = 0, len = gdjs.MarblesCode.GDPlayerMarbleObjects3.length ;i < len;++i) {
-    gdjs.MarblesCode.GDPlayerMarbleObjects3[i].putAroundObject((gdjs.MarblesCode.GDCircleObjects3.length !== 0 ? gdjs.MarblesCode.GDCircleObjects3[0] : null), ((( gdjs.MarblesCode.GDCircleObjects3.length === 0 ) ? 0 :gdjs.MarblesCode.GDCircleObjects3[0].getWidth()) + (gdjs.MarblesCode.GDPlayerMarbleObjects3[i].getWidth())) / 2 + gdjs.MarblesCode.localVariables[0].getFromIndex(2).getAsNumber(), gdjs.toDegrees(Math.atan2(gdjs.MarblesCode.localVariables[1].getFromIndex(1).getAsNumber() - (( gdjs.MarblesCode.GDCircleObjects3.length === 0 ) ? 0 :gdjs.MarblesCode.GDCircleObjects3[0].getPointY("")), gdjs.MarblesCode.localVariables[1].getFromIndex(0).getAsNumber() - (( gdjs.MarblesCode.GDCircleObjects3.length === 0 ) ? 0 :gdjs.MarblesCode.GDCircleObjects3[0].getPointX("")))));
+    gdjs.MarblesCode.GDPlayerMarbleObjects3[i].putAroundObject((gdjs.MarblesCode.GDCircleObjects3.length !== 0 ? gdjs.MarblesCode.GDCircleObjects3[0] : null), ((( gdjs.MarblesCode.GDCircleObjects3.length === 0 ) ? 0 :gdjs.MarblesCode.GDCircleObjects3[0].getWidth()) + (gdjs.MarblesCode.GDPlayerMarbleObjects3[i].getWidth())) / 2 + gdjs.MarblesCode.localVariables[0].getFromIndex(2).getAsNumber(), gdjs.toDegrees(Math.atan2(runtimeScene.getScene().getVariables().getFromIndex(14).getAsNumber() - (( gdjs.MarblesCode.GDCircleObjects3.length === 0 ) ? 0 :gdjs.MarblesCode.GDCircleObjects3[0].getPointY("")), runtimeScene.getScene().getVariables().getFromIndex(13).getAsNumber() - (( gdjs.MarblesCode.GDCircleObjects3.length === 0 ) ? 0 :gdjs.MarblesCode.GDCircleObjects3[0].getPointX("")))));
 }
 }
 }
@@ -1910,23 +1823,7 @@ gdjs.copyArray(gdjs.MarblesCode.GDPlayerMarbleObjects2, gdjs.MarblesCode.GDPlaye
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
-isConditionTrue_0 = false;
-{
-isConditionTrue_1 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-isConditionTrue_1 = gdjs.evtTools.input.hasTouchEnded(runtimeScene, 2);
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-}
-}
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
 if (isConditionTrue_0) {
 {runtimeScene.getScene().getVariables().getFromIndex(4).setBoolean(false);
 }
@@ -1942,20 +1839,6 @@ if (isConditionTrue_0) {
 {
 
 
-{
-const variables = new gdjs.VariablesContainer();
-{
-const variable = new gdjs.Variable();
-variable.setNumber(0);
-variables._declare("inputX", variable);
-}
-{
-const variable = new gdjs.Variable();
-variable.setNumber(0);
-variables._declare("inputY", variable);
-}
-gdjs.MarblesCode.localVariables.push(variables);
-}
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 {isConditionTrue_0 = runtimeScene.getScene().getVariables().getFromIndex(4).getAsBoolean();
@@ -1981,7 +1864,6 @@ for(var i = 0, len = gdjs.MarblesCode.GDDirectionalArrowBaseObjects2.length ;i <
 { //Subevents
 gdjs.MarblesCode.eventsList36(runtimeScene);} //End of subevents
 }
-gdjs.MarblesCode.localVariables.pop();
 
 }
 
@@ -2772,13 +2654,6 @@ if (isConditionTrue_0) {
 
 
 gdjs.MarblesCode.eventsList9(runtimeScene);
-}
-
-
-{
-
-
-gdjs.MarblesCode.eventsList12(runtimeScene);
 }
 
 

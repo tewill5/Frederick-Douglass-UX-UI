@@ -20,9 +20,9 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6672773998329988,
+    "zoomFactor": 0.6455105703311492,
     "windowMask": false,
-    "selectedLayer": "Tutorial3"
+    "selectedLayer": "Tutorial4"
   },
   "objectsGroups": [
     {
@@ -41,7 +41,7 @@
     {
       "name": "currentTutorial",
       "type": "number",
-      "value": 1
+      "value": 0
     }
   ],
   "instances": [
@@ -285,13 +285,7 @@
       "zOrder": 13,
       "numberProperties": [],
       "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "labelText",
-          "type": "string",
-          "value": "Start!"
-        }
-      ]
+      "initialVariables": []
     },
     {
       "angle": 0,
@@ -320,8 +314,8 @@
       "name": "Image",
       "persistentUuid": "df957339-bc72-4bad-9437-3da8f729b7ba",
       "width": 96,
-      "x": 128,
-      "y": 128,
+      "x": 139,
+      "y": 146,
       "zOrder": 15,
       "numberProperties": [
         {
@@ -341,8 +335,8 @@
       "name": "Image",
       "persistentUuid": "056effd4-f289-4121-b3eb-61564ea3b2dc",
       "width": 0,
-      "x": 128,
-      "y": 239,
+      "x": 135,
+      "y": 291,
       "zOrder": 16,
       "numberProperties": [
         {
@@ -362,35 +356,13 @@
       "name": "Image",
       "persistentUuid": "663a34f4-5c0c-4c4f-adad-48616b7d83f4",
       "width": 0,
-      "x": 132,
-      "y": 347,
+      "x": 135,
+      "y": 436,
       "zOrder": 17,
       "numberProperties": [
         {
           "name": "animation",
           "value": 5
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 2,
-      "height": 96,
-      "keepRatio": true,
-      "layer": "Tutorial3",
-      "name": "Image",
-      "persistentUuid": "ff3bd7bd-0026-486d-88d3-e60e2947ec15",
-      "width": 96,
-      "x": 151,
-      "y": 465,
-      "zOrder": 18,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 6
         }
       ],
       "stringProperties": [],
@@ -425,6 +397,145 @@
       "y": 608,
       "zOrder": 6,
       "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 672,
+      "keepRatio": true,
+      "layer": "Tutorial4",
+      "name": "TutorialBackground",
+      "persistentUuid": "644baf82-011c-4e5b-858a-40d6f403c18a",
+      "width": 1216,
+      "x": 32,
+      "y": 32,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "Tutorial4",
+      "name": "TutorialTitle",
+      "persistentUuid": "6fe1e3f3-315c-4db6-a394-726ce7b23473",
+      "width": 0,
+      "x": 63,
+      "y": 78,
+      "zOrder": 19,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 64,
+      "height": 64,
+      "keepRatio": true,
+      "layer": "Tutorial4",
+      "name": "NextButton",
+      "persistentUuid": "5ac73239-e7a5-4538-a339-a54977a4d1dd",
+      "width": 256,
+      "x": 800,
+      "y": 608,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "labelText",
+          "type": "string",
+          "value": "Start!"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "Tutorial4",
+      "name": "PreviousButton",
+      "persistentUuid": "0e597212-a923-4114-9617-e52d89a86445",
+      "width": 0,
+      "x": 192,
+      "y": 608,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 439,
+      "keepRatio": true,
+      "layer": "Tutorial4",
+      "name": "TutorialText4",
+      "persistentUuid": "25cf215b-c523-4d8a-a389-e9558312bb35",
+      "width": 896,
+      "x": 288,
+      "y": 137,
+      "zOrder": 20,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 128,
+      "keepRatio": true,
+      "layer": "Tutorial4",
+      "name": "Image",
+      "persistentUuid": "dd230a5b-c4b2-4eaa-a092-89a8b928faee",
+      "width": 128,
+      "x": 128,
+      "y": 160,
+      "zOrder": 21,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 6
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": "highlightStatue"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 128,
+      "keepRatio": true,
+      "layer": "Tutorial4",
+      "name": "Image",
+      "persistentUuid": "ae75a08f-e70a-4577-8d83-ffa2a934a63f",
+      "width": 128,
+      "x": 128,
+      "y": 384,
+      "zOrder": 21,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 6
+        }
+      ],
       "stringProperties": [],
       "initialVariables": []
     }
@@ -486,13 +597,7 @@
         }
       ],
       "effects": [],
-      "behaviors": [
-        {
-          "name": "CursorHover",
-          "type": "CursorType::CursorHover",
-          "CursorType": "pointer"
-        }
-      ],
+      "behaviors": [],
       "content": {
         "LeftPadding": 16,
         "RightPadding": 16,
@@ -643,13 +748,7 @@
       "variant": "UMDButton",
       "variables": [],
       "effects": [],
-      "behaviors": [
-        {
-          "name": "CursorHover",
-          "type": "CursorType::CursorHover",
-          "CursorType": "pointer"
-        }
-      ],
+      "behaviors": [],
       "content": {
         "LeftPadding": 16,
         "RightPadding": 16,
@@ -709,8 +808,27 @@
       "name": "Image",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
+      "variables": [
+        {
+          "name": "instanceID",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "highlight",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "226;24;51"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "animations": [
         {
@@ -1062,7 +1180,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Question Mark symbols can be selected to learn more about an objects relevance to Frederick Douglass.\n\nYou can use the map to travel to previously visited areas.\n\nClicking or tapping on the eye will highlight interactable objects. \n\n\nCollect all the Frederick Douglass figurines to win!",
+      "string": "Question Mark symbols can be selected to learn more about an objects relevance to Frederick Douglass.\n\nYou can use the map to travel to previously visited areas.\n\nClicking or tapping on the eye will highlight interactable objects. ",
       "font": "assets\\fonts\\BilkoOpti-Regular.otf",
       "textAlignment": "left",
       "characterSize": 34,
@@ -1085,12 +1203,55 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Question Mark symbols can be selected to learn more about an objects relevance to Frederick Douglass.\n\nYou can use the map to travel to previously visited areas.\n\nClicking or tapping on the eye will highlight interactable objects. \n\n\nCollect all the Frederick Douglass figurines to win!",
+        "text": "Question Mark symbols can be selected to learn more about an objects relevance to Frederick Douglass.\n\nYou can use the map to travel to previously visited areas.\n\nClicking or tapping on the eye will highlight interactable objects. ",
         "font": "assets\\fonts\\BilkoOpti-Regular.otf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
         "characterSize": 34,
-        "lineHeight": 39,
+        "lineHeight": 55,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "TutorialText4",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "The Figurine Icon will be outlined if there are still figurines left to collect in the current area. Make sure to keep an eye out, and try interacting with whatever you can.\n\n\nCollect all the Frederick Douglass figurines to win!",
+      "font": "assets\\fonts\\BilkoOpti-Regular.otf",
+      "textAlignment": "left",
+      "characterSize": 34,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
+        "italic": false,
+        "outlineColor": "0;0;0",
+        "outlineThickness": 4,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "The Figurine Icon will be outlined if there are still figurines left to collect in the current area. Make sure to keep an eye out, and try interacting with whatever you can.\n\n\nCollect all the Frederick Douglass figurines to win!",
+        "font": "assets\\fonts\\BilkoOpti-Regular.otf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 34,
+        "lineHeight": 55,
         "color": "255;255;255"
       }
     }
@@ -1123,6 +1284,9 @@
         "objectName": "TutorialText3"
       },
       {
+        "objectName": "TutorialText4"
+      },
+      {
         "objectName": "Image"
       }
     ]
@@ -1140,35 +1304,7 @@
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "HideLayer"
-          },
-          "parameters": [
-            "",
-            "\"Tutorial3\""
-          ]
-        },
-        {
-          "type": {
-            "value": "HideLayer"
-          },
-          "parameters": [
-            "",
-            "\"Tutorial2\""
-          ]
-        },
-        {
-          "type": {
-            "value": "TouchSimulateMouse"
-          },
-          "parameters": [
-            "",
-            ""
-          ]
-        }
-      ],
+      "actions": [],
       "events": [
         {
           "type": "BuiltinCommonInstructions::ForEach",
@@ -1199,6 +1335,36 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Image",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringObjectVariable"
+              },
+              "parameters": [
+                "Image",
+                "instanceID",
+                "!=",
+                "\"highlightStatue\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
+              },
+              "parameters": [
+                "Image",
+                "Effect",
+                "\"highlight\"",
+                "no"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1208,233 +1374,65 @@
       "actions": [],
       "events": [
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "LayerVisible"
-              },
-              "parameters": [
-                "",
-                "\"Tutorial1\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "HideLayer"
-              },
-              "parameters": [
-                "",
-                "\"Tutorial2\""
-              ]
-            },
-            {
-              "type": {
-                "value": "HideLayer"
-              },
-              "parameters": [
-                "",
-                "\"Tutorial3\""
-              ]
-            }
-          ],
+          "type": "BuiltinCommonInstructions::ForEachChildVariable",
+          "iterableVariableName": "tutorialLayers",
+          "valueIteratorVariableName": "thisLayer",
+          "keyIteratorVariableName": "thisLayerIndex",
+          "conditions": [],
+          "actions": [],
           "events": [
             {
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "Buttons",
-              "conditions": [],
-              "actions": [],
-              "events": [
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "Layer"
-                      },
-                      "parameters": [
-                        "Buttons",
-                        "\"Tutorial1\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-                      },
-                      "parameters": [
-                        "Buttons",
-                        "yes",
-                        ""
-                      ]
-                    }
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "thisLayerIndex",
+                    "=",
+                    "currentTutorial"
                   ]
-                },
+                }
+              ],
+              "actions": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": true,
-                        "value": "Layer"
-                      },
-                      "parameters": [
-                        "Buttons",
-                        "\"Tutorial1\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-                      },
-                      "parameters": [
-                        "Buttons",
-                        "no",
-                        ""
-                      ]
-                    }
+                  "type": {
+                    "value": "ShowLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "thisLayer"
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "LayerVisible"
-              },
-              "parameters": [
-                "",
-                "\"Tutorial2\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "HideLayer"
-              },
-              "parameters": [
-                "",
-                "\"Tutorial1\""
-              ]
             },
             {
-              "type": {
-                "value": "HideLayer"
-              },
-              "parameters": [
-                "",
-                "\"Tutorial3\""
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "Buttons",
-              "conditions": [],
-              "actions": [],
-              "events": [
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "Layer"
-                      },
-                      "parameters": [
-                        "Buttons",
-                        "\"Tutorial2\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-                      },
-                      "parameters": [
-                        "Buttons",
-                        "yes",
-                        ""
-                      ]
-                    }
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "thisLayerIndex",
+                    "!=",
+                    "currentTutorial"
                   ]
-                },
+                }
+              ],
+              "actions": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": true,
-                        "value": "Layer"
-                      },
-                      "parameters": [
-                        "Buttons",
-                        "\"Tutorial2\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-                      },
-                      "parameters": [
-                        "Buttons",
-                        "no",
-                        ""
-                      ]
-                    }
+                  "type": {
+                    "value": "HideLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "thisLayer"
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "LayerVisible"
-              },
-              "parameters": [
-                "",
-                "\"Tutorial3\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "HideLayer"
-              },
-              "parameters": [
-                "",
-                "\"Tutorial1\""
-              ]
             },
-            {
-              "type": {
-                "value": "HideLayer"
-              },
-              "parameters": [
-                "",
-                "\"Tutorial2\""
-              ]
-            }
-          ],
-          "events": [
             {
               "type": "BuiltinCommonInstructions::ForEach",
               "object": "Buttons",
@@ -1446,38 +1444,12 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "Layer"
-                      },
-                      "parameters": [
-                        "Buttons",
-                        "\"Tutorial3\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
-                      },
-                      "parameters": [
-                        "Buttons",
-                        "yes",
-                        ""
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
                         "inverted": true,
                         "value": "Layer"
                       },
                       "parameters": [
                         "Buttons",
-                        "\"Tutorial3\""
+                        "tutorialLayers[currentTutorial]"
                       ]
                     }
                   ],
@@ -1489,6 +1461,32 @@
                       "parameters": [
                         "Buttons",
                         "no",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Layer"
+                      },
+                      "parameters": [
+                        "Buttons",
+                        "tutorialLayers[currentTutorial]"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                      },
+                      "parameters": [
+                        "Buttons",
+                        "yes",
                         ""
                       ]
                     }
@@ -1523,6 +1521,16 @@
                 "50",
                 "1"
               ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "currentTutorial",
+                "+",
+                "1"
+              ]
             }
           ],
           "events": [
@@ -1531,119 +1539,12 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "LayerVisible"
+                    "value": "NumberVariable"
                   },
                   "parameters": [
-                    "",
-                    "\"Tutorial1\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "else",
-                    "False",
-                    "-1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "HideLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial1\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ShowLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial2\""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "LayerVisible"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial2\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "else",
-                    "True",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "else",
-                    "False",
-                    "-1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "HideLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial2\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ShowLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial3\""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "LayerVisible"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial3\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "else",
-                    "True",
-                    ""
+                    "currentTutorial",
+                    ">=",
+                    "VariableChildCount(tutorialLayers)"
                   ]
                 }
               ],
@@ -1687,95 +1588,15 @@
                 "50",
                 "1"
               ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "LayerVisible"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial2\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "else",
-                    "False",
-                    "-1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "HideLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial2\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ShowLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial1\""
-                  ]
-                }
-              ]
             },
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "LayerVisible"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial3\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "else",
-                    "True",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "HideLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial3\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ShowLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Tutorial2\""
-                  ]
-                }
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "currentTutorial",
+                "-",
+                "1"
               ]
             }
           ]
@@ -1786,6 +1607,89 @@
           "name": "else",
           "type": "boolean",
           "value": true
+        },
+        {
+          "name": "tutorialLayers",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "Tutorial1"
+            },
+            {
+              "type": "string",
+              "value": "Tutorial2"
+            },
+            {
+              "type": "string",
+              "value": "Tutorial3"
+            },
+            {
+              "type": "string",
+              "value": "Tutorial4"
+            }
+          ]
+        },
+        {
+          "name": "thisLayer",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "thisLayerIndex",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "CursorType::ChangeCursorType"
+          },
+          "parameters": [
+            "",
+            "\"default\"",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsHovered"
+          },
+          "parameters": [
+            "Buttons",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "PanelSpriteButton::PanelSpriteButton::IsActivated"
+          },
+          "parameters": [
+            "Buttons",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "CursorType::ChangeCursorType"
+          },
+          "parameters": [
+            "",
+            "\"pointer\"",
+            ""
+          ]
         }
       ]
     }
@@ -1923,6 +1827,24 @@
       "isLightingLayer": false,
       "isLocked": false,
       "name": "Tutorial3",
+      "renderingType": "2d",
+      "visibility": true,
+      "cameras": [],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera2DPlaneMaxDrawingDistance": 5000,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "Tutorial4",
       "renderingType": "2d",
       "visibility": true,
       "cameras": [],
