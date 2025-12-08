@@ -1444,7 +1444,7 @@
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "FullScreenToggleMinigame",
       "type": "Sprite",
@@ -1475,7 +1475,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets\\ui\\not_fullscreen.png",
                   "points": [],
                   "originPoint": {
@@ -1489,26 +1489,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 12,
-                        "y": 15
-                      },
-                      {
-                        "x": 52,
-                        "y": 15
-                      },
-                      {
-                        "x": 52,
-                        "y": 49
-                      },
-                      {
-                        "x": 12,
-                        "y": 49
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -1523,7 +1504,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets\\ui\\fullscreen.png",
                   "points": [],
                   "originPoint": {
@@ -1537,26 +1518,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 12,
-                        "y": 15
-                      },
-                      {
-                        "x": 52,
-                        "y": 15
-                      },
-                      {
-                        "x": 52,
-                        "y": 49
-                      },
-                      {
-                        "x": 12,
-                        "y": 49
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -1677,7 +1639,7 @@
     {
       "name": "DEBUG",
       "type": "boolean",
-      "value": true
+      "value": false
     },
     {
       "folded": true,
