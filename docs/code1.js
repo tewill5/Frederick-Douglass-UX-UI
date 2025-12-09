@@ -120,245 +120,11 @@ gdjs.TutorialCode.GDSoundToggleMinigameObjects6= [];
 gdjs.TutorialCode.GDSoundToggleMinigameObjects7= [];
 
 
-gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2});
-gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2});
 gdjs.TutorialCode.eventsList0 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.window.isFullScreen(runtimeScene));
-if (isConditionTrue_0) {
-gdjs.copyArray(gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2, gdjs.TutorialCode.GDFullScreenToggleMinigameObjects3);
-
-{gdjs.evtTools.window.setFullScreen(runtimeScene, true, true);
-}
-{for(var i = 0, len = gdjs.TutorialCode.GDFullScreenToggleMinigameObjects3.length ;i < len;++i) {
-    gdjs.TutorialCode.GDFullScreenToggleMinigameObjects3[i].getBehavior("Animation").setAnimationName("fullscreen");
-}
-}
-{gdjs.TutorialCode.localVariables[0].getFromIndex(0).setBoolean(false);
-}
-}
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.window.isFullScreen(runtimeScene);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-{isConditionTrue_0 = gdjs.TutorialCode.localVariables[0].getFromIndex(0).getAsBoolean();
-}
-}
-if (isConditionTrue_0) {
-/* Reuse gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2 */
-{for(var i = 0, len = gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
-    gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("not_fullscreen");
-}
-}
-{gdjs.evtTools.window.setFullScreen(runtimeScene, false, true);
-}
-}
-
-}
-
 
 };gdjs.TutorialCode.eventsList1 = function(runtimeScene) {
 
-{
-
-
-{
-const variables = new gdjs.VariablesContainer();
-{
-const variable = new gdjs.Variable();
-variable.setBoolean(true);
-variables._declare("else", variable);
-}
-gdjs.TutorialCode.localVariables.push(variables);
-}
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
-if (isConditionTrue_0) {
-
-{ //Subevents
-gdjs.TutorialCode.eventsList0(runtimeScene);} //End of subevents
-}
-gdjs.TutorialCode.localVariables.pop();
-
-}
-
-
-};gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.TutorialCode.GDSoundToggleMinigameObjects2});
-gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDSoundToggleMinigameObjects1Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.TutorialCode.GDSoundToggleMinigameObjects1});
-gdjs.TutorialCode.eventsList2 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 0;
-if (isConditionTrue_0) {
-gdjs.copyArray(gdjs.TutorialCode.GDSoundToggleMinigameObjects1, gdjs.TutorialCode.GDSoundToggleMinigameObjects2);
-
-{gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 100);
-}
-{for(var i = 0, len = gdjs.TutorialCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
-    gdjs.TutorialCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("on");
-}
-}
-{gdjs.TutorialCode.localVariables[0].getFromIndex(0).setBoolean(false);
-}
-}
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 100;
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-{isConditionTrue_0 = gdjs.TutorialCode.localVariables[0].getFromIndex(0).getAsBoolean();
-}
-}
-if (isConditionTrue_0) {
-/* Reuse gdjs.TutorialCode.GDSoundToggleMinigameObjects1 */
-{gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 0);
-}
-{for(var i = 0, len = gdjs.TutorialCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
-    gdjs.TutorialCode.GDSoundToggleMinigameObjects1[i].getBehavior("Animation").setAnimationName("off");
-}
-}
-}
-
-}
-
-
-};gdjs.TutorialCode.eventsList3 = function(runtimeScene) {
-
-{
-
-
-{
-const variables = new gdjs.VariablesContainer();
-{
-const variable = new gdjs.Variable();
-variable.setBoolean(true);
-variables._declare("else", variable);
-}
-gdjs.TutorialCode.localVariables.push(variables);
-}
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
-if (isConditionTrue_0) {
-
-{ //Subevents
-gdjs.TutorialCode.eventsList2(runtimeScene);} //End of subevents
-}
-gdjs.TutorialCode.localVariables.pop();
-
-}
-
-
-};gdjs.TutorialCode.eventsList4 = function(runtimeScene) {
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDFullScreenToggleMinigameObjects2Objects, runtimeScene, true, true);
-if (isConditionTrue_0) {
-/* Reuse gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2 */
-{for(var i = 0, len = gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
-    gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", false);
-}
-}
-}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDFullScreenToggleMinigameObjects2Objects, runtimeScene, true, false);
-if (isConditionTrue_0) {
-/* Reuse gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2 */
-{for(var i = 0, len = gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
-    gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", true);
-}
-}
-
-{ //Subevents
-gdjs.TutorialCode.eventsList1(runtimeScene);} //End of subevents
-}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.TutorialCode.GDSoundToggleMinigameObjects2);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDSoundToggleMinigameObjects2Objects, runtimeScene, true, true);
-if (isConditionTrue_0) {
-/* Reuse gdjs.TutorialCode.GDSoundToggleMinigameObjects2 */
-{for(var i = 0, len = gdjs.TutorialCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
-    gdjs.TutorialCode.GDSoundToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", false);
-}
-}
-}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.TutorialCode.GDSoundToggleMinigameObjects1);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDSoundToggleMinigameObjects1Objects, runtimeScene, true, false);
-if (isConditionTrue_0) {
-/* Reuse gdjs.TutorialCode.GDSoundToggleMinigameObjects1 */
-{for(var i = 0, len = gdjs.TutorialCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
-    gdjs.TutorialCode.GDSoundToggleMinigameObjects1[i].getBehavior("Effect").enableEffect("Effect", true);
-}
-}
-
-{ //Subevents
-gdjs.TutorialCode.eventsList3(runtimeScene);} //End of subevents
-}
-
-}
-
-
-};gdjs.TutorialCode.eventsList5 = function(runtimeScene) {
-
-};gdjs.TutorialCode.eventsList6 = function(runtimeScene) {
-
-};gdjs.TutorialCode.eventsList7 = function(runtimeScene) {
+};gdjs.TutorialCode.eventsList2 = function(runtimeScene) {
 
 {
 
@@ -422,7 +188,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.TutorialCode.eventsList8 = function(runtimeScene) {
+};gdjs.TutorialCode.eventsList3 = function(runtimeScene) {
 
 {
 
@@ -504,7 +270,7 @@ for(var i = 0, len = gdjs.TutorialCode.GDPreviousButtonObjects6.length ;i < len;
 }
 
 
-};gdjs.TutorialCode.eventsList9 = function(runtimeScene) {
+};gdjs.TutorialCode.eventsList4 = function(runtimeScene) {
 
 {
 
@@ -565,14 +331,14 @@ let isConditionTrue_0 = false;
 if (true) {
 
 { //Subevents: 
-gdjs.TutorialCode.eventsList8(runtimeScene);} //Subevents end.
+gdjs.TutorialCode.eventsList3(runtimeScene);} //Subevents end.
 }
 }
 
 }
 
 
-};gdjs.TutorialCode.eventsList10 = function(runtimeScene) {
+};gdjs.TutorialCode.eventsList5 = function(runtimeScene) {
 
 {
 
@@ -589,7 +355,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.TutorialCode.eventsList11 = function(runtimeScene) {
+};gdjs.TutorialCode.eventsList6 = function(runtimeScene) {
 
 {
 
@@ -627,7 +393,7 @@ if (true)
 {
 
 { //Subevents: 
-gdjs.TutorialCode.eventsList9(runtimeScene);} //Subevents end.
+gdjs.TutorialCode.eventsList4(runtimeScene);} //Subevents end.
 }
 }
 }
@@ -656,7 +422,7 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.TutorialCode.eventsList10(runtimeScene);} //End of subevents
+gdjs.TutorialCode.eventsList5(runtimeScene);} //End of subevents
 }
 
 }
@@ -686,14 +452,309 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.TutorialCode.eventsList12 = function(runtimeScene) {
+};gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2});
+gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2});
+gdjs.TutorialCode.eventsList7 = function(runtimeScene) {
 
 {
 
 
-gdjs.TutorialCode.eventsList4(runtimeScene);
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.window.isFullScreen(runtimeScene));
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2, gdjs.TutorialCode.GDFullScreenToggleMinigameObjects3);
+
+{gdjs.evtTools.window.setFullScreen(runtimeScene, true, true);
+}
+{for(var i = 0, len = gdjs.TutorialCode.GDFullScreenToggleMinigameObjects3.length ;i < len;++i) {
+    gdjs.TutorialCode.GDFullScreenToggleMinigameObjects3[i].getBehavior("Animation").setAnimationName("fullscreen");
+}
+}
+{gdjs.TutorialCode.localVariables[0].getFromIndex(0).setBoolean(false);
+}
 }
 
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.window.isFullScreen(runtimeScene);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = gdjs.TutorialCode.localVariables[0].getFromIndex(0).getAsBoolean();
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("not_fullscreen");
+}
+}
+{gdjs.evtTools.window.setFullScreen(runtimeScene, false, true);
+}
+}
+
+}
+
+
+};gdjs.TutorialCode.eventsList8 = function(runtimeScene) {
+
+{
+
+
+{
+const variables = new gdjs.VariablesContainer();
+{
+const variable = new gdjs.Variable();
+variable.setBoolean(true);
+variables._declare("else", variable);
+}
+gdjs.TutorialCode.localVariables.push(variables);
+}
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.TutorialCode.eventsList7(runtimeScene);} //End of subevents
+}
+gdjs.TutorialCode.localVariables.pop();
+
+}
+
+
+};gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.TutorialCode.GDSoundToggleMinigameObjects2});
+gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.TutorialCode.GDSoundToggleMinigameObjects2});
+gdjs.TutorialCode.eventsList9 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 0;
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.TutorialCode.GDSoundToggleMinigameObjects2, gdjs.TutorialCode.GDSoundToggleMinigameObjects3);
+
+{gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 100);
+}
+{for(var i = 0, len = gdjs.TutorialCode.GDSoundToggleMinigameObjects3.length ;i < len;++i) {
+    gdjs.TutorialCode.GDSoundToggleMinigameObjects3[i].getBehavior("Animation").setAnimationName("on");
+}
+}
+{gdjs.TutorialCode.localVariables[0].getFromIndex(0).setBoolean(false);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 100;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = gdjs.TutorialCode.localVariables[0].getFromIndex(0).getAsBoolean();
+}
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.TutorialCode.GDSoundToggleMinigameObjects2 */
+{gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 0);
+}
+{for(var i = 0, len = gdjs.TutorialCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.TutorialCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("off");
+}
+}
+}
+
+}
+
+
+};gdjs.TutorialCode.eventsList10 = function(runtimeScene) {
+
+{
+
+
+{
+const variables = new gdjs.VariablesContainer();
+{
+const variable = new gdjs.Variable();
+variable.setBoolean(true);
+variables._declare("else", variable);
+}
+gdjs.TutorialCode.localVariables.push(variables);
+}
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
+if (isConditionTrue_0) {
+
+{ //Subevents
+gdjs.TutorialCode.eventsList9(runtimeScene);} //End of subevents
+}
+gdjs.TutorialCode.localVariables.pop();
+
+}
+
+
+};gdjs.TutorialCode.eventsList11 = function(runtimeScene) {
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDFullScreenToggleMinigameObjects2Objects, runtimeScene, true, true);
+if (isConditionTrue_0) {
+/* Reuse gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", false);
+}
+}
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDFullScreenToggleMinigameObjects2Objects, runtimeScene, true, false);
+if (isConditionTrue_0) {
+/* Reuse gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", true);
+}
+}
+
+{ //Subevents
+gdjs.TutorialCode.eventsList8(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.TutorialCode.GDSoundToggleMinigameObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDSoundToggleMinigameObjects2Objects, runtimeScene, true, true);
+if (isConditionTrue_0) {
+/* Reuse gdjs.TutorialCode.GDSoundToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.TutorialCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.TutorialCode.GDSoundToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", false);
+}
+}
+}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.TutorialCode.GDSoundToggleMinigameObjects2);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDSoundToggleMinigameObjects2Objects, runtimeScene, true, false);
+if (isConditionTrue_0) {
+/* Reuse gdjs.TutorialCode.GDSoundToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.TutorialCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.TutorialCode.GDSoundToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", true);
+}
+}
+
+{ //Subevents
+gdjs.TutorialCode.eventsList10(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) > 0;
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.TutorialCode.GDSoundToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.TutorialCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.TutorialCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("on");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 0;
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.TutorialCode.GDSoundToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.TutorialCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.TutorialCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("off");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.window.isFullScreen(runtimeScene);
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("fullscreen");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.window.isFullScreen(runtimeScene));
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.TutorialCode.GDFullScreenToggleMinigameObjects1);
+{for(var i = 0, len = gdjs.TutorialCode.GDFullScreenToggleMinigameObjects1.length ;i < len;++i) {
+    gdjs.TutorialCode.GDFullScreenToggleMinigameObjects1[i].getBehavior("Animation").setAnimationName("not_fullscreen");
+}
+}
+}
+
+}
+
+
+};gdjs.TutorialCode.eventsList12 = function(runtimeScene) {
 
 {
 
@@ -704,7 +765,7 @@ isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.TutorialCode.eventsList7(runtimeScene);} //End of subevents
+gdjs.TutorialCode.eventsList2(runtimeScene);} //End of subevents
 }
 
 }
@@ -760,7 +821,7 @@ let isConditionTrue_0 = false;
 {
 
 { //Subevents
-gdjs.TutorialCode.eventsList11(runtimeScene);} //End of subevents
+gdjs.TutorialCode.eventsList6(runtimeScene);} //End of subevents
 }
 gdjs.TutorialCode.localVariables.pop();
 
@@ -826,6 +887,27 @@ if (isConditionTrue_0) {
 }
 }
 
+}
+
+
+{
+
+
+
+}
+
+
+{
+
+
+
+}
+
+
+{
+
+
+gdjs.TutorialCode.eventsList11(runtimeScene);
 }
 
 
