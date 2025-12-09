@@ -1600,7 +1600,13 @@
           "booleanParameters": {}
         }
       ],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "CursorHover",
+          "type": "CursorType::CursorHover",
+          "CursorType": "pointer"
+        }
+      ],
       "animations": [
         {
           "name": "not_fullscreen",
@@ -1683,7 +1689,13 @@
           "booleanParameters": {}
         }
       ],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "CursorHover",
+          "type": "CursorType::CursorHover",
+          "CursorType": "pointer"
+        }
+      ],
       "animations": [
         {
           "name": "on",
@@ -1839,7 +1851,11 @@
   "externalEvents": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalEvents/global-eventsjs"
+      "referenceTo": "/externalEvents/fdsg"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/minigame-persistent-ui"
     }
   ],
   "eventsFunctionsExtensions": [

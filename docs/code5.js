@@ -1274,7 +1274,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "gameOver") >= 3.5;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(10585044);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(21673692);
 }
 }
 }
@@ -1398,7 +1398,7 @@ gdjs.Photo_32PuzzleCode.localVariables.pop();
 
 
 };gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2});
-gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDSoundToggleMinigameObjects1Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1});
+gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2});
 gdjs.Photo_32PuzzleCode.eventsList24 = function(runtimeScene) {
 
 {
@@ -1408,12 +1408,12 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 0;
 if (isConditionTrue_0) {
-gdjs.copyArray(gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1, gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2);
+gdjs.copyArray(gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2, gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects3);
 
 {gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 100);
 }
-{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
-    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("on");
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects3.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects3[i].getBehavior("Animation").setAnimationName("on");
 }
 }
 {gdjs.Photo_32PuzzleCode.localVariables[0].getFromIndex(0).setBoolean(false);
@@ -1435,11 +1435,11 @@ isConditionTrue_0 = false;
 }
 }
 if (isConditionTrue_0) {
-/* Reuse gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1 */
+/* Reuse gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2 */
 {gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 0);
 }
-{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
-    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1[i].getBehavior("Animation").setAnimationName("off");
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("off");
 }
 }
 }
@@ -1535,20 +1535,88 @@ if (isConditionTrue_0) {
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1);
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDSoundToggleMinigameObjects1Objects, runtimeScene, true, false);
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Photo_32PuzzleCode.mapOfGDgdjs_9546Photo_959532PuzzleCode_9546GDSoundToggleMinigameObjects2Objects, runtimeScene, true, false);
 if (isConditionTrue_0) {
-/* Reuse gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1 */
-{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
-    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects1[i].getBehavior("Effect").enableEffect("Effect", true);
+/* Reuse gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", true);
 }
 }
 
 { //Subevents
 gdjs.Photo_32PuzzleCode.eventsList25(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) > 0;
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("on");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 0;
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("off");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.window.isFullScreen(runtimeScene);
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("fullscreen");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.window.isFullScreen(runtimeScene));
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects1);
+{for(var i = 0, len = gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects1.length ;i < len;++i) {
+    gdjs.Photo_32PuzzleCode.GDFullScreenToggleMinigameObjects1[i].getBehavior("Animation").setAnimationName("not_fullscreen");
+}
+}
 }
 
 }
@@ -1595,6 +1663,20 @@ gdjs.Photo_32PuzzleCode.eventsList19(runtimeScene);
 
 
 gdjs.Photo_32PuzzleCode.eventsList21(runtimeScene);
+}
+
+
+{
+
+
+
+}
+
+
+{
+
+
+
 }
 
 

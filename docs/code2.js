@@ -217,7 +217,7 @@ gdjs.ExplorationCode.GDSoundToggleMinigameObjects3= [];
 gdjs.ExplorationCode.GDSoundToggleMinigameObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0x11b54f0 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0xa08908 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -292,12 +292,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x11b54f0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xa08908(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x120cd48 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9fce88 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -494,6 +494,29 @@ FDSG.getFlag = function(obj, flagName, returnType = null) {
     }
 }
 
+/**
+ * Shake the given object
+ *      @param {RuntimeObject} object The object to shake
+ *      @param {number} shakeDurationMS How long you want each shake to last. Defaults to 100
+ *      @param {number} shakeAngle How much you want the object to rotate in degrees. Defaults to 15
+ */
+FDSG.playObjectShakeAnimation = async function(object, shakeDurationMS = 100, shakeAngle = 15) {
+    const tween = object.getBehavior("Tween");
+    const tweenDurationMS = shakeDurationMS;
+    const tweenAngle = shakeAngle;
+    tween.addObjectAngleTween("backpackShake", tweenAngle, "bouncePast", tweenDurationMS, false);
+    FDSG.debugPrint("log", "playing backpack shake animation 1");
+    window.setTimeout(() => {
+        tween.addObjectAngleTween("backpackShake", -tweenAngle, "bouncePast", tweenDurationMS, false);
+        window.setTimeout(() => {
+                tween.addObjectAngleTween("backpackShake", tweenAngle, "bouncePast", tweenDurationMS, false);
+                window.setTimeout(() => {
+                    tween.addObjectAngleTween("backpackShake", 0, "bouncePast", tweenDurationMS, false);
+                }, tweenDurationMS);
+        }, tweenDurationMS);
+    }, tweenDurationMS);
+}
+
 
 /**
  * Prints a message to the console only if the DEBUG is set to true
@@ -523,12 +546,12 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x120cd48(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9fce88(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x11b8198 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe065d0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -546,7 +569,9 @@ Object.assign(GameVars, {
     _isFading: false, // Used to halt input while fading in or out
     _longFade: false, // Whether to use a long transition or a short one. This is just used by TransitionObjects
     loadMinigame: null, // Used to set a minigame to be loaded
-    _currentLoadedMinigame: null // Used to track whether to check minigame flags on resuming this scene
+    _currentLoadedMinigame: null, // Used to track whether to check minigame flags on resuming this scene
+    _showLayoutInfoHint: false, // Whether to shake the layout info icon after fading in to show that the layout has info to read
+
 });
 
 Object.defineProperty(GameVars, 'currentLayout', {
@@ -581,7 +606,7 @@ FDSG.initScene = function() {
         // Load the layout for the current area
 
     for (const background of GameVars.runtimeScene.getInstancesOf("Background")) {
-        if (background.getLayer() == "Background") {
+        if (background.getLayer() == "Background") { // We also use the Background object for the map screen, so we need to make sure we get the right one
             background.setAnimationName(GameVars.currentLayout); // Set the background for the layout
             break;
         }
@@ -593,13 +618,12 @@ FDSG.initScene = function() {
     const objectsLayer = GameVars.runtimeScene.getLayer("SceneObjects");
     const uiLayer = GameVars.runtimeScene.getLayer("UI");
     const inspectionUILayer = GameVars.runtimeScene.getLayer("InspectionUI");
-    const activeDuringInspectionUILayer = GameVars.runtimeScene.getLayer("ActiveDuringInspectionUI");
-    for (const layer of [backgroundLayer, objectsLayer, uiLayer, activeDuringInspectionUILayer]) {
+    for (const layer of [backgroundLayer, objectsLayer, uiLayer]) {
         layer.enableEffect("Darken", false);
     }
 
     // Hide disabled layers
-    for (const layer in FDSG.Input.ClickableLayers) {
+    for (const layer in FDSG.Input.ClickableLayers) { // Get each layer in ClickableLayers and show or hide them depending on their state
         const runtimeLayer = GameVars.runtimeScene.getLayer(layer);
         runtimeLayer.show(FDSG.Input.ClickableLayers[layer]);
     }
@@ -613,8 +637,8 @@ FDSG.initScene = function() {
     // INSPECTIONS HANDLING
     FDSG.debugPrint("log", "initializing inspections");
     FDSG._LayoutInspections = FDSG.getLayoutInspections(); // Registers all inspections and their objects for the current layout
-    GameVars._loadedInspections = []; // No inspections are loaded on scene init
-    GameVars._isInspecting = false; // Reset flag
+    GameVars._loadedInspections = []; // No inspections are loaded on scene init, so clear the stack
+    GameVars._isInspecting = false; // The player can't be inspecting on scene init, so clear the flag if it's set
 
     FDSG.debugPrint("log", "initializing text objects")
     // Set instance specific innerText on text objects
@@ -630,7 +654,8 @@ FDSG.initScene = function() {
     for (const obj of GameVars.runtimeScene.getInstancesOf("TransitionObject")) {
         const targetLayout = obj.getVariables().get("targetLayout").getAsString();
         const hoverTooltip = obj.getVariables().get("hoverTooltip");
-        if (hoverTooltip.getChildNamed("text").getAsString() == "null") { // Don't overwrite custom settings
+        if (hoverTooltip.getChildNamed("text").getAsString() == "null"
+        || hoverTooltip.getChildNamed("text").getAsString() == "0" ) { // Don't overwrite custom settings
             hoverTooltip.getChildNamed("text").setString(`To ${targetLayout}`);
         }
         if (hoverTooltip.getChildNamed("outlineColor").getAsString() == "0") {
@@ -690,16 +715,13 @@ FDSG.initScene = function() {
 
     //LAYOUT INFO
     const infoPopupObject = FDSG.getInstanceFromID("locationPopupInfo");
+    infoPopupObject.hide(true); // We hide this, but it will be shown automatically after fading if there is infoText to show
     if (GameVars.currentLayout in FDSG._LayoutData
     && "infoText" in FDSG._LayoutData[GameVars.currentLayout]) {
-        let infoText = FDSG._LayoutData[GameVars.currentLayout].infoText;
-        infoPopupObject.getVariables().get("infoText").setString(infoText);
-        infoPopupObject.getVariables().get("enabled").setBoolean(true);
-        infoPopupObject.hide(false);
-        FDSG.playObjectShakeAnimation(infoPopupObject);
+        GameVars._showLayoutInfoHint = true;
+        //FDSG.playObjectShakeAnimation(infoPopupObject);
     } else {
         infoPopupObject.getVariables().get("enabled").setBoolean(false);
-        infoPopupObject.hide(true);
     }
 
     //FULLSCREEN TOGGLE
@@ -968,12 +990,12 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x11b8198(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe065d0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x11b82d0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x13979e0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1143,7 +1165,8 @@ FDSG.handlePlayerInput = function() {
                     // We only want to check clicks on interaction objects as long as an item is selected
                 let instanceLayer = instance.getLayer();
                 if (!FDSG.Input.ClickableLayers[instanceLayer]) { continue } // Skip instances on disabled layers
-                if (GameVars.visibilityToggled && GameVars._visibilityLayers.includes(instance.getLayer()) && !(FDSG.ObjectGroups.NoVisibility.includes(instance.getName()))) {
+                if (GameVars.visibilityToggled && GameVars._visibilityLayers.includes(instance.getLayer())
+                && !(FDSG.ObjectGroups.NoVisibility.includes(instance.getName()))) {
                     if (!instance.hasEffect("visibilityEffect")) { // Check visibilityToggle and effect
                         instance.addEffect(structuredClone(GameVars._visibilityEffect));
                     }
@@ -1183,22 +1206,7 @@ FDSG.handlePlayerInput = function() {
     }
 
     GameVars.runtimeScene.getGame().getRenderer().getCanvas().style.cursor = cursor; // Change the cursor
-
-    // InventoryItem Cursor handling
-    // const canTouch = FDSG.Input._deviceSupportsTouch; // Used to check for touchscreen compatibility
-    // if (selectedItemIndex != null && !canTouch ) {
-    //         // Only run if the current device does not have a touchscreen to avoid bugs
-    //     var itemCursor = FDSG.getAllSceneInstances("MouseCursor");
-    //     if (itemCursor.length > 0) {
-    //         var itemCursor = itemCursor[0];
-    //         //if (FDSG.Input._currentInputMethod == "Mouse") {
-    //         let xOffset = GameVars.Constants.ITEM_CURSOR_X_OFFSET;
-    //         let yOffset = GameVars.Constants.ITEM_CURSOR_Y_OFFSET;
-    //         itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + xOffset); // Make the itemCursor follow the mouse;
-    //         itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + yOffset); // Make the itemCursor follow the mouse;
-    //     }
-    // }
-
+    
     // Manage HoverTooltips
     if (!GameVars.visibilityToggled) { // We already do this for all instances if the visibility effect is toggled
         FDSG.handleHoverTooltip(hoveredInstance);
@@ -1232,8 +1240,9 @@ FDSG.handlePlayerInput = function() {
                 for (const clickDuration in clickObject.clickFunctions) {
                     if ((clickDuration == "pressed" && isPressed) || (clickDuration == "released" && isReleased)) {
                         /*
-                            This is a long conditional, but we basically check that the instance is not an interactionObject (since they'll run the interaction in their
-                            clickFunction anyway), and if the item is an ItemObject that has "showPickupPrompt" enabled, we don't run the interaction until
+                            This is a long conditional, but we basically check that the instance is not an interactionObject
+                            (since they'll run the interaction in their clickFunction anyway), and if the item
+                            is an ItemObject that has "showPickupPrompt" enabled, we don't run the interaction until
                             the player actually picks up the item.
                         */
                         if (hoveredInstance.getName() != "InteractionObject"
@@ -1350,7 +1359,10 @@ FDSG.handleHoverTooltip = function(hoveredInstance) {
             var hoverTooltipData = instanceVars.get("hoverTooltip");
             var text = hoverTooltipData.getChildNamed("text").getAsString();
             var bold = hoverTooltipData.getChildNamed("bold").getAsBoolean();
-            var outlineThickness = hoverTooltipData.getChildNamed("outlineThickness").getAsNumber();
+            var outlineThickness = 4
+            if (hoverTooltipData.hasChild("outlineThickness")){
+                outlineThickness = hoverTooltipData.getChildNamed("outlineThickness").getAsNumber();
+            }
             var outlineColor = hoverTooltipData.getChildNamed("outlineColor").getAsString();
             var textAlign = hoverTooltipData.getChildNamed("textAlign").getAsString();
             if (textAlign != "left" && textAlign != "center" && textAlign != "right") {
@@ -1420,12 +1432,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x11b82d0(runtimeScene);
+gdjs.ExplorationCode.userFunc0x13979e0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x1204bd0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xf9fef8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1438,8 +1450,12 @@ popups, dialogue popups, really any time the player is focusing on something in 
 */
 
 Object.assign(GameVars, {
-    _loadedInspections: [], // Used to track which Inspections are currently loaded
-    _isInspecting: false,
+    _loadedInspections: [], // This is a stack array used to check which Inspections and popups are currently loaded
+        /* Because this is a stack, when a sub-inspection or Item Popup is loaded while another Inspection is already on screen,
+        the new popup will be pushed onto the end of the array. While the system only shows the last popup, the previous popups will be
+        loaded whenever the last popup is cleared and removed from view. This makes handling sub-Inspections and Item Info popups easy, since
+        the system always knows which popup to display and when to recall previous ones.*/
+    _isInspecting: false, // Whether the inspection effect is currently active
     _playInspectionSFX: true, //Whether to play the inspection sound effect 
 });
 
@@ -1487,12 +1503,6 @@ Object.defineProperty(GameVars, "loadedInspection", {
 
 
 FDSG.Interactions = {}; // Where we store and register Interactions
-/*
-    Interactions are just an easy way to easily and dynamically allow an InteractionObject (or other objects) to run different code
-    based on the value of its "targetInteraction" property and its flags/variables. All this really does is allow me to
-    avoid having to make a bunch of unique objects for every interaction.
-    !!! If you just want to load an inspection into view without any conditions or extra code, just use an Inspection instead !!!
-*/
 
 
 /**
@@ -1722,12 +1732,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x1204bd0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xf9fef8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x11f7d80 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x978b50 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1737,6 +1747,7 @@ Object.assign(GameVars, {
     collectiblesFound: {}, /* This is used to track which collectibles have been collected. Each collectible has a uniqueID,
                         and is either true (collected) or false (not collected) */
     statuesCollected: 0, // The number of statues Collected
+    _shakeFigurineIconAfterFade: false, // Whether to shake the figurine icon after fading in to show the player there's still figurines to collect
 });
 
 Object.assign(GameVars.Constants, {
@@ -1815,10 +1826,11 @@ FDSG.updateStatueCounter = function() {
         FDSG.initFade(GameVars.Constants.FIRST_TRANSITION_FADE_DURATION, false, false);
     }
     const icon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0]; // Highlight the statue icon if there are any figurines still in the scene
+    icon.enableEffect("statueRemaining", false);
+        // We automatically disable this, but it will get enabled if there are figurines to collect after fading in
     if (GameVars.runtimeScene.getInstancesOf("StatueCollectible").length > 0) {
-        icon.enableEffect("statueRemaining", true);
-    } else {
-        icon.enableEffect("statueRemaining", false);
+        GameVars._showFigurineIconHint = true;
+        //FDSG.playObjectShakeAnimation(icon); // Shake and highlight the icon to notify the player that a figurine is in the current room after fading in
     }
 }
 };
@@ -1834,19 +1846,19 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x11f7d80(runtimeScene);
+gdjs.ExplorationCode.userFunc0x978b50(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x1204570 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xfa00f0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
 const Game = GameVars.runtimeScene.getGame();
 
 Object.assign(GameVars, {
-    _isItemPopupShowing: false, // Whether the itemPopup is showing or not
+    _isItemPopupShowing: false, // Whether the itemPopup effects are active or not
     _itemPopupData: {
         itemObject: null, // The RuntimeObject of selected item
         inventoryItem: null, // The RuntimeObject for the item sprite
@@ -1929,7 +1941,9 @@ FDSG.PlayerInventory = { // Stores data related to the player inventory
 }
 
 /**
- * Redraws the inventory to show current items
+ * Redraws the inventory to show current items. This function is highly automated to account for the shape,
+ * size, and position of the inventory, so I don't encourage you to mess with anything here. If you want to tweak how the
+ * inventory looks, just adjust the values in GameVars.Constants instead
  */
 FDSG.redrawInventory = function() {
     const inventory = FDSG.PlayerInventory;
@@ -1983,7 +1997,7 @@ FDSG.redrawInventory = function() {
         itemPosX += itemXModifier;
         itemPosY += itemYModifier;
     }
-
+    // Handle the inventory scrolling for if the player has several items
     const scrollArrowP = GameVars.runtimeScene.getObjects("CycleInventoryPrevious")[0];
     const scrollArrowN = GameVars.runtimeScene.getObjects("CycleInventoryNext")[0];
     var enableP = false;
@@ -2076,6 +2090,7 @@ FDSG.showItemPopup = function(itemName, itemDescription, canPickup = true) {
  * Add an item to the player inventory and redraw it
  *      @param {string} itemName The name of the item to add
  *      @param {string} itemDescription The description of the item being added
+ *      @param {string} infoText? If you want the item to have an infoText that the player can read, set it here. Defaults to null.
  */
 FDSG.addItemToInventory = function(itemName, itemDescription, infoText = null) {
     FDSG.debugPrint("log",`Adding ${itemName} to inventory`);
@@ -2176,21 +2191,6 @@ FDSG.selectInventoryItem = function(inventoryIndex) {
     // The InspectInventoryItem button lets the player view the item description of the currently selected item
     inspectInventoryItem.enableEffect("Disable", false); // Show the itemInspectButton
     inspectInventoryItem.getVariables().get("enabled").setBoolean(true);
-
-    // const canTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0; // Check if device has touchscreen compatibility
-    // if (!canTouch) { // This doesn't work well with touchscreens, so we disable it if the player is using one
-    //     FDSG.Input._deviceSupportsTouch = false;
-    //     const itemCursor = GameVars.runtimeScene.createObject("InventoryItem");
-    //     itemCursor.setLayer("MouseCursor");
-    //     itemCursor.getVariables().get("isCursor").setBoolean(true);
-    //     itemCursor.setAnimationIndex(inventoryItemObject.getAnimationIndex());
-    //     itemCursor.setWidth(inventoryItemObject.getWidth()/1.5);
-    //     itemCursor.setHeight(inventoryItemObject.getHeight()/1.5);
-    //     itemCursor.setX(gdjs.evtTools.input.getCursorX(GameVars.runtimeScene) + 16); // Make the itemCursor follow the mouse;
-    //     itemCursor.setY(gdjs.evtTools.input.getCursorY(GameVars.runtimeScene) + 16); // Make the itemCursor follow the mouse;
-    // } else {
-    //     FDSG.Input._deviceSupportsTouch = true;
-    // }
     FDSG.playSFX("Select");
     FDSG.PlayerInventory._selectedItemData = FDSG.PlayerInventory.itemData[inventoryIndex];
 }
@@ -2235,70 +2235,6 @@ FDSG.showInventory = function(show) {
     }
     inventory._isInventoryShowing = show;
 }
-
-/**
- * Shake the given object
- *      @param {RuntimeObject} object The object to shake
- */
-FDSG.playObjectShakeAnimation = async function(object) {
-    const tween = object.getBehavior("Tween");
-    const tweenDurationMS = 100;
-    const tweenAngle = 15;
-    tween.addObjectAngleTween("backpackShake", tweenAngle, "bouncePast", tweenDurationMS, false);
-    FDSG.debugPrint("log", "playing backpack shake animation 1");
-    window.setTimeout(() => {
-        tween.addObjectAngleTween("backpackShake", -tweenAngle, "bouncePast", tweenDurationMS, false);
-        window.setTimeout(() => {
-                tween.addObjectAngleTween("backpackShake", tweenAngle, "bouncePast", tweenDurationMS, false);
-                window.setTimeout(() => {
-                    tween.addObjectAngleTween("backpackShake", 0, "bouncePast", tweenDurationMS, false);
-                }, tweenDurationMS);
-        }, tweenDurationMS);
-    }, tweenDurationMS);
-}
-
-
-// /**
-//  * Plays the animation of an item floating into the backpack
-//  *      @param {Object} itemData An object with the necessary data
-//  *      @param {string} itemData.itemImageName The animation name of the items sprite
-//  *      @param {number} itemData.fromX X position to start the animation from
-//  *      @param {number} itemData.fromY Y position to start the animation from
-//  *      @param {number} itemData.startWidth The initial width of the animating item
-//  *      @param {number} itemData.startHeight The initial height of the animating item
-//  *      @param {number} itemData.toX? The target X position of the animation. Defaults to the backpacks position
-//  *      @param {number} itemData.toY? The target Y position of the animation. Defaults to the backpacks position 
-//  *      @param {number} itemData.targetXScale? The final Y scale of the animating item. Defaults to 0
-//  *      @param {number} itemData.targetYScale? The final X scale of the animating item. Defaults to 0     
-//  */
-// FDSG.playItemCollectionAnimation = function(itemData) {
-//     const backpack = GameVars.runtimeScene.getInstancesOf("Backpack")[0];
-//     const fromX = itemData.fromX;
-//     const fromY = itemData.fromY;
-//     const fromWidth = itemData.startWidth;
-//     const fromHeight = itemData.startHeight;
-//     const animItem = GameVars.runtimeScene.createObject("InventoryItem");
-//     animItem.getVariables().get("enabled").setBoolean(false);
-//     animItem.setLayer("UI");
-//     animItem.setWidth(fromWidth);
-//     animItem.setHeight(fromHeight);
-//     animItem.setX(fromX);
-//     animItem.setY(fromY);
-//     animItem.setAnimationName(itemData.itemImageName);
-//     let targetX = backpack.getX() + backpack.getCenterX();
-//     let targetY = backpack.getY() + backpack.getCenterY();
-//     let targetXScale = 0;
-//     let targetYScale = 0;
-//     if ("toX" in itemData) { targetX = itemData.toX }
-//     if ("toY" in itemData) { targetY = itemData.toY }
-//     if ("targetXScale" in itemData) { targetWidth = itemData.targetXScale }
-//     if ("targetYScale" in itemData) { targetHeight = itemData.targetYScale }
-//     let tween = animItem.getBehavior("Tween");
-//     tween.addObjectPositionTween("collectPositionTween", targetX, targetY, "linear", 750, true);
-//     tween.addObjectScaleTween("collectScaleTween", targetXScale, targetYScale, "linear", 1000, false, true);
-// }
-
-
 };
 gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 
@@ -2312,12 +2248,12 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x1204570(runtimeScene);
+gdjs.ExplorationCode.userFunc0xfa00f0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x12048f0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x111f930 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2470,12 +2406,12 @@ gdjs.ExplorationCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x12048f0(runtimeScene);
+gdjs.ExplorationCode.userFunc0x111f930(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x127b1d0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe79688 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2521,12 +2457,12 @@ gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x127b1d0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe79688(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x1226208 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe79510 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2579,7 +2515,9 @@ document.addEventListener("visibilitychange", () => { // This automatically hand
 FDSG.Sounds = {} // Used to store sound related data;
 
 
-FDSG.Sounds.LocationSounds = { // Here we put the sound effect to play for each layout. If the sound is not specified, the game will continue playing the sounds of the previous layout
+FDSG.Sounds.LocationSounds = {
+    /* Here we put the sound effect to play for each layout. If the sound is not specified,
+    the game will continue playing the sounds of the previous layout */
     "OutdoorAmbience": [
         "Frederick Douglass Square",
         "STAMP Entrance",
@@ -2683,11 +2621,11 @@ FDSG.handleLocationSounds = function() {
             gdjs.evtTools.sound.setMusicOnChannelPlayingOffset(GameVars.runtimeScene, locationSoundChannel, soundOffset);
         }
         GameVars.currentLocationSoundData = locationSoundData;
-        if (gdjs.evtTools.sound.getGlobalVolume(GameVars.runtimeScene) == 0) {
+        if (gdjs.evtTools.sound.getGlobalVolume(GameVars.runtimeScene) == 0) { // Pause the sound if the volume is off
             if (gdjs.evtTools.sound.isMusicOnChannelPlaying(GameVars.runtimeScene, locationSoundChannel)) {
                 gdjs.evtTools.sound.pauseMusicOnChannel(GameVars.runtimeScene, locationSoundChannel);
             }
-        } else {
+        } else { // Resume the sound if the volume is on
             if (gdjs.evtTools.sound.isMusicOnChannelPaused(GameVars.runtimeScene, locationSoundChannel)) {
                 gdjs.evtTools.sound.continueMusicOnChannel(GameVars.runtimeScene, locationSoundChannel);
             }
@@ -2707,26 +2645,12 @@ gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x1226208(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe79510(runtimeScene);
 
 }
 
 
-{
-
-
-
-}
-
-
-{
-
-
-
-}
-
-
-};gdjs.ExplorationCode.userFunc0xb817e8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe79328 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2788,7 +2712,7 @@ gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xb817e8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe79328(runtimeScene);
 
 }
 
@@ -2879,7 +2803,7 @@ gdjs.ExplorationCode.eventsList10(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xb82548 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x13978a0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2902,7 +2826,7 @@ Just call the FDSG.registerClickableObject() function, passing a clickConfig obj
                 If you don't know what to put here, create the desired effect in the editor
                 and then use the "copy effects" button. If you paste as text,
                 the object you want will be the "serialized effect" object.
-        hoverTooltip: If you want text to display when hovering over the object, put it in an object with the following structure:
+        hoverTooltip?: If you want text to display when hovering over the object, put it in an object with the following structure:
             hoverTooltip = {
                 x: Which x coordinate to display the object (relative to the parent object)
                 y: Which y coordinate to display the object (relative to the parent object),
@@ -3294,12 +3218,12 @@ gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xb82548(runtimeScene);
+gdjs.ExplorationCode.userFunc0x13978a0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xb81900 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9a7d40 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3328,7 +3252,7 @@ FDSG.registerOnLayoutLoadFunction("Frederick Douglass Square", () => {
 });
 
 FDSG.registerLayoutInfo("Frederick Douglass Square", 
-"Frederick Douglass Square was commemorated in honor of Frederick Douglass on November 18th, 2015. At the commemoration ceremony, two of Douglass' descendents, Nettie Washington Douglass and Kenneth B. Morris, were present for the unveiling of the statue and spoke about their family legacy.");
+"The Frederick Douglass Square was commemorated in honor of Frederick Douglass on November 18th, 2015. At the commemoration ceremony, two of Douglass' descendents, Nettie Washington Douglass and Kenneth B. Morris, were present for the unveiling of the statue and spoke about their family legacy.");
 
 FDSG.registerInteraction("MarblesMinigame", (obj) => { // I like putting all the code under one big interaction, but using multiple smaller ones is fine as long as you remember the names
     const instanceID = obj.getVariables().get("instanceID").getAsString();
@@ -3383,12 +3307,12 @@ gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xb81900(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9a7d40(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x1192498 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x96d3d0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3406,12 +3330,12 @@ gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x1192498(runtimeScene);
+gdjs.ExplorationCode.userFunc0x96d3d0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xb811a8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9f96c0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3454,12 +3378,12 @@ gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xb811a8(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9f96c0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xb82020 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9f9820 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3472,17 +3396,20 @@ gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xb82020(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9f9820(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xb81348 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x131d4e8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
 const Game = GameVars.runtimeScene.getGame();
 
+
+FDSG.registerLayoutInfo("Driskell Mural", 
+"This mural was designed by Brandon Donahue and constructed with the help of three undergaduate students, Boma Tende, Daria Parsa, and Curlee R. The mural is dedicated to the late David C. Driskell, a renowned artist and professor of art at UMD.");
 
 FDSG.registerInteraction("PhotoMinigame", (obj) => {
     const instanceID = obj.getVariables().get("instanceID").getAsString();
@@ -3546,7 +3473,7 @@ gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xb81348(runtimeScene);
+gdjs.ExplorationCode.userFunc0x131d4e8(runtimeScene);
 
 }
 
@@ -3595,7 +3522,7 @@ gdjs.ExplorationCode.eventsList17(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0x120d4c8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x9538d0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3650,7 +3577,7 @@ gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x120d4c8(runtimeScene);
+gdjs.ExplorationCode.userFunc0x9538d0(runtimeScene);
 
 }
 
@@ -3740,7 +3667,7 @@ gdjs.ExplorationCode.eventsList20(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.ExplorationCode.userFunc0x11fec78 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xe71158 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -3793,7 +3720,7 @@ if (GameVars._isFading) {
         }
         if (GameVars.loadMinigame != null) {
             let minigame = GameVars.loadMinigame;
-            FDSG.debugPrint("log", `loading minigame ${minigame}`)
+            FDSG.debugPrint("log", `loading minigame ${minigame}`);
             FDSG.initFade(GameVars.Constants.FIRST_TRANSITION_FADE_DURATION, true); /* Set so the game will fade back in on return */
             GameVars._currentLoadedMinigame = minigame;
             GameVars.loadMinigame = null;
@@ -3805,10 +3732,32 @@ if (GameVars._isFading) {
     } else if (fadeTween.exists("fadeIn") && fadeTween.hasFinished("fadeIn")) {
         fadeEffect.deleteFromScene();
         GameVars._isFading = false;
+        if (GameVars._showFigurineIconHint) {
+            const icon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0]; // Shake the statue icon if there are statues to collect in this layout
+            icon.enableEffect("statueRemaining", true);
+            FDSG.playObjectShakeAnimation(icon);
+            GameVars._showFigurineIconHint = false;
+        }
+        if (GameVars._showLayoutInfoHint) { // Whether to show and shake the infoPopup to show the player that the layout has infoText
+            const infoPopupObject = FDSG.getInstanceFromID("locationPopupInfo");
+            let infoText = FDSG._LayoutData[GameVars.currentLayout].infoText;
+            infoPopupObject.getVariables().get("infoText").setString(infoText);
+            infoPopupObject.getVariables().get("enabled").setBoolean(true);
+            infoPopupObject.hide(false);
+            FDSG.playObjectShakeAnimation(infoPopupObject);
+            GameVars._showLayoutInfoHint = false;
+        }
     }
 }
 };
 gdjs.ExplorationCode.eventsList22 = function(runtimeScene) {
+
+{
+
+
+
+}
+
 
 };gdjs.ExplorationCode.eventsList23 = function(runtimeScene) {
 
@@ -3822,7 +3771,7 @@ gdjs.ExplorationCode.eventsList22 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x11fec78(runtimeScene);
+gdjs.ExplorationCode.userFunc0xe71158(runtimeScene);
 
 }
 
@@ -3953,6 +3902,9 @@ for(var i = 0, len = gdjs.ExplorationCode.GDMapEnterButtonObjects3.length ;i < l
     gdjs.ExplorationCode.GDMapEnterButtonObjects3[i].SetLabelTextOp(gdjs.ExplorationCode.GDMapEnterButtonObjects3[i].getVariables().get("labelText").getAsString(), null);
 }
 }
+
+{ //Subevents: 
+gdjs.ExplorationCode.eventsList22(runtimeScene);} //Subevents end.
 }
 }
 

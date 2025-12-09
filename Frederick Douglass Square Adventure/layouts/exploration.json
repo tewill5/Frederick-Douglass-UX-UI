@@ -2559,7 +2559,6 @@
         },
         {
           "name": "enabled",
-          "persistentUuid": "d5bc98c3-68ce-41af-8e3a-269feea0c04f",
           "type": "boolean",
           "value": true
         },
@@ -4742,7 +4741,7 @@
       "include": {
         "includeConfig": 0
       },
-      "target": "Global EventsJS"
+      "target": "FDSG"
     }
   ],
   "layers": [

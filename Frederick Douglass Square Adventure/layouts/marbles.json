@@ -3477,28 +3477,11 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "BuiltinCommonInstructions::Or"
+                        "value": "MouseButtonFromTextReleased"
                       },
-                      "parameters": [],
-                      "subInstructions": [
-                        {
-                          "type": {
-                            "value": "MouseButtonFromTextReleased"
-                          },
-                          "parameters": [
-                            "",
-                            "\"Left\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "HasTouchEnded"
-                          },
-                          "parameters": [
-                            "",
-                            "2"
-                          ]
-                        }
+                      "parameters": [
+                        "",
+                        "\"Left\""
                       ]
                     }
                   ],
@@ -3578,7 +3561,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Init",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3951,7 +3933,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Main Game",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -5136,7 +5117,6 @@
               "colorG": 176,
               "colorR": 74,
               "creationTime": 0,
-              "folded": true,
               "name": "Turns",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -5172,7 +5152,6 @@
                       "colorG": 176,
                       "colorR": 74,
                       "creationTime": 0,
-                      "folded": true,
                       "name": "Player Turn",
                       "source": "",
                       "type": "BuiltinCommonInstructions::Group",
@@ -5187,6 +5166,30 @@
                               "parameters": [
                                 "isPlayerTurn",
                                 "True",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "SourisSurObjet"
+                              },
+                              "parameters": [
+                                "FullScreenToggleMinigame",
+                                "",
+                                "",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "SourisSurObjet"
+                              },
+                              "parameters": [
+                                "SoundToggleMinigame",
+                                "",
+                                "",
                                 ""
                               ]
                             }
@@ -5243,7 +5246,6 @@
                               "colorG": 176,
                               "colorR": 74,
                               "creationTime": 0,
-                              "folded": true,
                               "name": "Player Shooting Marble",
                               "source": "",
                               "type": "BuiltinCommonInstructions::Group",
@@ -6941,378 +6943,11 @@
       "parameters": []
     },
     {
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
-      "folded": true,
-      "name": "Persistent UI",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": true,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "FullScreenToggleMinigame",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "EffectCapability::EffectBehavior::EnableEffect"
-              },
-              "parameters": [
-                "FullScreenToggleMinigame",
-                "Effect",
-                "\"Effect\"",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "folded": true,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "FullScreenToggleMinigame",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "EffectCapability::EffectBehavior::EnableEffect"
-              },
-              "parameters": [
-                "FullScreenToggleMinigame",
-                "Effect",
-                "\"Effect\"",
-                "yes"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "MouseButtonFromTextReleased"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Left\""
-                  ]
-                }
-              ],
-              "actions": [],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": true,
-                        "value": "IsFullScreen"
-                      },
-                      "parameters": [
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetFullScreen"
-                      },
-                      "parameters": [
-                        "",
-                        "yes",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                      },
-                      "parameters": [
-                        "FullScreenToggleMinigame",
-                        "Animation",
-                        "=",
-                        "\"fullscreen\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "else",
-                        "False",
-                        ""
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "IsFullScreen"
-                      },
-                      "parameters": [
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "else",
-                        "True",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                      },
-                      "parameters": [
-                        "FullScreenToggleMinigame",
-                        "Animation",
-                        "=",
-                        "\"not_fullscreen\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetFullScreen"
-                      },
-                      "parameters": [
-                        "",
-                        "no",
-                        ""
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "variables": [
-                {
-                  "name": "else",
-                  "type": "boolean",
-                  "value": true
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": true,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "SoundToggleMinigame",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "EffectCapability::EffectBehavior::EnableEffect"
-              },
-              "parameters": [
-                "SoundToggleMinigame",
-                "Effect",
-                "\"Effect\"",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "folded": true,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "SoundToggleMinigame",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "EffectCapability::EffectBehavior::EnableEffect"
-              },
-              "parameters": [
-                "SoundToggleMinigame",
-                "Effect",
-                "\"Effect\"",
-                "yes"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "MouseButtonFromTextReleased"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Left\""
-                  ]
-                }
-              ],
-              "actions": [],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "GlobalVolume"
-                      },
-                      "parameters": [
-                        "",
-                        "=",
-                        "0"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "ModGlobalVolume"
-                      },
-                      "parameters": [
-                        "",
-                        "=",
-                        "100"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                      },
-                      "parameters": [
-                        "SoundToggleMinigame",
-                        "Animation",
-                        "=",
-                        "\"on\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "else",
-                        "False",
-                        ""
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "GlobalVolume"
-                      },
-                      "parameters": [
-                        "",
-                        "=",
-                        "100"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "else",
-                        "True",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "ModGlobalVolume"
-                      },
-                      "parameters": [
-                        "",
-                        "=",
-                        "0"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                      },
-                      "parameters": [
-                        "SoundToggleMinigame",
-                        "Animation",
-                        "=",
-                        "\"off\""
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "variables": [
-                {
-                  "name": "else",
-                  "type": "boolean",
-                  "value": true
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "parameters": []
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "Minigame Persistent UI"
     }
   ],
   "layers": [
