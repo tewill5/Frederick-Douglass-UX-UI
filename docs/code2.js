@@ -217,7 +217,7 @@ gdjs.ExplorationCode.GDSoundToggleMinigameObjects3= [];
 gdjs.ExplorationCode.GDSoundToggleMinigameObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0xa08908 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0xcce890 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -292,12 +292,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xa08908(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcce890(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9fce88 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcce928 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -546,12 +546,12 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9fce88(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcce928(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe065d0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd9388 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -570,7 +570,9 @@ Object.assign(GameVars, {
     _longFade: false, // Whether to use a long transition or a short one. This is just used by TransitionObjects
     loadMinigame: null, // Used to set a minigame to be loaded
     _currentLoadedMinigame: null, // Used to track whether to check minigame flags on resuming this scene
-    _showLayoutInfoHint: false, // Whether to shake the layout info icon after fading in to show that the layout has info to read
+    _showLayoutInfoHintAfterFade: false, // Whether to shake the layout info icon after fading in to show that the layout has info to read
+    _showFigurineIconHintAfterFade: false, // Whether to shake the figurine icon after fading in to show the player there's still figurines to collect
+
 
 });
 
@@ -628,17 +630,23 @@ FDSG.initScene = function() {
         runtimeLayer.show(FDSG.Input.ClickableLayers[layer]);
     }
 
-    FDSG.debugPrint("log", "checking collectibles");
-    // COLLECTIBLES HANDLING
-    FDSG.removeCollectedObjects(); // Removes any collected objects from the layout
-
-    FDSG.updateStatueCounter(); // Update the StatuesCollectedCounter to the proper value
-
     // INSPECTIONS HANDLING
     FDSG.debugPrint("log", "initializing inspections");
     FDSG._LayoutInspections = FDSG.getLayoutInspections(); // Registers all inspections and their objects for the current layout
     GameVars._loadedInspections = []; // No inspections are loaded on scene init, so clear the stack
     GameVars._isInspecting = false; // The player can't be inspecting on scene init, so clear the flag if it's set
+
+    FDSG.debugPrint("log", "checking collectibles");
+    // COLLECTIBLES HANDLING
+    FDSG.removeCollectedObjects(); // Removes any collected objects from the layout
+    FDSG.updateStatueCounter(); // Update the StatuesCollectedCounter to the proper value
+    const icon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0]; // Highlight the statue icon if there are any figurines still in the scene
+    icon.enableEffect("statueRemaining", false); // Set this to false until the scene loads
+        /* We automatically disable this, but it will get enabled if there are figurines to collect after fading in.
+        Doing it after fade will make players more likely to spot the hint, since there's no visual distractions.*/
+    if (GameVars.runtimeScene.getInstancesOf("StatueCollectible").length > 0) {
+        GameVars._showFigurineIconHintAfterFade = true;
+    }
 
     FDSG.debugPrint("log", "initializing text objects")
     // Set instance specific innerText on text objects
@@ -718,7 +726,7 @@ FDSG.initScene = function() {
     infoPopupObject.hide(true); // We hide this, but it will be shown automatically after fading if there is infoText to show
     if (GameVars.currentLayout in FDSG._LayoutData
     && "infoText" in FDSG._LayoutData[GameVars.currentLayout]) {
-        GameVars._showLayoutInfoHint = true;
+        GameVars._showLayoutInfoHintAfterFade = true;
         //FDSG.playObjectShakeAnimation(infoPopupObject);
     } else {
         infoPopupObject.getVariables().get("enabled").setBoolean(false);
@@ -990,12 +998,12 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe065d0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcd9388(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x13979e0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xccf160 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1432,12 +1440,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x13979e0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xccf160(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xf9fef8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcde300 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1732,12 +1740,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xf9fef8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcde300(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x978b50 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd6eb8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1747,7 +1755,6 @@ Object.assign(GameVars, {
     collectiblesFound: {}, /* This is used to track which collectibles have been collected. Each collectible has a uniqueID,
                         and is either true (collected) or false (not collected) */
     statuesCollected: 0, // The number of statues Collected
-    _shakeFigurineIconAfterFade: false, // Whether to shake the figurine icon after fading in to show the player there's still figurines to collect
 });
 
 Object.assign(GameVars.Constants, {
@@ -1784,9 +1791,15 @@ FDSG.collectObject = function(collectible) {
     const uniqueID = `${collectible.name}-${GameVars.currentLayout}-${collectible.getX()}-${collectible.getY()}`;
         // The objects uniqueID to distinguish it from others
     GameVars.collectiblesFound[uniqueID] = true; // Mark as collected
-    FDSG.updateStatueCounter();
     collectible.deleteFromScene(GameVars.runtimeScene);
     FDSG.debugPrint(`Collected ${uniqueID}`);
+    if (collectible.getName() == "StatueCollectible") {
+        FDSG.GameVars.statuesCollected += 1; // Increase statues collected counter
+        FDSG.updateStatueCounter();
+        const statueIcon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0];
+        FDSG.playObjectShakeAnimation(statueIcon);
+        FDSG.playSFX("StatueCollected");
+    }
     return true;
 }
 
@@ -1826,13 +1839,14 @@ FDSG.updateStatueCounter = function() {
         FDSG.initFade(GameVars.Constants.FIRST_TRANSITION_FADE_DURATION, false, false);
     }
     const icon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0]; // Highlight the statue icon if there are any figurines still in the scene
-    icon.enableEffect("statueRemaining", false);
-        // We automatically disable this, but it will get enabled if there are figurines to collect after fading in
     if (GameVars.runtimeScene.getInstancesOf("StatueCollectible").length > 0) {
-        GameVars._showFigurineIconHint = true;
-        //FDSG.playObjectShakeAnimation(icon); // Shake and highlight the icon to notify the player that a figurine is in the current room after fading in
+        icon.enableEffect("statueRemaining", true);
+    } else {
+        icon.enableEffect("statueRemaining", false);
+
     }
 }
+
 };
 gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 
@@ -1846,12 +1860,12 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x978b50(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcd6eb8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xfa00f0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd1ddd8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2248,12 +2262,12 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xfa00f0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd1ddd8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x111f930 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcdc3a0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2406,12 +2420,12 @@ gdjs.ExplorationCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x111f930(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcdc3a0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe79688 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcdc570 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2457,12 +2471,12 @@ gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe79688(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcdc570(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe79510 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd5678 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2645,12 +2659,12 @@ gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe79510(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcd5678(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe79328 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcdb5e8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2712,7 +2726,7 @@ gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe79328(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcdb5e8(runtimeScene);
 
 }
 
@@ -2803,7 +2817,7 @@ gdjs.ExplorationCode.eventsList10(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0x13978a0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcdd958 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3072,11 +3086,6 @@ FDSG.registerClickableObject({
         }
         if (itemObject.getName() == "StatueCollectible") { // If the item is a figurine (statue)
             FDSG.collectObject(itemPopupData.itemObject);
-            FDSG.GameVars.statuesCollected += 1; // Increase statues collected counter
-            FDSG.updateStatueCounter();
-            const statueIcon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0];
-            FDSG.playObjectShakeAnimation(statueIcon);
-            FDSG.playSFX("StatueCollected");
         } else {
             FDSG.addItemToInventory(itemName, itemDescription); // Add the item to inventory
             if (itemObject.getVariables().get("removeOnPickup").getAsBoolean()) {
@@ -3218,12 +3227,12 @@ gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x13978a0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcdd958(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9a7d40 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcddbd8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3307,12 +3316,12 @@ gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9a7d40(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcddbd8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x96d3d0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd0850 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3330,12 +3339,12 @@ gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x96d3d0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcd0850(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9f96c0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd0910 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3378,12 +3387,12 @@ gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9f96c0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcd0910(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9f9820 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd4de0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3396,12 +3405,12 @@ gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9f9820(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcd4de0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0x131d4e8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd3860 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3473,7 +3482,7 @@ gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x131d4e8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcd3860(runtimeScene);
 
 }
 
@@ -3522,7 +3531,7 @@ gdjs.ExplorationCode.eventsList17(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0x9538d0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd3ed8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3577,7 +3586,7 @@ gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0x9538d0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcd3ed8(runtimeScene);
 
 }
 
@@ -3667,7 +3676,7 @@ gdjs.ExplorationCode.eventsList20(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe71158 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xcd4a70 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -3732,20 +3741,20 @@ if (GameVars._isFading) {
     } else if (fadeTween.exists("fadeIn") && fadeTween.hasFinished("fadeIn")) {
         fadeEffect.deleteFromScene();
         GameVars._isFading = false;
-        if (GameVars._showFigurineIconHint) {
+        if (GameVars._showFigurineIconHintAfterFade) {
             const icon = GameVars.runtimeScene.getInstancesOf("StatueIcon")[0]; // Shake the statue icon if there are statues to collect in this layout
             icon.enableEffect("statueRemaining", true);
             FDSG.playObjectShakeAnimation(icon);
-            GameVars._showFigurineIconHint = false;
+            GameVars._showFigurineIconHintAfterFade = false;
         }
-        if (GameVars._showLayoutInfoHint) { // Whether to show and shake the infoPopup to show the player that the layout has infoText
+        if (GameVars._showLayoutInfoHintAfterFade) { // Whether to show and shake the infoPopup to show the player that the layout has infoText
             const infoPopupObject = FDSG.getInstanceFromID("locationPopupInfo");
             let infoText = FDSG._LayoutData[GameVars.currentLayout].infoText;
             infoPopupObject.getVariables().get("infoText").setString(infoText);
             infoPopupObject.getVariables().get("enabled").setBoolean(true);
             infoPopupObject.hide(false);
             FDSG.playObjectShakeAnimation(infoPopupObject);
-            GameVars._showLayoutInfoHint = false;
+            GameVars._showLayoutInfoHintAfterFade = false;
         }
     }
 }
@@ -3771,7 +3780,7 @@ gdjs.ExplorationCode.eventsList22 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe71158(runtimeScene);
+gdjs.ExplorationCode.userFunc0xcd4a70(runtimeScene);
 
 }
 

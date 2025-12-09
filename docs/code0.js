@@ -79,13 +79,13 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = runtimeScene.getGame().getVariables().getFromIndex(4).getAsBoolean();
 }
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("StartButton"), gdjs.Main_32MenuCode.GDStartButtonObjects2);
+gdjs.copyArray(runtimeScene.getObjects("StartButton"), gdjs.Main_32MenuCode.GDStartButtonObjects1);
 {gdjs.evtTools.camera.showLayer(runtimeScene, "GameOver");
 }
 {gdjs.evtTools.camera.hideLayer(runtimeScene, "Main Menu");
 }
-{for(var i = 0, len = gdjs.Main_32MenuCode.GDStartButtonObjects2.length ;i < len;++i) {
-    gdjs.Main_32MenuCode.GDStartButtonObjects2[i].Activate(false, null);
+{for(var i = 0, len = gdjs.Main_32MenuCode.GDStartButtonObjects1.length ;i < len;++i) {
+    gdjs.Main_32MenuCode.GDStartButtonObjects1[i].Activate(false, null);
 }
 }
 {gdjs.evtTools.sound.playSound(runtimeScene, "assets\\sfx\\game_won.wav", false, 50, 1);
@@ -95,21 +95,27 @@ gdjs.copyArray(runtimeScene.getObjects("StartButton"), gdjs.Main_32MenuCode.GDSt
 }
 
 
+};gdjs.Main_32MenuCode.userFunc0xccf3f0 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+// We basically just check if the player uses a touchscreen at any point in the main menu.
+// This is to know whether or not the VisibilityEffect should default to Enabled on game start
+window.addEventListener("pointerdown", e => { // js method for determining input type
+    if (e.pointerType == "touch") {
+        runtimeScene.getVariables().get("isUsingTouchscreen").setBoolean(true); // This distinguishes between touch and mouse input
+    }
+}, { passive: true }); // This is for performance reasons
+};
+gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
+
 {
 
 
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene);
-if (isConditionTrue_0) {
-{runtimeScene.getGame().getVariables().getFromIndex(5).setBoolean(true);
-}
-}
+gdjs.Main_32MenuCode.userFunc0xccf3f0(runtimeScene);
 
 }
 
 
-};gdjs.Main_32MenuCode.eventsList1 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
 
 {
 
@@ -155,7 +161,7 @@ gdjs.copyArray(runtimeScene.getObjects("StartButton"), gdjs.Main_32MenuCode.GDSt
 }
 
 
-};gdjs.Main_32MenuCode.eventsList2 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
 
 {
 
@@ -209,7 +215,7 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList1(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList2(runtimeScene);} //End of subevents
 }
 
 }
@@ -217,7 +223,7 @@ gdjs.Main_32MenuCode.eventsList1(runtimeScene);} //End of subevents
 
 };gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.Main_32MenuCode.GDFullScreenToggleMinigameObjects2});
 gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.Main_32MenuCode.GDFullScreenToggleMinigameObjects2});
-gdjs.Main_32MenuCode.eventsList3 = function(runtimeScene) {
+gdjs.Main_32MenuCode.eventsList4 = function(runtimeScene) {
 
 {
 
@@ -265,7 +271,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.eventsList4 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList5 = function(runtimeScene) {
 
 {
 
@@ -285,7 +291,7 @@ isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Lef
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList3(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList4(runtimeScene);} //End of subevents
 }
 gdjs.Main_32MenuCode.localVariables.pop();
 
@@ -293,8 +299,8 @@ gdjs.Main_32MenuCode.localVariables.pop();
 
 
 };gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2});
-gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDSoundToggleMinigameObjects1Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects1});
-gdjs.Main_32MenuCode.eventsList5 = function(runtimeScene) {
+gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2});
+gdjs.Main_32MenuCode.eventsList6 = function(runtimeScene) {
 
 {
 
@@ -303,12 +309,12 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 0;
 if (isConditionTrue_0) {
-gdjs.copyArray(gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects1, gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2);
+gdjs.copyArray(gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2, gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects3);
 
 {gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 100);
 }
-{for(var i = 0, len = gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
-    gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("on");
+{for(var i = 0, len = gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects3.length ;i < len;++i) {
+    gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects3[i].getBehavior("Animation").setAnimationName("on");
 }
 }
 {gdjs.Main_32MenuCode.localVariables[0].getFromIndex(0).setBoolean(false);
@@ -330,11 +336,11 @@ isConditionTrue_0 = false;
 }
 }
 if (isConditionTrue_0) {
-/* Reuse gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects1 */
+/* Reuse gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2 */
 {gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 0);
 }
-{for(var i = 0, len = gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
-    gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects1[i].getBehavior("Animation").setAnimationName("off");
+{for(var i = 0, len = gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("off");
 }
 }
 }
@@ -342,7 +348,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.Main_32MenuCode.eventsList6 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList7 = function(runtimeScene) {
 
 {
 
@@ -362,14 +368,14 @@ isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Lef
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList5(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList6(runtimeScene);} //End of subevents
 }
 gdjs.Main_32MenuCode.localVariables.pop();
 
 }
 
 
-};gdjs.Main_32MenuCode.eventsList7 = function(runtimeScene) {
+};gdjs.Main_32MenuCode.eventsList8 = function(runtimeScene) {
 
 {
 
@@ -404,7 +410,7 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList4(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList5(runtimeScene);} //End of subevents
 }
 
 }
@@ -430,26 +436,94 @@ if (isConditionTrue_0) {
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects1);
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDSoundToggleMinigameObjects1Objects, runtimeScene, true, false);
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.Main_32MenuCode.mapOfGDgdjs_9546Main_959532MenuCode_9546GDSoundToggleMinigameObjects2Objects, runtimeScene, true, false);
 if (isConditionTrue_0) {
-/* Reuse gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects1 */
-{for(var i = 0, len = gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
-    gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects1[i].getBehavior("Effect").enableEffect("Effect", true);
+/* Reuse gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", true);
 }
 }
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList6(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList7(runtimeScene);} //End of subevents
 }
 
 }
 
 
-};gdjs.Main_32MenuCode.eventsList8 = function(runtimeScene) {
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) > 0;
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("on");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 0;
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("off");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.window.isFullScreen(runtimeScene);
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.Main_32MenuCode.GDFullScreenToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.Main_32MenuCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.Main_32MenuCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("fullscreen");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.window.isFullScreen(runtimeScene));
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.Main_32MenuCode.GDFullScreenToggleMinigameObjects1);
+{for(var i = 0, len = gdjs.Main_32MenuCode.GDFullScreenToggleMinigameObjects1.length ;i < len;++i) {
+    gdjs.Main_32MenuCode.GDFullScreenToggleMinigameObjects1[i].getBehavior("Animation").setAnimationName("not_fullscreen");
+}
+}
+}
+
+}
+
+
+};gdjs.Main_32MenuCode.eventsList9 = function(runtimeScene) {
 
 {
 
@@ -472,6 +546,13 @@ gdjs.copyArray(runtimeScene.getObjects("Title"), gdjs.Main_32MenuCode.GDTitleObj
 gdjs.Main_32MenuCode.eventsList0(runtimeScene);} //End of subevents
 }
 
+}
+
+
+{
+
+
+gdjs.Main_32MenuCode.eventsList1(runtimeScene);
 }
 
 
@@ -527,7 +608,7 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.Main_32MenuCode.eventsList2(runtimeScene);} //End of subevents
+gdjs.Main_32MenuCode.eventsList3(runtimeScene);} //End of subevents
 }
 gdjs.Main_32MenuCode.localVariables.pop();
 
@@ -537,7 +618,21 @@ gdjs.Main_32MenuCode.localVariables.pop();
 {
 
 
-gdjs.Main_32MenuCode.eventsList7(runtimeScene);
+
+}
+
+
+{
+
+
+
+}
+
+
+{
+
+
+gdjs.Main_32MenuCode.eventsList8(runtimeScene);
 }
 
 
@@ -591,7 +686,7 @@ gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects2.length = 0;
 gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects3.length = 0;
 gdjs.Main_32MenuCode.GDSoundToggleMinigameObjects4.length = 0;
 
-gdjs.Main_32MenuCode.eventsList8(runtimeScene);
+gdjs.Main_32MenuCode.eventsList9(runtimeScene);
 gdjs.Main_32MenuCode.GDTitleObjects1.length = 0;
 gdjs.Main_32MenuCode.GDTitleObjects2.length = 0;
 gdjs.Main_32MenuCode.GDTitleObjects3.length = 0;
