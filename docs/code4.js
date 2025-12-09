@@ -372,23 +372,7 @@ gdjs.MarblesCode.eventsList7 = function(runtimeScene) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
-isConditionTrue_0 = false;
-{
-isConditionTrue_1 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-isConditionTrue_1 = gdjs.evtTools.input.hasTouchEnded(runtimeScene, 2);
-if(isConditionTrue_1) {
-    isConditionTrue_0 = true;
-}
-}
-{
-}
-}
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Left");
 if (isConditionTrue_0) {
 {runtimeScene.getScene().getVariables().getFromIndex(15).setBoolean(false);
 }
@@ -486,7 +470,7 @@ if (isConditionTrue_0) {
 gdjs.MarblesCode.eventsList10 = function(runtimeScene) {
 
 };gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDPlayerMarbleObjects2ObjectsGDgdjs_9546MarblesCode_9546GDComputerMarbleObjects2Objects = Hashtable.newFrom({"Marble": gdjs.MarblesCode.GDMarbleObjects2, "PlayerMarble": gdjs.MarblesCode.GDPlayerMarbleObjects2, "ComputerMarble": gdjs.MarblesCode.GDComputerMarbleObjects2});
-gdjs.MarblesCode.userFunc0xb81b18 = function GDJSInlineCode(runtimeScene) {
+gdjs.MarblesCode.userFunc0xcdb770 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 window.addEventListener("pointerdown", e => { // js method for determining input type
     runtimeScene.getVariables().get("isUsingTouchscreen").setBoolean(e.pointerType == "touch"); // This distinguishes between touch and mouse input
@@ -497,7 +481,7 @@ gdjs.MarblesCode.eventsList11 = function(runtimeScene) {
 {
 
 
-gdjs.MarblesCode.userFunc0xb81b18(runtimeScene);
+gdjs.MarblesCode.userFunc0xcdb770(runtimeScene);
 
 }
 
@@ -1484,7 +1468,9 @@ gdjs.MarblesCode.localVariables.pop();
 }
 
 
-};gdjs.MarblesCode.eventsList32 = function(runtimeScene) {
+};gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2});
+gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.MarblesCode.GDSoundToggleMinigameObjects2});
+gdjs.MarblesCode.eventsList32 = function(runtimeScene) {
 
 {
 
@@ -1900,10 +1886,20 @@ gdjs.MarblesCode.eventsList37(runtimeScene);
 
 {
 
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2);
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.MarblesCode.GDSoundToggleMinigameObjects2);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 {isConditionTrue_0 = runtimeScene.getScene().getVariables().getFromIndex(0).getAsBoolean();
+}
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDFullScreenToggleMinigameObjects2Objects, runtimeScene, true, true);
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDSoundToggleMinigameObjects2Objects, runtimeScene, true, true);
+}
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("ComputerMarble"), gdjs.MarblesCode.GDComputerMarbleObjects2);
@@ -2738,7 +2734,7 @@ gdjs.MarblesCode.localVariables.pop();
 
 
 };gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.MarblesCode.GDSoundToggleMinigameObjects2});
-gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDSoundToggleMinigameObjects1Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.MarblesCode.GDSoundToggleMinigameObjects1});
+gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.MarblesCode.GDSoundToggleMinigameObjects2});
 gdjs.MarblesCode.eventsList64 = function(runtimeScene) {
 
 {
@@ -2748,12 +2744,12 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 0;
 if (isConditionTrue_0) {
-gdjs.copyArray(gdjs.MarblesCode.GDSoundToggleMinigameObjects1, gdjs.MarblesCode.GDSoundToggleMinigameObjects2);
+gdjs.copyArray(gdjs.MarblesCode.GDSoundToggleMinigameObjects2, gdjs.MarblesCode.GDSoundToggleMinigameObjects3);
 
 {gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 100);
 }
-{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
-    gdjs.MarblesCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("on");
+{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects3.length ;i < len;++i) {
+    gdjs.MarblesCode.GDSoundToggleMinigameObjects3[i].getBehavior("Animation").setAnimationName("on");
 }
 }
 {gdjs.MarblesCode.localVariables[0].getFromIndex(0).setBoolean(false);
@@ -2775,11 +2771,11 @@ isConditionTrue_0 = false;
 }
 }
 if (isConditionTrue_0) {
-/* Reuse gdjs.MarblesCode.GDSoundToggleMinigameObjects1 */
+/* Reuse gdjs.MarblesCode.GDSoundToggleMinigameObjects2 */
 {gdjs.evtTools.sound.setGlobalVolume(runtimeScene, 0);
 }
-{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
-    gdjs.MarblesCode.GDSoundToggleMinigameObjects1[i].getBehavior("Animation").setAnimationName("off");
+{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("off");
 }
 }
 }
@@ -2875,20 +2871,88 @@ if (isConditionTrue_0) {
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.MarblesCode.GDSoundToggleMinigameObjects1);
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.MarblesCode.GDSoundToggleMinigameObjects2);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDSoundToggleMinigameObjects1Objects, runtimeScene, true, false);
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MarblesCode.mapOfGDgdjs_9546MarblesCode_9546GDSoundToggleMinigameObjects2Objects, runtimeScene, true, false);
 if (isConditionTrue_0) {
-/* Reuse gdjs.MarblesCode.GDSoundToggleMinigameObjects1 */
-{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects1.length ;i < len;++i) {
-    gdjs.MarblesCode.GDSoundToggleMinigameObjects1[i].getBehavior("Effect").enableEffect("Effect", true);
+/* Reuse gdjs.MarblesCode.GDSoundToggleMinigameObjects2 */
+{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDSoundToggleMinigameObjects2[i].getBehavior("Effect").enableEffect("Effect", true);
 }
 }
 
 { //Subevents
 gdjs.MarblesCode.eventsList65(runtimeScene);} //End of subevents
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) > 0;
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.MarblesCode.GDSoundToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("on");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.sound.getGlobalVolume(runtimeScene) == 0;
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("SoundToggleMinigame"), gdjs.MarblesCode.GDSoundToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.MarblesCode.GDSoundToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDSoundToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("off");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.window.isFullScreen(runtimeScene);
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2);
+{for(var i = 0, len = gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2.length ;i < len;++i) {
+    gdjs.MarblesCode.GDFullScreenToggleMinigameObjects2[i].getBehavior("Animation").setAnimationName("fullscreen");
+}
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.window.isFullScreen(runtimeScene));
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.MarblesCode.GDFullScreenToggleMinigameObjects1);
+{for(var i = 0, len = gdjs.MarblesCode.GDFullScreenToggleMinigameObjects1.length ;i < len;++i) {
+    gdjs.MarblesCode.GDFullScreenToggleMinigameObjects1[i].getBehavior("Animation").setAnimationName("not_fullscreen");
+}
+}
 }
 
 }
@@ -2935,6 +2999,20 @@ gdjs.MarblesCode.eventsList60(runtimeScene);
 
 
 gdjs.MarblesCode.eventsList61(runtimeScene);
+}
+
+
+{
+
+
+
+}
+
+
+{
+
+
+
 }
 
 
