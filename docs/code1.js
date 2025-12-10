@@ -452,9 +452,29 @@ if (isConditionTrue_0) {
 }
 
 
+};gdjs.TutorialCode.userFunc0xb3daa0 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+// We basically just check if the player uses a touchscreen at any point in the tutorial.
+// This is to know whether or not the VisibilityEffect should default to Enabled on game start
+window.addEventListener("pointerdown", e => { // js method for determining input type
+    if (e.pointerType == "touch") {
+        runtimeScene.getGame().getVariables().get("deviceSupportsTouchscreen").setBoolean(true); // This distinguishes between touch and mouse input
+    }
+}, { passive: true }); // This is for performance reasons
+};
+gdjs.TutorialCode.eventsList7 = function(runtimeScene) {
+
+{
+
+
+gdjs.TutorialCode.userFunc0xb3daa0(runtimeScene);
+
+}
+
+
 };gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2});
 gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDFullScreenToggleMinigameObjects2Objects = Hashtable.newFrom({"FullScreenToggleMinigame": gdjs.TutorialCode.GDFullScreenToggleMinigameObjects2});
-gdjs.TutorialCode.eventsList7 = function(runtimeScene) {
+gdjs.TutorialCode.eventsList8 = function(runtimeScene) {
 
 {
 
@@ -502,7 +522,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.TutorialCode.eventsList8 = function(runtimeScene) {
+};gdjs.TutorialCode.eventsList9 = function(runtimeScene) {
 
 {
 
@@ -522,7 +542,7 @@ isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Lef
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.TutorialCode.eventsList7(runtimeScene);} //End of subevents
+gdjs.TutorialCode.eventsList8(runtimeScene);} //End of subevents
 }
 gdjs.TutorialCode.localVariables.pop();
 
@@ -531,7 +551,7 @@ gdjs.TutorialCode.localVariables.pop();
 
 };gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.TutorialCode.GDSoundToggleMinigameObjects2});
 gdjs.TutorialCode.mapOfGDgdjs_9546TutorialCode_9546GDSoundToggleMinigameObjects2Objects = Hashtable.newFrom({"SoundToggleMinigame": gdjs.TutorialCode.GDSoundToggleMinigameObjects2});
-gdjs.TutorialCode.eventsList9 = function(runtimeScene) {
+gdjs.TutorialCode.eventsList10 = function(runtimeScene) {
 
 {
 
@@ -579,7 +599,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.TutorialCode.eventsList10 = function(runtimeScene) {
+};gdjs.TutorialCode.eventsList11 = function(runtimeScene) {
 
 {
 
@@ -599,14 +619,14 @@ isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonReleased(runtimeScene, "Lef
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.TutorialCode.eventsList9(runtimeScene);} //End of subevents
+gdjs.TutorialCode.eventsList10(runtimeScene);} //End of subevents
 }
 gdjs.TutorialCode.localVariables.pop();
 
 }
 
 
-};gdjs.TutorialCode.eventsList11 = function(runtimeScene) {
+};gdjs.TutorialCode.eventsList12 = function(runtimeScene) {
 
 {
 
@@ -641,7 +661,7 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.TutorialCode.eventsList8(runtimeScene);} //End of subevents
+gdjs.TutorialCode.eventsList9(runtimeScene);} //End of subevents
 }
 
 }
@@ -680,7 +700,7 @@ if (isConditionTrue_0) {
 }
 
 { //Subevents
-gdjs.TutorialCode.eventsList10(runtimeScene);} //End of subevents
+gdjs.TutorialCode.eventsList11(runtimeScene);} //End of subevents
 }
 
 }
@@ -754,7 +774,7 @@ gdjs.copyArray(runtimeScene.getObjects("FullScreenToggleMinigame"), gdjs.Tutoria
 }
 
 
-};gdjs.TutorialCode.eventsList12 = function(runtimeScene) {
+};gdjs.TutorialCode.eventsList13 = function(runtimeScene) {
 
 {
 
@@ -893,7 +913,7 @@ if (isConditionTrue_0) {
 {
 
 
-
+gdjs.TutorialCode.eventsList7(runtimeScene);
 }
 
 
@@ -907,7 +927,14 @@ if (isConditionTrue_0) {
 {
 
 
-gdjs.TutorialCode.eventsList11(runtimeScene);
+
+}
+
+
+{
+
+
+gdjs.TutorialCode.eventsList12(runtimeScene);
 }
 
 
@@ -1008,7 +1035,7 @@ gdjs.TutorialCode.GDSoundToggleMinigameObjects5.length = 0;
 gdjs.TutorialCode.GDSoundToggleMinigameObjects6.length = 0;
 gdjs.TutorialCode.GDSoundToggleMinigameObjects7.length = 0;
 
-gdjs.TutorialCode.eventsList12(runtimeScene);
+gdjs.TutorialCode.eventsList13(runtimeScene);
 gdjs.TutorialCode.GDTutorialTitleObjects1.length = 0;
 gdjs.TutorialCode.GDTutorialTitleObjects2.length = 0;
 gdjs.TutorialCode.GDTutorialTitleObjects3.length = 0;

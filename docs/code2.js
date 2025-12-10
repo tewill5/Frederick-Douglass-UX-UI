@@ -217,7 +217,7 @@ gdjs.ExplorationCode.GDSoundToggleMinigameObjects3= [];
 gdjs.ExplorationCode.GDSoundToggleMinigameObjects4= [];
 
 
-gdjs.ExplorationCode.userFunc0xdf0508 = function GDJSInlineCode(runtimeScene) {
+gdjs.ExplorationCode.userFunc0xb3d768 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 gdjs.FDGameData = {}; // All persistent data is attached to gdjs so that it isn't reset on scene change
 const FDSG = gdjs.FDGameData; // This way data can be accessed through a simpler variable name (FDSG = Frederick-Douglass Square Game)
@@ -292,12 +292,12 @@ gdjs.ExplorationCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdf0508(runtimeScene);
+gdjs.ExplorationCode.userFunc0xb3d768(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdf0898 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x1116970 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -546,12 +546,12 @@ gdjs.ExplorationCode.eventsList1 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdf0898(runtimeScene);
+gdjs.ExplorationCode.userFunc0x1116970(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdee868 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x1116cf0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -998,12 +998,12 @@ gdjs.ExplorationCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdee868(runtimeScene);
+gdjs.ExplorationCode.userFunc0x1116cf0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdef368 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xb3b1f0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1440,12 +1440,12 @@ gdjs.ExplorationCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdef368(runtimeScene);
+gdjs.ExplorationCode.userFunc0xb3b1f0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe04cb8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xb41d98 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1740,12 +1740,12 @@ gdjs.ExplorationCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe04cb8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xb41d98(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdedbb8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xb41840 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -1860,12 +1860,12 @@ gdjs.ExplorationCode.eventsList5 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdedbb8(runtimeScene);
+gdjs.ExplorationCode.userFunc0xb41840(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe047a0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd1c4e0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2262,12 +2262,12 @@ gdjs.ExplorationCode.eventsList6 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe047a0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd1c4e0(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd39550 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x11168a8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2421,12 +2421,12 @@ gdjs.ExplorationCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd39550(runtimeScene);
+gdjs.ExplorationCode.userFunc0x11168a8(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd33d88 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x1116c40 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2472,12 +2472,12 @@ gdjs.ExplorationCode.eventsList8 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd33d88(runtimeScene);
+gdjs.ExplorationCode.userFunc0x1116c40(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd34690 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xb3dad8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2662,7 +2662,7 @@ gdjs.ExplorationCode.eventsList9 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd34690(runtimeScene);
+gdjs.ExplorationCode.userFunc0xb3dad8(runtimeScene);
 
 }
 
@@ -2681,7 +2681,7 @@ gdjs.ExplorationCode.userFunc0xd34690(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe3e5f8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x1224620 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -2744,7 +2744,7 @@ gdjs.ExplorationCode.eventsList10 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe3e5f8(runtimeScene);
+gdjs.ExplorationCode.userFunc0x1224620(runtimeScene);
 
 }
 
@@ -2835,7 +2835,7 @@ gdjs.ExplorationCode.eventsList10(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe045b0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd6c140 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3245,12 +3245,12 @@ gdjs.ExplorationCode.eventsList12 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe045b0(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd6c140(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdf0b10 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xb3f540 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3334,12 +3334,12 @@ gdjs.ExplorationCode.eventsList13 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdf0b10(runtimeScene);
+gdjs.ExplorationCode.userFunc0xb3f540(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdf0cb8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x1220848 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3351,12 +3351,12 @@ gdjs.ExplorationCode.eventsList14 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdf0cb8(runtimeScene);
+gdjs.ExplorationCode.userFunc0x1220848(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd7ca00 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xb3bf30 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3404,12 +3404,12 @@ gdjs.ExplorationCode.eventsList15 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd7ca00(runtimeScene);
+gdjs.ExplorationCode.userFunc0xb3bf30(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xdef080 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xb3d310 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3422,12 +3422,12 @@ gdjs.ExplorationCode.eventsList16 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xdef080(runtimeScene);
+gdjs.ExplorationCode.userFunc0xb3d310(runtimeScene);
 
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe3e910 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0xd6cbd8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3499,7 +3499,7 @@ gdjs.ExplorationCode.eventsList17 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe3e910(runtimeScene);
+gdjs.ExplorationCode.userFunc0xd6cbd8(runtimeScene);
 
 }
 
@@ -3548,7 +3548,7 @@ gdjs.ExplorationCode.eventsList17(runtimeScene);
 }
 
 
-};gdjs.ExplorationCode.userFunc0xe04148 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x1221368 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData;
 const GameVars = FDSG.GameVars;
@@ -3603,7 +3603,7 @@ gdjs.ExplorationCode.eventsList19 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xe04148(runtimeScene);
+gdjs.ExplorationCode.userFunc0x1221368(runtimeScene);
 
 }
 
@@ -3693,7 +3693,7 @@ gdjs.ExplorationCode.eventsList20(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.ExplorationCode.userFunc0xd7d910 = function GDJSInlineCode(runtimeScene) {
+};gdjs.ExplorationCode.userFunc0x121ca08 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const FDSG = gdjs.FDGameData; // Simpler variables to use as reference
 const GameVars = FDSG.GameVars;
@@ -3800,7 +3800,7 @@ gdjs.ExplorationCode.eventsList22 = function(runtimeScene) {
 {
 
 
-gdjs.ExplorationCode.userFunc0xd7d910(runtimeScene);
+gdjs.ExplorationCode.userFunc0x121ca08(runtimeScene);
 
 }
 
