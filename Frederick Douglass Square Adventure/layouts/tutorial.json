@@ -1734,7 +1734,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Check Touchscreen",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1746,7 +1745,7 @@
             "// This is to know whether or not the VisibilityEffect should default to Enabled on game start",
             "window.addEventListener(\"pointerdown\", e => { // js method for determining input type",
             "    if (e.pointerType == \"touch\") {",
-            "        runtimeScene.getVariables().get(\"isUsingTouchscreen\").setBoolean(true); // This distinguishes between touch and mouse input",
+            "        runtimeScene.getGame().getVariables().get(\"deviceSupportsTouchscreen\").setBoolean(true); // This distinguishes between touch and mouse input",
             "    }",
             "}, { passive: true }); // This is for performance reasons"
           ],

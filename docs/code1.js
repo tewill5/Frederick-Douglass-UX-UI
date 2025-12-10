@@ -452,13 +452,13 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.TutorialCode.userFunc0xbb34a0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.TutorialCode.userFunc0xb3daa0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 // We basically just check if the player uses a touchscreen at any point in the tutorial.
 // This is to know whether or not the VisibilityEffect should default to Enabled on game start
 window.addEventListener("pointerdown", e => { // js method for determining input type
     if (e.pointerType == "touch") {
-        runtimeScene.getVariables().get("isUsingTouchscreen").setBoolean(true); // This distinguishes between touch and mouse input
+        runtimeScene.getGame().getVariables().get("deviceSupportsTouchscreen").setBoolean(true); // This distinguishes between touch and mouse input
     }
 }, { passive: true }); // This is for performance reasons
 };
@@ -467,7 +467,7 @@ gdjs.TutorialCode.eventsList7 = function(runtimeScene) {
 {
 
 
-gdjs.TutorialCode.userFunc0xbb34a0(runtimeScene);
+gdjs.TutorialCode.userFunc0xb3daa0(runtimeScene);
 
 }
 
